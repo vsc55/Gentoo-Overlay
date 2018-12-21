@@ -1,0 +1,51 @@
+*** start_urbackup_client_1.4.10	2015-11-13 22:02:44.000000000 +0100
+--- start_urbackup_client	2016-02-10 22:49:40.838771993 +0100
+***************
+*** 1,32 ****
+  #!/bin/sh
+  
+  NAME="urbackup_client"
+! PREFIX=/usr/local
+! DAEMON=$PREFIX/sbin/urbackup_client
+! if ! test -x $DAEMON
+! then
+!     PREFIX=/usr
+!     DAEMON=$PREFIX/sbin/urbackup_client
+! fi
+! 
+! DAEMON_DIR="/usr/local/var"
+! if ! test -e $DAEMON_DIR/urbackup/backup_client.db.template
+! then
+!     DAEMON_DIR="/var"
+!     if ! test -e $DAEMON_DIR/urbackup/backup_client.db.template
+!     then
+! 	DAEMON_DIR="/usr/var"
+!     fi
+! fi
+  
+  DAEMON_LIBS="$PREFIX/lib"
+  if ! test -e $DAEMON_LIBS/liburbackupclient_fileservplugin.so
+  then
+  	DAEMON_LIBS="$PREFIX/lib64"
+- 	if ! test -e $DAEMON_LIBS/liburbackupclient_fileservplugin.so
+- 	then
+- 		DAEMON_LIBS="/lib"
+- 	fi
+  fi
+  
+  DAEMON_PLUGINS="--plugin $DAEMON_LIBS/liburbackupclient_fileservplugin.so --plugin $DAEMON_LIBS/liburbackupclient_fsimageplugin.so --plugin $DAEMON_LIBS/liburbackupclient_cryptoplugin.so --plugin $DAEMON_LIBS/liburbackupclient.so --workingdir $DAEMON_DIR --server false --no-server"
+--- 1,14 ----
+  #!/bin/sh
+  
+  NAME="urbackup_client"
+! PREFIX=/usr
+! DAEMON=/usr/sbin/urbackup_client
+! DAEMON_DIR="/var/lib"
+  
+  DAEMON_LIBS="$PREFIX/lib"
+  if ! test -e $DAEMON_LIBS/liburbackupclient_fileservplugin.so
+  then
+  	DAEMON_LIBS="$PREFIX/lib64"
+  fi
+  
+  DAEMON_PLUGINS="--plugin $DAEMON_LIBS/liburbackupclient_fileservplugin.so --plugin $DAEMON_LIBS/liburbackupclient_fsimageplugin.so --plugin $DAEMON_LIBS/liburbackupclient_cryptoplugin.so --plugin $DAEMON_LIBS/liburbackupclient.so --workingdir $DAEMON_DIR --server false --no-server"

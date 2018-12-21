@@ -1,0 +1,581 @@
+https://www.urbackup.org/client_changelog.html
+
+2.3.4
+Changes from 2.2.x:
+
+    Set e flag on Linux in popen to open the pipe with O_CLOEXEC
+    Set FSCTL_ALLOW_EXTENDED_DASD_IO on volume handle to be able to read last sector
+    Clarify keep option in command line client
+    Don't use RequestUserAttention on Linux because it segfaults
+    Fix permission translation for Linux and macOS
+    Retry llistxattr with a multiple of the required memory if it fails
+    Cooperate CBT with multiple running clients
+    Don't show restore components option if components never have been backed up
+    Fix change indicator of open files such that the symbolic link detection works for them
+    Read USNs of symbolic links and directories on Windows instead of last modified time to detect directory metadata changes
+    Fix file permission translation on Linux/MacOS
+    Fix Crypto++ 6.0 byte compile issue
+    Handle reparse tag IO_REPARSE_TAG_APPEXECLINK on Windows
+    Backup VeraCrypt boot loader
+    Improve log message if indexing is interrupted
+
+
+2.2.6
+Changes:
+
+    Increase common metadata size limit
+    Fix tar file streaming large file size parsing
+    Add additional tar file streaming logging
+    Allow root to access/restore invalid symlinks
+    Fix EPERM handling when getting extended attributes fails on macOS
+    Log group/user name if mapping to token id fails on Linux
+    Add crypto++ CPPFLAGS and LDFLAGS to build
+    Enable assertions switch during configure
+    Do not crash if group name of group cannot be found on Linux
+
+
+2.2.5
+Changes:
+
+    Set correct working directory when apply default settings if update is run silently. This was causing the client settings to be reset on update with previous 2.2.x clients
+    Increase timeout for saving settings in setup wizard
+    Correctly open symlinks for setting metadata on macos
+    Get tokens only if metadata contains tids
+    Always exclude /run on Linux
+    Fix common snapshot script (posix compatibility)
+
+	
+2.2.4
+changes:
+
+    Client-side file hashing parallel with file backup
+
+	
+Changes since 2.2.3:
+
+    Fix memory access bug with file symlink to file symlink outside of all backed up paths
+    Check hash pos in piped tar file
+    Change image backup read alignment if necessary
+    Atomic settings reset/changing
+    Ability to exclude mount points from snapshot script on Linux
+    Calculate changed bytes in separate sweep. Make bitmap size difference non-fatal
+    Reengage cbt driver after error
+    Use Crypto++ to calculate MD5/SHA in release mode
+    Handle different sector size for vss volume
+    Run installer script by calling sh on Linux
+    Copy executables and then run them in Linux installer script
+    Fix piped tar file not sending directories in some cases (affected mysql backup with xtrabackup)
+    If snapshot dir is "none" use no snapshot and log no error
+    Configure virtual mariadb incr client correctly in mariadb/mysql setup script
+    Fixing corrupted file backup on macOS with APFS: Disable sparse file support on macOS
+
+For more details see the change logs for beta versions 2.2.0-2.2.3 in the testing category in the forums
+
+
+2.1.17
+Changes:
+
+    Fix piped tar file not sending directories in some cases (affected mysql backup with xtrabackup)
+    Linux: If snapshot dir is "none" use no snapshot and log no error
+    Configure virtual mariadb incr client correctly
+    Fixing corrupted file backup on macOS with APFS: Disable sparse file support on macOS
+
+
+2.1.16
+Changes:
+    Fix symlink check on Windows. Was misrepresenting all reparse points as symbolic links. Caused problems with newer Windows 10 versions
+
+
+2.1.15
+Changes:
+    Remove init script links on Linux client uninstall
+    Disable assertions in release build
+    Prevent client downgrades
+    Disallow direct use of internal share names
+    Fix postgresbase config script
+    Limit number of DC users/groups
+    Skip SYSVOL candidates where GetVolumeInformation fails
+    Fix include_dirs functionality on Linux & Mac
+    Fix token creation for groups on Windows
+
+
+2.1.14
+Major changes:
+    Ability to reconnect during indexing if connection is broken
+    Improved image backup performance
+    Windows Backup API support
+    Define which volumes need to be snapshotted together (snapshot groups)
+
+
+2.0.36
+Changes:
+    Fix timeout issue with connection encryption
+    Fix sysconf path in client scripts
+    Do not remove shadow copies for image backup after client restart if there are multiple concurrent jobs
+    Read computer name from default setting as fallback
+    Set internet client to not connected if no internet servers are configured
+    Output more detailed error information in sysvol_test
+    Prevent uninitialized device type on error in SYSVOL search
+    Use proper param string escape function to fix e.g. adding paths with '+' in them
+    Fix issue with single file backup being a symbolic link
+    Fix default includes when selecting the second option (backup only documents, pictures, ...) in wizard
+    Fix enable_internet_only.bat on Windows
+
+
+2.0.34
+Changes:
+    Update snapshot start time when resuming image backup (prevents snapshot timeout)
+    Allow symbolic link exclusions
+    Interpret time_since_last_lan_connection as int64 in GUI and command line clients to prevent integer overflow and resulting parse error
+
+
+2.0.33
+Changes:
+    Create directories only if not already present and fix directory permission bits in Linux client installer
+    Fixed full sparse file transfer resume with Windows client
+    Fixed full sparse file transfer with non-sparse extents longer than 4GB
+    Fix: Use cache for user account tokens
+
+	
+2.0.32
+Changes:
+    Keep last client access key to prevent race between old and new key
+    Fixed memory leak after restore
+    Trim Windows command line args from args.txt
+    Persist backup dir flags through saves via command line client
+    Added Finnish translation (by Jussi Bergström)
+    Remove image backups from command line client on non-Windows systems
+    Correctly read tokens on macOS in command line client
+    Prevent tray icon from starting more than once per user on all OS
+    Added C:\Windows.old to default excludes
+    Fix enable_internet_only.bat (try #2)
+
+
+2.0.31
+Changes:
+    Changed/added a few log messages
+    Fix symlink directory restore on Linux/Mac
+    Fixed memory leaks
+    Use default name when adding directory and no name is given in urbackupclientctl
+    Skip setup wizard on silent install
+    Fix internet_only batch file
+
+	
+2.0.30
+Changes:
+    Fix double free with stdout streams
+    Group and virtual client name as postfilebackup script paramters
+    Leave other shadow copies alone only if another simultaneous backup is running (only works in connection with server 2.0.31)
+    Fix unicode problem in backup path configuration
+
+	
+2.0.29
+Major changes:
+    New Mac OS X client
+    Much improved command line interface incl. backup browsing
+    File meta-data backup, such as last modified time, permissions, extended attributes
+    Sparse file support
+    File backup restore via client
+    Direct backup access from Explorer context menu or client tray icon
+    GPT partition backup and EFI System Partition (ESP) detection and backup
+    Security improvements in Internet protocol (Uses AES-GCM+ECDH now)
+    Improved Linux client file system snapshot support
+    Proper symbolic link handling during file backups
+    Virtual clients
+
+
+1.4.11
+Bugfixes:
+
+    Fixed Swedish translation attribution
+    Fixed file handle double free in chunked file transfer
+
+
+1.4.10
+Changes:
+
+    Silently ignore all broken symbolic links on Linux
+    Collect new file entries in-memory instead of in temporary file (could improve performance)
+    Added Swedish (thanks goes to Adam Karlsson, IorX) and Portuguese translation (thanks goes to J. Almeida)
+
+Bugfixes:
+
+    Properly break file transfer on timeout
+    Disable restart on new interfaces, because that could cause problems and was not neccessary anymore
+    Determine system reserved volume on startup and then do not determine it again to prevent timeouts
+    Read shadow copy device with write share mode to fix conflicts with other software accessing the device
+    Fixed Norwegian, Estonian and Turkish translation
+    Correctly handle $ in paths
+
+	
+1.4.9.1 only for Linux
+	Fixes a bug with 64bit inodes (relevant if you use XFS with "inode64")
+
+
+1.4.9
+    New server side advanced setting to not run the client with background priority
+    New server side advanced setting to not follow symlinks on Linux clients
+    Added Estonian and Turkish translation
+    Read ahead in separate thread to increase image backup performance
+
+	
+1.4.8
+Bugfixes:
+
+    Fixed persistent open files leak fix (pull request #2)
+    Fixed backup of file shares
+    Fixed crash bug with backup path sanitization
+
+	
+1.4.7
+Bugfixes:
+
+    Try to restart udp listening on error
+    Properly close open_write_files.dat when restarting watch thread
+    Correctly handle hard links to currently open files
+
+	
+1.4.6
+Bugfix:
+
+    Correctly detect changes in root directories (such as C:) on Windows. This bug was introduced with "Correctly backup root directory on Linux" with the last client version. If you configured a client to do file backups of e.g. "C:\" you are affected and should upgrade.
+
+	
+1.4.5
+Bugfixes:
+
+    Correctly backup root directory on Linux
+    Always look at file if basic info was changed
+    Correctly check the values in image_letters for correctness (volume can be opened)
+    Cache ntfs info correctly if it cannot be read from device (e.g. because of timeout). Fixes client connection error when querying capabilities
+
+	
+1.4.4
+Critical bugfixes:
+
+    Fixed potential file change detection issue which occurred if the indexing process was interrupted (e.g. via system shutdown). Caused changed files to not be loaded to the server during incremental file backups.
+    Persist open files information to disk to load them again on service restart. Caused changed, currently open files to not be loaded to the server during incremental file backups, if the client service is restarted.
+
+Bugfixes:
+
+    Cache ntfs property of volumes for capability command in case drives react slowly. Added new enumeration of all non-usb ntfs formatted volumes.
+    Enable end-to-end verification only for the next backup
+    Keep file modification times if no file in directory changed (this would cause unnecessary file backups during incremental file backups)
+    For ReFS: Switch to different indexing mode if FSCTL_ENUM_USN_DATA is not supported. Also added USNv3 support (not seen in the wild yet, though)
+    Do not crash if blocks of a file which could not be opened are requested
+    Fixed error handling in change journal watcher
+    Fixed log rotation
+
+	
+1.4.3
+Bugfixes:
+
+    Improved error handling while watching for file changes. In case of errors it falls back to MFT queries and if that fails it marks the volume as failed. This fixes a bug which caused UrBackup to not backup changes in some error situations.
+    Added log rotation on Windows
+    Better logging if temporary file cannot be created, and create temporary directory if it was created
+
+Changes:
+
+    Added Czech translation (thanks goes to Ales Hermann). Updated other translations and translation attribution.
+
+	
+1.4.2
+Bugfixes:
+
+    If image letters is ALL, only backup NTFS formatted volumes
+    Correctly hash files which were not hashed previously (e.g. because the client was connected locally)
+
+	
+1.4.1
+Bugfixes:
+
+    Fixed tray icon not installing with installers downloaded from server
+    Quit executable when window is closed
+    Correctly transfer error message, if the error occurs on the first file transmitted
+
+	
+1.4
+	No changes
+
+
+1.4 RC3
+    Don't log token authentication failures as error log messages
+    Added new "internetonly" client parameter
+    Changed writer error loglevel to warning
+    Use the hostname if it is identical to the FQDN except for casing
+
+	
+1.4 RC2
+	Fixed client update mechanism.
+
+
+1.4 RC1
+Changes:
+
+    Fixed bug where the status screen was crashing
+    Put temporary files into a folder and delete it on startup
+    Properly close handles to files on timeouts
+    Don't get stuck if receiving hash data for incremental image fails
+    Fixed bug where one of the hashes in the "block differences - hashed" transfer mode was calculated incorrectly. This caused unnecessary file blocks to be transferred during incremental file backups. Using Server 1.4RC1 with previous clients and vise versa causes even more unnecessary data to be transferred. This bug does, however, not affect file correctness.
+
+	
+1.4 beta 3
+	Fixed bug in shadow copy deletion of own/old shadow copies.
+
+
+1.4 beta 2
+Changes:
+
+    Added explanation of writer failures and consequences in the VSS log messages and lowered logging-level to warning.
+    Fixed crash when removing old/own shadow copies
+    Proper initialization of temporary file prefix on Windows
+
+	
+1.4 beta 1
+Major changes:
+
+    New Status screen which shows the current connection status, progress, an ETA, and current servers
+    Client side hash performance improvements
+    Server public key authentication additionally to the server identity
+    Use fully qualified domain names as default computer names in new installs
+
+Changes:
+
+    Don't delete file entries if include/exclude pattern changed, but do not use db during indexing
+    Execute postindex hook directly after indexing
+    Update start time of shadow copy while imaging, so that it does not time out on really long image backups (more than one week)
+    Filter useless error messages in connection with change journal entries
+    Remove need of newline at end of server_idents.txt file
+    Don't require change journal close for change entry to be written. Increase entry cache time.
+    Be more conservative about which files changed
+    Added Linux version querying. Made windows version querying more maintainable.
+    Setting value ("ALL") to backup all attached volumes
+    Return error if a directory to backup is or becomes inaccessible. Added flag to mark directories as optional
+    Show that backups are resumed
+    Increased buffer size for hashing
+    More icon states (you can change the icon color if you want)
+    Secured client log and server identities (permissions)
+    Internet client timeouts sooner if backup is running
+    Show "Indexing" instead of "0% done" during indexing on the client.
+    Only allow administrators to change paths and settings
+    Added more change journal indexing logging
+
+Bugfixes:
+
+    Don't lower case path in database on Linux
+    Fixed bugs in connection with multiple simultaneous backups with multiple servers
+    Fixed issue with multiple last_backup_time keys
+
+	
+1.3.1
+Changes:
+
+    Added Farsi translation (thanks goes to the osiengine group)
+    Lukasz Milata updated the polish translation
+
+Bugfixes:
+
+    Use 2003 x64 dll for XP 64bit
+    Fixed Linux client to actually build and install
+    Fixed crash bug when shadow copy writer fails with non-retryable error
+
+	
+1.3
+Changes:
+
+    Log information about VSS creation and indexing
+    Added Danish as translation (thanks goes to tnywos)
+    Added Ukrainian as translation (thanks goes to Ihor Maydanovich)
+    Added Polish as translation (thanks goes to drpt)
+    Added Portuguese – Brazil as translation (thanks goes to Artur Corumba)
+    Added Italian as translation (thanks goes to paolobeldi)
+    Added Slovak as translation (thanks goes to janda)
+    Added dutch translation (thanks goes to buzzertnl)
+
+Bugfixes:
+
+    Inform writers when creating Volume Shadow Copies on Windows
+    Correctly handle failed VSS writers (including retrying on retryable errors)
+    Retry snapshot operation if writer failed and has the retryable error
+    Trim identities when loading them from identity file
+    Scan for changed hard links on Windows
+    Always lookup the urbackup\ directory on the filesystem because changes there are ignored in the change journal watcher
+    Automatically add pagefile.sys and hiberfil.sys to the exclude list
+    Fixed problem with gettext (percentage character %)
+
+	
+1.2
+Changes:
+
+    Added spanish translation. Thanks go to Luis-Miguel Munoz.
+    Added simplified and traditional chinese translation. Thanks go to Zhengyu Ren.
+    Fixed bug where system restore volume was not imaged.
+    Fixed bug where not all buffers where freed during file backup.
+    Save changed folders lower cased on Windows.
+    Fixed "Setting TCP_NODELAY failed" error message.
+
+	
+1.1.1:
+Bugfixes:
+
+    Fixed bug, where changes of root directory paths were not indexed correctly. This bug would have affected you, if you do incremental file backups of whole volumes (e.g. C:). In this case changed or new files are missing in the incremental file backups!
+
+	
+1.1:
+Changes:
+
+    Better log messages if paths cannot be listed e.g. because the user running UrBackup does not have permission to access the folder
+    Reduced priority of some UrBackup threads in Windows XP
+    Optimized image backup sending
+    Proper restarting if a network interface change is detected
+    More effcient Change Journal watching
+    Correctly fail backups if there are disk problems
+    Reindex filesystem if exclude or include pattern has changed
+    Correctly parse include/excludes with forward slashes on Windows
+    Correctly handle backup paths with ' in them
+
+	
+1.0:
+New features:
+
+    Optional silent updating of clients
+    Detect new backup servers and ask the user to accept them
+    New hashed transfer mode for files and images
+    New Internet mode which allows backups of clients over the Internet
+
+Changes:
+
+    Reorganized settings into tabs
+    Fixed some memory leaks
+    Follow symlinks in backups paths
+    Backup files correctly that have no change in last modification time
+    Do not log errors on the client if SYSVOL is missing
+
+	
+0.40.1:
+Changes:
+
+    Stopped client from displaying random values in image settings if image backups are disabled
+    Added russian translation and switched to unicode installer
+    Stopped client from timing out if image backups are paused
+
+	
+0.40:
+New features:
+
+    File inclusion patterns
+    Changed notification style on Windows
+
+Bugfixes:
+
+    Correctly use default file exclusion pattern
+    Handle dynamic volumes
+    Fixed crash caused by uncommon file names
+    Changed pause behavior to not time out during image backups
+
+	
+0.39.2:
+Bugfixes:
+
+    Fixed GUI crash if client was not allowed to do image backups
+    Fixed bug where whole drives could not be added as a backup path
+    Fixed file exclusion
+
+	
+0.39.1:
+Bugfixes:
+
+    Allow unicode backup names
+    Fixed image size bug
+
+	
+0.39:
+New features:
+
+    Linux client without imaging capability
+    MSI installer for the client for 64bit systems
+    Starting backups is now only possible if a server is present and that server allows it
+    Settings which you cannot change are hidden now
+    Prevent system to go to sleep during a backup (Windows)
+    Image backups of multiple volumes (Windows)
+
+Bugfixes:
+
+    Only submit paths to the backend when a change occured
+    Startup delay is now really in minutes
+    Set default interval for incremental images value to correct text box
+    Timeout running image backups so that a new one can be started manually
+    Save less journal data
+    Do not save empty computernames
+    Made exclude pattern case insensitive on Windows
+    Allow reopening a file after timeout and do not timeout during pause
+    Fixed crash that occurred if a created shadow copy could not be deleted (e.g. hard disk unplugged)
+    Persist image on timeout
+    Correctly delete shadow copies for images with aborted backups
+
+	
+0.38:
+New features:
+
+    Create and restore the 'System Reserved' partition (Win7 + Server 2008) as well
+    Added cleanup time window
+    Allow setting the client name
+    New setting to exclude files via wildcards
+    Allow unicode share names
+
+Bugfixes:
+
+    Rewrite of shadow copy reference counting - token counting is now used
+    Fixed shadow copy replacement mechanism when backup was interrupted
+
+	
+0.37:
+    Changed image block size to make images compatible with the Windows 7 VHD mounting feature
+
+	
+0.36:
+    Optimized Change Journal Watcher and fixed bug where the real directory is accessed instead of the shadow copy (in rare cases)
+    Use backup semantics to backup files the backup server normally does not have the right to access
+    Fixed wrong replay order, wrong start USN after reindex and forced writing lastUSN after reindex
+    Fixed several deadlocks if one changes the directories to be backed up while indexing is in progress
+    Added pre filebackup hook
+    If the windows change journal does not work the client will rescan the backup directories now
+
+	
+0.35:
+    Repaired internationalization
+    Deleted directories on the clients get deleted in the client caches as well
+    Fixed racing condition while starting backups on watched directories
+
+	
+0.33:
+    Repaired autoupdate
+
+	
+0.32:
+    More efficient incremental image backups
+    Small bugfixes
+
+	
+0.31:
+    Bugfixes
+    Autoupdate
+
+	
+0.30:
+    64bit version for Windows Server 2003
+    Bugfix for incremental number of image backups
+    File system changes now via windows change journal
+    MBR will be saved with the image backups
+    Compiled with VC++ 2010
+
+	
+0.23:
+    64bit version
+    Small bug with image backups removed
+
+	
+0.22:
+    Pause button to pause backups
+    Bugfixes
+    Info screen for version information

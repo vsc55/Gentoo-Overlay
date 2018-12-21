@@ -1,0 +1,65 @@
+*** Chromecast_original.xml	2016-02-13 01:06:28.000000000 +0100
+--- Chromecast.xml	2016-02-17 20:35:12.971737850 +0100
+***************
+*** 2,11 ****
+  <Client name="Chromecast">
+    <!-- Author: Plex Inc. -->
+    <TranscodeTargets>
+!     <VideoProfile protocol="http" container="mkv" codec="h264" audioCodec="aac" context="streaming">
+        <Setting name="VideoEncodeFlags" value="-x264opts bframes=3:cabac=1" />
+      </VideoProfile>
+!     <MusicProfile container="mkv" codec="mp3" />
+      <PhotoProfile container="jpeg" />
+      <SubtitleProfile container="ass" codec="ass" />
+    </TranscodeTargets>
+--- 2,11 ----
+  <Client name="Chromecast">
+    <!-- Author: Plex Inc. -->
+    <TranscodeTargets>
+!     <VideoProfile protocol="http" container="mkv" codec="h264" audioCodec="mp3" context="streaming">
+        <Setting name="VideoEncodeFlags" value="-x264opts bframes=3:cabac=1" />
+      </VideoProfile>
+!     <MusicProfile container="wav" codec="pcm_s16le"/>
+      <PhotoProfile container="jpeg" />
+      <SubtitleProfile container="ass" codec="ass" />
+    </TranscodeTargets>
+***************
+*** 22,30 ****
+      </VideoTranscodeTarget>
+    </TranscodeTargetProfiles>
+    <DirectPlayProfiles>
+!     <VideoProfile container="mp4" codec="h264" audioCodec="aac" />
+      <MusicProfile container="mp4" codec="aac" />
+      <MusicProfile container="mp3" codec="mp3" />
+      <PhotoProfile container="jpeg,gif,bmp,png" />
+    </DirectPlayProfiles>
+    <ContainerProfiles>
+--- 22,31 ----
+      </VideoTranscodeTarget>
+    </TranscodeTargetProfiles>
+    <DirectPlayProfiles>
+!     <VideoProfile container="mp4" codec="h264" audioCodec="mp3" />
+      <MusicProfile container="mp4" codec="aac" />
+      <MusicProfile container="mp3" codec="mp3" />
++     <MusicProfile container="wav" codec="pcm" />
+      <PhotoProfile container="jpeg,gif,bmp,png" />
+    </DirectPlayProfiles>
+    <ContainerProfiles>
+***************
+*** 45,51 ****
+      </VideoCodec>
+      <VideoAudioCodec name="aac">
+        <Limitations>
+!         <UpperBound name="audio.channels" value="6" />
+        </Limitations>
+      </VideoAudioCodec>
+    </CodecProfiles>
+--- 46,53 ----
+      </VideoCodec>
+      <VideoAudioCodec name="aac">
+        <Limitations>
+!         <UpperBound name="audio.bitrate" value="768" isRequired="false"/>
+!         <UpperBound name="audio.channels" value="2" />
+        </Limitations>
+      </VideoAudioCodec>
+    </CodecProfiles>

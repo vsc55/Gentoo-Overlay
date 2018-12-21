@@ -1,0 +1,19 @@
+--- urbackup-server-2.1.19/Makefile.in.orig	2017-02-26 20:00:47.321309883 +0100
++++ urbackup-server-2.1.19/Makefile.in	2017-02-26 20:00:47.351310689 +0100
+@@ -6557,7 +6557,8 @@
+ @INSTALL_INITD_TRUE@@PACKAGING_FALSE@	if ! test -e "$(sysconfdir)/default/urbackupsrv"; then $(INSTALL) -D "$(srcdir)/defaults_server" "$(sysconfdir)/default/urbackupsrv"; fi
+ 
+ 	mkdir -p "$(DESTDIR)$(localstatedir)/urbackup"
++	mkdir -p "$(DESTDIR)$(datadir)/man/man1"
+ 	! test -e $(DESTDIR)$(sbindir)/urbackupsrv || rm $(DESTDIR)$(sbindir)/urbackupsrv
+ @FREEBSD_TRUE@@PACKAGING_FALSE@	pw groupadd urbackup -q || true
+ @FREEBSD_TRUE@@PACKAGING_FALSE@	pw useradd urbackup -q -g urbackup -d "$(DESTDIR)$(localstatedir)/urbackup" -m -s /usr/bin/false || true
+ @FREEBSD_FALSE@@PACKAGING_FALSE@	adduser urbackup --system --quiet --group --home "$(DESTDIR)$(localstatedir)/urbackup" || adduser urbackup --system --user-group --home "$(DESTDIR)$(localstatedir)/urbackup" || true
+@@ -6591,6 +6592,7 @@
+ 	$(INSTALL_DATA) $(INSTALL_OPTS) $(srcdir)/urbackupserver/www/swf/* "$(DESTDIR)$(datadir)/urbackup/www/swf/"
+ 	$(INSTALL_DATA) $(INSTALL_OPTS) $(srcdir)/urbackupserver/www/fonts/* "$(DESTDIR)$(datadir)/urbackup/www/fonts/"
+ 	$(INSTALL_DATA) $(INSTALL_OPTS) $(srcdir)/server-license.txt "$(DESTDIR)$(datadir)/urbackup/server-license.txt"
++	$(INSTALL_DATA) $(INSTALL_OPTS) $(srcdir)/docs/urbackupsrv.1 "$(DESTDIR)$(datadir)/man/man1/urbackupsrv.1"
+ @PACKAGING_FALSE@	chown urbackup:urbackup "$(DESTDIR)$(datadir)/urbackup"
+ @PACKAGING_FALSE@	chown -R urbackup:urbackup "$(DESTDIR)$(datadir)/urbackup/www"
+ 

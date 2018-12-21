@@ -1,0 +1,71 @@
+#!/sbin/openrc-run
+#
+# /etc/init.d/urbackupclientbackend  Script to start and stop UrBackup Client
+
+depend () {
+	need net
+}
+
+checkconfig() {
+	ebegin "[UrBackup Client] Ajutando Configuraciones"
+		NICE_LEVEL=${NICE_LEVEL:-"-5"}
+		
+		DESC="UrBackup Client Daemon"             	# Introduce a short description here
+		NAME="urbackupclientbackend"             	# Introduce the short server's name here
+		DAEMON=/usr/sbin/urbackupclientbackend 		# Introduce the server's location here
+		PIDFILE=/var/run/$NAME.pid
+		SCRIPTNAME=/etc/init.d/$NAME
+		
+		DAEMON_ARGS = "--daemon --config "/etc/urbackup/urbackupclient" --pidfile ${PIDFILE}"
+	eend $?
+	
+	#SystemaD
+	#ExecStart=/usr/local/sbin/urbackupclientbackend --config /etc/default/urbackupclient --no-consoletime
+}
+
+borrarpidfile()
+{
+	if [ -f ${PIDFILE} ]; then
+		ebegin "[UrBackup Client] Borrando fichero PID (${PIDFILE})"
+			rm -f "${PIDFILE}"
+		eend $?
+	fi
+}
+
+start() {
+	checkconfig || return 1
+	
+	# Exit if the package is not installed
+	[ -x $DAEMON ] || exit 0
+	
+	ebegin "[UrBackup Client] Iniciando Servicio Test"
+		start-stop-daemon --start --quiet --pidfile "${PIDFILE}" --nicelevel ${NICE_LEVEL} --exec ${DAEMON} --test > /dev/null || return 1
+	eend $?
+	ebegin "[UrBackup Client] Iniciando Servicio Daemon"
+		start-stop-daemon --start --quiet --pidfile "${PIDFILE}" --nicelevel ${NICE_LEVEL} --exec ${DAEMON} -- ${DAEMON_ARGS} || return 2
+	eend $?
+}
+
+stop() {
+	checkconfig || return 1
+	ebegin "[UrBackup Client] Deteniendo Servicio"
+		echo -n "	Espere..."
+		start-stop-daemon --stop --quiet --retry=TERM/30/KILL/5 --pidfile "${PIDFILE}" --exec ${DAEMON}
+		RETVAL="$?"
+		[ "${RETVAL}" = 2 ] && return 2
+		echo ""
+		echo -n "	Espere..."
+		start-stop-daemon --stop --quiet --oknodo --retry=0/30/KILL/5 --exec ${DAEMON}
+		RETVAL="$?"
+		[ "${RETVAL}" = 2 ] && return 2
+	eend ${RETVAL}
+	borrarpidfile
+	return "${RETVAL}"
+}
+
+restart () {
+	svc_stop
+	echo
+	sleep 10
+	svc_start
+}

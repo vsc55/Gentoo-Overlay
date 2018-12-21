@@ -1,0 +1,817 @@
+https://www.urbackup.org/server_changelog.html
+
+
+2.3.7
+Major changes:
+
+    Use reflinks on file systems that do not have snapshot/subvolume but reflink support (XFS and ReFS v3)
+    Run backup storage checks asynchronously from status screen
+    Allow client renames in some cases
+    Preparations for special Hyper-V client with disk images instead of volume images
+    Allow client to restore its own image backups (image restore with normal client)
+
+Changes since 2.3.6:
+
+    Change default client update location such that server upgrades clients to 2.3.x
+
+For more details see the change logs for beta versions 2.3.0-2.3.6 the testing category in the forums
+
+
+2.2.11
+Changes:
+
+    Fix symlink directory creation during incremental backups when a file is removed
+
+2.2.10
+Changes:
+
+    Fix 64bit types on FreeBSD
+    Close file before syncing after image backup
+
+2.2.8
+Changes:
+
+    Disable assertions in Windows release builds
+    Fix to SQL which prunes del_stats
+    Log attempts where username does not exist as failed login attempts
+    Fix all settings clearing/updating
+    Show image mount error information on web interface
+
+2.2.7
+changes:
+
+    Client-side file hashing parallel with file backup
+    Image backup restore via Internet client
+    Simultaneous file meta data application with file backups
+    Scriptable (lua) alerts and reports
+    File backup with ZFS snapshot (sponsored by Tuxis Internet Engineering )
+
+2.2.6
+Changes:
+
+    Set width to auto for alert setting check boxes for Chrome
+    Make new subvolumes (not snapshotted) during incremental backups read only when backing up with subvolumes and snapshots (btrfs/ZFS)
+    Improve add identity info message(s) for failed client server identity check
+    Set sync time of image backups even if image backup has dependencies
+    Reset errno if stat fails on Linux/FreeBSD
+    Use cross volume links for linking files after creating new subvolume for backup during incremental file backup
+    Properly clean up tar file script fd
+
+	
+2.1.20
+Changes:
+    Fix integer overflow in client specific settings
+    Show restore status on status screen
+    Do not delete server binary if bindir = sbindir
+    Fix day of month matching in archiving
+    Delete sync file before starting file backup
+    Fix symlink file type check on Windows
+    Fix getting backup folder for backup listings in connection with settings groups
+    Prevent XSS with action parameter
+    Updated translations
+
+
+2.1.19
+Changes:
+    Fix build issues with really old Linux systems
+    Disable assertions in release builds
+    Append version to update URL such that 2.1.x automatically downloads the 2.1.x change block tracking client
+    Made deletion from file entry index more robust
+
+	
+2.1.18
+Major changes:
+    Groups for client settings
+    Ability to reconnect during indexing if connection is broken
+    Define which volumes need to be snapshotted together (snapshot groups)
+    Image backup mounting, browsing and archival on Windows, Linux and FreeBSD (does not work in FreeBSD jails and with VHD/VHDZ on FreeBSD)
+    Copy-on-write raw images now also work with ZFS (specifically with ZFSOnLinux and on FreeBSD). See the ZFS section in the administration manual for setup steps.
+
+
+2.0.38
+Changes:
+    Do not connect while a ping/pong packet is in flight with internet client
+    Allow selection of VHD files from multiple directories when selecting VHD files for assembling
+    Fix sending settings issue
+    Fix getting free space with files with back-slash on Linux
+    Fix "ignore disk errors" not being displayed correctly for clients
+    Fix internal database backup. Was broken since 2.0.35
+
+
+2.0.36
+Changes:
+    Security fix: Not handling back-slashes properly in the build-in HTTP server on Windows lead to all files on e.g. C: being accessible remotely (affected: Server on Windows and using build-in HTTP-server)
+    Fix symbolic link to file deletion in file backups on Windows
+
+	
+2.0.35
+Changes:
+    Fix password reset on Windows
+    Do not close SQLite database file after opening it e.g. during database backup. Fixes SQLite IO errors/database corruption when accessing database with other programs like the sqlite shell
+    Fix failed snapshot parsing with Linux/MacOS clients
+
+
+2.0.34
+Changes:
+    Fix compatibility with older btrfs command versions
+    Add missing web interface fonts to Windows server .exe installer
+    Fixed settings retrieval from client on Windows servers
+    Security fix: Send server public key to new clients
+    Build armhf Debian package with -mfpu=vfp
+
+	
+2.0.33
+Changes:
+    Fix updating client access token after client changes it
+    Fix directory symlink to directory change in btrfs mode
+    Continue image backup after getting MBR for dynamic volume failed
+    Fix cleanup and repair commands
+    Do not run backup cleanups after writing failures during file metadata download
+    Do not log to memory when logging cleanups etc.
+    Fix relative VHD file locator for new naming scheme
+    Improve error message if copying database fails during database backup
+    Trim Windows command line args from args.txt
+    Preallocate space for full image if possible to prevent fragmentation
+    Added Finnish translation (by Jussi Bergström)
+    Save partial backup after client read error
+    Do not try to open files if metadata is sent via callback during restore on Windows
+
+
+2.0.32
+Changes:
+    Fix symbolic replay accounting
+    Stop server installation on WinXP/Win2003 with NSIS installer
+    Changed default reporting from address from "report@urbackup.org" to "report@urbackup.example.com"
+    Fix vhd mounting (untested)
+    Do not run db backup if backup storage folder equals working directory
+    Log cleanup to cleanup processes
+    Fix one big endian issue
+    Fix directory to directory symlink change causing incremental backup failures
+    Escape metadata filenames while deleting in hash snapshot
+    Changed a few log messages
+    Correctly handle symlinks in ZIP file download
+    Do not move directories above symbolic links into to directory pool
+
+
+2.0.31
+Changes:
+    Cope with negative max/min incr/full file/image backup number
+    Do not try to increase cache size for upgrade if current db version is smaller than 15
+    Fix compile issue with gcc 6.1
+    Fix quota enforcement with a small amount of free space (target space is negative)
+    Fail backup if backing up SYSVOL or ESP partition fails
+    Backup all databases using the stop world writes and copy method, including the main database (this blocks logins during backup)
+    Look in legacy path for VHD file to fix incrementals after upgrade from 1.4.x
+    Config test for fallocate64 and fallback if not present
+    Improve error messages by printing correct system error code
+    Show in activities when cleanup is in progress
+    Updated translation (wasn't updated in previous versions)
+
+
+2.0.30
+Major changes:
+    Improved file deduplication performance and scalability
+    File meta-data backup, such as last modified time, permissions, extended attributes
+    Sparse file support
+    File backup restore via client
+    Security improvements in Internet protocol (Uses AES-GCM+ECDH now)
+    Proper symbolic link handling during file backups
+    Virtual clients
+    Synthetic full image backups, advanced settings to modify image backup styles
+    Btrfs cow-raw image backups for incremental forever image backups without size limit
+    Simultaneous image and file backups
+    Configure different backup speeds and backup intervals at different times
+    Improved Internet transfer compression
+    New hashing method where the server only needs to hash changed parts of a file
+
+
+1.4.14
+Changes:
+    Decreased Internet client ping interval to 50s from 5min
+    Do not run quota enforcement for a client if quota is "100%" or "-"
+
+
+1.4.13
+Changes:
+    Added Swedish (by Jonas Aaslund) and Romanian (by Olivian Daniel Tofan) translation
+
+Bugfixes:
+    Fixed crash in SYSVOL clean-up
+    Request block after out of band reconnection in chunked file transfer
+    20 min timeout for out of band block download in chunked file transfer (caused server to get stuck during backup)
+
+
+1.4.12
+Bugfixes:
+    Fixed re-adding of file entries after more than "minimal number of incremental file backups" file backups. This causes unnecessary file transfers with Internet clients
+    Fixed clients getting stuck in "Error during server authentication" state after authentication failed once
+
+	
+1.4.11
+Changes:
+    Disable quota enforcement by default
+    Added Portuguese translation. Thanks goes to J. Almeida.
+    Log errors during internal database backup at ERROR log level
+    Write successful authentications and authentication failures to syslog
+    Remove orphaned SYSVOL image backups during remove unknown cleanup
+
+Bugfixes:
+    Correctly get free space on FreeBSD
+    Properly cleanup SYSVOL images
+    Do not delete full image backups if that would cause the number of incremental image backups to fall below the set minimum
+
+	
+1.4.10
+Bugfixes:
+    Properly handle escaping (fix) with --reset_pw and --broadcast_interfaces on GNU/Linux
+    Fixed bug where an attached database became detached causing settings to become not available in random threads and backups of some clients not to start (this bug occured with Internet clients and client side hashes when a file could not be hard linked, e.g. because the NTFS hard link limit was reached)
+
+Changes:
+    Improved error logging in rare cases
+
+	
+1.4.9
+Changes:
+    New server side advanced setting to not run the client with background priority
+    New server side advanced setting to not follow symlinks on Linux clients
+    Fixed bug where garbage was appended to the end of a decompressed VHDZ file. This causes this file to become unmountable e.g. with the VHD mounting integrated in Windows
+    Added turkish translation
+    New tool to write compressed/incremental volume images into one disk image with proper layout and master boot record. On Windows assemble_disk_image.bat, on Linux start_urbackup_server --assemble "a.vhd;b.vhd" --assemble_output "disk.vhd"
+
+	
+1.4.8
+Bugfixes:
+    Fixed bug in backup archive file type handling (incremental and full were reversed)
+    Fixed threading issue when recalculating statistics
+    Properly handle transfer hash if partition ends on VHD block boundary and last block is available
+    Fixed server crash if a hash is wrong during image backups
+
+	
+1.4.7
+Bugfixes:
+    Properly return file size on partial downloads to prevent hitting an assertion; Output old filesize, if download is partial and current size is blow the old filesize
+    Fixed race condition in thread pool which could cause crashes
+    Don't delete archive settings if save button is pressed without changing anything (other than the archive settings)
+    Continue to use global archive settings if client specific settings are/remain identical to the global ones
+    Properly reset remaining bufptr bytes when loading chunk out of band
+    Load fuse kernel module before using it when mounting VHD
+    Check correct setting, for if client update should be downloaded
+
+	
+1.4.6
+Bugfixes:
+    Keep session alive as long as channel is alive to fix crash bug when restoring an image backup with accompanying system reserved partition and with required login
+    Extended query to filter by clientid when accessing backups. Did not cause security issue, because filesystem access uses the clientname
+    Allow "ALL" and "ALL_NONUSB" as special image backup values on web interface
+    Nice explanation in case of compression error on NTFS (ERROR_FILE_SYSTEM_LIMITATION)
+
+	
+1.4.5
+Critical Bugfixes:
+    Always use separate connection to download blocks with wrong hashes, because the patch file format requires the data in ascending order. This rarely causes corrupted files in file backups if the 'block differences' transfer mode is used.
+
+Bugfixes:
+    Get allow_overwrite from global settings if local settings are not enabled
+    Properly propagate global setting changes to client settings
+    Update capabilities after client update
+    Fixed log rotation
+    Use execvp instead of execvpe in snapshot helper to fix compile errors on some platforms
+    Try to automatically set the /etc/urbackup/backupfolder file (in case urbackup is run as root)
+    Fixed switching of client from Internet to LAN
+    Added assertions and error logging if patch is corrupt
+    Fixed big endian issues with file backups
+    Fixed wrong file data, if reflinking file fails on btrfs
+    Only output warning message if symlinked directory is not found in database
+    Continue after reading from base file failed in "block hash differences" transfer mode
+    Fixed infinite loop in quota enforcement if deleting image fails
+
+Changes:
+    New value "ALL_NONUSB" for volumes to backup to back up all volumes which are not on an usb disk
+
+	
+1.4.4
+Bugfixes:
+    Fix ' being escaped in settings entered through the web interface
+    Better logging if temporary file cannot be created, and create temporary directory if it was created.
+    Check snapshot properties for NULL return value.
+    Fix disabling of symlink incremental backups from web interface
+
+Changes:
+    Added Czech translation (thanks goes to Ales Hermann). Updated translations and updated translation attribution.
+    Added systemd unit file and firewalld config file to tarball
+    Disable outputting of static plugin libraries on Linux
+    Added log rotation on Windows
+
+	
+1.4.3
+Bugfixes:
+    Detach settings db at a few more places to prevent web interface lock-ups
+
+	
+1.4.2
+Changes:
+    New option to disable the periodical re-adding of file entries.
+    Log number of re-added and copied file entries as info
+    Copy file if hard linking fails when client side hash is available
+    The file tree reading and differencing was fragmenting the memory horribly on Linux (with glibc). Fixed it by making one big allocation.
+
+Bugfixes:
+    Fixed crash bug when a client is forced offline
+    Don't re-add all file entries on every incremental Internet file backup.
+    New option to disable the periodical re-adding of file entries.
+    Properly re-add file entries from symbolically linked directories
+    Get the correct "chunk hash - difference" file size for saving it into the database
+    Copy file entry in proper transaction and exit before that, if another backup is running
+    Properly handle error case, when hard linking fails in incremental backup
+    Properly set zip files to contain UTF-8 file and directory names
+    Properly handle backslashes in paths on Linux servers
+    Fixed crash when not able to open server_version_info.properties for writing
+
+	
+1.4.1
+Changes:
+    Increased buffer size in chunk patcher and optimization of chunk patcher for btrfs
+    New setting to verify the client side hashes on the server after the file backup
+    Make clientnames case-insensitive during discovery
+
+Bugfixes:
+    Fixed null pointer dereference crash bug when stopping a backup
+    Fixed a few memory leaks
+    Use exec instead of system in setuid snapshot helper executable, because the system calls do not work on some Linux systems and are insecure
+    Enabled FastCGI on Windows on the same port as on Linux
+    Only mark statistic calculation as done if it was not interrupted
+    Exclude columns from column selector if they are disabled by way of the settings (e.g. image backups completely disabled)
+    Don't reset client specific disabling of file/image backups when saving
+
+	
+1.4
+Bugfixes:
+    Fixed archive window not displaying and "forever" not being allowed in some cases
+
+	
+1.4 RC6
+    Use full interval for backup status if incremental interval is not set
+    Chunk hashes transfer mode: Don't rerequest the file if it does not exist. Use the same connection after reconnection and correctly shutdown old connections on reconnect.
+
+	
+1.4 RC5
+    Limit the number of queued file downloads according to number of file descriptors used
+    Fixed null pointer dereferencing bug with the progress debug logging
+    Forcibly offline client, if capabilities cannot be requested/received
+
+	
+1.4 RC3
+    Fixed partial file downloads with Internet clients
+    Set client specific local_incr_file_transfer_mode setting correctly
+    Reconnect to flush queue if file does unexpectedly not exist
+    Run export_auth_log as current user
+    Show full auth_log.csv file path
+    Properly log restore cd logins
+    Debug log file loading progress every minute
+    Fixed intermixing of local/internet speed when globally throttling the chunked file transfer
+    Fixed table on status screen (is not in the Debian packages yet)
+
+	
+1.4 RC2
+    Fixed issue with some mail servers and newer cURL versions
+
+	
+1.4 RC1
+    Don't crash if file is not compressed when asked to decompress a image file
+    Properly rename temporary decompressed image file after it being decompressed completely
+    If backup was started from the web interface run exactly that backup type, if other backup types may be possible
+    Added Norwegian web interface translation (by matsr) and Dutch web interface translation (by buzzertnl and by Pimmetje)
+    Converted the "compress image backup" switch to a select box, because further image format options are planned
+    Switched update download URL to http://update2.urbackup.org
+    Logrotate using pidfile to prevent the logrotation from killing other urbackup_srv process instances
+    Fixed potential bug with the file transfer reconnection
+    Option to delete file entries with failed verification from database when verifying file backups
+    Save correct file size in database with patches ("block differences - hashed" transfer mode)
+    Verify filesize when verifying hashes
+    Fixed bug where one of the hashes in the "block differences - hashed" transfer mode was calculated incorrectly. This caused unnecessary file blocks to be transferred during incremental file backups. Using Server 1.4RC1 with previous clients and vise versa causes even more unnecessary data to be transferred. This bug does, however, not affect file correctness.
+    Add changed file to database on incremental backups if changed file can be linked via file hash
+
+	
+1.4 beta 2
+Changes: 
+	More extensive logging, if deleting files in snapshot or creating directories fails - Don't run post_incr/full_filebackup script if it does not exist
+
+
+1.4 beta 1
+Major changes:
+    Web interface improvements: Sortable and paginated table for client status, ZIP file download of folders, changed the python charting to jqplot, show monthly and yearly storage usage
+    Image file (VHD) compression
+    New symlinking scheme during incremental file backups increasing file backup performance significantly on non-btrfs filesystems
+    Improved performance of small file transfers significantly
+    Server private/public key authentication
+
+Changes:
+    Don't download new server version information in the browser. Do it nightly instead.
+    Post filebackup scripts on the server
+    Cleanup history during nightly cleanups
+    Better error handling in socket code
+    Calculate file hashes on Internet client per default
+    Added Slovenian web interface translation. Thanks goes to janda
+    Always prepend "UrBackup: " to mail subjects
+    Setting to disable the "Exit" menu item and to always connect to the internet server
+    Script to decompress image
+    Do not download zero sized files
+    Add file entries every min_file_incr times for each file
+    Don't log "too many hardlinks" errors as warnings
+    Faster file backup stopping
+    Changed time functions to use 64bit integers
+    Added ETA estimation
+    Support sub-hour/daily file/image backup intervals
+    Removed downloadplugin. Replaced it with cURL.
+    Added Linux version querying. Made Windows version querying more maintainable.
+    Special setting to backup all volumes on Windows
+    Removed skipping file backup if there was a file backup error. Exponential back off takes care of that.
+    Setup web interface translations to be pulled from transifex
+    Better settings exchange
+    Copy over file entries from last backup when resuming backup
+    Show that backups are resumed
+    Added (compressed) VHD file mounting on Linux
+    Do not log filelist construct connect error backups
+    Parameters to configure client backend ports
+    Save partial files if blockhash transfer mode is activated
+    Delete incomplete file backups during cleanups (spare the last incomplete file backup)
+    Automatically offline clients which are to be deleted
+    Different settings if client is not allowed to overwrite client settings
+    Properly calculate the progress by counting the transferred bytes (intra file progress)
+    Increase buffer size for hashing
+    Delete old logs if they are older than half a year
+    Log web interface logins
+    Larger cache size for usage graph
+    Add defrag_database option
+    Updated Installer to include all www files
+    Removed VC 2008 redistributable
+    Removed pychart
+    Added defrag database app/command
+    Use database cursor when verifying file backups
+    Get settings from client before sending the server settings on startup
+    Exponentially less backup tries on failed backup
+    Changed integrity check before database backup to do a quick check
+    Allow setting user via start_urbackup_server
+    Added more change journal indexing logging
+    Use local getopt if present
+    Add user in a different way on FreeBSD
+    Removed unused nullptr definition
+    Fallback if getifaddrs fails
+
+Bugfixes:
+    Disable reports section if logged in anonymously
+    Allow use of volume as backup folder on Windows
+    Properly handle file backups with failed verification
+    Use own functionality to create random file names on Windows
+    Don't get server-side only settings from client
+    Properly escape filenames in file list
+    Properly handle " in file names (on Linux clients)
+    Properly handle *?:| etc. on Windows servers
+    Properly handle + in urls
+    Fixed some memory leaks
+    Send settings even if no settings exist on the client
+    Do not retry getting settings if they did not exist
+    Search for new interfaces before broadcasting
+    Properly update settings
+    Delete pending clients for removal during cleanup
+    Use same name in MSI installer as with exe installer
+    Don't try to send mail if no admin mail was configured
+    Better output in snapshot_helper
+    Internet client timeouts sooner if backup is running
+    Fixed crash bug that crashed the server when the file cache was enabled and the server was not immediately restarted
+    Retry sending "DID BACKUP" message
+    Look first at PREFIX dir for backup server database
+    Get PREFIX from start_backup_server path
+
+	
+1.3.2
+Bugfixes:
+    Fixed issues with multiple network interfaces on Windows
+    Bug fix for crash with SQLite file cache
+    Buf fix for symbolic links on Windows with samba shares
+    Fixed live log threading issues (crash bug)
+    Add computername to settings when downloading client
+    Fixed cleanup command/script
+
+	
+1.3.1
+Bugfixes:
+    Fixed bug where the disable checkbox of the backup intervals wasn't handled correctly on the web interface
+    Bugfix: Backup window changes are properly saved now
+    Better logging messages when authentication fails
+
+	
+1.3
+New features:
+    Users can download a customized client installer which has server identity and authentication key for the specific client pre-set.
+    New live log lets you access debug level log information and client specific log information directly from the web interface while backups are running
+    Checkboxes to disable any kind of backup. Can be client specific.
+    More fine grained client permissions
+    Soft client quota to limit the amount of storage of each client
+    Separate backup windows for incremental/full file/image backups
+    Client-side hashing to prevent the retransfer of files already existing on the server (for Internet mode)
+    New file entry cache which may speed up the performance with many file entries
+    Access to images is password protected now, if an admin password was set (you need the Restore CD 1.1 to restore images if a password was set)
+    Check for new UrBackup Server version on status screen
+    Hide status column if backup method (image or file backups) is disabled
+    Show client and operating system version on web interface
+    Restyle: Wider tables, if necessary
+    End-to-end file backup verification for debugging purposes
+
+Bugfixes:
+    Many bugfixes for deadlocks and racing conditions in connection with many clients
+    Fixed severe Linux issue with many clients
+    Better error messages when opening database fails
+    Copy file locally if maximum hard link count was reached
+    Limit stack size to 1MB on 32bit architectures
+    Rethrow SEH to terminate programm on access violation
+    Linux: Build hardening (stack protector)
+    Fixed race condition in InternetServiceConnector
+    Delete UrBackupUpdate if it failed to verify
+    Properly handle UNC paths
+    If a folder cannot be accessed and access to the root is gone do not delete change information
+    Optimized InternetServiceConnector
+    Added settings caching
+    Increase number of fds in start_urbackup_server script
+    Destroy database after some threads are finished to conserve memory
+    Bind to all interfaces on Windows
+    Only start some threads when they are needed to conserve memory
+    Reset sqlite reads if necessary to prevent deadlocks
+    Remove temporary file when updating (disabled per default)
+    Free memory and clear Databases more often to conserve memory
+    Argument for running UrBackup in gdb on Linux (--run_in_gdb)
+    Improved performance of status screen
+    Additional debug information, when getting bootable flag fails when discovering system reserved volume
+    Refactoring and performance improvements when receiving images
+    Additional wait time on unknown command on channel
+    Paramter to bind UrBackup Server to a specific interface on Linux
+    Replaced all select calls with poll on non-Windows systems
+    Warn only once about error while reading from parent hash file during image backups
+    Don't stop incremental image backups with an error if the volume size increased
+    Fixed bug, where the internal file hash was calculated incorrectly with the chunked file hash transfer mode
+    Added about page on web interface
+    Don't allow changing the clientname if on internet connection
+    Don't set ident error, if sending the identity failed because of connection issues
+    Show error message on status page if the database is corrupted
+    Require add_client right to add client
+    Use open64 instead of open to open files for reflinking (Fixes 2GB bug)
+    Proper cmd exit code returning on Windows
+    Fixed saving settings if internet mode is disabled because cryptoplugin is not available
+    Added boardcast_interfaces command line option to start_urbackup_server wrapper
+    New right "client_settings" which when removed disables changing client settings
+    Correctly check the incremental image interval for a negative value not the incremental file backup interval
+    Only show calculated backup size if it was calculated completely
+    Better error message when sending test mail failed
+    Increased the number of reconnection retries
+    Separate settings for allowing client-side starting of incremental and full backups
+    Disable buttons for all backup kinds
+    Cleanup and repair of the broadcasting code
+    Work around for issue where last modified dates of files are not changed, if the file is changed via memory mapping
+    Read proxy settings from http_proxy variable, if set
+    Strip #I and # from server identity
+    Improved the way UrBackup finds and selects the system reserved partition
+    Fixed bug where the block difference transfer mode wasn't properly throttled in interned mode
+    Fixed bug, where a disconnected (and deleted) connection was used
+    Don't rollback on error when "repairing" database
+    Only one client per thread for the build in http server (for simultaneous file downloads)
+    Fixed bug where images were not removed during cleanup
+    Show clients which use less then 5% of the backup space as "other" (when using pychart)
+    Put the action links on top of the client status, if there are more than 10 clients
+    Longer timeouts for internet clients
+    Don't add a slash when creating junctions on Windows
+
+	
+1.2.4
+Bugfixes:
+    Fixed bug where the block difference transfer mode wasn't throttled at all with the Internet mode
+    Fixed bug where a disconnected (and deleted) connection was used with the Internet mode causing a crash
+    Don't rollback on error when "repairing" database
+    Correctly handle compression errors with Internet clients
+    Proper bandwidth throttling at low speeds
+    Fixed init script status checking on Linux
+    Do log hard link errors due to the file system hard link limit as debug log messages on Windows
+
+	
+1.2.3
+Bugfixes:
+    Fixed bug, where a disconnected client caused 100% CPU usage.
+    Fixed: Only do cleanup max every 12 hours not as often as possible in a backup window
+
+	
+1.2.2
+Bugfixes:
+    Fixed: The Internet transfer mode (i.e., "block differences - hashed") caused a data corruption in files with a size of 0 bytes which subsequently became larger.
+
+Changes:
+    Added nice/ionice levels to init.d/defaults file
+    Added database repair script
+
+	
+1.2.1
+Bugfixes:
+    Fixed: The new "hashed" transfer mode for image backups causes supsequent incremental image backups to fail if the volumes do not end a certain block boundary.
+
+The Linux/kFreeBSD/Solaris and source code version of Server 1.2 did not include some bugfixes. Those are now included:
+    Fall back to full file backups if no other file backup was found
+    Internet server name/IP was not set correctly from web interface
+    Only use internet server name from server if it is not empty
+
+	
+1.2
+New features:
+    Scripts to cleanup the UrBackup database and the backups
+    Added log rotation on Linux
+    Global soft filesystem quota
+    Enabled hashed image transfer
+    Added french translation of web interface. Thanks go to mehdincd
+    Partial traditional and simplified chinese translation for the web interface. Thanks go to Zhengyu Ren
+    Added more advanced settings
+    Added statistics recalculation
+
+Bugfixes:
+    Fall back to full file backups if no other file backup was found
+    Fixed crash bug when client timed out while image transfer is in progress
+    Actually use temporary files for file backups if enabled
+    Push settings to client after a while
+    Free sqlite cache at appropriate places
+    Better client discovery
+    Use indicator on status page
+    Added FAQ link for ident error
+    Properly update the number of full/incremental images while cleaning up images
+    Don't get stuck in a loop, if a backup cannot be removed during client removal
+    Fixed performance problem when deleting files in database
+    Fixing directory shortening for Unicode path names (appends part of a hash now)
+    Properly handle long filenames on Linux server
+
+	
+1.1.1
+Changes:
+    Fixed a problem with long path names on Windows, if the temporary file buffers are disabled
+
+	
+1.1
+New features:
+    Per default UrBackup does not use files in the temporary folder as buffer anymore. Reenable this in the "Advanced" tab in settings if your main backup storage is slow and if you have enough temporary space available.
+    New btrfs specific backup mode which uses snapshots and cross device reflinks [[http://urbackup.org/blog/?p=83|See blog entry]].
+    Added spanish translation
+    Fixed verification of image backups and added verification of file backups
+
+Changes:
+    Correctly transmit image backup errors
+    Update backup intervals correctly while the server is running
+    Better error handling while VHD writing and during image backups
+    Additional error states and error messages
+    Added warnings in the web interface about UrBackup not having enough backup space
+    Use junctions instead of symlinks on Windows if available
+    Fixed UrBackup such that it runs on FreeBSD
+    Use CRLF instead of only LF in mail header. This fixed a problem with some mail servers
+    Fixed infinite loop if the server is unable to delete a full file backup
+
+	
+1.0
+New features ([[http://urbackup.org/blog/?p=62|See this blog entry for details]]):
+    New hashed transfer mode for files and images
+    New Internet mode which allows backups of clients over the Internet
+    Archiving of file backups
+    Starting and stoping of backups in the web interface
+    Allow throttling of bandwidths. Per client and global
+
+Changes:
+    Reorganized settings in the web interface into tabs
+    Fixed a lot of memory leaks
+    Correctly read default included files
+    Correctly change the symlinks in Windows (e.g. "current") to point to the correct backup
+    Better default language selection for server web interface
+    Truncate file names that are too long for the server file system
+
+	
+0.26.1
+Changes:
+    Added russian translation
+    Corrected mail sender format, which caused some mail servers to not send reports
+    Modified the way client-side settings overwrite server-side settings if the client did not change the settings. It also displays a warning now informing about what is happening.
+    Fixed window calculations if start time is larger than stop time
+
+	
+0.26
+Changes:
+    Changed behaviour on hardlink error
+    Fixed web interface for IE8
+    Added include file pattern
+
+	
+0.25.2
+Changes:
+    Ignode new lines in backup folder path
+    Allow sockets to bind to already used ports
+    Fixed crash in sql query
+
+	
+0.25.1
+Changes:
+    Allow unicode backup path names
+    Speed optimizations for VHD file writing
+    Fixed bug where extra clients could not be removed
+    Fixed crash occuring with some file names in backup paths
+
+	
+0.25
+New features:
+    Added mailed reports of backups
+    You can specifiy what client can and cannot do on the server now (start backups etc.)
+    Added image backup of multiple volumes capability
+    Optimized performance
+    Added server database backup
+    Added setting for no file backups
+
+Bugfixes:
+    Change english date style to ISO
+    Fixed ip address printing
+    Allow statistics updates to be interruptible
+    Optimized statistics updating
+    Better file download restarting (Wait 300s for the client not just 8 tries)
+    Fixed bug which leads to too many transfered files
+    Better client ip change detection
+    Better timeout detection during file list construction
+    Fixed ping error on restoration
+    Optimized image receiving
+
+	
+0.24:
+New features:
+    Create and restore the 'System Reserved' partition (Win7 + Server 2008) as well
+    Added cleanup time window
+    Sped up statistics calculation
+    Don't crash if temporary file directory is not accessible
+    Allow changing of temporary directory in Windows
+    Updated Makefile system for easier setup
+    Allow clients to be removed
+    Use google chart if pychart is not available (for statistics)
+    Allow setting the client name
+    New setting to exclude files via wildcards
+    Allow unicode share names
+
+Bugfixes:
+    Fix build in Solaris
+    Catch exception if fcgi stream is invalid
+    Sanitize JSON data for html display
+    Fixed symbolic link on Windows
+    Fixed Windows service shutdown
+    Fixed statistics threading issues
+    If the directory tree files contain errors stop gracefully and fall back to a full backup
+    Fixed some file handle leaks
+    If a backup was done but failed, wait longer for a retry
+    Fixed bug where paths with ' in them would not be browsable
+    Increased statistics performance via larger cache size
+    Stop server if it cannot listen on the fastcgi port
+    Use Timeouts for queries to not stall during long updates
+    Do nightly cleanup at local night
+
+	
+0.23.1:
+    Fixed bug where saving an incremental image was not done correctly and caused a memory access error in the Linux version
+    Fixed bug where the symbolic links in the client directory were not created correctly
+
+	
+0.23:
+    Changed image blocksize to make the images compatibel with the Windows 7 image mounting feature. Breaking change. New image backups will be started automatically (old images are still okay). Please update clients.
+    Fixed bug where the extended client status wasn't displayed properly
+    Allow long pathnames in the Windows version
+    Made fileserv restart correctly if a interface change is detected
+
+	
+0.22:
+    Changed default incremental file backup interval
+    Sanitize JSON input against XSS attacks
+    Delete files properly when hardlinking fails
+    Fixed several bugs in connection with account rights
+    Added detailed client status
+    Allow manually adding clients via IP or hostname
+    Allow setting backup window
+    Fixed 64bit compilation errors
+    New options: Backup window, max number of simultaneous backups, max number of active clients
+    Improved image error handling (when not enough space on server)
+    Use select boxes instead of links for clients in statistics and settings
+    Make client autoupdate configurable
+    Removed diff dependency. Use own tree diff algorithm
+    Warn if backup folder is inaccessible
+    Additional error states if backup folder is not available
+    Fixed a bug where the server deleted min_file_full incremental backups
+    Priorized removal of backups of clients which have old backups
+    Fixed directory removal on filesystem whose readdir doesnot return d_type
+    Stop backup if shadow copy is deleted
+    Made backupfolder setting dynamic
+
+	
+0.21:
+    Internationalization (English and German for now)
+    Uses Linux standard paths
+    Bugfixes
+
+	
+0.2:
+    Webinterface for backup status, current activities, statistics und settings
+    Performance optimizations with image backups
+    Use SQLITE-WAL journal mode for better performance
+    Size of backups is calculated. Storage usage of clients is calculated
+    Bugfixes

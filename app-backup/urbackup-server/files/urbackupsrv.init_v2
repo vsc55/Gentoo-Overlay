@@ -1,0 +1,129 @@
+#!/sbin/openrc-run
+#
+# /etc/init.d/urbackup_srv  Script to start and stop UrBackup Server
+
+depend () {
+	need net
+}
+
+checkconfig() {
+	ebegin "[UrBackup Server] Ajutando Configuraciones"
+		RUN_USER=${RUN_USER:-"urbackup"}
+		RUN_GRUPO=${RUN_GRUPO:-"urbackup"}
+		
+		DESC="UrBackup server deamon"             	# Introduce a short description here
+		NAME="urbackupsrv"             				# Introduce the short server's name here
+		DAEMON=/usr/sbin/urbackupsrv 				# Introduce the server's location here
+		DAEMON_REAL=/usr/sbin/urbackupsrv
+		PIDFILE=/var/run/$NAME.pid
+		PIDFILET=/var/run/$NAME_test.pid
+		SCRIPTNAME=/etc/init.d/$NAME
+		NICE_LEVEL="19"
+		IOSCHED_CLASS="2"
+		#IOSCHED_CLASS="best-effort"
+	eend $?
+}
+
+borrarpidfile()
+{
+	if [ -f ${PIDFILET} ]; then
+		ebegin "[UrBackup Server] Borrando fichero PID Test (${PIDFILET})"
+			rm -f "${PIDFILET}"
+		eend $?
+	fi
+	if [ -f ${PIDFILE} ]; then
+		ebegin "[UrBackup Server] Borrando fichero PID Daemon (${PIDFILE})"
+			rm -f "${PIDFILE}"
+		eend $?
+	fi
+}
+
+start() {
+	checkconfig || return 1
+		
+	DAEMON_ARGS="run --config /etc/urbackup/$NAME --daemon --pidfile $PIDFILE"
+	
+	# Return
+	#   0 if daemon has been started
+	#   1 if daemon was already running
+	#   2 if daemon could not be started
+	
+	ulimit -n 10000 > /dev/null 2>&1
+	#ebegin "[UrBackup Server] Iniciando Servicio Test"
+	#	start-stop-daemon --start --quiet --pidfile "${PIDFILET}" --make-pidfile --nicelevel ${NICE_LEVEL} --ionice ${IOSCHED_CLASS} --user "${RUN_USER}" --exec "${DAEMON_REAL}" --test > /dev/null || return 1
+	#	RETVAL=$?
+	#eend $RETVAL
+	
+	ebegin "[UrBackup Server] Iniciando Servicio Daemon"
+		start-stop-daemon --start --quiet --pidfile "${PIDFILE}" --make-pidfile --nicelevel ${NICE_LEVEL} --ionice ${IOSCHED_CLASS} --user "${RUN_USER}" --exec "${DAEMON}" -- ${DAEMON_ARGS} || return 2
+		RETVAL=$?
+	eend $RETVAL
+}
+
+
+stop() {
+	checkconfig || return 1
+	
+	
+	# Return
+	#   0 if daemon has been stopped
+	#   1 if daemon was already stopped
+	#   2 if daemon could not be stopped
+	#   other if a failure occurred
+	
+	start-stop-daemon --stop --quiet --retry=TERM/30/KILL/5 --pidfile "${PIDFILE}" --name $NAME
+	RETVAL="$?"
+	[ "$RETVAL" = 2 ] && return 2
+	# Wait for children to finish too if this is a daemon that forks
+	# and if the daemon is only ever run from this initscript.
+	# If the above conditions are not satisfied then add some other code
+	# that waits for the process to drop all resources that could be
+	# needed by services started subsequently.  A last resort is to
+	# sleep for some time.
+	start-stop-daemon --stop --quiet --oknodo --retry=0/30/KILL/5 --exec ${DAEMON}
+	[ "$?" = 2 ] && return 2
+	# Many daemons don't delete their pidfiles when they exit.
+	rm -f "${PIDFILE}"
+	return "$RETVAL"
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	#ebegin "[UrBackup Server] Deteniendo Servicio Test"
+	#	echo -n "	Espere..."
+	#	start-stop-daemon --stop --quiet --retry=TERM/30/KILL/5  --pidfile "${PIDFILET}" -- ${NAME}
+	#	RETVAL="$?"
+	#eend $RETVAL
+	#[ "$RETVAL" = 2 ] && return 2
+		
+	ebegin "[UrBackup Server] Deteniendo Servicio Daemin"
+		echo -n "	Espere..."
+		start-stop-daemon --stop --quiet --retry=TERM/30/KILL/5  --pidfile "${PIDFILE}" -- ${NAME}
+		#start-stop-daemon --stop --quiet --oknodo --retry=0/30/KILL/5 --exec ${DAEMON_REAL}
+		#start-stop-daemon --stop --quiet --retry=TERM/30/KILL/5 --pidfile "${PIDFILE}" -- ${DAEMON_REAL}
+		#start-stop-daemon --stop --user "${RUN_USER}" --progress --pidfile "${PIDFILE}" --retry=TERM/60/KILL/15
+		RETVAL="$?"
+	eend $RETVAL
+	#[ "$RETVAL" = 2 ] && return 2
+	
+	borrarpidfile
+}
+
+restart () {
+	svc_stop
+	echo
+	sleep 10
+	svc_start
+}

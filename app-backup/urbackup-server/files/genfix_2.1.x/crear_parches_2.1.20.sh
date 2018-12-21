@@ -1,0 +1,4 @@
+diff -Naur urbackup-server-2.1.20/urbackupserver/server_update.cpp.orig urbackup-server-2.1.20/urbackupserver/server_update.cpp > urbackup-server-2.1.20-autoupdate-code.patch
+diff -Naur urbackup-server-2.1.20/urbackupserver/server_settings.cpp.orig urbackup-server-2.1.20/urbackupserver/server_settings.cpp > urbackup-server-2.1.20-autoupdate-config.patch
+diff -Naur urbackup-server-2.1.20/urbackupserver/www/js/templates.chash-f85173fea3869fb86c781b60569246a4.js.orig urbackup-server-2.1.20/urbackupserver/www/js/templates.chash-f85173fea3869fb86c781b60569246a4.js > urbackup-server-2.1.20-autoupdate-ui.patch
+diff -Naur urbackup-server-2.1.20/Makefile.in.orig urbackup-server-2.1.20/Makefile.in > urbackup-server-2.1.20-autoupdate-datafiles-gcc-fortify.patch

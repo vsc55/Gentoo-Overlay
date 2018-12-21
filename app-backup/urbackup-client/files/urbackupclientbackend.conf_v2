@@ -1,0 +1,2 @@
+#Priority adjustment of the client process. Increase to lower priority.
+#NICE_LEVEL=-5

@@ -1,0 +1,10 @@
+--- urbackup-client-2.1.15.0/defaults_client.orig	Mon Jun 13 14:32:06 2016
++++ urbackup-client-2.1.15.0/defaults_client	Sun Feb 26 20:32:48 2017
+@@ -1,6 +1,6 @@
+ # Defaults for urbackup_client initscript
+ # sourced by /etc/init.d/urbackupclientbackend
+-# installed at /etc/default/urbackupclient by the maintainer scripts
++# installed at /etc/conf.d/urbackupclient by the maintainer scripts
+ 
+ #
+ # This is parsed as a key=value file

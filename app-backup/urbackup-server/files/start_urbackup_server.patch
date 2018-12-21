@@ -1,0 +1,72 @@
+*** start_urbackup_server_1.4.12	2016-02-10 13:04:22.000000000 +0100
+--- start_urbackup_server	2016-02-10 13:55:24.000000000 +0100
+***************
+*** 3,56 ****
+  NAME="urbackup_srv"
+  BASEDIR=`dirname $0`
+  PREFIX=`dirname $BASEDIR`
+! DAEMON=$PREFIX/sbin/urbackup_srv
+! if ! test -x $DAEMON
+! then
+! 	PREFIX=/usr/local
+!     DAEMON=$PREFIX/sbin/urbackup_srv
+! 	if ! test -x $DAEMON
+! 	then
+! 		PREFIX=/usr
+! 		DAEMON=$PREFIX/sbin/urbackup_srv
+! 	fi
+! fi
+! 
+! DAEMON_DIR="/var"
+! if ! test -f $DAEMON_DIR/urbackup/backup_server.db
+! then
+!     DAEMON_DIR="$PREFIX/var"
+!     if ! test -f $DAEMON_DIR/urbackup/backup_server.db
+!     then
+! 		DAEMON_DIR="/usr/local/var"
+! 		if ! test -f $DAEMON_DIR/urbackup/backup_server.db
+! 		then
+! 			DAEMON_DIR="/var"
+! 			if ! test -d $DAEMON_DIR/urbackup
+! 			then
+! 				DAEMON_DIR="$PREFIX/var"
+! 				if ! test -d $DAEMON_DIR/urbackup
+! 				then
+! 					DAEMON_DIR="/usr/local/var"
+! 					if ! test -d $DAEMON_DIR/urbackup
+! 					then
+! 						DAEMON_DIR="/usr/var"
+! 					fi
+! 				fi
+! 			fi
+! 		fi
+!     fi
+! fi
+! 
+! 
+  
+! DAEMON_LIBS="$PREFIX/lib"
+  if ! test -e $DAEMON_LIBS/liburbackupserver.so
+  then
+! 	DAEMON_LIBS="$PREFIX/lib64"
+! 	if ! test -e $DAEMON_LIBS/liburbackupserver.so
+! 	then
+! 		DAEMON_LIBS="/lib"
+! 	fi
+  fi
+  
+  PLUGIN_URL="--plugin $DAEMON_LIBS/liburbackupserver_urlplugin.so"
+--- 3,15 ----
+  NAME="urbackup_srv"
+  BASEDIR=`dirname $0`
+  PREFIX=`dirname $BASEDIR`
+! DAEMON=/usr/sbin/urbackup_srv
+! DAEMON_DIR=/var/lib
+  
+! DAEMON_LIBS="/usr/lib"
+  if ! test -e $DAEMON_LIBS/liburbackupserver.so
+  then
+! 	DAEMON_LIBS="/usr/lib64"
+  fi
+  
+  PLUGIN_URL="--plugin $DAEMON_LIBS/liburbackupserver_urlplugin.so"
