@@ -5,6 +5,128 @@ https://plex.tv/downloads/1/archive
 
 
 
+Plex Media Server 1.15.3.858 is now available to Plex Pass users in the Beta update channel
+-----------------------------------------
+FIXES:
+	- Analysis could fail to set media item attributes
+
+
+
+Plex Media Server 1.15.2.793 is now available to Plex Pass users in the Beta update channel
+-----------------------------------------
+FIXES:
+	- (Analysis) Chapters for multi-part media was not correctly imported (#9554)
+	- (DVR) Don’t schedule in progress airings if sub doesn’t allow partials. (#9688)
+	- (DVR) Fix a long-standing but rare crash when starting a live tune (#7790)
+	- (Dashboard) User counts in Top Played could be inaccurate (#9730)
+	- (Transcoder) A few seconds of audio could be missing after seeking while Direct Streaming both audio and video (#9658)
+	- (Transcoder) Seeking could be unreliable with some DASH clients (#9137)
+
+
+
+Plex Media Server 1.15.1.780 is now available to Plex Pass users in the Beta update channel
+-----------------------------------------
+This build has the following changes on top of the prior 1.15.1 releases.
+
+FIXES:
+	- (HTTP) Server could become unavailable when using the Samsung app (#9784)
+	- (Metadata) Lockouts when scanning / refreshing metadata (#9704)
+	- (Windows) Crashes as a result of database contention (#9663)
+
+
+
+Plex Media Server 1.15.1.710 is now available to Plex Pass users in the Beta update channel
+-----------------------------------------
+This build has the following changes on top of the prior 1.15.1 releases.
+
+FIXES:
+	- Support for hardware transcoding on Windows has been restored
+	- The Donator build of comskip is now included.
+
+
+
+Plex Media Server 1.15.1.707 is now available to Plex Pass users in the Beta update channel.
+-----------------------------------------
+NEW:
+	- (On Deck) Added preference for showing season premiers in On Deck
+	- (Web) Updated to 3.83.1
+	
+FIXES:
+	- (DVR) Better support for the dd_progid field in XMLTV. Adds handling of SH and MV tags. (#9680)
+	- (DVR) Display a better error message when there is a duplicate channel mapping when configuring a DVR (#9606)
+	- (DVR) Don’t let DVR content refreshes take place simultaneously.
+	- (DVR) Fix for Live TV session not getting stopped when a recording needs the tuner
+	- (DVR) Handle original-air-date field in XMLTV correctly if it doesn’t include a time (#9593)
+	- (DVR) Recording files with non-ASCII characters in filename could fail on macOS.
+	- (DVR) Scheduler would use large amounts of memory with many recordings scheduled. (#9050)
+	- (Dashboard) Some playback sessions were not displayed (#9705)
+	- (HTTP) Connections could become unresponsive after a long-poll response (#9713)
+	- (Library) “Scan library automatically” did not work on MacOS (#9695)
+	- (Library) Smart playlists with multiple tags (e.g. genre and genre) didn’t work correctly.
+	- (Library) When rematching an item, preserve any uploaded media.
+	- (Live TV) Fix for sessions not ending after tune failure. (#9465)
+	- (Playlists) Playlist items would fail to load given certain parameters (#8963)
+	- (Transcoder) Segments near the end of a session could be dropped (#9702)
+	- Avoid crash at startup when scanning remote media servers (#9664)
+	- Pull in episode ratings from TMDB.
+
+
+
+Plex Media Server 1.15.0.659 is now available to Plex Pass users in the Beta update channel
+-----------------------------------------
+This version contains the following fixes in addition to the changes in 1.15.0.647:
+
+	- Fixed an issue with hardware transcoding on Windows
+	- Fixed an issue where comskip donor features were inactive
+	- Fixed an issue with NetGear and RPM packages
+	- Fixed an issue where Western Digital devices would offer an update to an old version (Requires a vendor-side change we are still working on)
+
+
+
+Plex Media Server 1.15.0.647 is now available to Plex Pass users in the Beta update channel
+-----------------------------------------
+This version contains numerous changes and a lot of invisible behind the curtains stuff. There a few caveats and some missing builds at this point:
+
+Notes:
+	- Thecus Builds for Thecus devices will not be available at this time. Thecus is working on a firmware update that allows the new PMS to run on their devices.
+	- Docker If you are running our PMS docker container (or Linuxserver.io 19’s container) you will need to ensure the container is up-to-date before PMS 1.15.0 will run.
+	- Nvidia SHIELD builds are slightly delayed and will be available on Google Play store once QA testing has completed.
+	- RedHat/CentOS/Fedora These platforms now only support running on systemd-based distros.
+	- Ubuntu We now have official ARMv7 and ARMv8 deb packages.
+	
+NEW:
+	- (Linux) Support for Ubuntu/Debian ARMv7 and ARMv8 platforms.
+	- (NAS) Support for ASUSTOR, Synology, and QNAP ARMv8 devices.
+	- (NAS) Support for hardware encoding on QNAP Intel/AMD 64-bit devices with a discrete Nvidia GPU.
+	- (NAS) Support for volume selection, and app migration on QNAP devices.
+	
+FIXES:
+	- (DVR) Avoid a few crashes around parsing bad JSON from OnConnect (#8889)
+	- (DVR) Avoid caching EPG HTTP cache requests for longer than the refresh time (#9629)
+	- (DVR) Avoid downloading XMLTV files to disk before parsing (#9272)
+	- (DVR) Certain scheduled recordings would incorrectly show an error. (#9325)
+	- (DVR) Change the way Plex Tuner Service returns keys for TVButler devices, especially on macOS, to properly handle using multiple TVButlers on the same system. N.B. This is a breaking change for users of TVButler devices. Those users will need to delete and recreate their DVR to use the new device information. (#8760)
+	- (DVR) Disk space checking underestimates the necessary amount of space when starting recordings (#8807)
+	- (DVR) Ensure grab operations get destroyed after a tune fails (#9465)
+	- (DVR) Fixed a bug where changing recording priority would not update the schedule. (#9035)
+	- (DVR) Log which device we’re allocating a tuner from
+	- (DVR) Output signal strength/quality information into log periodically during tunes (#9503)
+	- (DVR) Plex Tuner Service now properly detects when a transcode session exited due to signal failure and releases the tuner (#9174)
+	- (DVR) Revert timeout changes, should help with timeouts during tune startup (#9473,
+	- (DVR) Translate Guide header for clients to display (#8698)
+	- (Library) Library summary endpoint should report the correct duration for large music libraries (#9223)
+	- (Live TV) Fix for intermittent tune failures. (#9412)
+	- (Live) Avoid delaying video playback while leading audio plays (#9343)
+	- (Music) Restricting music libraries with labels could prevent them from loading. (#8935)
+	- (Scanner) Add support for reading Opus metadata (#5974)
+	- (Transcoder) Seeking in DASH streams could be unreliable (#9137)
+	- Corrected rare crash involving accessing User data (#9464)
+	- Removed some remaining uses of plaintext HTTP (#8958)
+	- The server could crash when TV media was being deleted. (#9350)
+	- Updated translations
+
+
+
 Plex Media Server 1.14.1.5487 is now available to Plex Pass users in the Beta update channel
 -----------------------------------------
 NEW:
