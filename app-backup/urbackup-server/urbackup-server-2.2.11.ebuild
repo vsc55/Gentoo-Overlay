@@ -70,7 +70,7 @@ src_install() {
 		newins "${FILESDIR}"/urbackupsrv.logrotate urbackupsrv
 	fi
 	newconfd "${FILESDIR}"/urbackupsrv.conf_v3 urbackupsrv
-	doinitd "${FILESDIR}"/urbackupsrv.init_v3 urbackupsrv
+	newinitd "${FILESDIR}"/urbackupsrv.init_v3 urbackupsrv
 	
 	if use systemd; then
 		systemd_dounit ${FILESDIR}/urbackup-server.service_v2 urbackup-server.service

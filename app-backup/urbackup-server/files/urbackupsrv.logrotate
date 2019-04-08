@@ -4,7 +4,5 @@
 	missingok
 	create 640 urbackup urbackup
 	compress
-	postrotate
-		/etc/init.d/urbackupsrv restart
-	endscript
+	notifempty
 }

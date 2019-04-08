@@ -1,6 +1,18 @@
 https://www.urbackup.org/server_changelog.html
 
 
+2.3.8
+Changes:
+
+    Change assert to log message and return to prevent denial of service
+    Comment out currently unused functionality to prevent denial of service
+    Improve zeroed block skipping during full image backup
+    Log about not deleting any backups during startup
+    Fix disallowing component config
+    Fix pulseway next_refresh_interval_minutes/notify_when_offline
+    Add additional report script params (client ip, os and version)
+    Increase Hyper-V MBR zip file timeout from 5min to 60min
+
 2.3.7
 Major changes:
 
