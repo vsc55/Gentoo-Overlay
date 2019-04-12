@@ -5,6 +5,23 @@ https://plex.tv/downloads/1/archive
 
 
 
+Plex Media Server 1.15.4.919 is now available to Plex Pass users in the Beta update channel
+-----------------------------------------
+NEW:
+	- (DVR) Ability to give Home Users DVR access. (#8794)
+	- (Playback) Assume unknown audio to be foreign if the preferred audio language is not english (#6126)
+	- (Streaming Brain) Preference to allow automatically terminating playbacks which have been paused for an hour (#9700)
+	- (Subtitles) Auto select forced subtitles when not listening to foreign audio (#6126)
+	- When transcoding for supported clients, automatically select media based on supported resolution and dynamic range (#9490)
+FIXES:
+	- (Analysis) Chapters were not being imported for new media (#9843)
+	- (Dashboard) Respect user preferences for local / remote bandwidth (#9562)
+	- (Dashboard) Respect user preferences when showing streams as local / remote (#9562)
+	- (Metadata) Asking to refresh metadata still used cache for movies and TV shows (#1566)
+	- (Metadata) Related collections were not paginated (#9844)
+
+
+
 Plex Media Server 1.15.3.858 is now available to Plex Pass users in the Beta update channel
 -----------------------------------------
 FIXES:
