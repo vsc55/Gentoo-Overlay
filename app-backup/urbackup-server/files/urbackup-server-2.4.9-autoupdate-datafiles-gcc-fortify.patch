@@ -1,0 +1,40 @@
+--- urbackup-server-2.4.9/Makefile.in.orig	2019-10-01 01:00:34.000000000 +0200
++++ urbackup-server-2.4.9/Makefile.in	2019-10-02 00:31:55.534738443 +0200
+@@ -912,7 +912,7 @@
+ 	$(am__append_3) $(am__append_4) luaplugin/dllmain.cpp \
+ 	luaplugin/LuaInterpreter.cpp luaplugin/pluginmgr.cpp \
+ 	$(am__append_5) $(am__append_6)
+-@WITH_FORTIFY_TRUE@FORTIFY_FLAGS = -fstack-protector-strong --param=ssp-buffer-size=4 -Wformat -Werror=format-security -D_FORTIFY_SOURCE=2 -fPIE
++@WITH_FORTIFY_TRUE@FORTIFY_FLAGS = -fstack-protector-strong --param=ssp-buffer-size=4 -Wformat -Werror=format-security -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=2 -fPIE
+ @WITH_FORTIFY_TRUE@FORTIFY_ldflags = -Wl,-z,relro
+ urbackupsrv_LDADD = $(LIBCURL) $(PTHREAD_LIBS) $(DLOPEN_LIBS) \
+ 	$(FUSE_LIBS) $(am__append_8) $(am__append_10) $(am__append_11) \
+@@ -1086,7 +1086,7 @@
+ 	urbackupcommon/CompressedPipeZstd.h blockalign_src/main.cpp \
+ 	blockalign_src/crc32c-adler.cpp blockalign_src/crc.cpp \
+ 	blockalign_src/crc.h
+-EXTRA_DIST = docs/urbackupsrv.1 init.d_server defaults_server logrotate_urbackupsrv urbackup-server.service urbackup-server-firewalld.xml urbackup/status.htm urbackupserver/www/js/*.js urbackupserver/www/js/vs/* urbackupserver/www/*.htm urbackupserver/www/*.ico urbackupserver/www/css/*.css urbackupserver/www/images/*.png urbackupserver/www/images/*.gif urbackupserver/www/*.ico urbackupserver/urbackup_ecdsa409k1.pub urbackupserver/www/swf/* urbackupserver/www/fonts/* tclap/COPYING tclap/AUTHORS server-license.txt urbackup/dataplan_db.txt
++EXTRA_DIST = docs/urbackupsrv.1 init.d_server defaults_server logrotate_urbackupsrv urbackup-server.service urbackup-server-firewalld.xml urbackup/status.htm urbackupserver/www/js/*.js urbackupserver/www/js/vs/* urbackupserver/www/*.htm urbackupserver/www/*.ico urbackupserver/www/css/*.css urbackupserver/www/images/*.png urbackupserver/www/images/*.gif urbackupserver/www/*.ico urbackupserver/www/swf/* urbackupserver/www/fonts/* tclap/COPYING tclap/AUTHORS server-license.txt urbackup/dataplan_db.txt
+ all: config.h
+ 	$(MAKE) $(AM_MAKEFLAGS) all-recursive
+ 
+@@ -5586,7 +5586,7 @@
+ @FREEBSD_FALSE@@PACKAGING_FALSE@	adduser urbackup --system --quiet --group --home "$(DESTDIR)$(localstatedir)/urbackup" || adduser urbackup --system --user-group --home "$(DESTDIR)$(localstatedir)/urbackup" || true
+ @PACKAGING_FALSE@	chown urbackup:urbackup "$(DESTDIR)$(localstatedir)/urbackup"
+ 
+-install-data-local: urbackup/status.htm urbackupserver/www/js/*.js urbackupserver/www/js/vs/*.js urbackupserver/www/js/vs/base/worker/* urbackupserver/www/js/vs/basic-languages/src/* urbackupserver/www/js/vs/editor/* urbackupserver/www/*.htm urbackupserver/www/*.ico urbackupserver/www/css/*.css urbackupserver/www/images/*.png urbackupserver/www/images/*.gif urbackupserver/www/fonts/* urbackupserver/urbackup_ecdsa409k1.pub urbackupserver/www/swf/* server-license.txt urbackup/dataplan_db.txt
++install-data-local: urbackup/status.htm urbackupserver/www/js/*.js urbackupserver/www/js/vs/*.js urbackupserver/www/js/vs/base/worker/* urbackupserver/www/js/vs/basic-languages/src/* urbackupserver/www/js/vs/editor/* urbackupserver/www/*.htm urbackupserver/www/*.ico urbackupserver/www/css/*.css urbackupserver/www/images/*.png urbackupserver/www/images/*.gif urbackupserver/www/fonts/* urbackupserver/www/swf/* server-license.txt urbackup/dataplan_db.txt
+ 	$(INSTALL) $(INSTALL_OPTS) -m 744 -d "$(DESTDIR)$(localstatedir)/urbackup"
+ 	chmod +x "$(DESTDIR)$(localstatedir)/urbackup"
+ 	$(INSTALL_DATA) $(INSTALL_OPTS) $(srcdir)/urbackup/dataplan_db.txt "$(DESTDIR)$(localstatedir)/urbackup/dataplan_db.txt"
+@@ -5629,10 +5629,8 @@
+ 	$(INSTALL_DATA) $(INSTALL_OPTS) $(srcdir)/urbackupserver/www/images/*.gif "$(DESTDIR)$(datadir)/urbackup/www/images/"
+ 	$(INSTALL_DATA) $(INSTALL_OPTS) $(srcdir)/urbackupserver/www/swf/* "$(DESTDIR)$(datadir)/urbackup/www/swf/"
+ 	$(INSTALL_DATA) $(INSTALL_OPTS) $(srcdir)/urbackupserver/www/fonts/* "$(DESTDIR)$(datadir)/urbackup/www/fonts/"
+-	$(INSTALL_DATA) $(INSTALL_OPTS) $(srcdir)/urbackupserver/urbackup_ecdsa409k1.pub "$(DESTDIR)$(datadir)/urbackup/urbackup_ecdsa409k1.pub"
+ 	$(INSTALL_DATA) $(INSTALL_OPTS) $(srcdir)/server-license.txt "$(DESTDIR)$(datadir)/urbackup/server-license.txt"
+ @PACKAGING_FALSE@	chown urbackup:urbackup "$(DESTDIR)$(datadir)/urbackup"
+-@PACKAGING_FALSE@	chown urbackup:urbackup "$(DESTDIR)$(datadir)/urbackup/urbackup_ecdsa409k1.pub"
+ @PACKAGING_FALSE@	chown -R urbackup:urbackup "$(DESTDIR)$(datadir)/urbackup/www"
+ 
+ install-exec-hook:

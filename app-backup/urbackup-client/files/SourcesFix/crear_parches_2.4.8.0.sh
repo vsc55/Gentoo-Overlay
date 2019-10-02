@@ -1,0 +1,2 @@
+diff -Naur urbackup-client-2.4.8.0/Makefile.in.orig urbackup-client-2.4.8.0/Makefile.in > urbackup-client-2.4.8-Makefile.patch
+diff -Naur urbackup-client-2.4.8.0/defaults_client.orig urbackup-client-2.4.8.0/defaults_client > urbackup-client-2.4.8-conf.patch

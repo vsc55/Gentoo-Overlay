@@ -1,5 +1,30 @@
 https://www.urbackup.org/client_changelog.html
 
+2.4.8
+Major changes:
+
+    IPv6 support (sponsored by Tuxis Internet Engineering )
+    ZSTD transport compression
+    HTTPS proxy support
+    Parallel hashing improvements
+    Image backup performance improvement: Read-ahead file system in larger blocks
+
+
+Changes from 2.4.7:
+
+    Fix parallel hashing hang if interrupted
+    Fix CbtUpdate/RestartFilesrv confusion causing internal file server restarts
+    Fix reading tokens on Windows allowing restores via command line on Windows
+    Fix race condition removing image backup status structure
+    Don’t try to connect via http proxy if not compiled with SSL
+    Fix compilation with older glibc
+    Fix piped tar file hash issue after resume
+    Use different shell path for Android build (uses /system/bin/sh per default)
+    Improve install info about using android build
+
+For more details see the change logs for beta versions 2.4.0-2.4.6 in the testing category in the forums.
+
+
 2.3.4
 Changes from 2.2.x:
 

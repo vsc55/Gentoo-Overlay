@@ -1,0 +1,3 @@
+(function(){dust.register("settings_inv_row",body_0)
+- .f(ctx.get(["tPerform autoupdates silently"], false),ctx,"h").w(":</label><div class=\"col-sm-6\"><label><input type=\"checkbox\" id=\"silent_update\" ").f(ctx.get(["silent_update"], false),ctx,"h").w("/></label></div></div>");}
++ .w("</label></div>");}

@@ -1,5 +1,26 @@
 https://www.urbackup.org/server_changelog.html
 
+2.4.9
+Major changes:
+
+    IPv6 support (sponsored by Tuxis Internet Engineering )
+    ZSTD transport compression
+    Parallel hashing improvements
+
+Changes since 2.4.8:
+
+    Remove macos download buttons
+    Limit amount of previous clients moved from added during rename
+    Add max file name length check on status screen
+    Only add to rename from table if client has file backups
+    Add grace period for internet clients for server to assume the client is still online
+    Delete mail from queue after retrying for 3 days
+    Properly delete tar file backup dirs before backup (if using btrfs/ZFS snapshots)
+    Fix compilation with older glibc
+    Add check for case sensitivity and special Windows file names on status screen
+
+For more details see the change logs for beta versions 2.4.0-2.4.7 in the testing category in the forums.
+
 
 2.3.8
 Changes:
