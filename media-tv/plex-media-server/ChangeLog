@@ -4,6 +4,259 @@ https://plex.tv/downloads/1/archive
 https://plex.tv/downloads/1/archive
 
 
+Plex Media Server 1.17.0.1841 is now available to everyone
+-----------------------------------------
+FIXES:
+	- (EPG) On Windows, XMLTV guide would fail to refresh (#10624)
+
+
+
+Plex Media Server 1.17.0.1709 is available in the Beta update channel
+-----------------------------------------
+Note: due to an issue with hardware decoding HEVC causing a green bar in output, support for zero-copy hardware transcoding on Windows for Intel GPUs is not enabled in this release. This issue has since been resolved internally and zero-copy for intel GPUs will be enabled in 1.17.1
+NEW:
+	- (Transcoder) Update to current upstream ffmpeg
+	- (Transcoder) Support for hardware transcoding on Linux with Intel 9th-gen processors
+	- (Transcoder) Support for VC-1 hardware decoding on supported platforms
+	- (Transcoder) Support for hardware decoding on Linux with Nvidia GPUs
+	- (Transcoder) Support for zero-copy hardware transcoding on Linux with Nvidia GPUs
+	- (Transcoder) Support for zero-copy hardware transcoding of interlaced media
+FIXES:
+	- (DVR) Comskip was not available in recording options on FreeBSD.
+	- (DVR) Enhanced Plex Media Server’s performance by skipping reads of previously processed XMLTV guide data. (#9846)
+	- (Transcoder) The server could become unresponsive after certain precisely-timed client interactions.
+	- Corrects Live TV playback error when tuning to channel that contains space(s) in it.
+	- (Transcoder) The server could use large amounts of CPU time when converting subtitles (#10478)
+
+
+
+Plex Media Server 1.16.6.1592 is available in the Beta update channel
+-----------------------------------------
+FIXES:
+	- Resolved an issue loading Plex Web settings page on various Linux/NAS platforms.
+
+
+
+Plex Media Server 1.16.6.1559 is available in the Beta update channel
+-----------------------------------------
+NEW:
+	- Enhance the loudness leveling to reflect recent research.
+FIXES:
+	- (EPG) Make episode detection more robust when using XMLTV guide data (#10390)
+	- (Library) Sorting a Show by Oldest first didn’t work correctly (#7800)
+	- (Music) Items added from TIDAL would not show up in collection hubs (#10306)
+	- Plex Relay could fail to start on Netgear R9000 devices. (#10395)
+	- Read track titles from embedded tags in audio files.
+	- Repair trailing slashes which could appear in audio metadata.
+
+
+
+Plex Media Server 1.16.5.1554 is available in the Beta update channel
+-----------------------------------------
+NEW:
+	- (Web) Updated to 3.108.2
+FIXES:
+	- (DVR) Re-enable signal strength updates for all tuners except Hauppauge. (#10352)
+	- (Library) The Track Last Skipped filter could return the incorrect results (#10309)
+	- (Live) In some circumstances, new recordings could use an additional tuner, rather than sharing one already tuning the same channel. This could manifest as a missing “watch from start” option (#9736)
+	- Watching a trailer could mark the corresponding movie watched in some cases (#9481)
+	- (DVR) Live session buffer data could be pruned prematurely, resulting in live TV being unable to seek back as far as expected (#10430)
+	- (Playback) Certain clients could receive corrupted data in media requests, leading to corruption during playback (#10436)
+
+
+
+Plex Media Server 1.16.5.1488-deeb86e7f is available in the Beta update channel
+-----------------------------------------
+NEW:
+	- (Web) Updated to 3.108.2
+FIXES:
+	- (DVR) Re-enable signal strength updates for all tuners except Hauppauge. (#10352)
+	- (Library) The Track Last Skipped filter could return the incorrect results (#10309)
+	- (Live) In some circumstances, new recordings could use an additional tuner, rather than sharing one already tuning the same channel (#9736)
+	- Watching a trailer could mark the corresponding movie watched in some cases (#9481)
+
+
+
+Plex Media Server 1.16.4.1469 is available in the Beta update channel
+-----------------------------------------
+NEW:
+	- (Web) Updated to 3.104.2
+FIXES:
+	- (DVR) Improve selection of default lineup during setup. (#10211)
+	- (Filters) Track source filter would not work. Renamed to Album Source.
+	- (Music) Tracks added from TIDAL would not show up in Popular Tracks (#10319)
+	- (Notifications) A large number of new item notifications would arrive after enabling the preference
+	- (Playlists) Shuffling a playlist containing items from mixed sources could cause unexpected results (#10222)
+	- (Playlists) Smart playlist generated from Add to Library content would not play back (#10244)
+	- (Scanner) PlexIgnore file exclusion would not work in Photo libraries (#9818)
+	- (Subtitles) Issues with automatic selection when default subtitle and audio languages differ (#10241)
+	- Fix for deadlock when deleting DVR that could not be upgraded to Cloud EPG. (#10358)
+	- (Transcoder) The transcoder process could leak memory on the Nvidia SHIELD (#9291)
+
+
+
+Plex Media Server 1.16.3.1433 is available in the Beta update channel
+-----------------------------------------
+FIXED:
+	- (LiveTV) Temporarily disable signal strength updates. This reduces pixelation with some tuners.
+
+
+
+Plex Media Server 1.16.2.1321 is now available for all users in the Public channel.
+-----------------------------------------
+Corrects an internal publishing / deployment problem.
+Release notes for 1.16.2.1297 apply, repeated below, are:
+NEW:
+	- (Web) Updated to 3.99.2
+FIXED:
+	- (Add to Library) Hi-fi quality was limited if TIDAL account was not managed through plex.tv (#10155)
+	- (Localization) Translated strings were not returned (#10168)
+	- (NAS) Ensure transcoder temp directory is present at startup on Synology devices (#10213)
+	- (NAS) The server might not automatically start after system reboot on Synology devices (#10236)
+	- Greatly speed up partial scan operation (#10171)
+	- On macOS, if a network interface had multiple IPv4 addresses, they could fail to publish to plex.tv (#1778)
+	- Shows in “Shows you might like” were missing season counts (#10162)
+	- The scanner or transcoder could crash when processing files containing big-endian DTS audio streams (#10135)
+	- The server could use large amounts of CPU time when running on a network with certain routers with UPnP enabled (#9610)
+
+
+
+Plex Media Server 1.16.3.1402 is now available to Plex Pass users in the Beta update channel
+-----------------------------------------
+NEW:
+	- (Web) Updated to 3.104.1
+	- Add translations for Afrikaans, Finnish and Polish and update existing ones.
+FIXES:
+	- (Library) Filtering shows by audio or subtitle language would fail (#10189)
+	- (Metadata) Posters could fail to load on Nvidia Shield servers (#10036)
+	- Collection hubs would only display a maximum of six items.
+	- Fix Hungarian translations.
+	- In single-core systems, loudness analysis might not occur on audio files (10049)
+	- Published addresses could fail to update after network interface state changed on macOS (#10192)
+
+
+
+Plex Media Server 1.16.2.1297 is now available to Plex Pass users in the Beta update channel
+-----------------------------------------
+NEW:
+	- (Web) Updated to 3.99.2
+FIXES:
+	- (Add to Library) Hi-fi quality was limited if TIDAL account was not managed through plex.tv (#10155)
+	- (Localization) Translated strings were not returned (#10168)
+	- (NAS) Ensure transcoder temp directory is present at startup on Synology devices (#10213)
+	- (NAS) The server might not automatically start after system reboot on Synology devices (#10236)
+	- Greatly speed up partial scan operation (#10171)
+	- On macOS, if a network interface had multiple IPv4 addresses, they could fail to publish to plex.tv (#1778)
+	- Shows in “Shows you might like” were missing season counts (#10162)
+	- The scanner or transcoder could crash when processing files containing big-endian DTS audio streams (#10135)
+	- The server could use large amounts of CPU when running on a network with certain routers with UPnP enabled (#9610)
+
+
+
+Plex Media Server 1.16.1.1291 is now available to Plex Pass users in the Beta update channel
+-----------------------------------------
+FIXES:
+	- (DVR) Some shows without season & episode info were displaying the wrong date. (#10233)
+	- (DVR) In some cases subscriptions were not scheduled automatically after upgrade to new EPG provider. (#10215)
+	- (EPG) End of guide would not populate without a full refresh. (#10220)
+
+
+
+Plex Media Server 1.16.1.1273 is now available to Plex Pass users in the Beta update channel
+-----------------------------------------
+FIXES:
+	- (DVR) Don’t default to Episode 1. (#10207)
+	- (DVR) Users in Canada can now set up a new DVR, using a space in the postal code. (#10204)
+	- (DVR) Users in Ireland can now set up a new DVR.
+	- (DVR) Additionally show channel title in DVR setup where only an internal channel identifier is present.
+
+
+
+Plex Media Server 1.16.1.1246 is now available to Plex Pass users in the Beta update channel
+-----------------------------------------
+Live TV & DVR - Beginning on June 30, 2019 Plex will require Plex Media Server version 1.16.1 to maintain EPG data and overall Live TV & DVR functionality. Users in unsupported countries will have to switch to an XMLTV based EPG solution to maintain overall Live TV & DVR functionality. Users that don’t upgrade by the above date will begin losing guide data starting July 1, 2019. Since part of this process involves matching your current channel lineup to a new channel lineup, as well as matching any recordings that you may already have scheduled, we strongly encourage all users to refresh their program guide after updating Plex Media Server and then review their channel lineup and scheduled recordings.
+SHIELD - Please note that the creation of new “Premium Music” libraries on the SHIELD is currently unsupported and all existing Premium Music libraries will gracefully fall back to using standard library matching. Improvements are actively being worked on and are coming soon (within the next few months at the latest)!
+NEW:
+	- New EPG provider for Live TV & DVR.
+
+
+
+Plex Media Server 1.16.0.1226 is now available to Plex Pass users in the Beta update channel
+-----------------------------------------
+FIXES:
+	- Updated translations
+
+
+
+Plex Media Server 1.16.0.1220 is now available to Plex Pass users in the Beta update channel
+-----------------------------------------
+SHIELD - Please note that the creation of new “Premium Music” libraries on the SHIELD is currently unsupported and all existing Premium Music libraries will gracefully fall back to using standard library matching. Improvements are actively being worked on and are coming soon (within the next few months at the latest)!
+FIXES:
+	- (HTTP) Addressed network efficiency issues which could lead to slow Live TV tunes (#10151)
+	- (HTTP) Responses to requests on keep-alive connections could be delayed, potentially resulting in slow transcoder startups (#10118)
+	- (Live TV) The transcoder could take a very long time to start on streams from certain broadcasters or service providers (#10065)
+	- (Playback) The server could crash when a transcode session finished. These manifested as heap corruptions or double-frees (#9801 #9883 #9938 #9940 #9950)
+
+
+
+Plex Media Server 1.15.8.1198 is now available to Plex Pass users in the Beta update channel
+-----------------------------------------
+SHIELD - Please note that the creation of new “Premium Music” libraries on the SHIELD is currently unsupported and all existing Premium Music libraries will gracefully fall back to using standard library matching. Improvements are actively being worked on and are coming soon (within the next few months at the latest)!
+FIXES:
+	- This release contains the fixes in version 1.15.8.1163, and additionally:
+	- Server settings could become unavailable on the Nvidia SHIELD after certain upgrade sequences (#10125)
+
+
+
+Plex Media Server 1.15.8.1163 is now available to Plex Pass users in the Beta update channel
+-----------------------------------------
+SHIELD - Please note that the creation of new “Premium Music” libraries on the SHIELD is currently unsupported and all existing Premium Music libraries will gracefully fall back to using standard library matching. Improvements are actively being worked on and are coming soon (within the next few months at the latest)!
+FIXES:
+	- (Database) Scheduled database backup job could cause a crash (#9993)
+	- (Hubs) Invalidate cached hubs when watch state or library preferences are updated. (#8401)
+	- (Music) Don’t try to run loudness analysis on non-local files (#9999)
+	- Certain clients (third party Samsung and OpenPHT) would fail to resume video.
+	- The server could crash when interacting with a video item with no audio streams (#10007)
+
+
+
+Plex Media Server 1.15.6.1079 is now available to Plex Pass users in the Beta update channel
+-----------------------------------------
+SHIELD - This is the first 1.15.x series release on Nvidia SHIELD.
+Please Note: The creation of new “Premium Music” libraries is currently unsupported and all existing Premium Music libraries will gracefully fall back to using standard library matching. Improvements are actively being worked on and are Coming Soon (within the next few months, latest)!
+
+NEW:
+	- (DVR) Add Resolution, Replace lower resolution items, and Allow partial airings at DVR level with option to override at recording level.
+FIXES:
+	- (Analysis) Corrected chapters not being imported again
+	- (DVR) Prefer HD airings when both HD and SD are available. (#9641)
+	- Docker host addresses were published unnecessarily (#9576)
+	- IP addresses from interfacing starting with a “v” weren’t published (#9576)
+	- Sync or Optimize could fail to fallback to software transcoding if hardware transcoding failed (#9455)
+
+
+
+Plex Media Server 1.15.5.994 is now available to Plex Pass users in the Beta update channel
+-----------------------------------------
+NEW:
+	- Allow all users with linked TIDAL accounts to access Add to Library features.
+FIXES:
+	- (Analysis) A data structure was freed twice (#9865)
+	- (DVR) Shows with a title ending in a special character would sometimes fail to record on Windows. (#9763)
+	- (Music) Local artist music videos were unintentionally hidden for all users (#9923)
+	- (Music) Local artist music videos would not have thumbnails
+	- (Photos) Place tags could get duplicated (#9884)
+	- (Transcoder) The server could crash if an HLS subtitle segment was requested while the session was terminating (#9927)
+	- Transcoded sparse subtitle streams in HLS could take too long to respond (#9921)
+
+
+
+Plex Media Server 1.15.4.993 is now available to Plex Pass users in the Beta update channel
+-----------------------------------------
+NEW:
+	- (Web) Updated to 3.95.2
+
+
 
 Plex Media Server 1.15.4.919 is now available to Plex Pass users in the Beta update channel
 -----------------------------------------
