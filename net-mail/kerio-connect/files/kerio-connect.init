@@ -1,0 +1,122 @@
+#!/sbin/openrc-run
+#
+# /etc/init.d/kerio-connect  Script to start and stop Kerio Connect
+
+depend () {
+	need net
+}
+
+checkconfig() {
+	ebegin "[Kerio] Connect - Ajutando Configuraciones"
+		KERIO_DIR=${KERIO_DIR:-"/opt/kerio/mailserver"}
+		KERIO_STORAGE=${KERIO_STORAGE:-"/home/kerio/mailserver"}
+
+		KEIRO_USER=${KEIRO_USER:-"kerio"}
+		KEIRO_GRUPO=${KEIRO_GRUPO:-"kerio"}
+
+		KERIO_STK_SIZE=${KERIO_STK_SIZE:-"2048"}
+		KERIO_DESC_SIZE=${KERIO_DESC_SIZE:-"10240"}
+
+		KERIO_PROCES_NAME="mailserver"
+		KERIO_PIDFILE="/var/run/kms.pid"
+		KERIO_PATH_ALL_PROCESS="${KERIO_DIR}/${KERIO_PROCES_NAME}"
+	eend $?
+}
+
+ajustandopermisos()
+{
+	einfo "[Kerio] Connect - Ajustando permiso a ficheros:"
+	ebegin "                - ${KERIO_DIR}"
+		chown ${KEIRO_USER}:${KEIRO_GRUPO} ${KERIO_DIR} -R 
+		chmod 0740 ${KERIO_DIR} -R 
+	eend $?
+	ebegin "                - ${KERIO_STORAGE}"
+		chown ${KEIRO_USER}:${KEIRO_GRUPO} ${KERIO_STORAGE} -R 
+		chmod 0740 ${KERIO_STORAGE} -R 
+	eend $?
+}
+
+borrarpidfile()
+{
+	if [ -f ${KERIO_PIDFILE} ]; then
+		ebegin "[Kerio] Connect - Borrando fichero PID (${KERIO_PIDFILE})"
+			rm -f "${KERIO_PIDFILE}"
+		eend $?
+	fi
+}
+
+# Waiting to complete start
+wait_until_start() {
+	local delay
+	
+	sleep 1 # min waiting
+	delay=$STOPTIMEOUT
+	while [ $delay -gt 0 ] && [ -n "`pidof $KERIO_PROCES_NAME`" ] && [ ! -e $KERIO_PIDFILE ]; do
+		echo -n "."
+		sleep $DELAY
+		delay=$(( $delay - $DELAY ))
+	done
+	[ -z "`pidof $KERIO_PROCES_NAME`" ] && return 1 || return 0
+}
+
+start_watchdog() {
+	exec 0>&-       # close stdin
+	exec 1>&-       # close stdout
+	exec 2>&-       # close stderr
+	/opt/kerio/mailserver/kerio-connect-watchdog start $KERIO_PIDFILE $KERIO_PROCES_NAME $KERIO_PATH_ALL_PROCESS $KERIO_DIR &
+}
+
+start() {
+	checkconfig || return 1
+	if [ -n "`pidof ${KERIO_PROCES_NAME}`" ]; then
+		if [ -e ${KERIO_PIDFILE} ]; then
+			eerror "[Kerio] Connect -  Ya esta en marcha!!"
+			eend 1
+		else
+			eerror "[Kerio] Connect -  Se esta iniciando o cerrando!!"
+			eend 1
+		fi
+		return 1
+	fi
+	if [ -f "${KERIO_PATH_ALL_PROCESS}" ]; then
+		ajustandopermisos || return 1
+		borrarpidfile || return 1
+
+		ebegin "[Kerio] Connect - Iniciando Servicio"
+			ulimit -c unlimited
+			ulimit -s ${KERIO_STK_SIZE}
+			ulimit -n ${KERIO_DESC_SIZE}
+			
+			start-stop-daemon --start --quiet --user "${KEIRO_USER}" --pidfile "${KERIO_PIDFILE}" --make-pidfile --exec "${KERIO_PATH_ALL_PROCESS}" -- "${KERIO_DIR}"
+			RETVAL=$?
+			
+			#if [ $RETVAL -eq 0 ]; then
+				# Waiting to complete start
+				#wait_until_start
+				#	RETVAL=$?
+			#fi
+		eend $RETVAL
+		#start_watchdog
+	else
+		RETVAL=1
+		eerror "[Kerio] Connect -  No esta instalado!!"
+		eend 1
+	fi
+	return $RETVAL
+}
+
+stop() {
+	checkconfig || return 1
+	ebegin "[Kerio] Connect - Deteniendo Servicio"
+		echo -n "	Espere..."
+        start-stop-daemon --stop --user "${KEIRO_USER}" --progress --pidfile "${KERIO_PIDFILE}" --retry=TERM/60/KILL/15
+	eend $?
+	borrarpidfile
+}
+
+restart () {
+	svc_stop
+	echo
+	sleep 10
+	svc_start
+}

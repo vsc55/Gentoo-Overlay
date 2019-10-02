@@ -1,0 +1,2693 @@
+http://www.kerio.com/kerio-connect-release-history
+https://www.gfi.com/products-and-solutions/email-and-messaging-solutions/kerio-connect/specifications/product-editions
+
+Legend:
++ Added feature
+* Improved/changed feature
+- Bug fixed
+! Known issue / missing feature
+
+
+
+Version 9.2.10 - Released: July 31, 2019
+-----------------------------------------
+Fixes:
+- Problem with sending emails from outlook after update to office version 1903 - 11425.20228
+- Calendar not syncing with Outlook for Windows- Active Sync connection
+- Mailbird client error failed to fetch emails
+- Public folder rights - Invalid value
+- Overview of shared sent items folder displays sender instead of the recipient address
+- Verify your Identity pop up when using webmail over HTTPS
+- Calendar events with Attachments causing issues with Active Sync synchronization
+- Dragging a contact from "To:" field to e-mail body doesn't work
+- LDAP Search no results when using non-standard fields
+- Digital signature from Kerio Connect Client is not accepted by Gmail
+- KOFF not loading correctly after upgrade to Outlook 1903 - 11425.20228
+- Mailbird hangs during account configuration
+- NMAP shows program name as Kerio
+- Prompt on encryption when there is not enough disk space
+- Drag a contact from To to email body does not work
+- EWS: "DateTimeCreated" property is missing
+- Domain folder rights are showing Invalid value
+
+
+
+Version 9.2.9p2 - Released: July 19, 2019
+-----------------------------------------
+Fixes:
+- Problem with sending emails from outlook after update to office version 1903 - 11425.20228
+- KOFF not loading correctly after upgrade to Outlook 1903 - 11425.20228
+
+
+
+^^^^^^^^^^^^^^^^^^^
+Changelog - gfi.com
+-------------------
+
+
+
+Version 9.2.9 Patch 1
+-----------------------------------
+Kerio Connect
+- WebMail Contacts auto-completion is not working for previously created entries
+- Finder is not responding MacOS 10.14
+- Email with attached (Nested) email message not showing in KOFF
+- LDAP-Replication gets only 200 contacts (configurable)
+- Remote images are shown by default (disabled via config) 
+
+
+
+Version 9.2.9
+-----------------------------------
+Kerio Connect
++ Faster Contact List (webmail)
++ Faster Global Address List (GAL)
++ Added HTTP Security Headers
+- Calendar not syncing with Outlook 2016 (Windows) - Active Sync connection
+- Apple Mail (EWS) trying to sync deleted emails
+- Garbled text in Outlook 2016 when using emoji character
+- Mapping users from specific OU will break when editing the domain
+- Webmail is treating a specific calendar invite as a normal email
+- Incorrect PDF extension in Outlook 2016 and KOFF
+- PDF attachments are missing in KOFF
+- EWS Invalid GetItem response for meeting requests causing Mac Mail to crash
+- "Data encryption" text is partially missing
+- Cannot edit public contacts in MacOS 10.13 and 10.14 with Account Assistant
+- Mapping users from a specific OU will break when editing the domain
+- Calendar not syncing with Outlook 2016 (Windows) - Active Sync connection
+- All day calendar events created in webmail span two days in KOFF in Windows 10 and Outlook 2016 (Polish edition)
+- WebEx invitation is not triggering calendar entry
+- Invitee's free/busy info mismatch in webmail and CalDAV client
+- Missing "DateTimeCreated" property
+- ActiveSync Incorrect HTTP status code Provisioning
+- Spam tag issue Outlook
+- Broken link in the Instant Messaging page
+- Extra line space added when email is viewed in webmail 
+
+
+
+Version 9.2.8 Patch 1
+-----------------------------------
+Kerio Connect
+- Webmail Edit as New is causing webmail crash
+- Getting "Too many recipients" error after upgrading to 9.2.8
+- Kerio Connect crashes when Max number of recipients is reached
+- Mailing List should not be affected by Max recipients
+- External calendar invitations disappearing after accepting in Outlook for Mac 16.20
+- PDF attachments are missing in KOFF 9.2.8
+- Reply to an email sent on behalf of a user is delivered to the delegate 
+
+
+
+Version 9.2.8
+-----------------------------------
+Kerio Connect
++ Support for Mac OS Mojave
++ Support for Outlook 2019
+- Apple 10.13.1 Mail crash after - GetItem: Item #423: FAILED, Item was not processed due to a previous error., error code=14
+- Calendar not syncing with Outlook 2016 (Windows) - Active Sync connection
+- Out-of-Office response not sent when a move to folder rule is enabled against the sender
+- Sending S/MIME encrypted mail from Kerio Connect Web Client results in some servers refusing the message with "Error 501: Line too long" in response to DATA
+- Activesync: Marking a flag as complete does not show completed in other clients
+- Apple Mail (EWS) trying to sync deleted emails
+- Autodiscover wrongly generated when using custom HTTPS port
+- The chat server isn't showing proper SSL Certificate
+- Inconsistent behavior when replying to an email with a delegation.
+- Improve Encryption partition creation time and safety
+- Encrypted data is not removed during full uninstallation
+- Kerio Connect Client "send to email client" not working
+- Error in log ActiveSync MailData::ReadFromWBXml: Unknown Application data ID: 0x0219
+- Kerio Account assistant hangs when configuring Outlook for Mac
+- Cannot send to Exchange (or O365) user when Exchange (or O365) + KOFF account is added in Outlook
+- Kerio Connect Web Client does not show unread items in the title
+- Max. number of recipients in a message not working with KOFF
+- Mac OS X mail Exchange is adding text as attachments
+- Serbia country code for Certificate Request is incorrect
+- Incorrect translation for Kerio Connect Client GUI (Croation)
+- Sieve Script error when opening KOFF options
+- SPF Connect should not block email on SOFT FAIL 
+
+
+
+Version 9.2.7 Patch 3
+-----------------------------------
+Kerio Connect 
+- Improvements in EWS operations 
+- Answering recurring event makes organizer attendee on IOS 
+- Multiple instances of avserver process 
+- Too many opened HTTP connections 
+- Missing attachment error in Webmail after waiting some time 
+- The first startup gives unknown IP addresses, from other Network class. instead of from DHCP 
+- Out-of-Office response not sent when a move to folder rule is enabled against the sender 
+- Mailserver process crashes because of corrupted metadata dbb and dbo files 
+- Sending S/MIME encrypted mail from Kerio Connect Web Client results in some servers refusing the message with "Error 501: Line too long" in response to DATA 
+- Brisbane Time zone event creation issue iCal/Mac Calendar issue 
+- Kerio Connect Web Client does not show unread items in the title 
+- Kerio Connect Web Client Email Preview should not update page title 
+- ActiveSync Calendar events move to the date when the invite is accepted 
+
+
+
+Version 9.2.7 Patch 2
+-----------------------------------
+Kerio Connect 
+- Kerio Connect Appliance fails to upgrade to 9.2.7 
+- Meeting organizer does not see updated status on iOS ActiveSync 
+- Attachments cannot be added to calendar events 
+
+
+
+Version 9.2.7 Patch 1
+-----------------------------------
+Kerio Connect 
+- Changed to Exchange ActiveSync 14 due to iOS compatibility issues 
+- Cryptosetup version 1.2.0 to support CentOS6 and Debian wheezy 
+- Unable to disable encryption in certain situations 
+- Shared domain calendars cannot be modified (Outlook on Mac) 
+- Setting up a meeting from iOS with ActiveSync does not send invitations (includes re-invites) 
+- Unable to add an attachment to the event in a calendars 
+- Unable to set license on Linux when Encryption is enabled 
+- Unable to upgrade Kerio Connect on VMware Virtual Appliance 
+- Debian APT was being changed to Buster 
+- AV Update can cause mailflow to stop 
+
+
+
+Version 9.2.7
+-----------------------------------
+Kerio Connect 
++ Encryption of Personal Data on Linux Installation 
+- Send email when only delegated Calendar 
+- Restores deleted emails 
+- Manually created CalDAV accounts can't add invitees 
+- Crash due to malformed email (To, Cc, Bcc, From) in Drafts from emails in ActiveSync 
+- Show more results calendar search 
+- ActiveSync All Day event issue on iOS 
+- Fix to Windows Timezones 
+- Windows 10 Calendar event now showing in WebMail 
+- Webmail unable to get focus on the body after removing the recipient from the list 
+- ActiveSync created events not displaying in Outlook 
+- Unable to download chat or XMPP Archives 
+- Memory leak in tinydb_get_item_maybe_raw 
+- Maximum number of Recipients ignored WebMail/HTTP 
+- Maximum number of Recipients ignored ActiveSync 
+- Additional improvements and fixes. 
+
+
+
+Version 9.2.6 Patch 2
+-----------------------------------
+Kerio Connect 
+- Kerio Connect Account Assistant hang on Mac OS X Sierra (10.13) 
+- Memory leaks on CentOS 
+
+
+
+Version 9.2.6 Patch 1
+-----------------------------------
+Kerio Connect 
+- Kerio Connect Account Assistant hang on Mac OS X Sierra (10.13) 
+- Error when dismissing reminders in Chrome 64 
+- Several timezones are detected incorrectly by Connect Server 
+- Kero Connect Crashing after upgrade to 9.2.6 
+
+
+
+Version 9.2.6
+-----------------------------------
+Kerio Connect
++ Support for Exchange ActiveSync 16
++ ActiveSync 16: Syncing the Drafts Folder
++ ActiveSync 16: Calendar Attachments
+- The delete button is not available in Context menu of WebMail
+- ActiveSync Calendar event deleted from webmail remains on iOS device
+- ActiveSync Fails to parse request from iPhone when the location is given
+- Events created from WebMail are not getting synchronized to Calendar application on certain setup
+- Kerio Connect Sync app on Android does not Sync in a certain configuration
+- Wrong Timezone detected for (UTC +01:00) on Windows
+- Send to Mail recipient from Windows Explorer context menu does not work
+- Kerio Connect Account Assistant hang on Mac OS X High Sierra (10.13)
+- Emails containing images with a link to another URL is opened incorrectly (MacOS)
+- Slow HTTP POST vulnerability
+- XSS Vulnerability
+- AV fails to scan when it detects a special character
+- Telephone number fields are not properly synced from AD for GAL Contacts
+- High Reference Count - EWS Error in Log
+- PDF attachments are converted to .bin for some emails
+- Crash in Apple Mail after receiving an error message from Kerio Connect
+- Bayes is not able to re-learn the message
+- Kerio Connect: Email Search by Number - Size in search box not correctly displayed
+- Kerio Connect: Email Search by Number - Time in search box not correctly displayed
+- Kerio Connect vCard does not escape the semicolon in phone numbers
+- Windows 10 Calendar Event not displaying in WebMail
+- AntiSpam SMTP greeting delay doesn't apply to Secure SMTP
+- Sub-folder in Sent Folder displays Emails Sender Address in Kerio Connect Client
+- Process crash after a timeout when stopping busy service
+- IM: Long incoming message is not scrolling on top
+- Unable to select any font style other than Aerial and Default
+- REsponses from attendees are not removed from CalInbox when an event is changed
+- Domain name in Connect can't contain multiple dashes in sequence
+- Click on desktop notification should not change the position of New messages marker
+- Default avatar changes after updating contact and refreshing
+- Error after moving lots of contacts between two folders
+- Drag and drop email from "to" to "email body" is buggy
+- Shrink inline images to the viewport
+- Default timezone set according to the browser, not server settings
+- Spell checker: It's not possible to fix words that are in front of a special character
+- It's possible to remove the last user with admin rights
+- Updated Boost to improve html2plain conversion
+- Issue when uploading filename with invalid characters in the name
+- Strange character in webmail causes email not to be displayed
+- General fixes and improvements 
+
+
+
+Version 9.2.5 patch 3
+-----------------------------------
+Kerio Connect
+- Fixed issues with Kerio Antivirus
+
+
+
+Version 9.2.5 patch 2
+-----------------------------------
+Kerio Connect
+- Fixed issue with installer on Windows
+
+
+
+Version 9.2.5 patch 1
+-----------------------------------
+Kerio Connect
+- Fixed issue with upgrading from older versions
+
+
+
+Version 9.2.5
+-----------------------------------
+Kerio Connect
+- Cursor goes to the bottom when replying to email in Firefox
+- Errors with webmail interface
+- Account Assistant for macOS incorrectly configures account causing password prompts
+- Javascript files take long time to load- Account Assistant, multiple shared accounts, Contacts app
+- FORGED_YAHOO_RCVD is evaluated incorrectly and flags messages originating from valid Yahoo servers
+- FORGED_MUA_MOZILLA spamassassin rule is not correctly evaluated or is too aggressive
+- NO_RDNS_DOTCOM_HELO is evaluated incorrectly and marks messages originating from servers with reverse DNS
+- Links are rendered incorrectly in Kerio Connect 9.2.4
+- Opened folders Bug 
+
+
+
+Version 9.2.4
+-----------------------------------
+Kerio Connect
+* Add support for Windows Server 2016
+- Kerio Connect in Perth timezone incorrectly detects timezone as
+- Kerio Connect Engine doesn't work on MacOS
+- TNEF decoder corrupts whole email if signed
+- Last login is not updated in user statistics
+- Message opened in KOFF in extra Window reports MAPI Error Message Outlook 0x00040680 MAPI_W_PARTIAL_COMPLETION when deleted in other client
+- Print view is shifted by one hour in Calendar print view
+- Some events appear in Webmail bit not in Outlook using KOFF connector
+
+Kerio Connect Client
+- Kerio Connect client does not allow email with single-letter domain
+- XSS vulnerability in email preview with links containing "mailto:" and "http://"
+- UI redressing / CSS injection vulnerability with body *link attributes
+- XSS vulnerability in email preview with body attributes
+- Right click links containing credential fires error on IE/Edge
+- Copy/Paste from Excel into Contacts fails to separate items
+
+
+
+Version 9.2.3
+-----------------------------------
+Kerio Connect
+- Fixed updating of Kerio Antivirus if update directory or downloaded update files are held by another process.
+- Fixed rare interruption of upgrade process when upgrading from Kerio Connect 9.1 and older.
+- Fixed potential stability problem during instant messaging (XMPP) server initialization.
+- Some meeting responses to invitations could not be successfully sent from devices with iOS 10.3 using Exchange ActiveSync.
+
+Kerio Connect Client
+- Fixed CVE-2017-7440 (CWE-693) vulnerability.
+
+Kerio Connect Client application for Mac and Windows
+- Fixed CVE-2017-7440 (CWE-693) vulnerability.
+
+Kerio Connect Administration
+- Fixed Japanese translation.
+
+
+
+Version 9.2.2 patch 1
+-----------------------------------
+Kerio Connect
+- Some IMAP clients could have problem with showing mailbox sub-folders.
+- Kerio Connect Sync application for Android could fail to authenticate in some cases.
+
+Kerio Connect Client
+- Drag&drop attachment download was not reliable in Google Chrome. 
+
+
+
+Version 9.2.2 - Mar 23 2017
+-----------------------------------
+Kerio Connect
+* Sophos Antivirus was replaced with Kerio Antivirus which is based on the Bitdefender antivirus engine.
+* Performance of IMAP Auto-Expunge was improved.
+* The server on Mac OS X waits some period of time until a volume where is a message store located is mounted.
+* Java Runtime Environment was upgraded to version 8u121.
+* Login pages use relative redirect to application allowing to use HTTP proxy with https->http translation.
+* The domain rename reliability was improved.
+- Fixed problem that some folders cannot be deleted using Microsoft Outlook 2013 and IMAP protocol.
+- Shared folders were not unsubscribed in IMAP after unsharing.
+- Testing maximum size of outgoing messages didn't work properly in the distributed domain.
+- Message filters no longer append extra header if an input data for a header modification are not correct.
+- Some S/MIME signed messages sent using Exchange ActiveSync were modified by Kerio Connect.
+- Related messages were not grouped together on BlackBerry 10 devices connected by Exchange ActiveSync.
+- Full-text store can be created now on a virtual disk or empty partition and ignores default system folders.
+- Fixed problem with read-only exceptions of recurrent events in Microsoft Outlook for Mac 2016.
+- Fixed issue with incorrect encoding of PDF attachments in Microsoft Outlook for Mac 2016.
+- Sendmail utility now uses server FQDN instead of a hostname as an alternative sender email domain.
+- POP3 download sorting rules could incorrectly match some custom email headers (eg. Received-SPF).
+! Exchange ActiveSync: Rename and move operations are not allowed anymore for shared and public folders.
+- Kerio Active Directory Extensions (KADE) installer failed to run on Microsoft Windows 10 even if Remote Server Administration Tools (RSAT) are installed.
+- Fixed Quota notification reports when affected user has no full name.
+- XMPP service did not sync user details after server default certificate change.
+- Fixed possible duplication of CardDAV groups.
+- Fixed password change notification on macOS with shared CardDAV accounts.
+- Fixed shared calendar rights when removing through Kerio Outlook Connector.
+- Fixed time zone offset issues.
+- Fixed Jabber service status in Administration services view.
+- Opening property databases could fail when Data Deduplication is enabled on Microsoft Windows Server.
+- Fixed few stability issues.
+
+Kerio Connect Client application for Mac and Windows
+- Attachment with national or special characters in the name could not be sent from Microsoft Word or Microsoft Windows file explorer.
+- Some HTML links were opened directly in Kerio Connect Client application instead of the default web browser.
+- Fixed a problem with the system registry update during the installation/uninstallation on Microsoft Windows.
+- Keyboard navigation did not work properly in the contact list.
+- Some name characters of downloaded files are incorrectly encoded.
+
+Kerio Connect Administration
+- Users mapped from a directory service did not inherit access rights from a group.
+- Recovery items are not related to Deleted Items folder only (an item type is respected)
+
+Kerio Connect Client
++ User can now use email addresses also for domain aliases.
++ Upload progress can be aborted now.
+* Email addresses that include multiple hyphens in domain name pass validation in new email composer.
+* Fixed displaying of read email as unread in Trash.
+* Email attachments added with drag&drop preserve their file names.
+* Calendar search shows events in visible calendars only.
+- Download all attachments can fail if a connection was established via Apache proxy server.
+- Contact avatars were not displayed in a contact group.
+- Fixed "Display images" in an email body for Safari 6.X and 7.0.X.
+- Fixed error message when printing calendar with 2 repeating events starting at midnight.
+
+Kerio Outlook Connector
++ Added possibility to work with "Send Notification" filtering rule containing custom Subject.
+* Spam action used in mapped folder moves message to a private Junk Email folder.
+* Not Spam action used in mapped folder moves message to a private Inbox folder.
+- Fixed incorrectly displayed start/end time of all-day events created on iOS devices.
+- Fixed crash when updating start/end time of recurrent events with exceptions.
+- Items in mapped calendar marked as private no more prevent sending calendar detail by email.
+- Name of items in mapped calendar marked as private is correctly translated.
+- Work with profile configuration when authenticating to Kerio Connect is much faster now.
+- Weekly events with frequency of every 2 weeks (or less) are no more displayed one-week shifted. 
+
+
+
+Version 9.2.1 - Dec 1 2016
+-----------------------------------
+Kerio Connect
+- Fixed synchronization of repeated events in Microsoft Outlook 2016 for Mac.
+- Fixed non-working ZIP attachment filter on Windows.
+- Apple Mail could unexpectedly quit when synchronizing EWS (Exchange) account.
+
+Kerio Connect Client application for Mac and Windows
++ Added spell-checking for clients on OS X 10.11, macOS Sierra and Microsoft Windows 8 and higher.
+- Fixed missing translations in context menus.
+- Attachment download could not work correctly in some cases.
+- Delete hotkey could stop work in mail list after composing a new message.
+- Fixed some issues with composing S/MIME signed messages in a new window.
+- Autodiscovery process now works properly for users in for non-primary domain.
+- Windows Defender could cause slowness of Kerio Connect Client.
+
+Kerio Outlook Connector
+- Some emails could be displayed as plaintext in Microsoft Outlook in a combination with certain Outlook add-ons.
+
+Kerio Connect Client
+- Improved visual feedback when changing Chat conversations & fixed invalid scroll position.
+- Fixed showing external images in email draft without asking.
+
+
+
+Version 9.2.0 - Oct 25 2016
+-----------------------------------
+Kerio Connect
++ New Kerio Connect Client applications for Windows and Mac.
++ Added push notifications for CardDAV (iOS, macOS) and IMAP (iOS).
+* Improved Exchange Web Services compatibility with mobile and desktop clients.
+* Service start on CentOS 7 now waits for all network and local filesystem services.
+* Upgraded OpenSSL library to version 1.0.1u.
+- Apple Calendar on OS X 10.11 may become unresponsive when editing an event in a public calendar.
+- Microsoft Outlook 2016 for Mac with Exchange Web Services account could cause high CPU usage while synchronizing shared calendars with many events.
+- Notification about expired mailbox quota could be delivered more frequently than configured.
+- Fixed a problem during server shutdown initiated by administrator when server was doing a mailbox maintenance.
+- VCARD with lowercase attributes may not be completely synchronized to Exchange ActiveSync clients.
+- Fixed push authentication for CalDAV on iOS.
+- Fixed occasional delay when message is being sent by ActiveSync on BlackBerry 10.
+- Fixed occasional slow attachment download by ActiveSync on BlackBerry 10.
+
+Kerio Connect Client
++ Added support for desktop notifications in Microsoft Edge.
++ When loading attendee/resource presence status spinner is displayed instead of 'not available'.
++ vCard email attachment can be directly saved as a contact.
++ In chat, Shift+Enter wraps a line as well as Ctrl+Enter.
+* Improvements in email preview (all the header information displayed directly; high priority label emphasized; improved certificate issue warnings).
+* New design of email autocomplete with contact photos.
+* Better performance in email composer and in email preview.
+* Attachments are not visible if the email is encrypted and certificate store is closed.
+* Date separator in chat displayed only once for each day.
+* Time fields in event editor accept all possible time formats regardless of user locale.
+* Contact list ordering and grouping improved.
+- A specific instance of public recurrent event could not be changed.
+- Data is not lost when moving contacts between folders.
+- Internet Explorer 10 is not a supported browser.
+- Blank window is not opened when opening attachment in external app.
+- Reminder is not dismissed when desktop notification is closed.
+- Improved performance when moving contacts between folders.
+- Sharing dialog constrained to the browser viewport, its buttons displayed correctly.
+- Action buttons could be hidden in sharing window with many users.
+
+Kerio Outlook Connector
+- Groupware folder deleted in Kerio Connect Client may not be removed from Outlook.
+
+Kerio Connect Administration
++ Added an option for remote administration and management through the MyKerio service.
+* Integrated Bayes antispam filter is optional for Kerio Anti-spam.
+- Company location is properly used in domain footer.
+- Fixed adding Message filter rules in MSIE 11.
+- Many small bug fixes and translation improvements.
+
+Kerio Connect Appliances
+* Operating system was upgraded from Debian 7 to Debian 8.
+* OVF Format has been updated from 0.9 to 1.0 for better compatibility.
+* Hardware in Virtual Appliances is upgraded to 2 CPUs and 2GB of RAM.
+* UFW is now enabled by default in Kerio Connect Virtual Appliance.
+! Dropped support for vSphere Hypervisor 5.0, minimal required version is vSphere Hypervisor 5.1. 
+
+
+
+Version 9.1.1 - August 8th, 2016
+-----------------------------------
+Kerio Connect
+- Fixed auto-discovery scheme for Exchange ActiveSync.
+- Opened folders were reported in product administration when computing a domain quota.
+- Upgrade from previous version could fail due to the old license files present in a product directory.
+- Fixed user statistics for Secure XMPP connections.
+- Improved stability and reliability of Instant Messaging.
+- Fixed stability issues.
+
+Kerio Connect Client
+- Calendar view settings is now shared with all browsers used by the user.
+- Read and delivery receipt request option in email composer now respects global setting in Kerio Connect Client.
+- Improved performance when expanding Distribution list.
+- Chat presence notifications were not reliable in Safari 6 on OS X Mountain Lion.
+- Fixed some issues when creating or moving contacts.
+- Resource availability is displayed properly in event editor
+
+Kerio Connect Administration
+* Fixed error during Remote server upgrade to Kerio Connect 9.1 (501 Method not implemented).
+
+
+Version 9.1.0 - Jul 12th, 2016
+-----------------------------------
+Kerio Connect
++ Added support for Ubuntu 16.04 LTS (64-bit).
++ Added IPv6 support for Sender Policy Framework spam test.
++ The Out of office auto-response is not sent if the incoming email contains the "X-Auto-Response-Suppress: OOF, AutoReply" header.
++ Disk space can be limited for a domain, and the amount of quota used can be viewed.
+* Kerio Connect uses a new type of database to store MAPI properties.
+- Kerio Anti-Spam filter does not add negative spam points for messages with neutral result.
+- Attachment filter now can detect attachments with incorrectly encoded filenames.
+- Kerio Connect can search messages and events with Message-ID or UID longer than 64 characters.
+- Emails sent from iOS devices through Exchange ActiveSync are reformatted to be RFC 5822 compliant.
+- BlackBerry 10 devices connected via Exchange ActiveSync display encrypted messages correctly.
+- Devices connected via Exchange ActiveSync are always notified about message deletion.
+- All event reminders on Exchange ActiveSync devices are sent correctly.
+- AutoDiscover for Exchange ActiveSync devices sends a correct response.
+- Synchronization of messages in Outlook 2016 for Mac does not stop unexpectedly.
+
+Kerio Connect Administration
+* Kerio Connect displays the SSL certificate chain, and enhanced information about server SSL certificates.
+
+Kerio Connect Client
++ Added Instant Messaging to Kerio Connect Client.
++ Added user presence status (online, offline, etc.).
++ Users can insert inline images into email text and email signature.
++ Users can disable the automatic message preview after selecting a folder to protect privacy.
++ Selection of a message is preserved after changing sorting or switching between folders.
++ Users can show more columns in mail list when mail preview is bottom or hidden
++ Kerio Connect Client can now display up to 500 emails per page. You can change the number in the Kerio Connect Client settings.
++ Added the option to display To: column in horizontal mail list view.
+* The event editor size and location automatically adjusts to the browser window.
+* The event editor has been redesigned for better readability of read-only events.
+* The event editor supports hyperlinks in the Where and Description fields.
+* The monthly calendar view has been redesigned.
+* Event colors set by external devices are handled more accurately .
+* Contacts starting with special characters now group together in the contact list.
++ Contacts include a quick contact/action context menu.
++ Users can create new contacts directly from vCard email attachments.
+* Improved design of contact photos and thumbnails.
+* Contact editor now validates the email address format. Email messages cannot be sent to an invalid address.
+- Newly subscribed folders refresh automatically.
+
+Kerio Outlook Connector
+- Multiple accounts with unsaved passwords in a single profile no longer cause any issues.
+- Quick search in Sent Items now searches through the message body.
+- Folders with a group containing a space in the name can be shared.
+- Several stability issues are addressed.
+
+Kerio IMAP Migration Tool
+* Improved the Kerio IMAP Migration Tool performance, especially when migrating to a server on Linux. 
+
+
+Version 9.0.4 - May 10th, 2016
+-----------------------------------
+Kerio Connect
+* Upgraded OpenSSL library to version 1.0.1t.
+- Fixed problem with stopped synchronization of new messages in Microsoft Outlook for Mac 2016 (version 15.21).
+- Fixed a potential stability issue.
+- Fixed a stability issues when using Airmail client.
+
+Kerio Connect Administration
+- Fixed localization for Kerio Anti-spam setting.
+
+
+Version 9.0.3 - April 14th, 2016
+-----------------------------------
+Kerio Connect
++ Kerio Anti-spam (powered by Bitdefender).
++ Unsupported EWS requestes are now logged.
+- Fixed access to Public folders in Microsoft Outlook 2016 for Mac.
+- Performance issues when using Exchange account in eM Client are solved.
+- Fixed matching of localhost IP address in IP address groups on dual-stack IPv4/IPv6 server.
+
+Kerio Connect Client
++ Resource managers can add and edit events directly in resource calendars.
+- Increased level of contrast in various elements in Kerio Connect Client.
+
+Migration Tools
+- Fixed adjustment of IP address in Kerio IMAP Migration Tool. 
+
+
+Version 9.0.2 - February 23, 2016
+-----------------------------------
+Kerio Connect
++ SPF checks IPv6 addresses.
++ Ephemeral Diffie-Hellman key exchange is enabled by default for TLS.
++ Multiple active SSL certificates allowed on one server.
+* Upgraded OpenSSL library to version 1.0.1q.
+* Upgraded Apache SpamAssassin to version 3.4.1.
+* Increased SpamAssassin email body size limit to 1MB.
+* Improved the detection of the server time zone: Moscow, St.Petersburg, Volgograd (RTZ 2).
+* Added support for IMAP ID - client identification - for Thunderbird 8.
+- Password expiration counter is reset after enabling the password expiration feature for local users.
+- The issue with messages that cannot be found via IMAP search is fixed.
+- Full text search can be restarted if slowed by a large mailbox.
+- Fixed binding domain to IP address that could break NTLM.
+- Fixed SmartForward configured on Windows Mobile that could deadlock account on Kerio Connect server.
+* SSL/TLS settings for SMTP(S) services are separate from other server settings.
+
+Kerio Connect Administration
+- Search box in Administration works for new features.
+
+Kerio Connect Client
+* Increased level of contrast in various elements in Kerio Connect Client.
+* Added support for Safari 9.1.
+- Fixed minor issues in Kerio Connect Client calendars.
+
+Kerio Outlook Connector
++ Added possibility to use an alternative email address when sending meeting replies to prevent attendee duplication by the organizer. 
+
+
+
+
+
+Version 9.0.1 - December 14th, 2015
+-----------------------------------
+Kerio Connect
+- Free-busy in Outlook for Mac works correctly.
+- Fixed some stability issues.
+
+Exchange ActiveSync
+- Android 6 allows data synchronization without requiring device password to be set.
+- Android 6 sends reply and forward messages.
+- Synchronization in mailboxes with a large number of folders and messages in the desktop version of MS Outlook runs without failing.
+- Synchronization runs without failing with "invalid SyncKey" message in the warning log.
+- Deleting messages from the Trash folder on a device also deletes them on the server.
+- Slow downloading of attachments runs without stopping and increasing the CPU usage.
+
+Kerio Connect Administration
+- Filter rules are displayed correctly.
+
+Kerio Connect Client
+* Minimum supported resolution increased to 1152x768.
+- Fixed minor graphics glitches.
+- Photos in contacts are uploaded correctly in MS Internet Explorer 10.
+- Certificates from digitally signed messaged are saved when you reply to the messages.
+- Contents of the email previews are displayed correctly.
+- Unread count icons are always visible in the folder tree. 
+
+
+
+
+
+Version 9.0.0 - November 18th, 2015
+-----------------------------------
+Kerio Connect
++ Added IPv6 support for services in Kerio Connect - listening on IPv6 addresses.
++ Server-wide email filtering rules for both received and sent messages.
+* Improvements in Kerio Connect Client push notification mechanism.
+- Optional attendees were not visible in calendar events created by the auto-scheduling functionality.
+- Fixed occasional crashes during SQLite database operations.
+- Fixed the Certificate Signing Request formatting.
+- Signing/encryption of emails could hang in some cases.
+- Standard ephemeral Diffie-Hellman key exchange is now disabled by default for TLS.
+- Fixed occasional freezing of Account Assistant on running applications check.
+- Instant messaging archive inlcudes messages timestamps.
+* Kerio Connect Client is now a primary interface for web access, replacing legacy client interfaces.
+* Old Webmail Mini was removed.
+
+Kerio Connect Multi-Server
+- Fixed couple of issues during backend role deployment.
+- Incorrect sender host address in mail log fixed.
+- User migration between backends might fail in some cases.
+- The 'maximum number of messages per hour from one IP' restriction in SMTP server settings is working now.
+- MySQL server was periodically restarted in some circumstances.
+- Fixed incorrect hostname in the server role setup dialog.
+- Managing resource calendars fixed.
+- Fixed couple of security issues.
+
+Kerio Connect Administration
+* New Audit log file for tracking all user logins.
+* IPv6 support.
+* Server-wide email filtering rules for both received and sent messages.
+* Remote server upgrade can be initiated from web administration.
+
+Kerio Connect Client
+* A brand new modern design for better readability. Includes new workflows for managing your emails, calendars, contacts, tasks and notes.
+* New unified toolbar for all views (emails, calendars, contacts etc.).
+* New interface for calendar.
+* New interface for tasks.
+* New interface for notes.
+* New popup event editor in calendar view.
+* New information panel in calendar view for invitation.
+* Reply, reply all and 'more' don't scroll when reading through a long email.
+* Pull 'forward' out of "More" options and put at top of email msg.
+* Improvements in Kerio Connect Client push notification mechanism.
+- Signing/encryption of emails could hang in some cases. 
+
+
+
+
+
+Version 8.5.3 - October 12, 2015
+--------------------------------
+Kerio Connect
++ Added support for OS X 10.11 El Capitan.
++ Added support for iOS 9.
+- Fixed auto-configuration tool compatibility with OS X 10.10.5 when server uses self-signed SSL certificate untrusted for the system.
+- Fixed GAL synchronization when using modified mapping file.
+
+Kerio Connect Client
++ Added support for Safari 8.1 and 9.
+- Fixed issue with public folder rename.
+
+Kerio Outlook Connector
++ Added support for Microsoft Office 2016.
+- Fixed upgrade from previous Kerio Outlook Connector versions (8.5.1 and lower) running on Windows 10.
+
+
+
+
+
+Version 8.5.2 patch 1 - August 27, 2015
+---------------------------------------
+Kerio Connect
+- Fixed delivery of new messages in Outlook 2011 for Mac. 
+
+
+
+
+
+Version 8.5.2 - August 4th, 2015
+--------------------------------
+Kerio Connect
++ New Kerio Connect Sync application for Android providing synchronization of Calendars, Tasks and Contacts. Available in Google Play Store.
++ Added support for Microsoft Outlook 2016 for Mac.
++ Added support for Windows 10 Mail and Calendar.
+- Fixed SMTP connections from front-end proxy in Multi-Server.
+- Fixed synchronization of messages with invalid UTF-8 characters over Exchange ActiveSync.
+- Fixed Samsung mobile synchronization with Exchange ActiveSync 14.1.
+- Fixed few potential stability issues.
+
+Kerio Connect Client
+- Fixed issue with HTML attachment download. 
+
+
+
+
+
+Version 8.5.1 - June 22, 2015
+-----------------------------
+Kerio Connect
+* Fulltext and instant messaging services upgraded to Java 8.
+* Added an option to blacklist EAS 14 for certain mobile devices in mailserver.cfg.
++ Support for plug-in integration with Kerio Connect Client mail composer.
+- Fixed Exchange ActiveSync problem with contact synchronization (some data could be hidden in a contact after contact update).
+- Fixed format of SSL server certificate request (CSR) to make it compatible with Thawte.
+- Fixed EWS MAPI conversion problem on 64-bit systems.
+
+Kerio Connect Client
++ Basic support for Edge browser on Windows 10.
+- Fixed occasional attachment upload issue in Kerio Connect Client with Microsoft Internet Explorer 8 and 9. 
+
+
+
+
+
+Version 8.5.0 - May 18, 2015
+----------------------------
+Kerio Connect
++ Added support for Debian 8 Jessie (64-bit).
++ CalDAV clients and Kerio Connect Client can define additional "travel time" for each event in a calendar.
++ Added support for Exchange ActiveSync 14.1.
+* Reply and forward flags are now synchronized via Exchange ActiveSync from iOS devices to the server.
+* OpenSSL library upgraded to version 1.0.1m.
+* Server SSL certificate and Certificate signing request is created with SHA-256 signature.
+* Anti-hammering extended to SASL authentication methods.
+* Informational messages about HTTPS redirection for each HTTP request moved to debug log.
+* For subscribing shared folder in any IMAP client, it is necessary to map it in Kerio Connect Client first.
+* Microsoft Entourage 2004 and 2008 clients are no longer configured with auto-configuration tool.
+- Adding a domain footer into a message sent from Blackberry Z30 could render email body unreadable.
+- Password lenght limit for POP3 downloader accounts was too low.
+- Fixed IMAP folder synchronization in eM Client.
+- Fixed an issue with accessing shared folders over IMAP.
+- Fixed attachment names containing national characters in Kerio Connect Client.
+- Offline messages in XMPP could be re-delivered after an upgrade to new server version.
+- Fixed couple of server stability issues.
+
+Kerio Connect Multi-Server
++ Users can share folders between multiple servers.
++ Added distributed SpamAssassin version for all servers.
++ Added node monitoring with Zabbix.
+
+Kerio Connect Client
++ Added more formatting options for email editor - fonts, indentation, etc.
++ Support for travel time for events in a calendar.
++ Added new calendar agenda view.
++ Login dialog can be customized in product administration.
++ Added improved calendar printing.
++ Added possibility to create/modify recipient's contact directly from email.
+* Improved mail filters configuration.
+* A new mail filter can be created directly from the message.
+* Mail folders show total number of messages.
+* Internet Explorer pinned app.
+* Possibility to add sender to the spam whitelist.
+* A brand new About dialog displaying product version and contact information.
+* Improved time format configuration in Settings.
+* New notification about password match when changing password in Settings.
+* Forwarded message now contains more email headers from original message.
+
+Kerio Connect Administration
+* A new Sophos Live Protection option in Antivirus setting.
+* Customizable login dialog for Kerio Connect Client.
+- Fixed some translation typos. 
+
+
+
+
+
+Version 8.4.3 - April 16, 2015
+------------------------------
+Kerio Connect
++ Fixed problem with message sending in Apple Mail with Exchange account on OS X 10.10.3 Yosemite. 
+
+
+
+
+
+Version 8.4.2 - March 10, 2015
+------------------------------
+Kerio Connect
++ Support for Sophos Live Protection implemented.
++ Timezone definitions updated.
+- Fixed potential stability issues when using Apple Mail with Exchange account. 
+
+
+
+
+
+Version 8.4.1 - January 21, 2015
+--------------------------------
+Kerio Connect
+* Improved stability.
+* Contact photos are now displayed within Messages on Yosemite.
+- More secure default SSL/TLS configuration (AES-GCM ciphersets are now preferred).
+- Item duplication with Microsoft Entourage fixed.
+- Fixed the problem of upgrade installation on Windows which may fail when there are some national characters in mailserver.cfg file.
+- Windows Phone devices are recognized as supported again.
+
+Kerio Connect client
+- Name of email attachment in cyrillic was corrupted after download.
+- Fixed issue with higher number of missed tasks reminders.
+
+Kerio Connect Administration
+- It was impossible to define adresses for forwarding in user template. 
+
+
+
+
+
+Version 8.4.0 - December 3, 2014
+--------------------------------
+Kerio Connect
+* OpenSSL library upgraded to version 1.0.1j to prevent MITM protocol downgrade to insecure SSL 3.0 protocol (CVE-2014-3566 "POODLE").
+* Uninstaller is signed with a new signature to remove warning that signature cannot be verified.
+* EAS 12.1 full implementation.
+- Fixed issues with shared calendar names in Apple Calendar on Yosemite.
+- Performance optimization of processing recurring events in iCal.
+- Fixed detection of homeserver in distributed domain if internet hostname and server hostname differ.
+- Optimization of read/write locking to avoid problems with corrupted properties.fld.
+- Solved issue with redelivery of instant messages after server upgrade.
+
+Kerio Connect client
+* Better performance.
+* Improved stability.
+* Automatic push refresh.
+* Address book in mail composer.
+* New spam settings.
+* New URL editor in mail composer.
+* Added possibility to copy/move all emails to folder.
+* Added possibility to accept/reaccept/decline events with a comment.
+* New reminders.
+* New dialog for folder sharing.
+* New dialog for subscribing folders.
+* Mapped folders in hierarchical tree instead of flat list.
+* Custom login dialog for Kerio Connect client.
+* Added possibility to share all folders.
+* Improved email printing from Kerio Connect client.
+* Added possibility to use certificates with multiple email addresses.
+* Content of KCc is blurred (Gecko, Webkit) or masked (IE) when session expires.
+* Added new event button.
+* Request for delivery receipt.
+* Delegation improvements in KCc.
+* Performance during folder rendering improved.
+- Fixed behaviour when user wasn't able to turn webassists off.
+- Attachments with long filenames containing underscores lost the underscores.
+- Meeting reply showed date of 1899 in Sent folder in Kerio Connect client
+- Fixed crash in Safari 7.1 and 8.0
+- Timezone definition for Georgetown Guyana was incorrect.
+- Work phone field added to domain footer editor.
+- Sorting: Reverse order of items when sorting by priority or unread was used.
+- Kerio Connect client did not show all archived messages.
+- Added support for m-files urls.
+
+Kerio Connect Administration
+* New Kerio News tile in dashboard.
+* Settings for custom login dialog.
+- Fixed problem with national chars in a new certificate.
+- It was impossible to save statistics in Italian.
+
+Kerio Connect Multi-Server Technology Preview
+* HTTP/IMAP/POP3 reverse proxy.
+* Virtual appliance for proxy, syslog, back-end servers and directory server.
+* Puppet server for central management.
+* Users & Groups management using WAM. 
+
+
+
+
+
+Version 8.3.4 patch 2 - Nov 06, 2014
+------------------------------------
+Kerio Connect
+* Added BerkeleyDb exclusive locking. 
+
+
+
+
+
+Version 8.3.4 patch 1 - Oct 24, 2014
+------------------------------------
+Kerio Connect
+- Fixed an issue with failing outbound secure connections.
+
+
+
+
+
+Version 8.3.4 - Oct 23, 2014
+----------------------------
+Kerio Connect
+* OpenSSL library upgraded to version 1.0.1j to prevent MITM protocol downgrade to insecure SSL 3.0 protocol (CVE-2014-3566 "POODLE"). 
+
+
+
+
+
+Version 8.3.3 - Oct 16, 2014
+----------------------------
+Kerio Connect
++ Added support for Apple Mac OS X Yosemite.
++ Enabled S/MIME encryption for iOS8 profiles.
+* Updated Russian timezone definitions.
+- Fixed server hang during shutdown.
+- Fixed couple of stability issues in Exchange ActiveSync protocol implementation.
+- Fixed DKIM public key matching.
+- Fixed synchronization of messages with unicode characters over Exchange Web Services.
+- Fixed the non-functional fulltext search after a server migration from/to Mac OS X.
+
+Kerio Connect client
+- Added support for Safari 6.2, 7.1 and 8.0.
+- Fixed a XSS problem in admin port redirect.
+- Fixed CWE-79 and CWE-98 vulnerabilities.
+
+Kerio Connect Administration
+- Added support for Safari 6.2, 7.1 and 8.0.
+
+Kerio Outlook Connector (Offline Edition)
+- The Jerusalem timezone doesn't change to Cairo anymore.
+
+Kerio Connect Virtual Appliance
+- Added missing security repository reference. 
+
+
+
+
+
+Version 8.3.2 - August 11, 2014
+-------------------------------
+Kerio Connect
+* Delegators can choose whether they want to share their INBOX folder now.
+* Cross-domain sharing is again possible in this version.
+* Number of connections to directory servers has been significantly reduced.
+* There is no limit for the number of domains mapped from directory server(s) any more.
+* Microsoft ActiveSync protocol implementation has been improved.
+- Read flag was sometimes displayed incorrectly.
+- Fixed a minor issue in CalDAV.
+- Fixed a bug in Microsoft ActiveSync push notification implementation.
+- Fixed several stability issues.
+
+Kerio Connect client
+- Improved behavior of the popup error dialog.
+- Some distribution lists could not be edited.
+
+Kerio Outlook Connector (Offline Edition)
+- Some calendar invitations might have caused a synchronization conflict.
+- Fixed several stability issues. 
+
+
+
+
+
+Version 8.3.1 - June 23, 2014
+-----------------------------
+Kerio Connect
++ Added support for certificates with multiple email addresses.
++ Added support for certificates where email(s) are defined in the subject alternative name field.
+- OpenSSL library upgraded to version 1.0.1h to fix a SSL/TLS man-in-the-middle vulnerability (CVE-2014-0224).
+- IM service failed to start if mail archive folder did not exist.
+- Weak SSL ciphers were disabled for IM service.
+- Fixed several Exchange ActiveSync stability issues.
+- Plain text e-mails with certain invalid character encodings were generating a lot of Exchange ActiveSync errors into the server error log.
+- Some e-mails signed in Kerio Connect client were corrupted in MS Outlook 2013.
+- Plain text messages were displayed in a single line on some mobile devices.
+- The attachment filter might work incorrectly in some cases.
+- Apple Mail sometimes displayed an error dialog when deleting e-mails in IMAP account.
+- CalDAV SSL connection was incorrectly configured with Account Assistant on Mac OS X 10.9.3.
+
+Kerio Connect client
+- An e-mail signed in Kerio Connect client was unreadable in MS Outlook 2013.
+- Mail filters were unable to save.
+- Some special folders (Trash, Sent Items, Drafts, Junk E-mail) could not be shared.
+- It was impossible to type some czech national characters into the attendee list.
+- Fixed a problem with logging into Kerio Connect client when the integration with Kerio Operator was enabled.
+- Integration page for mobile devices asked to continue unsecured even if connected over https.
+- Integration page did not work correctly on standard https port i.e. 443.
+- Fixed several stability issues.
+
+Kerio Connect Administration
+- User selected colums in the list of company locations were forgotten after logout.
+
+Kerio Outlook Connector (Offline Edition)
+- Users were unable to remove a custom email/reply-to address.
+
+Kerio Outlook Connector
+- Automatic update did not work.
+- Address book could not be open. 
+
+
+
+
+
+Version 8.3.0 - May 20 2014
+---------------------------
+Kerio Connect
+* Configuration Wizard removed from Kerio Connect installers and turned into a web application.
+- Device wipe of Exchange ActiveSync enabled devices works after a password change, now.
+- Attachement filter did not work correctly for messages with HTML footer containing an image.
+- Synchronization of task status to iOS mobile devices via Exchange ActiveSync could be unreliable.
+- Line endings in task created on Windows Phone mobile device could be removed during synchronization due to a bug in mobile device.
+- Domain aliases could not be used in SMTP together with the anti-spoofing feature.
+- User quota status might become incorrect on some filesystems.
+- CalDAV scheduling invitations were optimized in subscribed shared calendars.
+- HTML format of bodies of calendar events is now supported on Exchange ActiveSync enabled devices.
+- Exchange ActiveSync synchronization issues on folders containing messages with high UID numbers.
+- Performance of Exchange ActiveSync protocol has been improved.
+- Several stability issues have been solved.
+- The event location field was not auto-filled for Mac OS X Mavericks CalDAV accounts.
++ The Exchange account type of Internet Accounts on Mac OS X is supported now for Apple Mail, Calendar and Contacts.
+- Kerio Account Assistant sometimes failed to install a configuration profile.
+- DNS requests might fail in some circumstances.
+- Kerio Account Assistant failed to install the configuration profile in some cases.
+- A title of an event might get lost in Apple Calenar client.
+- The **SPAM** prefix is removed from a message subject when the message is marked as not a spam, now.
+- Workaround for Apple Mail when stuck in infinitely fetching new emails.
+- Other minor improvements and bugfixes.
+
+Kerio Connect client
++ S/MIME - support for sign/encrypt message in Kerio Connect client.
++ Management of Exchange ActiveSync devices in Kerio Connect client.
++ Added possibility to remove auto created contacts in mail composer.
+- Spam prefix is removed from subject if a message is marked as not spam
+- Italian translation improved.
+- Added support for Internet Explorer 11.
+- Fixed issue with HTML signature.
+- Improved stability on iPad.
+- URL with colons was broken in Kerio Connect client.
+- Fixed design issues with zoom in Chrome.
+- User timezone might get changed together with a language update.
+
+Kerio Connect Administration
++ User profiles in administration console.
++ Domain footers with user and company details.
+! Discontinued support for Internet Explorer 7.
+- Fixed problem with user password change by domain administrator.
+
+Kerio Outlook Connector (Offline Edition)
++ It is possible to add more KOFF accounts to the single profile.
++ Address in From field can be selected from the drop-down list of aliases.
++ Voting buttons are supported in Outlook.
++ Follow up flags for Recipients are supported in Outlook.
++ Kerio Connect rules are offered when opening Outlook Rules and Alerts.
+- Custom sender settings are saved even in offline
+- It is possible to modify copied default folders.
+- It is possible to import forwarded contacts with photos (except of Outlook 2003).
+- Read flag is synchronized from KOFF even if the message is opened in Outlook.
+- Messages sent from shared stores (not delegated stores) are no more sent on behalf of the store owner.
+- Fixed issues when installing KOFF to the custom path.
+- Using KOFF and IMAP for the same mailbox no more leads to the multiplication of Junk E-mail folder.
+- Outlook no more displays plaintext body instead of html with some Outlook addins installed.
+
+Kerio Exchange Migration Tool
+- Kerio Exchange Migration Tool is also available as a 64-bit binary, now.
+- Fixed creation of duplicated folders with different letter case. 
+
+
+
+
+
+Version 8.2.4 - April 9, 2014
+-----------------------------
+Kerio Connect
+- Fixed OpenSSL vulnerability CVE-2014-0160.
+
+
+
+
+
+Version 8.2.3 - March 17, 2014
+------------------------------
+Kerio Connect
+* Open Directory user authentication uses Pluggable Authentication Modules (PAM).
+- Improved stability of Kerio Connect.
+- Memory consumption has been optimized.
+- Apple Contacts could display shared contacts instead of personal contacts.
+- Mac Autoconfig Tool could not install configuration profile on Mac OS X 10.9.
+
+Kerio Connect client
+- Improved stability of Kerio Connect client.
+- Name of email attachment in cyrillic was corrupted after download.
+- Opening a pdf attachment in new window in MS Internet Explorer 11 crashed Kerio Connect client.
+
+
+
+
+
+Version 8.2.2 - December 12, 2013
+---------------------------------
+Kerio Connect
++ Added support for default event alarms in Apple Calendar on Mac OS X 10.9 Mavericks.
++ Added support for Microsoft Windows 2012 R2.
+- Improved stability during synchronization via Exchange ActiveSync.
+- Calendar events created on BlackBerry device with OS 10.2 are correctly synchronized to Kerio Connect now.
+- Read-only shared calendars no longer show meeting invitations in Apple Calendar.
+- Resources were not auto-completed in Apple Calendar on Mac OS X 10.9 Mavericks.
+- Shared calendars have initialy the same color as they have in owner's mailbox.
+- Fixed contact synchronization in Exchange ActiveSync when deleting more contacts at once.
+- Fixed kmsrecover utility warning about invalid message store path.
+- Some meeting invitations could be marked as outdated after synchronization with iOS over Exchange ActiveSync.
+
+Kerio Connect client
+- Login page rendering sometime took long time on slow connection.
+- Scroll wheel didn't work in mail list on Microsoft Internet Explorer 11.
+- Microsoft Internet Explorer 11 sometime got stuck at "Loading".
+- New lines were removed from notes in contact editor.
+
+Kerio Outlook Connector (Offline Edition)
+- It was not possible to set another sender email address.
+
+
+
+
+
+Version 8.2.1 - November 7, 2013
+--------------------------------
+Kerio Connect
+- Fixed possible event duplication on Motorola RAZR HD mobile phone.
+- Events with no reminder created in Kerio Outlook Connector could be synchronized with 15 minutes reminder to mobile device via Exchange ActiveSync.
+- Fixed stability issue during conversion from plain text to HTML during synchronization via Exchange ActiveSync.
+- Accepting invites via Exchange ActiveSync is now reflecting in Kerio Connect client.
+- Local domain was used in outgoing SMTP communication.
+- Order of subscribed shared calendars in Apple iCal/Calendar list was not preserved.
+- Fixed auto-configuration of public contacts in Apple Address Book/Contacts when using Account Assistant.
+- Auto-configuration tool is now compatible with OS X 10.9.
+
+Kerio Connect client
+- Fixed stability issue during sending messages from new window on Internet Explorer 8.
+- Enter closed event editor when user tried to select end time.
+- Translations updated.
+- Quota warning was not shown immediately after reaching the limit.
+
+Kerio Connect Administration
+- Removed password policy restriction for PAM authentication.
+- Generate password button is disabled for LDAP user.
+- Translations updated.
+
+Kerio Outlook Connector (Offline Edition)
+- Fixed stability issue during ICS file import.
+- Fixed stability issue during synchronization of folder deletion.
+- It is no longer necessary to restart the Outlook, when the message synchronization spontaneously stops.
+
+Kerio Exchange Migration Tool
+- Fixed migration of public folders if they are set as global for all domains. 
+
+
+
+
+
+Version 8.2.0 October 8, 2013
+-----------------------------
+Kerio Connect
++ Improved interoperability of Out Of Office replies by using a sender email address.
++ OpenSSL library upgraded to version 1.0.1e.
++ Added delegation for Microsoft Outlook (MS Windows, OS X).
++ Improved stability of engine.
++ Added support for multi-user / group chat in Instant Messaging.
++ Added support of attachments synchronization for BlackBerry 10.
++ Decreased CPU usage during CalDAV synchronization.
++ Better handling of task requests in Outlook for Mac (EWS).
++ Added Sender Anti-Spoofing security feature.
++ Added DomainKeys Identified Mail feature.
++ Improved stability of search engine.
++ Added ability to subscribe to other domain users folders/calendars in MS Outlook for MAC.
+- Fixed LDAP search in folders with special (national) characters.
+- Solved problem with automatic update of 64-bit version on Linux.
+- Fixed Instant Messaging server statistics.
+- Fixed problem with Instant Messaging server, when double domain renaming.
+- Many small improvements in Instant Messaging server.
+- Fixed syncing tasks issue for some Samsung phone.
+- Fixed stability issue during starting/stopping server.
+- Fixed stability issue during recovery process.
+- Fixed stability issue in IMAP server for deep search query.
+- Fixed issue with task synchronization in MS Outlook for MAC.
+- Fixed issue with changing permissions in delegation in MS Outlook for MAC.
+- Fixed issue with losing Public folders in iCal/Calendar.
+
+Kerio Connect client
++ Added possibility to change mail preview - right/bottom/none.
++ Calendar inbox was redesigned.
++ Added size of message to list of messages.
++ Delegation support.
++ Added possibility to hide folder tree.
++ Added possibility to sort emails.
++ Added possibility to chose default calendar for event creation in calendars.
++ Added possibility to relogin to server without losing context.
++ Added possibility to select folders for synchronization for CalDAV and CardDAV clients.
++ Usability of calendars was improved.
++ Improved speed of listing folder tree.
++ Improved compatibility with some invalid formatted emails.
++ Improved stability on Internet Explorer.
+- Fixed problem with HTML signature.
+- Fixed Safari problems with national characters in attachment name.
+- Fixed highlighting of some special URLs.
+- Fixed problem that users cannot change their Default and Special Reply-To addresses.
+- Fixed problem with links inside html email.
+- Fixed issue with missing original email address in the forwarded message.
+- Removed limit for auto reply size.
+- Fixed issue with creating new event by scrolling in Calendar.
+
+Kerio Connect Administration
++ Added new page about System Health - CPU and Memory information.
++ Added new tile of System Health to dashboard.
++ Added Password Policy.
++ Added password generator.
++ Added possibility to make bookmarks (save direct URL) to administration pages.
++ Improved behavior of dashboard tiles.
++ Added Instant Messaging activity to charts.
+- Fixed user interface for antivirus settings when software maintenance expired.
+- Fixed issue with no visible users in mailing lists.
+- Fixed issue of exporting SSL server certificate bigger then 8 kB.
+
+Kerio Outlook Connector (Offline Edition)
++ Added support for delegation.
++ Added support for Salesforce for Outlook (versions 2.2.0 and 2.2.1).
++ Added option to demand trusted server SSL certificates.
++ Improved stability of Kerio Outlook Connector.
++ Improved detection of type and name of attachment (for invalid email).
+- It was impossible to modify filter rules in 64-bit KOFF.
+- Kerio Outlook Connector sometimes couldn't connect to Connect via an Apache 2.2.16 Reverse Proxy.
+- Gmail and Hotmail displayed incomplete sender name for mails sent by Kerio Outlook Connector.
+- Fixed detection of changes in Public folders.
+- Kerio Outlook Connector was not reporting disconnected status when Connect is down.
+- Fixed problem in notes conversion.
+- Improved search for short words.
+- Fixed issue with imported ics file in Outlook not populating to server.
+- Fixed problem with flag color synchronization in Outlook 2013
+- Fixed synchronization issue with private contacts 
+
+
+
+
+
+Version 8.1.0 - April 30, 2013
+------------------------------
+Kerio Connect
++ Added native support for 64-bit systems. Among other advantages the service can utilize more system memory if available.
++ Added Instant Messaging server.
++ Setting a SSL certificate active has an immediate effect and doesn't require restart any more.
++ Improved performance of folder operations in mailboxes with many folders
++ Greylisting now sends cryptographic hashes (MD5) instead of e-mail addresses
++ Added Apple Messages/iChat autoconfiguration through Account Assistant.
++ Improved reliability of Custom Spam Rules. Message header "From" and "To" rules are applied besides message headers also to message envelope members.
++ Improved stability of SpamAssasin server.
++ AppleDouble attachments handling improved in EWS.
+! Dropped support for external antivirus modules. Replaced with Kerio AntiVirus SDK built antivirus modules.
+- Fixed SSL vulnerability to BEAST attack
+- Fixed rare crash in the full-text during parsing message.
+- Messages could appear in Microsoft Outlook with Kerio Outlook Connector Offline Edition with long delay in some cases.
+- Fixed a stability issue in Free/Busy.
+- Calendar events were disappearing for few seconds in CalDAV calendars on Apple iPhone.
+- A folder with incorrect name could be created over IMAP protocol.
+- Domain footer is not appended to notification messages.
+- A group from LDAP is correctly displayed in Microsoft Outlook Contacts.
+- Fixed possible endless synchronization in ActiveSync push mode.
+- Fixed a stability issue when delivering meeting event.
+- Fixed an issue when Apple Contacts application could stop synchronization of server Contacts folder containing subfolders through CardDAV.
+- Fixed alleged duplication when creating a new calendar through CalDAV.
+
+Kerio Connect client
++ New color profiles.
++ Added settings for marking mail as read.
++ Added possibility to download all attachments in one file.
++ Added image gallery with fullscreen.
++ Added possibility edit signature in html. Current solution can in some cases damage signatures created in Old Webmail. In this case it is necessary to redefine signature in KCc.
++ Improved compatibility with various formated HTML emails.
++ Communication with server was optimized.
++ Reduced count of client/server requests for loading free/busy statuses.
++ Reduced count of requests for working with reminders.
++ Redesigned reminders view (and fixed memory issus).
++ Working with attachments redesigned in read panel and in composer.
++ New login dialog
++ Improved stability for Internet Explorer 8 and 9.
++ Design of client was improved.
++ Performance improved.
++ Improved detection of UTF-16 encoding (Big and Little Endian) if it is not properly declared in email headers.
++ Added possibility to make a custom localization for Kerio Connect Client.
+* Kerio Sync Connector was removed from integration page.
+- Fixed HTML parser problem with long string starting with www substring.
+- Fixed issues with desktop notification.
+- Fixed issue with very long email address in filters (for example from Salesforce).
+- Improved behavior of mini calendar arrows.
+- Fixed issue when contacts with private flag from shared folders are displayed.
+- Fixed issue that the sharing is lost if an user renames folder.
+- Translations fixed.
+- Fixed an attempt to scroll on iPad/iPhone ended by WebAssist (iPad/iPhone is not fully supported yet).
+- Fixed WebAssist shown when some AJAX request timed-out.
+- Some users were not able to log in to new Kerio Connect Client, they saw only white screen.
+- Fixed problem with filters modification.
+- Fixed performance problem with huge recipient list in meeting request.
+- Fixed problem with calendar that shows time+1 hour due to day-light saving.
+- Fixed problem with invitation to distributing list with many contacts.
+- Sometime it was not possible to edit new mail.
+- Contacts with private flag from shared folders was displayed.
+- Fixed problem with viewing emails with UTF-16 charset.
+- Fixed problem with moving readonly email from shared readonly folder.
+- Fixed problem with contact without name, now it is possible to save new company contact.
+- Calendar subfolder was deleted without any warning.
+- Fixed problem with count of unread messages.
+- Fixed many problems with folder tree behavior.
+- Timeouts for requests were enlarged.
+- Removed automatic validation of invalid emails in the mail compose.
+- Newly shared folders were not offered in sharing dialog.
+- Fixed small problems in filter design.
+- Fixed problem with scrolling in the message list.
+- Fixed problem in the calendar view after timezone changed.
+- Fixed memory issue in the contact editor.
+- Performance of loading events from server improved.
+- Fixed problem with an event created by drag-and-drop.
+- Improved rendering of an email with lots of attachments.
+- Changes in design when messages were filtered by search.
+- Fixed search in Sent Items folder.
+- Event was sometime displayed on wrong place durring dragging.
+- Internal users and external users received different out of office messages.
+- Newly created group was not offered in the sharing dialog for first 10 minutes.
+- Sharing was lost when an owner rename the calendar.
+- GMT an UTC time zones were removed.
+- Incorrect sender in e-mail list fixed.
+- Fixed problem with server error durring task removing.
+- Select of multiple contacts was not working in the contact list.
+- Fixed stability issue when using CTRL+A and right click.
+- Fixed problem with consistence of distributed list when user change some included contact.
+- Viewing of url in emails fixed for url without http prefix.
+- Same XML tag was displayed in text in the mail preview.
+- Many of old reminders were displayed for iCal users.
+- Fixed problem with email selection in Internet Explorer 8.
+- Fixed problem with showing events from pop-up notification in Internet Explorer 8.
+- Fixed problem with resizing panels in Internet Explorer 8.
+- Out of office alert was confusing.
+- Fixed problem with printing of external images.
+- Subject abbreviations were removed from subject.
+- Toolbar in mail composer in new window was not displayed.
+- Message with many recipients was displayed incorrectly.
+- It was not possible to display images if sender requires confirm reading.
+- Client incorrectly showed information about quota.
+- Fix support of Shift+Tab keyboard combination.
+- Email notifications were not disappeared on Chrome.
+- Fixed problem with incorrect server error: "Root folder '%1' cannot be listed".
+- Message about quota exceeded was fixed.
+- Settings of calendar view were lost after logout.
+- Fixed corrupted design of date picker in calendar events.
+- Disposition-Notification-To header was not used for sending the confirmation of mail reading.
+- Count of unread messages was not immediately decreased after multiple delete.
+- When Kerio Connect client save messages to draft, it sometime shows "sending" even after the message was sent.
+- Added support for progressive jpeg attachement.
+- Fixed problem with autocomplete feature in mail compose in separate window.
+- Improved moving item from read only public folder.
+- A user should not be bothered by errors in third-party scripts (browsers add-ons).
+
+Kerio Connect Administration
++ New product menu - designed for iPad and desktop.
++ Added new dashboard with information about product on one place.
++ GUI changes for a new EAS licensing.
++ Added a new GUI for IM settings.
++ Changes in GUI for certificates management, added possibility to change certificate without restart.
++ Added support for external (not Kerio plugins) antivirus plugins.
++ Context help replaced by Knowledge Base.
++ Added experimental support for Android devices.
++ Added support for synchronization with windows Phone and Windows 8 client.
+* Kerio Sync Connector was removed from administration.
+- Fixed stability issue caused by multi-edit of all users.
+- Fixed stability of logs view.
+- Fixed problem that remote administration can be forbidden even in cloud installation.
+- Removed possibility than logged admin account can be disabled in multiple edit dialog.
+- State of services was not updated after switch page with the service list.
+- German translation improved.
+- Spam filter improved. Some rejected spam messages was not forwarded to the quaratine.
+
+Kerio Outlook Connector (Offline Edition)
++ Added support for Outlook 2013 Click-to-run edition
++ It is possible to create meeting requests in shared Calendar in behalf of Calendar's owner.
++ It is possible to accept meeting requests in shared Inbox in behalf of Inbox owner if there are editor rights for Calendar provided.
++ DbBackup: New command line tool for shrinking local cache files when needed.
+* Synchronization of large folders starts significantly faster.
+
+Kerio Open Directory Extension
+- Fixed incorrect creation of index files.
+
+Kerio Connector for BlackBerry
+Kerio Connector for BlackBerry has been discontinued in this version of Kerio Connect.
+
+Kerio Sync Connector for Mac
+Kerio Sync Connector for Mac has been discontinued in this version of Kerio Connect.
+
+
+
+
+
+Version 8.0.2 - March 21, 2013
+------------------------------
+Kerio Connect
+- Fixed losing connections to Open Directory in user account mapping.
+- Fixed download of certain attachments to Windows Phone 8.
+- Lot of "Failed conversion" messages was delivered into Outlook 2011 for Mac when Connect's user was migrated from directory service to a local database.
+- Fixed occasional problem with national characters in messages decoded from TNEF.
+
+Kerio Connect client
+- An attempt to scroll on iPad/iPhone ended by WebAssist.
+- WebAssist was shown instead a warning "Server is not responding" when the response from the server didn't arrive in expected time (e.g. on slow connection).
+
+Kerio Outlook Connector (Offline Edition)
+- Fixed missing attachments in older email messages.
+
+
+
+
+
+Version 8.0.1 - January 30, 2013
+--------------------------------
+Kerio Connect
+- Fixed warning about missing system locales on Linux systems.
+- Fixed upgrade process from trial mode to licensed version.
+- Fixed rare crash on server shutdown.
+- Fixed crash when sorting a folder with huge amount of items.
+- Fixed issue when user was not able to enter new password for Calendar, Reminder or AddressBook account (CalDAV and CardDAV protocol) on iOS5 or iOS6.
+- Fixed rare unhandled exception on file access.
+- Fixed crash on deeply nested multipart MIME messages.
+
+Kerio Connect client
+- Fixed email parser in Kerio Connect client.
+- Fixed memory leaks in browser.
+- Fixed problem with many reminders for users with Mac OS clients.
+- Fixed problem with link to Kerio Connect client from webmail in Microsoft Internet Explorer 9.
+- Fixed invalid URL for mailto href.
+- Fixed problem with invitation on distribution list with lots of contacts.
+- Some email was not rendered, says Loading...
+- Minical in end date doesn't respect the first day in week setting.
+- Minical overview isn't displayed correctly.
+- When Kerio Connect client save messages to draft, it shows "sending" even after the message was sent.
+- Sound of notification was played every minute.
+- Timeout for requests was increased for slow connection.
+- Fixed server error when user from Cc or BCc tries to confirm message reading.
+- Polish: Issue of typing 's' into subject - it saves draft instead.
+- Fixed issue where Chrome shows blank page instead of opening PDF attachment.
+- Fixed rare crash in a calendar caused by an invalid event.
+- Stopped adding X-MSMail-Priority header because it causes high spam score.
+- Fixed rare crash in sharing folders.
+
+Kerio Outlook Connector (Offline Edition)
+- Fixed rare issue causing synchronization to stop working due to frozen KoffRtfWrapper process.
+- Fixed switching online/offline in Outlook 2013.
+- Fixed rare issue preventing KOFF installation/update.
+- Search in contact folders for full email address is case sensitive.
+- Fixed rare stability issue in Outlook GUI. 
+
+
+
+
+
+Version 8.0.0 - December 4, 2012
+--------------------------------
+Please read the Release Notes document before installing this version.
+
+Kerio Connect
++ Greylisting service
++ DNS reverse lookup
++ Added ability for Sophos to ignore encrypted or password protected attachments
++ Apple Notes are saved on server now
+* Improved local domain spoofing prevention.
+* Improved reliability of message store backup.
+* Improved performance for Outlook 2011 for Mac and ActiveSync clients
+* Name of all newly created differential backup files will start with letter 'D' instead of 'I' (e.g I20120720T080107Z.zip ==> D20120720T080107Z.zip)
+* Added X-Envelope-To header to all newly archived emails. The header contains all email recipients.
+- The Out-of-office reply was sent to a whole group.
+- The process did not stop in expected time.
+- Restart of service on Linux failed in some situations.
+- Archived messages did not record BCC headers.
+- Kerio Account Assistant failed to configure accounts when downloaded from Virtual Appliance server.
+- Kerio Account Assistant might setup an incorrect type of IMAP account under specific circumstance.
+- National characters were sometimes incorrectly displayed in Outlook.
+- Incorrect sender address was displayed when sending an e-mail over the WebDAV protocol.
+- Backup process might sometimes fail to start.
+- Backup process sometimes hung.
+- Some meeting invitations had incompatible timezone definition.
+- Some recurrent events were not synchronized to the server via the Exchange ActiveSync protocol.
+- Kerio Connect server sometimes crashed during startup when full-text search was enabled.
+- TNEF decoder sometimes failed to decode signed messages.
+- Email messages with invalid charset could not be downloaded to iPhone.
+- Contacts synchronized from Global Address List might contain duplicate e-mail addresses.
+- Deleted calendar events were still visible in Apple iCal in some cases.
+- Calendar events might get duplicated on HTC Android phones.
+- Fixed kmsrecover which refuses to run if Kerio Connect is running even with "-s" option to a separate store folder
+- Fixed performance problems and denial of new connections when Kerio Connect is running on Mac OS 10.8.
+- Fixed several stability issues.
+
+Kerio Outlook Connector (Offline Edition)
++ Public Folders can be configured to not be synchronized completely.
+* Improved performance of both initial synchronization and common work too.
+* Improved management of the size of local cache by [local] removing of bodies of old email messages (they persist in Connect).
+* Improved capability to synchronize received ill-formed email messages.
+- Fixed conflict of ICU libraries with 3d party software.
+- Fixed non-working Spam button when preview pane is active in Outlook 2007 and 2010.
+- Fixed rare problem of synchronization conflict upon downloading folder hierarchy.
+- Fixed rare problem of synchronization conflict upon emptying the Deleted Items folder.
+- Fixed out of memory problem upon downloading of a huge message
+- Fixed showing of pdf attachments as .bin files in some email messages.
+- Fixed synchronization conflicts after import from PST file.
+- Fixed saving exception sent from subscribed calendar.
+- Fixed Perth and Greenland timezone issues.
+- Fixed wrong recognition of the organizer of a meeting when custom address is used.
+- Fixed that reminder appears for an outdated events sometimes.
+- Fixed that calendar event could be deleted if invite email is deleted.
+
+Kerio Connector for BlackBerry
+* Improved capability to synchronize received ill-formed email messages.
+- Email messages deleted on Blackberry don't get deleted from the INBOX on the server.
+
+Kerio Outlook Connector
+- Calendar event could be deleted from organizer's store when meeting reply was deleted.
+
+Kerio WebMail
+- Fixed viewing of a month/week view calendar on iOS device constantly increases in size.
+- Fixed corrupted pdf files on Firefox for Mac.
+- Fixed few translation issues.
+
+Kerio Connect client (a.k.a. New WebMail)
+* Graphical User Interface completely redesigned.
+* Overlay calendars
+* Smart sharing
+* Improved performance.
+* Improved style of paging toolbar.
+* Redesigned Contact Groups.
+* Contact suggestions in message editor.
+* Respect calendar colors of CalDAV clients.
++ Calendar search implemented.
++ Added Calendar overview (user can choose 2-6 weeks).
++ Photos in contacts.
++ Added ability to vote on Suggest Idea.
++ Added support for custom From and Reply-To address.
++ Added ability to switch off sound in reminder.
++ Added Tasks.
++ Added Notes.
++ Added Contact Groups.
++ Advanced search implemented.
++ Added folder sharing.
++ Added header settings in mail composer.
++ Added ability to attach more files at once with drag & drop.
++ Added ability to show photo of mail sender.
++ Confirm reading, High priority flags implemented.
++ Message edit/preview in new window.
++ All messages in folder can be deleted/marked as read.
++ Message can be sent as attachment.
++ Remote images are shown in messages.
++ Added support for hotkeys.
++ Added support for rich text signature (without pictures).
++ Added support for archive and public folders.
++ Added ability to drag and drop a contact between folders.
++ Added settings of out of office, mail signature, language, time, and notifications.
++ Quota added to settings and navigation bar.
++ Added reminders popup on desktop with supported browsers.
++ Added mail filters.
++ Added support for password change.
++ Added contacts.
++ Added option to add attachments to forward.
++ Added ability to open a new mail composer window.
++ Added context menus on email messages.
++ Added out of office setting.
++ Added plain text signature setting.
++ Added ability to see sender's photo.
++ Added ability to mail to event attendees.
++ Added ability to invite all mail recipients at once.
+Known issues for Kerio Connect Client:
+- Tablets are not fully supported.
+- Reminders will be shown for expired iCal events.
+
+Kerio Connect Administration
++ Added version number to Sophos upgrade log information.
++ Added an option to show number of mailing list subscribers.
++ Added the possibility to choose the default WebMail client.
++ Added support for Internet Explorer 10.
+- Fixed non-working copy&paste on Mountain Lion's Safari 6.
+- Fixed missing options when deleting mailbox.
+
+Kerio Active Directory Extension
+* Users mapped from Active Directory use full name from Display Name Active Directory attribute.
+
+Kerio Open Directory Extension
+No change.
+
+Kerio Migration tools
++ Added support for migration from MS Exchange 2010. 
+
+
+
+
+
+Version 7.4.3 - August 21, 2012
+-------------------------------
+Please read the Release Notes document before installing this version.
+
+Kerio Connect
+- Reminders (ToDos) were not synchronized properly in Apple iCal.
+- Completed tasks could be duplicated in Reminders app.
+- Kerio Connect Account Assistant could configure MD5 authentication in Apple Mail accounts.
+- Prematurely closed LDAPS connection could cause performance issue on server.
+- Implemented workaround for missing HTML email body in messages synchronized to Sony Xperia S.
+- Attachments were not extracted from certain TNEF messages.
+- Microsoft Outlook 2011 could not use secondary user email address or domain alias in account setting.
+
+Kerio Connect Administration
+* Improved integration with Technical Support Portal.
+- Fixed copy&paste shortcut in logs on Safari 6.
+
+Kerio Active Directory Extension
+No change.
+
+Kerio Open Directory Extension
+No change. 
+
+
+
+
+
+Version 7.4.2 - July 11, 2012
+-----------------------------
+Please read the Release Notes document before installing this version.
+
+Kerio Connect
++ Added support for OS X 10.8 Mountain Lion.
++ Added watch dog script for Linux.
+- Fixed message numbering in the list of mailbox events sent in certain IMAP responses.
+- Microsoft Outlook 2011 for Mac could not see Public folders after configuration change from per-domain to global.
+- All-day event could be displayed as shifted in a week view in Microsoft Outlook 2011 for Mac.
+- Account assistant utility for Mac client could fail to run if the server is running in Virtual Appliance.
+- Fixed some stability issues.
+
+Kerio WebMail
++ Added support for Safari 6.0.
+- Marking a message with a flag required the message to be selected first.
+
+Kerio Connect Administration
++ Added support for Safari 6.0.
+- In certain situation number of users in Web Administration could count also disabled user accounts.
+
+Kerio Outlook Connector
+- Event could be deleted from calendar after deleting email with meeting invitation.
+
+Kerio Outlook Connector (Offline Edition)
+- Microsoft Outlook could hang or terminate while using AVG 2012 SP1 add-in.
+- Fixed a rare issue with non-working push of new messages to the client.
+
+Kerio Active Directory Extension
+No change.
+
+Kerio Open Directory Extension
+No change. 
+
+
+
+
+
+Version 7.4.1 - May 15, 2012
+----------------------------
+Kerio Connect
++ Added support for Ubuntu 12.04 LTS.
+* Auto-configuration tool for iOS devices configures also user password in the configuration profile.
+* Email domain forwarding can use SMTP relay with authentication if the forwarding host is the same.
+- Integrated anti-virus could use HTTP proxy for downloading updates even after it was disabled.
+- Avserver process could produce a core file on server shutdown.
+- Reply-To header was not used when sending a reply from Microsoft Outlook 2011 for Mac on some server installations.
+- Server could reject login from Kerio Outlook Connector if the password contains national characters.
+- Installer on OS X could allow upgrade to the version with expired Software Maintenance subscription.
+- Backup could incorrectly detect amount of free disk space on mounted disk in Linux.
+- Fixed synchronization of attachments from multipart/mixed MIME messages with missing email headers to mobile devices.
+- Fixed several stability issues.
+
+Kerio Outlook Connector (Offline Edition)
+- Importing of certain calendar events from PST file to Kerio Outlook Connector profile could cause synchronization conflict.
+
+Kerio WebMail
+- Some emails in Japanese charset encoding could be displayed incorrectly.
+- Redirect to WebMail login page could fail when running behind reverse proxy server.
+
+Kerio Connect Administration
+- An error was reported in a browser when opening Advanced Options settings with certain configuration.
+- Removing custom spam rules using a search could remove all rules.
+- Adding a new user to user group could show an error in the browser.
+- New "Deny all" access policy rule could be saved incorrectly into the configuration.
+- Restarting of HTTP/HTTPS service could block all services until server restart.
+
+Kerio Active Directory Extension
+No change.
+
+Kerio Open Directory Extension
+No change. 
+
+
+
+
+
+Version 7.4.0 - April 24, 2012
+------------------------------
+Kerio Connect
++ Added User Access Policies settings.
++ Added posibility of spam server e-mail body rules definition.
++ Added support for Kerio Directory server.
+* Upgraded Perl interpreter in the anti-spam server.
+* Spam Assassin engine upgraded to version 3.3.2.
+* Made several improvements of full-text search performance.
+* Full-text indexes and searches in archive folders, now.
+* Improved support for TNEF encoded messages sent from IMAP clients like Kerio Outlook Connector or Mircosoft Outlook.
+- Anti-spam server could crash in some cases.
+- Fixed some stability issues of anti-virus server.
+- Fixed possible crash in Kerio Connect server.
+- Kerio Connect server could crash during folder rename under certain circumstances.
+- An exception from recurrent event might get duplicated in Apple iCal.
+- An event time zone definition could be accidentally removed by Apple iCal.
+- Improved performance of some data operations.
+- Caller-ID resolver did not use full list of IP addresses from multi-address A DNS records.
+- Fixed handling of HTML domain footer in meeting requests and some emails sent from Apple Mail.
+- On OX S 10.7 Lion the Kerio Connect Monitor could incorrectlly detect OS version and fails to stop the service.
+- Decreased amount of reserved memory used for each connection.
+- NTLM is now enabled by default for all Kerberos users mapped from Active Directory.
+- Contact birtday date could be shifted by one day on HTC phone synchronized over Exchange ActiveSync.
+- Task reminder time was not properly synchronized from Moxier Mail client to Microsoft Outlook 2011 for Mac.
+- Email with invalid HTML body part was displayed with incorrect encoding on Nokia phones with Mail for Exchange client.
+- HTML email body was not synchronized to Exchange ActiveSync 2.5 mobile devices.
+- SMTP client always tried to switch to backup MX SMTP server if email delivery was rejected by receiving SMTP server.
+- Folder rename in a mailbox could cause a very rare stability issue.
+- Mailbox re-indexation did not re-count user statistics and quota.
+- Various minor bugfixes and improvements.
+
+Kerio Outlook Connector (Offline Edition)
++ Added ability to set Kerio Outlook Connector (Offline Edition) upgrade policy. See "Advanced Options/Software Updates" tab in Kerio Connect Administration.
+* Speed of initial synchronization has been increased.
+* Speed of folder creation (including search folders) has been increased.
+* Speed of reading of data from local cache has been slightly increased.
+* Overall memory consuption has been lowered.
+* Capability of processing of malformed mails has been increased.
+* More user-friendly report message about failed conversion.
+- Fixed few stability issues.
+- Fixed several calendaring issues.
+
+Kerio Connector for BlackBerry
+* Same changes as in Kerio Outlook Connector (Offline Edition) except the upgrade policy.
+* Connector for Blackberry ignores Connect version till it.s compatible. It switches to offline otherwise.
+
+Kerio WebMail
++ Added support for Firefox 10.
++ Added support for pictures inserted from clipboard in mail composer.
+* Folder access rights could be applied also to Public and Archive subfolders by one click.
+* Default date and time format for German and Czech language has been changed to "DD.MM.YYYY 24:MM".
+* Text attachments are not displayed inline when printing mail.
+- HTML messages with invalid charset were displayed with corrupted national chars in mail view, reply and forward.
+- Pictures in HTML messages were not displayed in special case.
+- Date header in message reply and forward respects time zone of sender now.
+- Open Office attachments sent by WebMail were corrupted in some cases.
+- Horizontal scrollbar in mail view was not visible when long message was displayed.
+- Invitee comments were not displayed in meeting reply sent from Exchange.
+- Out of Office did not work properly in the full-featured WebMail when was set in WebMail Mini.
+- Fixed some other minor issues.
+
+Kerio Connect Administration
++ Added support for iPad.
++ Added Kerio Outlook Connector (Offline Edition) settings of silent update and lose/coupled package version.
+* Improved performance of user find and domain selector.
+* Increased directory service password length to 110 characters.
+- Fixed improper behavior of IP group list on Custom Blacklist, Spam Repellent, SPF, and Caller ID.
+- Fixed usability problem when adding a new IP address group into existing one by its selection.
+- Fixed functionless configuration of a NT domain which contains some special characters.
+- Fixed malfunction of licensing information update when web administration is switched to Spanish.
+- Fixed missing refresh when adding a new custom rule on SPAM filter with a lot of rules.
+
+Kerio Active Directory Extension
+No change.
+
+Kerio Open Directory Extension
+No change. 
+
+
+
+
+
+Version 7.3.3 - April 26, 2012
+------------------------------
+Kerio Connect
+- Fixed a problem with user statistics resetting.
+- Added support for Microsoft Outlook 2011 Service Pack 2 update.
+- Fixed rare performance problems during synchronization of Microsoft Outlook 2011 for Mac. 
+
+
+
+
+
+Version 7.3.2 - February 8, 2012
+--------------------------------
+Please read the Release Notes document before installing this version.
+
+Kerio Connect
+- Microsoft Entourage 2008 reported SSL warnings when trying to contact autodiscovery web service.
+- Certain IMAP clients (eg. Thunderbird) could not access default mailbox folders after change in folder sharing.
+- Fixed rare stability issues of external anti-virus process on Linux.
+- Fixed removing of temporary .emf files.
+- Microsoft Outlook 2011 for Mac did not sychronize some recent messages in certain situation.
+- Corrected explanation URL link in status of SPF check.
+- Microsoft Outlook could report that no invitations have been sent for a meeting created on iPhone.
+- Anti-hammering protection did not interrupt existing connections.
+- Fixed possible memory leak in Kerio Outlook Connector synchronization.
+- Debian repository URL in Kerio Connect Virtual Appliance was not up-to-date.
+- Synchronization of Microsoft Outlook 2011 for Mac could use huge amount of memory.
+
+Kerio Outlook Connector (Offline Edition)
+- Fixed compatibility of SSL connections from Microsoft Outlook after installing KB2585542 update.
+- Meeting response was not sent for some meeting invitations.
+
+Kerio WebMail
+- Fixed hot-key support in Firefox 9.
+- Some draft messages were not removed from Drafts folder after sending.
+
+Kerio Active Directory Extension
+No change.
+
+Kerio Open Directory Extension
+No change.
+
+
+
+
+
+Version 7.3.1 patch 2 - January 12, 2012
+----------------------------------------
+Kerio Outlook Connector (Offline Edition)
+- Fixed compatibility of SSL connections from Microsoft Outlook after installing KB2585542 update.
+
+
+
+
+
+Version 7.3.1 patch 1 - January 6, 2012
+---------------------------------------
+Kerio Connect
+- Fixed removing of temporary .emf files.
+
+Kerio WebMail
+- Fixed hot-key support in Firefox 9.
+
+
+
+
+
+Version 7.3.1 - December 8, 2011
+--------------------------------
+Please read the Release Notes document before installing this version.
+
+Kerio Connect
++ Added support for Windows Phone 7.5.
+- Android mobile phones with Motoblur client could display MIME email structure instead of email text.
+- Some Motorola Atrix 4G mobile phones could be incorrectly detected as unsupported.
+- Kerio Outlook Connector (Offline Edition) autoconfiguration tool didn't detect 32bit command prompt mode on 64bit operating system.
+- Email response was sometimes not sent from mobile device when declining meeting invitation.
+- Meeting reply sent from mobile device could have incorrect SEQUENCE number.
+- Synchronizing certain meeting invitation could cause iPhone notification engine restart.
+- Global Address List search from iPhone could get email address in incorrect format.
+- Subscribed Inbox folder from shared account could be displayed as preferred on iPhone.
+- Reply flag from mobile devices (Android, Windows Phone) was incorrectly synchronized to the server.
+- Fixed a client hang while deleting contacts from Apple Address Book.
+- Bdbchecker process could report some stability issues.
+- Fulltext does not work on Mac OS X with public folders set to global.
+- Fulltext indexed only users in local database.
+- Fixed Mac Account Assistant which could not configure iCal if Mac OS X standard account was used.
+- Fixed Address Book group and WebMail category compatibility.
+- Fixed delivery to archiving account which automatically accepted meeting invites.
+- Microsoft Outlook 2011 did not detect Perth time zone properly.
+- Fixed some stability issues.
+- Cross domain sharing in iCal was removed after server restart (only with setting public folders per domain)
+
+Kerio Outlook Connector (Offline Edition)
+- Fixed the error that Outlook failed to start when it is not set as a default Mail Client in Windows.
+- Fixed the error of automatic update caused by unstopped Windows Search service.
+- Fixed the error of all day event's resource reservation cancellation.
+- Fixed some stability issues.
+
+Kerio Active Directory Extension
+No change.
+
+Kerio Open Directory Extension
+No change.
+
+
+
+
+
+Version 7.3.0 . November 8, 2011
+--------------------------------
+Please read the Release Notes document before installing this version.
+
+Kerio Connect
++ Added advanced Out of Office options (time interval, external recipients).
++ Added support for iOS 5.
++ Added Account Assistant for Apple Mac OS X clients.
++ Server now supports Microsoft Autodiscovery Service.
++ Added option to customize quota warning interval and threshold.
++ Global Address List synchronization populates public contacts with SSL public key and photo from directory service.
++ Recurrent tasks.
+* Message store copy/delete operations performance improvement.
+* Added message store data consistency check.
+* Network timeout in SMTP client has been increased.
+! Dropped support for PowerPC Mac.
+- Fixed slow email distribution to many recipients.
+- Fixed CardDAV Config tool error if an umlaut is in full name.
+- Some special HTML characters were not displayed in email synchronized to iPhone.
+- Plaintext emails could be displayed with wrong charset encoding in Mail for Exchange client.
+- Data of deleted user were not counted to quota of new owner.
+- Disk quota warning was not sent if new quota is set for the user.
+- Fixed some performance and stability issues.
+
+Kerio Outlook Connector (Offline Edition)
++ Added 64bit version so MS Outlook 2010 64bit is supported now.
++ Added support of Outlook's confidential tag in mails.
++ Added support for mail merge in MS Word.
+* Folder access rights could be applied to all subfolders by one click.
+* Lot of database improvements implemented.
+* Improved ability to process malformed incoming mails.
+- Fixed the error of synchronisation of mail with invalid Thread-Index header.
+- Fixed the error of synchronisation caused by unwanted changing of original name of special folders.
+- Fixed the error that forwarded meeting request doesn't contain organizer.
+- Fixed the error with incorrect space inside the last name in header To:.
+- Fixed the error that message with many recipients causes out-of-memory condition.
+- Fixed the error with corrupted national chars in meeting request sent by Exchange.
+- Fixed the error that changes in assigned task are not reported back.
+- Fixed the error of duplication of some events for iCal.
+- Fixed several issues causing conflicts.
+- Fixed lot of minor performance and stability issues.
+
+Kerio Connector for BlackBerry
+- Fixed repeated creation of associated messages in News Feed folder
+
+Kerio WebMail
++ Beta Calendar Preview of New WebMail
++ Added support for Firefox 6.
+! Dropped support for Internet Explorer 6
+* Folder access rights could be applied to all subfolders by one click.
+* Task organizer is listed in task owners in printed task.
+- A message sent to a distribution list was not delivered to all recipients when the distribution list was obtained from another user.
+- Original draft was deleted after using it for composing a new message.
+- Reply to message sent from Kerio Outlook Connector could cause incorrect line spacing.
+- Date header in message reply respects time zone of sender now.
+- National characters in event might get corrupted when forwarded by message.
+- Obsolete meeting reply was displayed and processed as up-to-date.
+- Custom WebMail logo was not displayed in some skins.
+- Fixed translation errors in Chinese language.
+
+Kerio Connect Administration
++ Improved quota warnings and notifications.
++ Ability to re-index a user from the Web Administration.
++ Ability to create a new support ticket within Web Administration.
++ Ability to drag and drop more custom rules at once in Spam Filter section.
++ The administrator is informed about Kerio Outlook Connector (Offline Edition) users without installed Updater Service.
+* To improve usability paging has been removed from sections without autorefresh (e.g. Users, Groups, Aliases).
+* Improved performance by reduction of requests.
+* Improved usability when deleting a user with a large account.
+- Fixed browser freeze on large data on mailing lists, resources, and spam filter.
+- Fixed a JSON encoder error in logs.
+- Fixed failure when importing users from CSV.
+- Fixed wrong standard font selection in HTML Domain Footer.
+- Fixed several issues on Logs section on slow data lines.
+- Fixed quota exceeding when performed recovery of deleted messages.
+
+Kerio Active Directory Extension
+- Fixed rare problem with invalid email address when creating mailbox in Active Directory.
+
+Kerio Open Directory Extension
+No change. 
+
+
+
+
+
+Version 7.2.4 - October 24, 2011
+--------------------------------
+Kerio Connect
+- Fixed problem with storing huge data to properties.fld database file.
+- Fixed calendar delegation in OS X 10.7.2 iCal update.
+
+Kerio Open Directory Extension
+No change.
+
+Kerio Active Directory Extension
+No change.
+
+
+
+
+
+Version 7.2.3 Patch 1 - September 23, 2011
+------------------------------------------
+Kerio Outlook Connector (Offline Edition)
+- Fixed reminder issue after installing KB2583910 update for Microsoft Outlook 2007.
+
+
+
+
+
+Version 7.2.3 - September 1, 2011
+---------------------------------
+Kerio Connect
+* Improved performance of Outlook 2011 for Mac synchronization.
+- Users from secondary email domain could not see public folders in Outlook 2011 for Mac.
+- Out of office reply could be sent to some DSN reports.
+- Fixed stability issue when shutting down anti-virus plug-in.
+- Fixed synchronization of some attachments to mobile devices.
+- Fixed some performance problems.
+
+Kerio Connect Administration
+* Added detection of users running Kerio Outlook Connector without Kerio Updater Service installed.
+- Fixed scrollbar problem in logs view in Safari 5.1 on Mac OS X.
+
+Kerio Outlook Connector (Offline Edition)
+- Picture in email signature was displayed as an attachment.
+- Attachment in TIFF format was displayed with incorrect file extension.
+- Some HTML formatted attachments were not synchronized to the client.
+- Special quote characters were removed from the message sent from Outlook.
+- Fixed a problem with folder sharing of default Outlook folders.
+
+Kerio Connector for BlackBerry
+- Some email folders were not synchronized with BlackBerry Enterprise Server 5.0.3.
+
+Kerio Open Directory Extension
+No change.
+
+Kerio Active Directory Extension
+No change.
+
+
+
+
+
+Version 7.2.2 - July 21, 2011
+-----------------------------
+Kerio Connect
+* Added support for Mac OS X 10.7 Lion.
+* Added support for Apple iCal and Apple AddressBook on Mac OS X 10.7 Lion.
+- Fixed high CPU usage when synchronizing contact with picture over WebDAV protocols.
+- Changed folder name was not synchronized to Microsoft Outlook 2011.
+
+Kerio Connect Administration
+* Added support for Safari 5.1.
+- Fixed random Javascript error in Message Queue window.
+
+Kerio WebMail
+* Added support for Safari 5.1.
+
+Kerio Open Directory Extension
+No change.
+
+Kerio Active Directory Extension
+No change.
+
+
+
+
+
+Kerio Connect 7.2.1 - July 11, 2011
+-----------------------------------
+Kerio Connect
+* Performance improvements in IMAP server.
+* More reliable email delivery to multi-homed SMTP servers with more IP addresses.
+- Apple Mail client with Exchange IMAP account could cause high resource usage on the server.
+- Fixed group mapping from Open Directory.
+- Fixed the scope of email addresses provided in Apple iCal auto-complete.
+- Fixed rare issue with message store disk mounting on Mac OS X.
+- Some emails with attachments were not displayed properly in Apple Mail after adding HTML domain footer containing an image.
+- Email HTML body with certain charset was displayed incorrectly in Mail for Exchange 3.9 client.
+- Motorola Droid phones could re-download emails in specific situations.
+- Corrected email push timeouts when synchronizing with iPhone.
+- Fixed a problem with folder rename on Windows Mobile 6.x devices.
+- Categories in calendar events were sometimes not synchronized from mobile devices.
+- Recurrent event exception was not displayed on Android mobile phones.
+
+Kerio Connect Administration
+- Fixed a problem with removing users from mailing lists.
+- User activation from directory service was reporting wrong username in config log.
+
+Kerio Outlook Connector (Offline Edition)
+- Kerio Outlook Connector option could be missing in email account settings upon first Microsoft Outlook start.
+- Email attachment in .csv format was not displayed in email preview.
+- Fixed rare stability issues.
+
+Kerio Sync Connector for Mac
+- Renamed or moved calendars were causing synchronization failure.
+
+Kerio Open Directory Extension
+- LDAP server was not properly restarted after Kerio Open Directory Extension
+installation.
+
+Kerio Active Directory Extension
+No change.
+
+
+
+
+
+Version 7.2.0 patch 1 - June 7, 2011
+------------------------------------
+Kerio Connect
+- Fixed rare performance issues.
+
+
+
+
+
+Version 7.2.0 - May 24, 2011
+----------------------------
+Kerio Connect
++ Support for Microsoft Outlook 2011 for Mac (not supported for Kerio Connect running on PowerPC Mac).
++ Support for exceptions from recurrent events.
++ A domain footer can contain HTML formated text and images.
++ Implicit CalDAV scheduling with meeting auto-accept functionality.
++ Built-in administrator, which has no mailbox and does not consume a license.
++ Administrators can prevent users from changing their password.
++ SMTP client supports email domain IP address binding.
++ User's full name is displayed in CalDAV delegates list in Apple iCal.
++ Added support for RedHat Enterprise Linux 6.
++ Added support for iOS 4.3 mobile devices.
++ Added support for new mobile devices (see the Release Notes for details).
+* Various performance improvements.
+* Apple iCal can search for attendees without configured directory service.
+* When deleting user in Kerio Connect Administration, it is also possible to delete his/her aliases and group/mailing list membership.
+* The default browser support has been changed from Blocked to Unsupported. Levels of browser support: supported, unsupported, blocked.
+* Kerio Outlook Connector installation package can be downloaded directly from the server on the Integrations page.
+* Disabled RC4 ciphers in the Secure Socket Layer (SSL) connections.
+* Improved simultaneous listing of Public folders.
+! Dropped support for Firefox 3.0.
+! Dropped support for RedHat Enterprise Linux 4.
+- Information on event cancelation was sometimes not sent out to attendees.
+- iCal autoconfiguration tool could silently fail to configure directory server.
+- Invitations from Apple iCal were sometimes sent multiple times.
+- Some contacts could be missing on iPhone with CardDAV account configured.
+- Some recurrent events could be missing on iPhone with CalDAV account configured.
+- Synchronization of Apple Address Book with CardDAV account configured, might never finish due to connection timeout.
+- Tasks marked as completed in Apple iCal could remain incomplete on the server.
+- Some messages and contacts could be missing on Android devices.
+- Email attachments with special characters could not be downloaded to the mobile device.
+- Folder deleted from WebMail did sometimes not disappear from Microsoft Entourage.
+- WebMail custom logo wasn't set correctly for non-default store directory.
+- In Apple iCal a reply to invitation from public folders returned DSN.
+- X-Spam-Status headers are no longer removed from the message if the sender is on a whitelist.
+- Fixed incompatibility with iCal client on Mac OS X 10.6.6.
+- Disabling a user with shared calendar could broke delegation in iCal clients.
+- CardDAV account setup failed on iOS 4.1 and higher devices.
+- Fixed data in response to IMAP BODY FETCH command.
+- Fixed detection of sender IP address in POP3 downloaded messages.
+- Fixed mailbox counting in the license when the e-mail domain is renamed.
+- Autoconfiguration tools did not support SSL certificates with multiple hostnames (subjectAltName).
+- Fixed possible long delay in the installer on Mac OS X.
+- Fixed synchronization of all-day events from Nokia E52 mobile device.
+- Categories could be removed from the event after synchronization from iPhone.
+- Fixed message format of email messages forwarded or replied on the Android mobile devices.
+- Improved email push after long idle period on mobile devices.
+- Fixed using of secondary email address in ActiveSync account on iPhone.
+
+Kerio Outlook Connector (Offline Edition)
+* Various performance and resource improvements.
+* New autoupdate service
+! Dropped support for Microsoft Outlook XP
+- Outlook not showing WAV attachments
+- Emptying large public 'Deleted Items' causes Outlook 2007 to crash
+- Deleting items in local folder causes Outlook 2007 to Hang
+- Fixed lot of other bugs.
+
+Kerio Connector for BlackBerry
++ Added support for BlackBerry Enterprise Server 5.0.3 and BlackBerry Enterprise Server Express 5.0.3.
+* Various performance and resource improvements.
+* Reduced number of conflicts in Kerio Outlook Connector (Offline Edition) while using Kerio Connector for BlackBerry
+- Special characters in user fields may cause Kerio Connector for BlackBerry can not read user list from server.
+- Fixed lot of other bugs.
+
+Kerio WebMail
++ Support for 'the last day in month' rule in recurrent events.
+* Meeting invites, updates and replies are automatically displayed in Calendar now.
+* Added ability to view all recipients in mail view and preview. Mail content is scrollable in mail preview now.
+* More contacts are displayed in "card view" mode now.
+* Enabled/disabled buttons are more highlighted in toolbars now.
+* Outlook 2011 for Mac autoconfiguration tool on the Integration page.
+* Apple Address Book manual configuration description added on the Integration page.
+! Dropped support for Safari 3.2 in full WebMail.
+- Some dialogs where opened in wrong place in some browsers.
+- Embedded images from HTML messages were missing in reply and forward.
+- Mail sent to distribution list was not delivered to all recipients when distribution list contains addresses from Public folders in special cases.
+- Read and delivery receipt was not sent when national characters were used in name part of email address.
+- Mail composer toolbar were rendered incorrectly in Internet Explorer 7.
+- Mail filter rules editor could not work properly in Russian localization.
+- Fixed invalid line breaking in notifications automatically sent by mail filter.
+- Messages were not marked as read after reply and forward when the "Mark displayed messages as read" setting was switched off.
+- National characters in attached plain text file might get corrupted when forwarded.
+- Calendar daily view could be slow when many events had to be displayed.
+- Forwarded task was not possible to open and save to personal folder.
+- Forwarded contact was not possible to edit in Outlook because of incorrect filename.
+- Original mail content was incomplete when forwarding mail sent from Apple Mail in special case.
+- Task reminder jumped one day late in special cases.
+- Binary mail attachments were displayed inline in mail composed in WebMail in Google Chrome.
+- Fixed invalid URL in Google Calendar subscription on the Integration page.
+- Fixed translation errors in Chinese and German language.
+- Fixed lot of other minor issues.
+
+Kerio Connect Administration
++ A domain footer can contain HTML formated text and images.
++ Login dialog tolerates also unsupported browsers.
++ Administrator can disable to change user password.
++ It is possible to setup time of compression of old archives.
++ Added two new columns, Authenticated sender and Sender IP, into Message Queue.
+* Slightly changed design after upgrade on ExtJS 3.
+* Improved display of the application on small resolution.
+- Fixed several Javascript errors on Logs.
+- Fixed inability to import groups from CSV users file.
+- Fixed instability of domain editor.
+- Fixed problem with too strict validation of spam custom rules.
+- Fixed importing groups on users CSV file.
+- Fixed domain limit exceed while importing users from CSV file.
+- Fixed search result on remove users dialog.
+- Fixed translation errors in Chinese language.
+
+Kerio Active Directory Extension
+No change.
+
+Kerio Open Directory Extension
+No change.
+
+
+
+
+
+Version 7.1.4 - March 7, 2011
+-----------------------------
+Kerio Connect
++ Added support for Windows Phone 7.
++ Added support for Mail for Exchange client on Nokia mobile phones with Symbian^3.
++ Added support for Motoblur by Motorola, DROID 2 by Motorola and DROID X by Motorola.
++ Added support for iOS 4.2 mobile devices.
++ Added support for Debian 6.
+* Improved synchronization speed and performance of CardDAV account configured through the Address Book configuration tool.
+- Fixed BODY response in IMAP server.
+- Fixed character set detection in iCalendar subscribed from the server.
+- Shutdown process on Linux and Mac OS X could store some message indexes unreliably.
+- Anniversary and all-day event was not synchronized properly from Mail for Exchange client on Nokia mobile phone.
+- Attachment with a national characters in a name could not be opened in Mail for Exchange client on Nokia mobile phone.
+- Fixed some performance and stability issues.
+
+Kerio Connector for BlackBerry
+- Fixed Connector configuration on server with enabled UAC.
+- The BlackBerryAgent process could stop responding and cause high CPU usage.
+
+Kerio Outlook Connector (Offline Edition)
+- Fixed detection of 64-bit Outlook and Click-To-Run Microsoft Office version.
+- Fixed rare error in calendar search.
+- Message reply sent from Kerio Outlook Connector could contain invalid email header.
+- Outlook login could fail when the password is not saved in account settings.
+
+Kerio WebMail
+- Fixed expansion of distribution list referencing non-existent contacts in public folders.
+- Return receipt request could not be issued if the user full name contained national characters.
+- Reply to a message with HTML body containing embedded images could produce invalid HTML.
+
+Kerio Connect Administration
+- Fixed Chinese translation.
+
+Kerio Active Directory Extension
+No change.
+
+Kerio Open Directory Extension
+No change.
+
+
+
+
+
+Kerio Connect 7.1.3 - December 8, 2010
+--------------------------------------
+Kerio Connect
+- Fixed issue with keep-alive WebMail connections tunnelled through reverse proxy.
+- Fixed Sophos antivirus database update on Mac OS X 10.4 Tiger.
+- Fixed stability issue on multicore CPU systems.
+- Changed calendar event could become duplicated on Android 2.2 (Froyo) mobile device.
+- Fixed rare full re-synchronization of whole mailbox on some mobile devices.
+
+Kerio WebMail
+- Message icon was not changed when replying to or forwarding unread message.
+
+Kerio Connect Administration
+- Custom WebMail logo could not be changed if the product is installed in non-default location.
+- Huge amount of email domains could make Web Administration slow.
+- Fixed some Javascript exceptions in log view.
+
+Kerio Outlook Connector (Offline Edition)
+- Outlook could show empty message list when deleting a message from a folder with 'group by' view.
+
+
+
+
+
+Version 7.1.2 Patch 1 - November 23, 2010
+-----------------------------------------
+Kerio Connect
+- Fixed Sophos antivirus database update on Mac OS X 10.4 Tiger.
+
+
+
+
+
+Version 7.1.2 - October 25, 2010
+--------------------------------
+Kerio Connect
+* Implemented workaround for bugs in Microsoft Outlook 2011 for Mac IMAP client.
+- Fixed removing of unwanted attachments from spam quarantine notifications.
+- Fixed user counting for renamed email domains.
+- Certain recurrent events could be duplicated in Microsoft Entourage client after upgrade to Kerio Connect 7.1.x.
+- Server search from iPhone ActiveSync account returned oldest email messages on the top.
+- Using two ActiveSync accounts on the iPhone could break Push notifications.
+
+Kerio Connector for BlackBerry
+- Special characters in user fields could cause the Kerio Connector for Blackberry to not read the user list from server.
+- Sending a reply to certain email messages with HTML body could fail.
+
+Kerio WebMail
+- "Search in subfolders" option was missing in email search window.
+
+
+
+
+
+Version 7.1.1 - September 15, 2010
+----------------------------------
+Kerio Connect
++ Added support for HTC Desire and HTC Bravo mobile device.
+* Improved usage of HTTP keep-alive connections in WebMail.
+- Additional domain aliases could not be used for forwarding email messages for unknown domain users.
+- Meeting request for the resource was rejected if the message has been modified by the Spam Filter.
+- Event update was not sent to all attendees in event with multiple attendees created in Apple iCal on Mac OS X 10.5 Leopard.
+- Contacts were not sometimes completely synchronized to Android phone.
+- Private events were synchronized to shared calendar on mobile device.
+- Fixed ActiveSync Push notifications to improve battery life.
+- Large contact pictures were not synchronized to Android mobile phone.
+- Fixed updating of Sophos antivirus database over HTTP proxy server.
+- Sophos antivirus could fail to initialize on Linux in few rare situations.
+
+Kerio Outlook Connector (Offline Edition)
+- Mailbox name and Junk E-mail folder name was not localized in Microsoft Outlook 2010.
+- Plain text email body converted from HTML could miss some space characters.
+
+Kerio Connector for BlackBerry
+* Added detection of correct user account during Kerio Connector for BlackBerry update.
+
+Kerio Connect Administration
+- Password setting was not correctly saved in HTTP Proxy setting.
+- Fixed displaying of log lines with invalid UTF-8 encoding.
+
+Kerio Active Directory Extension
+* Added a warning for installation on Windows Server 2008 R2 with no Active Directory domain.
+
+
+
+
+
+Kerio Connect 7.1.0 Patch 1 - August 25, 2010
+---------------------------------------------
+Kerio Connect
+- Fixed stability issue in overloaded WebMail interface.
+
+Kerio Connector for BlackBerry
++ Added support for BlackBerry Enterprise Server 5.0.2 and BlackBerry Enterprise Server Express 5.0.2.
+
+
+
+
+
+Version 7.1.0 - August 3, 2010
+------------------------------
+Kerio Connect
++ Kerio Connector for BlackBerry® Enterprise Server
++ Public and shared folders can be synchronized to ActiveSync device.
++ Added ability to leave messages on a remote POP3 server.
++ Messages delivered to mailbox can be marked as read by user email filter.
++ Added support for publishing availability information from calendars in Apple iCal.
+* Internal antivirus changed from McAfee to Sophos.
+* CardDAV server improvements.
+* Improved mail retention policy options.
+* Increased speed of messages indexing.
+* Improved CalDAV and CardDAV stability by upgrading SQLite database to version 3.6.
+* All user authentication failures are logged to the security log.
+* Changed Portuguese to Brazilian Portuguese.
+* Original administration console is not a part of the main installation package any more.
+* Dropped support for Visnetic antivirus plugin.
+* Improved attributes in LDAP mapping files.
+* New OpenSSL library 0.9.8n.
+- New users were published to Global Address List even if GAL synchronization was disabled.
+- Sending email to distribution list took a long time in a certain situation.
+- Compression of archive folders could cause performance issues.
+- Apple iCal did not show calendars delegated to user group.
+- Address Book configuration tool could not configure CardDAV account if there is Exchange 2007 account in the Address Book.
+- Apple iCal did not show notifications for cancelled events.
+- IMAP subscription could not work correctly for Archive or Public folders after upgrade from previous version.
+- Synchronizing corrupted email to iPhone could stop the synchronization of the folder.
+- Attendee status for events accepted on mobile device was not synchronized to the server.
+- User authentication could fail due to "Too many LDAP connections error".
+- Fixed correct line folding of extremely long lines in email messages received via SMTP.
+- Access rights for authorized users to global Public folders were sometimes lost.
+- Fixed recovery process after unsuccessful domain rename.
+
+Kerio Outlook Connector (Offline Edition)
++ Support for Microsoft Outlook 2010.
+- Installation package does not require VBScript any more.
+- Many small fixes and optimizations.
+
+Kerio Outlook Connector
+- Microsoft Outlook 2010 is not supported in Kerio Outlook Connector (online version). Previous versions of Outlook are still supported.
+
+Kerio WebMail
++ Added ability to see quota usage. User gets a warning after logging to WebMail when the quota is near the limit.
++ Added ability to set permanently request read receipts.
++ Added ability to remove formatting of selected text in HTML editor in mail composer.
++ Added support for Safari 5.
+* Week/Month view respects "First day in week" setting.
+* Saturday/Sunday are displayed as separated days in month view.
+* Event created by "New event" button starts at today, not at selected day.
+* "Folder selection" dialogs contain only allowed folders now.
+- Images displayed inside HTML message could not be saved in some cases.
+- Original images displayed inside HTML message were missing by forwarding.
+- Event reminder was not updated properly when changing start time in some cases.
+- It was impossible to log into full WebMail in Firefox when folder name contains special white space char.
+- It was impossible to type a new message in on Apple iPhone/iPad in full WebMail in some cases.
+- Fixed annoying "Server doesn't respond..." issue when sending a message using Google Chrome.
+- Many small fixes and optimizations.
+
+Kerio Connect Administration
++ Added support for Safari 5.
++ Added ability to export Users.
++ Added traffic charts.
++ Ability to leave messages on a remote POP3 server.
++ Added ability to export user statistics.
++ Added ability to change IP address groups and time ranges contextually.
++ Added slider on spam rating limits.
++ Full administrator can see number of users per domain.
+* Improved mail retention policy options.
+* Better support of multiple domain members on resources.
+* Improved user experience on loading data from server.
+* Improved logs performance
+* Time information is provided in server time zone only.
+* Improved input validations.
+- Fixed impossibility to use whole email address as a user name on SMTP.
+- Removed Slovak localization.
+- Alias to public folder can be created with incorrect public folder location.
+
+
+
+
+
+Version 7.0.2 Patch 1 - July 7, 2010
+------------------------------------
+Kerio Outlook Connector (Offline Edition)
+- Fixed mapping of shared mailboxes in Microsoft Outlook 2010.
+- Kerio Outlook Connector auto-configuration tool sometimes didn't work correctly with Microsoft Outlook 2010.
+
+
+
+
+
+Version 7.0.2 - June 10, 2010
+-----------------------------
+Kerio Connect
+- Users could lost access to the Public folders in very rare case on upgrade from previous version.
+- Fixed potential crash when opening corrupted sort.fld file.
+- Deleted folders were not removed from mobile devices.
+- Fixed few other minor issues.
+
+Kerio Outlook Connector (Offline Edition)
++ Added support for Microsoft Outlook 2010.
+
+Kerio WebMail
+- Mail filter rules editor did not work properly in French and Italian localization.
+- Sending a reply to task update could display an error.
+
+Kerio Connect Administration
+- Domain wildcard could not be used in POP3 sorting rules.
+- UNC path in Backup settings could disappear after page refresh.
+
+Kerio Active Directory Extension
+- Fixed installation in Remote Server Administration Tools on Windows 7.
+
+
+
+
+
+Version 7.0.1 - April 7, 2010
+-----------------------------
+Kerio Connect
++ Added support for Nokia N900.
+- Calendar event attendee status was not updated in Apple iCal sometimes.
+- Contacts synchronized to Apple Address Book using CardDAV could contain incorrect notes.
+- Contacts with picture synchronized to Apple Address Book could be duplicated.
+- Fixed high client CPU usage when synchronizing contacts with empty pictures to Apple Address Book.
+- Domain forwarding for unknown recipients was not working correctly for domain aliases.
+- Using a domain alias in sender address could cause email rejection due to a non-existing DNS record.
+- Fixed issue with connection to Active Directory LDAP server using the DIGEST-MD5 authentication.
+- Calendar application on DROID mobile devices was not synchronized with the server.
+- Newly created resources were not synchronized to CardDAV clients.
+
+Kerio Outlook Connector (Offline Edition)
+- Fixed stability issue when using the mshtml.dll system library.
+
+Kerio Connect Administration
++ Added support for sending reports to Kerio Technologies.
+- Group membership could not be changed for users authenticated in a directory service.
+- A username in the email address format could not be used for the SMTP relay authentication.
+- Minor mistakes in Slovak translation fixed.
+
+Kerio Sync Connector for Mac
+- Certain contacts created in a CardDAV client were not synchronized by Kerio Sync Connector for Mac.
+
+
+
+
+
+Version 7.0.0 Patch 2 - March 17, 2010
+--------------------------------------
+Kerio Connect
+- Fixed issue with contact synchronization from Nokia mobile devices.
+- Fixed stability issue caused by overloaded HTTP services.
+- Fixed rare crash on server shutdown.
+
+Kerio Sync Connector for Mac
+- Fixed compatibility with 64bit Mac OS X 10.5 Leopard.
+
+
+
+
+
+Version 7.0.0 Patch 1 - February 18, 2010
+-----------------------------------------
+Kerio Connect
+- Fixed issue: Some Windows Mobile 6.0 devices could not be configured with Kerio Connect.
+- Fixed issue: Tasks editing on Nokia phones with Mail for Exchange client could cause synchronization failure.
+- Fixed high network load when synchronizing Apple AddressBook via CardDAV.
+
+Kerio Outlook Connector (Offline Edition)
+- Emails could not be sent from Microsoft Outlook running on Windows XP and using SPA authentication.
+
+
+
+
+
+Version 7.0.0 - February 9, 2010
+--------------------------------
+Kerio Connect
++ CardDAV support.
++ Complete Web Administration.
++ Email domains can be distributed over several servers.
++ Added ability to migrate users in distributed domain to a different home server.
++ Added the domain rename capability.
++ Simplified CalDAV account configuration on the Apple iPhone 3.0 firmware.
++ Added a support for the ESMTP message submission (port 587).
++ Added a retention policy for the message store auto cleanup.
+* Rebranding to Kerio Connect.
+* New integrated McAfee anti-virus engine version 5400.
+* Improved calendar synchronization with Nokia E75.
+* Improved publishing of users from Open Directory to Global Address List.
+* The number of Apple iCal generated meeting updates delivered to event attendees was significantly reduced.
+* Reduced a time delay during the IMAP/POP account configuration on Apple iPhone.
+* Improved the compatibility of calendar invitations.
+* Significantly reduced the memory used by the inactive HTTP connections.
+* The IMAP server improvements.
+* Server SSL certificate and SSL certificate requests (CSR) are now generated with 2048bit RSA private key.
+* Many performance enhancements.
+* Added a support for wildcard server SSL certificates in the iCal configuration tool.
+* Improved installation and upgrade process on Debian-based Linux systems.
+- Some messages could not be downloaded from a remote POP3 server.
+- Operations with huge folders might have made the server unavailable.
+- Meeting invitations from ActiveSync were silently accepted by Apple iCal.
+- Fixed handling of large messages sent from Microsoft Entourage.
+- Fixed the full name attribute parsing in Global Address List.
+- National characters in calendar events might get corrupted when synchronized to Apple iCal.
+- The server was incorrectly detached from a terminal on Linux.
+- Fixed occasional server crashes.
+- A copied event could cause error during the CalDAV synchronization.
+- A Resource could remain blocked after a meeting update in some cases.
+- Contact created on the iPhone could be synchronized with wrong last name, first name order to Apple Address Book.
+- The recent message count in IMAP was sometimes inaccurate.
+- Tasks appeared in the default calendar for delegated accounts in Apple iCal.
+- Fixed private events visibility in shared calendars.
+- Active Directory groups might get duplicated in Global Address List.
+- An appended domain footer could corrupt some messages with meeting requests.
+- A message could stick in the queue if the delivery address was malformed.
+- An incorrect value of the threshold appeared in the spam log.
+- Delegation might stop working in Apple iCal and get never working again under specific circumstances.
+- Fixed an error message reported while stopping the server on Linux.
+- Certain email messages with added domain footer could be rejected by some servers (PGP AntiGen).
+- Some contact could be repeatedly published/removed from the Global Address List.
+- Dropped support of Symantec antivirus plugin
+- Many small fixes and optimizations.
+
+Kerio Outlook Connector (Offline Edition)
++ Out-Of-Office settings are available from Outlook's panel now.
+* Several performance enhancements implemented.
+* Logging options can be easily set in Connector's configuration now.
+* Automatic Connector's update is performed unattended now.
+- Searches no longer make Outlook unresponsible.
+- Several stability issues fixed.
+- Many small bugs were fixed.
+
+Kerio WebMail
++ Added support for Firefox 3.5, 4.0.
++ HTML editor in mail composer for Safari 4.
+* Location is showed in event and task reminder now.
+* Improved speed of viewing meeting invitations.
+* Apple Address Book auto-configure tool on the Integration page.
+* WebMail mode selection (the full-featured of simplified) is remembered on login page now.
+! Dropped support for Safari 2, Safari 3.0, Safari 3.1 and Firefox 2 in full WebMail.
+- Some dialogs were rendered incorrectly in Internet Explorer 8.
+- Events copied within the same calendar could case synchronization issues.
+- Events could be changed by obsolete meeting update.
+- Event reminder was not updated when changing start time in some cases.
+- Events with many attendees were opened too slowly in some cases.
+- Last occurrence of recurrent events were not visible in Calendar in some case.
+- Original message header Sent: were not included on reply or forward.
+- Ctrl+F in message list unexpectedly opened browser search dialog.
+- Opening Mail filters dialog might cause an JavaScript error.
+- The Tasks folder in Public Folders was not localized.
+- Email address of vCard sent from Apple Address Book was not imported in some case.
+- Many small bugs were fixed.
+
+Kerio Connect Administration
++ Added full scaled read/write web administration (Message Queue, Statistics, Active Connections, Opened Folders, Services, Domains, SMTP Server, Content Filters, Archiving and Backup, Delivery, SSL Certificates, Advanced Options, Time Ranges, IP Address Groups, User Templates, Settings, Logs).
++ Added Distributed Domains
++ Added support for auditing (read-only web administration).
++ Added support for Safari 4.
++ Added support for Firefox 3.5, 4.0.
+* Dedicated port 4040 is used for web administration.
+- Many small bugs were fixed.
+
+Kerio Administration Console
++ Added configuration for global retention policy of messages in the message store. 

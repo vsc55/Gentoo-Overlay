@@ -1,0 +1,14 @@
+[Unit]
+Description=Kerio Connect
+
+[Service]
+Type=forking
+PIDFile=/var/run/kms.pid
+ExecStart=/opt/kerio/mailserver/mailserver /opt/kerio/mailserver
+Restart=on-failure
+LimitCORE=infinity
+LimitSTACK=2097152
+LimitNOFILE=10240
+
+[Install]
+WantedBy=multi-user.target
