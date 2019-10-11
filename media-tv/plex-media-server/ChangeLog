@@ -4,6 +4,19 @@ https://plex.tv/downloads/1/archive
 https://plex.tv/downloads/1/archive
 
 
+Plex Media Server 1.18.0.1944
+FIXES:
+    - (LiveTV) Pixellation and stuttering could occur during LiveTV and DVR playback
+
+
+
+Plex Media Server 1.18.0.1913 is available to PlexPass users in the Beta update channel
+-----------------------------------------
+FIXES:
+	- (Library) Music could fail to scan when added to a new or upgraded music library on Nvidia SHIELD devices.
+	- (NAS) Permissions issues resulting in a failures to start
+
+
 
 Plex Media Server 1.18.0.1906
 -----------------------------------------
