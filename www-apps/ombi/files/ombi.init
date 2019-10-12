@@ -1,5 +1,6 @@
 #!/sbin/openrc-run
-#
+# Copyright © 2019  Javier Pastor (aka vsc55)
+# Distributed under the terms of the GNU General Public License v3
 # /etc/init.d/ombi Script to start and stop Ombi
 
 name="Ombi"
