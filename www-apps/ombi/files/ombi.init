@@ -1,0 +1,30 @@
+#!/sbin/openrc-run
+#
+# /etc/init.d/ombi Script to start and stop Ombi
+
+name="Ombi"
+
+RUN_USER=${RUN_USER:-"ombi"}
+RUN_GRUPO=${RUN_GRUPO:-"ombi"}
+PATH_CONFIG=${PATH_CONFIG:-"/etc/Ombi"}
+PORT=${PORT:-"5000"}
+LISTEN=${LISTEN:-"*"}
+
+pidfile="/var/run/ombi.pid"
+logfile="/var/log/ombi.log"
+
+workdir="/opt/Ombi"
+command="$workdir/Ombi"
+command_args=" --host http://$LISTEN:$PORT --storage $PATH_CONFIG"
+command_user="$RUN_USER"
+command_background="yes"
+start_stop_daemon_args=" --stdout $logfile --stderr $logfile --chdir $workdir"
+
+depend () {
+	need net
+}
+
+start_pre() {
+	checkpath -q --directory --owner $RUN_USER:$RUN_GRUPO --mode 0775 $PATH_CONFIG/Logs
+	checkpath -q --file --owner $RUN_USER:$RUN_GRUPO --mode 0775 $logfile $PATH_CONFIG/*.* $PATH_CONFIG/Logs/*.*
+}
