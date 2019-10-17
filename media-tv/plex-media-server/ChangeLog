@@ -5,8 +5,7 @@ https://plex.tv/downloads/1/archive
 
 
 
-
-Plex Media Server 1.18.1.1966
+Plex Media Server 1.18.1.1973
 -----------------------------------------
 NEW:
     - (Localization) Updated translations
@@ -15,8 +14,6 @@ NEW:
     - Set the DLNA server feature to be turned off by default. It can be manually re-enabled if required in Plex Web's server settings (#10530)
     - (Linux) Improved quality and performance of hardware transcoding on Linux systems with 8th-generation or later GPUs
     - (Linux) Improved automatic detection of Intel GPUs on systems that also have other graphics
-    - (Metadata) Read track moods
-
 FIXES:
     - (Dashboard) CPU and Memory graphs would not load on some NAS devices (#10080)
     - (Library) Some portrait videos could return the incorrect resolution value (#10586)
@@ -28,7 +25,28 @@ FIXES:
 
 
 
- Plex Media Server 1.18.0.1944 is now available in the Beta update channel
+Plex Media Server 1.18.1.1966
+-----------------------------------------
+NEW:
+    - (Localization) Updated translations
+    - Add an HDR filter for movies (#9652)
+    - Improve detection of udevadm on newer debian-based distros.
+    - Set the DLNA server feature to be turned off by default. It can be manually re-enabled if required in Plex Web's server settings (#10530)
+    - (Linux) Improved quality and performance of hardware transcoding on Linux systems with 8th-generation or later GPUs
+    - (Linux) Improved automatic detection of Intel GPUs on systems that also have other graphics
+    - (Metadata) Read track moods
+FIXES:
+    - (Dashboard) CPU and Memory graphs would not load on some NAS devices (#10080)
+    - (Library) Some portrait videos could return the incorrect resolution value (#10586)
+    - (Linux) An internal system directory could be displayed unexpectedly in the directory browser on certain NAS platforms (#10630)
+    - (Transcoder) Hardware transcoding could fail on systems with recent systemd versions (#10723)
+    - (Transcoder) Fixed hardware decoding of VC1
+    - (Transcoder) Output streams could be corrupted in certain cases (#10709)
+    - (Metadata) Improved reliability of music lookups
+
+
+
+Plex Media Server 1.18.0.1944 is now available in the Beta update channel
 -----------------------------------------
 FIXES:
     - (LiveTV) Pixellation and stuttering could occur during LiveTV and DVR playback
@@ -58,7 +76,6 @@ NEW:
     - (Library) Support for reading OGG tags.
     - (Transcoder) Support for zero-copy hardware transcoding on Windows with Intel GPUs
     - (Web) Updated to 4.8.4
-
 FIXES:
     - (Companion) Some companion apps would not be available to control from the Web player (#10522)
     - (DVR) Rarely would crash while extending a rolling subscription (#10535)
