@@ -1,11 +1,23 @@
 https://www.urbackup.org/server_changelog.html
 
+2.4.10
+Changes:
+
+    Check for too many clients before sending server identity to new client
+    Remove mac download
+    Option to compile with embedded ZSTD
+    Fix status/alert if incremental image backups are disabled
+    Check on startup if syncfs() works for backup storage folder and ignore errors if it doesn’t
+    Handle EINVAL error return of BTRFS_IOC_SYNC
+
+
 2.4.9
 Major changes:
 
     IPv6 support (sponsored by Tuxis Internet Engineering )
     ZSTD transport compression
     Parallel hashing improvements
+
 
 Changes since 2.4.8:
 

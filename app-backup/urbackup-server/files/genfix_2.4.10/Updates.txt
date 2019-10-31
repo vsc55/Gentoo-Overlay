@@ -1,0 +1,4 @@
+igual que 2.3.7	=>	Makefile.in
+igual que 2.3.7	=>	server_settings.cpp
+cambio		=>	server_update.cpp
+igual que 2.3.7	=>	templates.chash-f85173fea3869fb86c781b60569246a4.js

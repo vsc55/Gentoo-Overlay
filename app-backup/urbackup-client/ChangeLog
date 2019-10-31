@@ -1,5 +1,15 @@
 https://www.urbackup.org/client_changelog.html
 
+2.4.9 (Linux only)
+Changes:
+
+    Fix OpenSSL configure warning
+    Disable using sse4 in linux build using Android NDK for x86/amd64 making the Linux binary client work on older CPUs without SSE4 instruction supports
+    Option to compile with embedded ZSTD
+    Linux binary client is now build with ZSTD support
+    Handle error returned from listen()
+
+
 2.4.8
 Major changes:
 
