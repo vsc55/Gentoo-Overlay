@@ -1,5 +1,12 @@
 https://www.urbackup.org/server_changelog.html
 
+
+2.4.11
+Changes:
+
+    Fix configure (on Linux/FreeBSD) issue with a crypto++ test failing because of missing pthread linkage and because of wrong linker command order. This issue caused the server to crash on startup in combination with some variants of the crypto++ library
+
+
 2.4.10
 Changes:
 
