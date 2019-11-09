@@ -17,11 +17,14 @@ IUSE="-systemd crypt hardened fuse mail zlib logrotate"
 
 
 RDEPEND="
-	crypt? ( dev-libs/crypto++ )
 	dev-db/sqlite
-	fuse? ( sys-fs/fuse )
-	mail? ( >=net-misc/curl-7.2 )
-	zlib? ( sys-libs/zlib )"
+	>=sys-devel/gcc-4.1.1
+	>=sys-libs/glibc-2.17
+	crypt? ( dev-libs/crypto++ )
+	fuse? ( >=sys-fs/fuse-2.6 )
+	mail? ( >=net-misc/curl-7.23.1[ssl] )
+	zlib? ( >=sys-libs/zlib-1.1.4 )
+"
 DEPEND="${RDEPEND}"
 
 
