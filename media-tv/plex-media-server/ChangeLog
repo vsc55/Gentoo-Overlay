@@ -4,6 +4,21 @@ https://plex.tv/downloads/1/archive
 https://plex.tv/downloads/1/archive
 
 
+Plex Media Server 1.18.2.2029 is now available in the Beta update channel
+-----------------------------------------
+FIXES:
+	- (DVR) Preserve EPG metadata when assimilating Sports and News recordings. (#10544)
+	- (Playlists) Recently added playlists were not sorted correctly
+
+
+
+Plex Media Server 1.18.1.2019 is now available to everyone
+-----------------------------------------
+FIXES:
+	- (LiveTV) Hubs and Grid may not load for shared users (or may take a long time to do so)
+
+
+
 Plex Media Server 1.18.2.2015 is now available in the Beta update channel**
 -----------------------------------------
 NEW:
