@@ -21,5 +21,6 @@ net-misc
 net-p2p
 sys-kernel
 virtual
+www-apache
 www-apps
 www-misc

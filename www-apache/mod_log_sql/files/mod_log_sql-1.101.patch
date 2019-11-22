@@ -1,0 +1,82 @@
+diff -Naur mod_log_sql-1.101.orig/AUTHORS mod_log_sql-1.101/AUTHORS
+--- mod_log_sql-1.101.orig/AUTHORS	2005-01-11 23:00:10.000000000 +0100
++++ mod_log_sql-1.101/AUTHORS	2019-11-22 16:02:27.395426500 +0100
+@@ -9,3 +9,6 @@
+ 
+ The Apache Foundation
+ 	standard apache logging module for which this module is based on
++
++Modified to work with the X-Forwarded-For and mod_vhs HTTP header by Rene Kanzler <rk (at) cosmomill (dot) de>
++Update X-Forwarded-For and mod_vhs HTTP to version 1.101 by Javier Pastor <jpastor (at) cerebelum (dot) net>
+\ No hay ningún carácter de nueva línea al final del fichero
+diff -Naur mod_log_sql-1.101.orig/docs/manual.html mod_log_sql-1.101/docs/manual.html
+--- mod_log_sql-1.101.orig/docs/manual.html	2006-11-06 07:06:47.000000000 +0100
++++ mod_log_sql-1.101/docs/manual.html	2019-11-22 16:33:41.646632000 +0100
+@@ -1066,7 +1066,10 @@
+                       </td><td>time_stamp</td><td>int unsigned</td><td>1005598029</td></tr><tr><td>s</td><td>HTTP Response Code Status</td><td>status</td><td>smallint</td><td>200</td></tr><tr><td>T</td><td>Seconds to service request</td><td>request_duration</td><td>smallint unsigned</td><td>2</td></tr><tr><td>t</td><td>Time of request in human format</td><td>request_time</td><td>char(28)</td><td>[02/Dec/2001:15:01:26 -0800]</td></tr><tr><td>U</td><td>Request in simple form</td><td>request_uri</td><td>varchar(255)</td><td>/books-cycroad.html</td></tr><tr><td>u</td><td>User info from HTTP auth</td><td>remote_user</td><td>varchar(50)</td><td>bobby</td></tr><tr><td>v</td><td>Virtual host servicing the request</td><td>virtual_host</td><td>varchar(255)</td><td>www.foobar.com</td></tr><tr><td>V</td><td>
+                         requested Virtual host name (mass
+                         virtualhosting)
+-                      </td><td>virtual_host</td><td>varchar(255)</td><td>www.foobar.org</td></tr></tbody></table></div><div class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Note</h3><p><a id="Foot.LogCookie"></a>
++                      </td><td>virtual_host</td><td>varchar(255)</td><td>www.foobar.org</td></tr>
++                      <tr><td>g</td><td>requested Virtual host name for <a href="http://openvisp.fr/doku/doku.php?id=mod_vhs:logs">mod_vhs</a></td><td>virtual_host</td><td>varchar(255)</td><td>www.foobar.org</td></tr>
++                      <tr><td>x</td><td>Name of remote host behind a proxy (X-Forwarded-For)</td><td>remote_host</td><td>varchar(50)</td><td>blah.foobar.com</td></tr>
++                    </tbody></table></div><div class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Note</h3><p><a id="Foot.LogCookie"></a>
+                   [1] You must also specify LogSQLWhichCookie for this
+                   to take effect.
+                 </p><p><a id="Foot.MachineID"></a>
+diff -Naur mod_log_sql-1.101.orig/functions.h mod_log_sql-1.101/functions.h
+--- mod_log_sql-1.101.orig/functions.h	2004-09-20 04:50:46.000000000 +0200
++++ mod_log_sql-1.101/functions.h	2019-11-22 17:44:36.787187944 +0100
+@@ -258,4 +258,40 @@
+ 	  return tempid;
+ }
+ 
++/* The X-Forwarded-For HTTP header is a de facto standard for identifying the originating IP address
++ * of a client connecting to a web server through an HTTP proxy or load balancer. 
++ */
++static const char *extract_forwarded_for(request_rec *r, char *a)
++{
++	const char *val;
++	const char *forwarded_for;
++
++	forwarded_for = apr_table_get(r->headers_in, "X-Forwarded-For");
++	if (forwarded_for != NULL) {
++		/* try to get the farthest downstream client */
++		val = ap_get_token(r->pool, &forwarded_for, 0);
++		return val;
++	}
++
++	/* return the remote IP address if no X-Forwarded-For HTTP header is set */
++	//return r->connection->remote_ip;
++	
++	//Fix Apache 2.4
++	return r->useragent_ip;
++}
++
++/* Special HTTP header for mod_vhs read http://openvisp.fr/doku/doku.php?id=mod_vhs:logs  */
++static const char *extract_vhgecos(request_rec *r, char *a)
++{
++	const char *vhgecos;
++
++	vhgecos = apr_table_get(r->subprocess_env, "VH_GECOS");
++	if (vhgecos != NULL) {
++		return vhgecos;
++	}
++
++	/* return the virtual host name if no VH_GECOS HTTP header is set */
++	return r->server->server_hostname;
++}
++
+ /* End declarations of various extract_ functions */
+diff -Naur mod_log_sql-1.101.orig/mod_log_sql.c mod_log_sql-1.101/mod_log_sql.c
+--- mod_log_sql-1.101.orig/mod_log_sql.c	2006-11-07 03:43:23.000000000 +0100
++++ mod_log_sql-1.101/mod_log_sql.c	2019-11-22 17:45:19.345438192 +0100
+@@ -493,6 +493,8 @@
+     log_sql_register_item(s,p,'U', extract_request_uri,       "request_uri",      1, 1);
+     log_sql_register_item(s,p,'v', extract_virtual_host,      "virtual_host",     0, 1);
+     log_sql_register_item(s,p,'V', extract_server_name,       "virtual_host",     0, 1);
++    log_sql_register_item(s,p,'x', extract_forwarded_for,     "remote_host",      0, 1);
++    log_sql_register_item(s,p,'g', extract_vhgecos,           "virtual_host",     0, 1);
+ 
+     if (global_config.announce) {
+         ap_add_version_component(p, PACKAGE_NAME"/"PACKAGE_VERSION);
