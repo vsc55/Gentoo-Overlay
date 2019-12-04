@@ -4,6 +4,27 @@ https://plex.tv/downloads/1/archive
 https://plex.tv/downloads/1/archive
 
 
+Plex Media Server 1.18.3.2111 is now available in the Beta update channel
+-----------------------------------------
+NEW:
+	- (Dashboard) Add CPU and memory graphs to some new linux-based platforms (#10080)
+	- (Library) Don’t add duplicate files to the PlayQueue. This could occur when a single file contains multiple episodes. (#1340)
+	- (Library) Track watch status accross multiple episodes when they share the same underlying file. (#1340)
+	- (NAS) QNAP packages are now signed. (required for QTS 4.4.0 and newer)
+	- (Web) Updated to 4.12.3
+FIXES:
+	- (Apple) Disable iPhoto and Aperture channels. They can be re-enabled in settings. (#7189)
+	- (DVR) Change India to require an XMLTV guide since our provider is dropping support. (#10659)
+	- (DVR) Re-enable signal strength updates for Hauppauge tuners. (#9746)
+	- (DVR) Recording options “Show Advanced” -> “Limit To Airing Time” would sometimes display incorrect airing times, that were off by 1 hour. (#10536)
+	- (DVR) Reduce the likelihood of a national lineup being selected by default during setup. (#10211)
+	- (DVR) Return proper error when recording is skipped because airing is in progress. (#9688)
+	- (DVR) Support moving multiple files during assimilation. (#9996)
+	- (Playqueue) Shared users would not see subsequent episodes in playqueues (#10838)
+	- (Scanner) Some pre-defined directories weren’t ignored when scanning (#10671)
+
+
+
 Plex Media Server 1.18.2.2058 is now available to everyone
 -----------------------------------------
 NEW:
