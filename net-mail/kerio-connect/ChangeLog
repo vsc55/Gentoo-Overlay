@@ -9,6 +9,41 @@ Legend:
 
 
 
+Version 9.2.11 - Released: December 9, 2019
+-----------------------------------------
+New:
+- KOFF performance improvements for searching items. Benefits mainly x64 platforms
+- Open Java runtime is used for XMPP (repacing Oracle Java)
+
+Fixes:
+- Kerio Connect fails to start if luks.container file is missing
+- Built-in Admin archive folder rights "checkbox" cannot be deactivated in Windows
+- BCC is ignored in emails sent via ActiveSync
+- A calendar invite from iCloud moves to another time
+- Cannot deactivate access to the archive for users
+- Chat is not working in Safari
+- Kerio Connect trims large notes with no warning
+- Delivery/Read receipts are not working with Outlook 2016/2019 Exchange ActiveSync profile
+- eM Client: When trying to share calendar, an unnamed error pops up
+- eM Client: When you want to upload a new distribution list on Kerio, error pops up and the upload won't be successful. Doesn't matter if you copy the list or create a new one.
+- Email attachments missing using outlook with KOC
+- GAL photos don't sync with AD
+- Kerio Connect webmail login form does not contain anti-CFR token (XSS)
+- Kerio Connect compatibility with The Bat! IMAP search
+- Outlook for Mac reverts back change to appointment date from series
+- Private Calendar Event's attachments are visible to all users
+- Public calendar link broken after renaming calendar via BusyCal (MacOS)
+- Reply messages contain extra strange numbers and characters
+- Report Problem and Technical Support buttons are not working
+- Secure Message signing does not work when the recipient is macOS Mojave Apple Mail
+- The message when an attachment is blocked is not displayed in KOFF
+- Timezone issue for Outlook 365 calendar invites
+- Title for New Contact group, New task, and New note is incorrect
+- When a user clicks to add extra disk space and Resizing Fails error occurs
+- LDAP custom search Filter returns unnecessary results
+
+
+
 Version 9.2.10 - Released: July 31, 2019
 -----------------------------------------
 Fixes:
