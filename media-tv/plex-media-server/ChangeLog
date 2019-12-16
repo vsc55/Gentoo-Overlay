@@ -4,6 +4,14 @@ https://plex.tv/downloads/1/archive
 https://plex.tv/downloads/1/archive
 
 
+
+Plex Media Server 1.18.3.2129 is now available in the Beta update channel
+-----------------------------------------
+FIXES:
+	- (DVR) Fix for crash when accessing Live TV & DVR.
+	
+
+
 Plex Media Server 1.18.3.2111 is now available in the Beta update channel
 -----------------------------------------
 NEW:
