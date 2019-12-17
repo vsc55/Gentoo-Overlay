@@ -4,6 +4,39 @@ https://plex.tv/downloads/1/archive
 https://plex.tv/downloads/1/archive
 
 
+Plex Media Server 1.18.4.2153
+-----------------------------------------
+Nuevo
+	- (DVR) "Upcoming Sports" renamed to "Sports On Later"; filter refined to only have sport events (#10554).
+	- (DVR) Added new "Sports On Now" hub (#10554).
+	- (DVR) Enhanced "TV Shows" Hub, now named "Shows On Now". (#10815)
+	- (Library) Add an "in progress" filter for movies and episodes.
+	- (Library) Added a release date filter for albums.
+	- (Library) Allow using Musicbrainz IDs when manually matching artists and albums.
+	- (Library) Keep track of when items are rated, add filter.
+	- (Preferences) Added more bitrate options to limiting remote per-stream bandwidth (#10778)
+	- (Preferences) Enable "Use hardware-accelerated video encoding" by default.
+
+Reparaciones
+	- (DVR) Programs listed under "Recommended" Hub would not sort by airing start datetime (#10554).
+	- (EPG) Allow filtering of EPG data by content rating.
+	- (Library) Fix manual searches for old music album agents.
+	- (Library) Huge speedup to history view in dashboard.
+	- (Library) Read MusicBrainz tags from files to help match the correct release.
+	- (Library) Stop showing recommendations from shared libraries which don't exist anymore.
+	- (Library) Use track filenames as last-ditch track titles. (#10740)
+	- (Music) Read track artist tags in more cases.
+	- (PMS) Server would sometimes return HTTP 404 when scanner was traversing folders. (#10800)
+	- (Transcoder) The server could crash when attempting hardware transcodes on certain Windows systems (#10736)
+
+
+
+Plex Media Server 1.18.3.2156 is now available in the Beta update channel
+-----------------------------------------
+FIXES:
+	- Fix crash on Windows with Intel graphics adapter and hardware acceleration enabled (#10736)
+
+
 
 Plex Media Server 1.18.3.2129 is now available in the Beta update channel
 -----------------------------------------
