@@ -1,5 +1,12 @@
 https://www.urbackup.org/server_changelog.html
 
+2.4.12
+
+    Delete backup script .hashes file in snapshot before backups (fixes issues with script backups in some cases)
+    Update lua code ( Fix status/alert if incremental image backups are disabled )
+    Fix restore crash bug
+    Fix image cleanup not looping and only removing one backup per client per cleanup
+
 
 2.4.11
 Changes:
