@@ -1,5 +1,12 @@
 https://www.urbackup.org/client_changelog.html
 
+
+2.4.10
+    Add ELLCC build for ARMv6 again
+    Fix log fetching for newer postgres version
+    Disable using SSE3 in x86 client builds
+
+
 2.4.9 (Linux only)
 Changes:
 
