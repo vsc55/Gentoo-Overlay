@@ -1,0 +1,34 @@
+--- 1.18.5.2260/start_pms_orig	2020-01-17 05:17:10.000000000 +0100
++++ 1.18.5.2260/start_pms	2020-01-20 22:41:21.891598824 +0100
+@@ -4,12 +4,12 @@
+ #
+ 
+ # Set Crash Reporting identification variables
+-export PLEX_MEDIA_SERVER_INFO_VENDOR="$(grep ^NAME= /etc/os-release|awk -F= '{print $2}'|tr -d \" )"
++export PLEX_MEDIA_SERVER_INFO_VENDOR="$(lsb_release -i |awk -F: '{print $2}' | tr -d '[:blank:]')"
+ export PLEX_MEDIA_SERVER_INFO_DEVICE="PC"
+ export PLEX_MEDIA_SERVER_INFO_MODEL="$(uname -m)"
+-export PLEX_MEDIA_SERVER_INFO_PLATFORM_VERSION="$(grep ^VERSION= /etc/os-release|awk -F= '{print $2}'|tr -d \" )"
++export PLEX_MEDIA_SERVER_INFO_PLATFORM_VERSION="$(lsb_release -r |awk -F: '{print $2}' | tr -d '[:blank:]')"
+ 
+-# Change these parameters in /etc/default/plexmediaserver
++# Change these parameters in /etc/plex/plexmediaserver.conf
+ export PLEX_MEDIA_SERVER_USER=plex
+ export PLEX_MEDIA_SERVER_MAX_PLUGIN_PROCS=6
+ export PLEX_MEDIA_SERVER_HOME=/usr/lib/plexmediaserver
+@@ -17,12 +17,12 @@
+ export PLEX_MEDIA_SERVER_TMPDIR=/tmp
+ export PLEX_MEDIA_SERVER_APPLICATION_SUPPORT_DIR="${HOME}/Library/Application Support"
+ 
+-if [ -f /etc/default/locale ]; then
+-  export LANG="$(cat /etc/default/locale|awk -F '=' '/LANG=/{print $2}'|sed 's/"//g')"
++if [ -f /etc/env.d/02locale ]; then
++  export LANG="$(cat /etc/env.d/02locale|awk -F '=' '/LANG=/{print $2}'|sed 's/"//g')"
+   export LC_ALL="$LANG"
+ fi
+ 
+-test -f /etc/default/plexmediaserver && . /etc/default/plexmediaserver
++test -f /etc/plex/plexmediaserver.conf && . /etc/plex/plexmediaserver.conf
+ 
+ # Silently support PLEX_USER if provided as override
+ if [ "$PLEX_USER" != "" ]; then

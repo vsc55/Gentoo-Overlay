@@ -1,0 +1,29 @@
+--- 1.15.0.647/start_pms_orig	2019-02-04 17:27:12.000000000 +0100
++++ 1.15.0.647/start_pms	2019-02-07 13:15:22.166605039 +0100
+@@ -1,10 +1,10 @@
+ #!/bin/sh
+ 
+ # Set identification variables
+-export PLEX_MEDIA_SERVER_INFO_VENDOR="$(grep ^NAME= /etc/os-release|awk -F= '{print $2}'|tr -d \" )"
++export PLEX_MEDIA_SERVER_INFO_VENDOR="$(lsb_release -i |awk -F: '{print $2}' | tr -d '[:blank:]')"
+ export PLEX_MEDIA_SERVER_INFO_DEVICE="PC"
+ export PLEX_MEDIA_SERVER_INFO_MODEL="$(uname -m)"
+-export PLEX_MEDIA_SERVER_INFO_PLATFORM_VERSION="$(grep ^VERSION= /etc/os-release|awk -F= '{print $2}'|tr -d \" )"
++export PLEX_MEDIA_SERVER_INFO_PLATFORM_VERSION="$(lsb_release -r |awk -F: '{print $2}' | tr -d '[:blank:]')"
+ 
+ # change these parameters in /etc/default/plexmediaserver
+ export PLEX_MEDIA_SERVER_MAX_PLUGIN_PROCS=6
+@@ -14,11 +14,11 @@
+ export PLEX_MEDIA_SERVER_APPLICATION_SUPPORT_DIR="${HOME}/Library/Application Support"
+ 
+ if [ -f /etc/default/locale ]; then
+-  export LANG="$(cat /etc/default/locale|awk -F '=' '/LANG=/{print $2}'|sed 's/"//g')"
++  export LANG="$(cat /etc/env.d/02locale|awk -F '=' '/LANG=/{print $2}'|sed 's/"//g')"
+   export LC_ALL="$LANG"
+ fi
+ 
+-test -f /etc/default/plexmediaserver && . /etc/default/plexmediaserver
++test -f /etc/plex/plexmediaserver.conf && . /etc/plex/plexmediaserver.conf
+ 
+ if [ ! -d "$PLEX_MEDIA_SERVER_APPLICATION_SUPPORT_DIR" ]
+ then
