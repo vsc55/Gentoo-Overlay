@@ -4,6 +4,25 @@ https://plex.tv/downloads/1/archive
 https://plex.tv/downloads/1/archive
 
 
+Plex Media Server 1.18.5.2260 is now available in the Beta update channel.
+-----------------------------------------
+NEW:
+	- (Networking) Added prefrence to allow disabling of the relay (#8514)
+	- (Photos) Support WebP image format in photo libraries (#1082)
+	- (Prefs) Exposed an advanced preference to disable video transcoding (#10891)
+	- (Ubuntu/Debian) Add support for SysVinit. 24
+	- (Ubuntu/Debian) Improve installation in non-standard environments. 24
+FIXES:
+	- (Camera Upload) Very large video files could fail to upload (#6880)
+	- (Collections) Collections were sorted incorrectly in some cases
+	- (Language) Changes to shared user’s audio/subtitle language preferences were not respected. (#10910)
+	- (Library) Crash scanning single track albums. (#10941)
+	- (PlayQueue) Deleting the currently playing item in a queue could result in undefined behaviour (#10450)
+	- (Synology) Improve process of stopping PMS when device is busy.
+	- (TerraMaster) Libraries created during initial setup could be lost in rare cases.
+
+
+
 Plex Media Server 1.18.4.2164 is now available in the Beta update channel
 -----------------------------------------
 Nuevo
@@ -16,7 +35,6 @@ Nuevo
 	- (Library) Keep track of when items are rated, add filter.
 	- (Preferences) Added more bitrate options to limiting remote per-stream bandwidth (#10778)
 	- (Preferences) Enable "Use hardware-accelerated video encoding" by default.
-
 Reparaciones
 	- (DVR) Programs listed under "Recommended" Hub would not sort by airing start datetime (#10554).
 	- (EPG) Allow filtering of EPG data by content rating.
