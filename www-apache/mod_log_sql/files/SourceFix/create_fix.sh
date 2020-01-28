@@ -1,0 +1,1 @@
+diff -Naur mod_log_sql-1.101.orig mod_log_sql-1.101 > fix.txt
