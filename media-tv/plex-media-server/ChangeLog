@@ -4,6 +4,16 @@ https://plex.tv/downloads/1/archive
 https://plex.tv/downloads/1/archive
 
 
+
+Plex Media Server 1.18.6.2368
+-----------------------------------------
+FIXES:
+    (Ubuntu/Debian) In some cases Docker container detection could fail.
+    (Ubuntu/Debian) The service may not have automatically started after upgrading an existing install.
+    The server could become unresponsive after navigating many preplay screens.
+
+
+
 Plex Media Server 1.18.6.2348
 -----------------------------------------
 NEW:
