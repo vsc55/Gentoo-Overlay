@@ -5,6 +5,27 @@ https://plex.tv/downloads/1/archive
 
 
 
+Plex Media Server 1.18.7.2415 is now available in the Beta update channel.
+-----------------------------------------
+NEW:
+	- (DVR) Added “Kids On Now” hub (#10817).
+FIXES:
+	- (DVR) Content may be presented out of order for Shows On Now, Kids On Now, and Sports On Now Hub (#11107).
+	- (DVR) Only require 100 MB of disk space per recording for the transcode session directory. (nvidia-shield-issues#236)
+	- (DVR) Server would fail to display all shows under “Shows On Now” section in Web client (#11014).
+	- (DVR) Server would fail to provide “Shows On Now” view for iOS (#11014).
+	- (DVR) Server would not display “On Right Now” and “Upcoming Sports”, when XMLTV was the datasource (#10997).
+	- (DVR) Server would present very long running sports programs at front of “Sports On Now” Hub (#11004).
+	- (Hubs) Starting a playqueue from Recently Added movies could contain items which are not accessible or playable (#10669)
+	- (Library) Improve quality of shuffled music playback order in certain cases.
+	- (Library) Sort order of episodes without air date could be incorrect.
+	- (Transcoder) Hardware decoding could produce corrupt video when burning subtitles on Apollo Lake-based processors. (#10753)
+	- (Transcoder) Hardware encoding on older Intel processors could produce very low-quality output in some cases. (#10863)
+	- (Transcoder) Transcoder request for session segment would hang if we killed the transcoder job and OS fails to complete the process kill (#10886)
+	- (Transcoder) Transcodes could fail in some cases due to thread scheduling conditions (#10831)
+
+
+
 Plex Media Server 1.18.6.2368
 -----------------------------------------
 FIXES:
