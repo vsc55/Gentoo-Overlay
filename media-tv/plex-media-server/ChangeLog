@@ -5,6 +5,13 @@ https://plex.tv/downloads/1/archive
 
 
 
+Plex Media Server 1.18.7.2434 is now available in the Beta update channel.
+-----------------------------------------
+FIXES:
+	- Certain clients could make a request that would crash the server (#11154)
+
+
+
 Plex Media Server 1.18.7.2415 is now available in the Beta update channel.
 -----------------------------------------
 NEW:
