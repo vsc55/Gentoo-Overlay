@@ -4,6 +4,12 @@ https://plex.tv/downloads/1/archive
 https://plex.tv/downloads/1/archive
 
 
+Plex Media Server 1.18.7.2457 is now available to everyone.
+-----------------------------------------
+FIXES:
+	- (Stability) PMS could hang when using iTunes plugins (#11187)
+
+
 
 Plex Media Server 1.18.7.2438 is now available in the Beta update channel.
 -----------------------------------------
