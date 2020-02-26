@@ -4,6 +4,31 @@ https://plex.tv/downloads/1/archive
 https://plex.tv/downloads/1/archive
 
 
+Plex Media Server 1.18.8.2461 is now available in the Beta update channel
+-----------------------------------------
+NEW:
+	- (DVR) ‘New Episodes Tonight’ hub renamed to ‘New Shows On Tonight’ (#10818).
+	- (DVR) ‘Upcoming News’ hub renamed to ‘News On Later’ (#10818).
+	- (DVR) Added ‘Movies On Now’ Hub (#10816).
+	- (DVR) Added ‘News On Now’ Hub (#10818).
+	- (DVR) Added Kids On Later Hub (#11072)
+	- (DVR) Added Movies On Later Hub (#11073).
+	- (Library) Add custom filter fields for sharing Labels (#8711)
+FIXES:
+	- (Collections) When a collection was renamed, its tag kept the old name (#10446)
+	- (DLNA) Don’t start DLNA server after leaving Plex Home (#11061)
+	- (DVR) Ensure there is no loss of existing metadata when the Enhanced Guide option is selected and some metadata is not available and add extra logging. (#10942)
+	- (DVR) Pref to delete watched episodes On next refresh would result in not deleting episodes for 100 days (#10985)
+	- (DVR) Preserve EPG metadata when assimilating all recordings except XMLTV Movies & Shows. (#10972)
+	- (Dashboard) Transcodes to a lossless audio codec would display bitrate of 10Gbps (#10341)
+	- (Hubs) Invalidate user’s cached hubs on account update. (#8176)
+	- (Live TV) Fix for crash when stopping Live TV session. (#11172)
+	- (Scanning) Speed up repeat scans of large music libraries (#11077)
+	- (Windows) Increase timeout period for Windows Auto update to guard against premature launch on slower PCs (#10060)
+	- Certain clients could make a request that would crash the server (#11154)
+
+
+
 Plex Media Server 1.18.7.2457 is now available to everyone.
 -----------------------------------------
 FIXES:
