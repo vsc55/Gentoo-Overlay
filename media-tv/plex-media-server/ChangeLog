@@ -4,6 +4,12 @@ https://plex.tv/downloads/1/archive
 https://plex.tv/downloads/1/archive
 
 
+Plex Media Server 1.18.8.2468 is now available in the Beta update channel
+-----------------------------------------
+	- (DVR) Server would incorrectly add On-Now and On-Later hubs to the home screen (#11204).
+
+
+
 Plex Media Server 1.18.8.2461 is now available in the Beta update channel
 -----------------------------------------
 NEW:
