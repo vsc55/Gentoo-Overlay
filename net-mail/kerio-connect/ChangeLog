@@ -9,6 +9,25 @@ Legend:
 
 
 
+Version 9.2.12 - Released: March 11, 2020
+-----------------------------------------
+Fixes:
+- Crash with KThreadPool errors macOS
+- ?annot install Kerio Connect Account Assistant in macOS Catalina
+- KEMT | Userlist is empty when using Exchange 2013 and 2016
+- Missing KOFF Account type because of Simplified Account Creation
+- eM Client: When trying to share calendar, an unnamed error pops up
+- Emails duplicated in a mailbox in certain scenarios
+- AV fails to update in macOS
+- Tasks are not synced anymore on iOS 13 with CalDAV
+- KEMT fails to connect to Exchange 2013
+- KOFF Unable to open the second shared folder (after upgrade)
+- KOFF does NOT fully sync Deleted items from shared folders to the server.
+- Kerberos to Active Directory authentication is not working on CentOS from mail client
+- Kerio Connect Exchange - Event invites stripping hyperlinks
+
+
+
 Version 9.2.11 - Released: December 9, 2019
 -----------------------------------------
 New:
