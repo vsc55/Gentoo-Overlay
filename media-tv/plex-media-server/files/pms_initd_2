@@ -9,7 +9,7 @@ checkconfig() {
 	export PLEX_MEDIA_SERVER_INFO_VENDOR="$(grep ^NAME= /etc/os-release | awk -F= '{print $2}' | tr -d \" )"
 	export PLEX_MEDIA_SERVER_INFO_DEVICE="PC"
 	export PLEX_MEDIA_SERVER_INFO_MODEL="$(uname -m)"
-	export PLEX_MEDIA_SERVER_INFO_PLATFORM_VERSION="$(grep ^VERSION= /etc/os-release | awk -F= '{print $2}' | tr -d \" )"
+	export PLEX_MEDIA_SERVER_INFO_PLATFORM_VERSION="$(lsb_release -v | cut -d':' -f2 )"
 
 	# Change these parameters in /etc/conf.d/plex-media-server
 	export PLEX_MEDIA_SERVER_HOME=/usr/lib/plexmediaserver
