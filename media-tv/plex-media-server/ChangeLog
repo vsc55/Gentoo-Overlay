@@ -4,6 +4,14 @@ https://plex.tv/downloads/1/archive
 https://plex.tv/downloads/1/archive
 
 
+Plex Media Server 1.18.9.2578 is now available to everyone.
+-----------------------------------------
+FIXES:
+	- (Live TV) Live playback could stutter and stall unexpectedly in certain regions
+	- (Live TV) Tuning could fail the first time the feature is used in certain regions (#11307)
+
+
+
 Plex Media Server 1.18.9.2571 is now available to everyone.
 -----------------------------------------
 NEW:
