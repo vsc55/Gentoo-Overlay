@@ -1,0 +1,88 @@
+#!/sbin/openrc-run
+
+depend() {
+	need avahi-daemon
+}
+
+checkconfig() {
+	# Set Crash Reporting identification variables
+	export PLEX_MEDIA_SERVER_INFO_VENDOR="$(grep ^NAME= /etc/os-release | awk -F= '{print $2}' | tr -d \" )"
+	export PLEX_MEDIA_SERVER_INFO_DEVICE="PC"
+	export PLEX_MEDIA_SERVER_INFO_MODEL="$(uname -m)"
+	export PLEX_MEDIA_SERVER_INFO_PLATFORM_VERSION="$(grep ^VERSION= /etc/os-release | awk -F= '{print $2}' | tr -d \" )"
+
+	# Change these parameters in /etc/conf.d/plex-media-server
+	export PLEX_MEDIA_SERVER_HOME=/usr/lib/plexmediaserver
+	export PLEX_MEDIA_SERVER_HOME_LIB="${PLEX_MEDIA_SERVER_HOME}/lib"
+	export PLEX_MEDIA_SERVER_HOME_BIN="${PLEX_MEDIA_SERVER_HOME}/Plex Media Server"
+	
+	export PLEX_MEDIA_SERVER_USER=${PLEX_MEDIA_SERVER_USER:-"plex"}
+	export PLEX_MEDIA_SERVER_MAX_PLUGIN_PROCS=${PLEX_MEDIA_SERVER_MAX_PLUGIN_PROCS:-"6"}
+	export PLEX_MEDIA_SERVER_MAX_STACK_SIZE=${PLEX_MEDIA_SERVER_MAX_STACK_SIZE:-"3000"}
+	export PLEX_MEDIA_SERVER_APPLICATION_SUPPORT_DIR=${PLEX_MEDIA_SERVER_APPLICATION_SUPPORT_DIR:-"${HOME}/Library/Application Support"}
+	export PLEX_MEDIA_SERVER_TMPDIR=${PLEX_MEDIA_SERVER_TMPDIR:-"/tmp"}
+	
+	export PLEX_MEDIA_SERVER_PID=${PLEX_MEDIA_SERVER_PID:-"/var/run/plex-media-server.pid"}
+	export PLEX_MEDIA_SERVER_LOG_OUT=${PLEX_MEDIA_SERVER_LOG_OUT:-"/var/log/pms/out.log"}
+	export PLEX_MEDIA_SERVER_LOG_ERR=${PLEX_MEDIA_SERVER_LOG_ERR:-"/var/log/pms/err.log"}
+		
+	if [ -f /etc/default/locale ]; then
+		export LANG="$(cat /etc/default/locale | awk -F '=' '/LANG=/{print $2}' | sed 's/"//g')"
+		export LC_ALL="$LANG"
+	fi
+
+	# Silently support PLEX_USER if provided as override
+	if [ "$PLEX_USER" != "" ]; then
+		export PLEX_MEDIA_SERVER_USER="$PLEX_USER"
+	fi
+}
+
+start() {
+	checkconfig || return 1
+
+	if [ $(ps -ef | grep 'Plex Media Server'| grep -v grep | wc -l) -gt 0 ]; then
+		eerror "[PMS] Plex is already running!!"
+		eend 1
+		return 1
+    fi
+
+	# Create AppSuppDir if not present
+	if [ ! -d "${PLEX_MEDIA_SERVER_APPLICATION_SUPPORT_DIR}" ]; then
+		mkdir -p "${PLEX_MEDIA_SERVER_APPLICATION_SUPPORT_DIR}"
+		if [ $? -eq 0 ]; then
+			chown "${PLEX_MEDIA_SERVER_USER}"."${PLEX_MEDIA_SERVER_USER}" "${PLEX_MEDIA_SERVER_APPLICATION_SUPPORT_DIR}"
+		else
+			eerror "[PMS] ERROR: Couldn't create \"${PLEX_MEDIA_SERVER_APPLICATION_SUPPORT_DIR}\" "
+			eend 1
+			return 1
+		fi
+	fi
+
+	# export LD_LIBRARY_PATH="${PLEX_MEDIA_SERVER_HOME_LIB}"
+	export LD_LIBRARY_PATH="${PLEX_MEDIA_SERVER_HOME_LIB}":"${PLEX_MEDIA_SERVER_HOME}"
+    export TMPDIR="${PLEX_MEDIA_SERVER_TMPDIR}"
+    
+	ulimit -s ${PLEX_MEDIA_SERVER_MAX_STACK_SIZE}
+
+	ebegin "Starting Plex Media Server"
+		start-stop-daemon -S -m -p "${PLEX_MEDIA_SERVER_PID}" -1 "${PLEX_MEDIA_SERVER_LOG_OUT}" -2 "${PLEX_MEDIA_SERVER_LOG_ERR}" --quiet -u ${PLEX_MEDIA_SERVER_USER} -N -5 -b --exec "${PLEX_MEDIA_SERVER_HOME_BIN}"
+	eend $?
+}
+
+stop() {
+	checkconfig || return 1
+	
+	ebegin "Stopping Plex Media Server"
+		echo -n "	Waiting..."
+		# start-stop-daemon --stop --pidfile ${PLEX_MEDIA_SERVER_PID} --quiet --exec "${PLEX_MEDIA_SERVER_HOME_BIN}"
+		# kill -- -`cat ${PLEX_MEDIA_SERVER_PID}`
+		start-stop-daemon --stop --user ${PLEX_MEDIA_SERVER_USER} --progress --pidfile "${PLEX_MEDIA_SERVER_PID}" --retry=TERM/60/KILL/15
+	eend $?
+}
+
+restart() {
+	svc_stop
+	echo
+	sleep 10
+	svc_start
+}

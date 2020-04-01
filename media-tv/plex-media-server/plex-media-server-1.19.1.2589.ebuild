@@ -21,7 +21,7 @@ SRC_URI="
 "
 SLOT="0"
 LICENSE="Plex"
-IUSE="systemd"
+# IUSE="systemd"
 
 DEPEND=""
 RDEPEND="net-dns/avahi"
@@ -43,17 +43,6 @@ pkg_preinst() {
 	# remove useless files
 	rm -fr data/usr/share
 	rm -r data/etc/apt
-	
-	einfo "Preparing config files"
-	# config default
-	mkdir data/etc/plex
-	cp "${FILESDIR}/plexmediaserver.conf" data/etc/plex/plexmediaserver.conf
-	
-	einfo "Patching Startup"
-	# apply patch for start_pms to use the new config file
-	cd data/usr/sbin
-	epatch "${FILESDIR}"/start_pms_1.18.5.2260.patch || die "patch startup failed"
-	cd ../../..
 	
 	# as the patch doesn't seem to correctly set the permissions on new files do this now
 	# now copy to image directory for actual installation
@@ -79,10 +68,12 @@ pkg_preinst() {
 }
 
 src_install() {
-	if use systemd; then
-		systemd_newunit "${FILESDIR}"/plex-media-server.service plex-media-server.service	
-	fi
-	newinitd ${FILESDIR}/pms_initd_1 plex-media-server
+# TODO: No actualizado systemd
+#	if use systemd; then
+#		systemd_newunit "${FILESDIR}"/plex-media-server.service plex-media-server.service	
+#	fi
+	newinitd ${FILESDIR}/pms_initd_2 plex-media-server
+	newconfd ${FILESDIR}/pms_conf_2 plex-media-server
 }
 
 pkg_prerm() {
