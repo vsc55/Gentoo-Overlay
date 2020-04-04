@@ -4,6 +4,48 @@ https://plex.tv/downloads/1/archive
 https://plex.tv/downloads/1/archive
 
 
+Plex Media Server 1.19.1.2621 is now available in the Beta update channel
+-----------------------------------------
+What’s changed:
+	- Addressed issue with commercial removal preference not being set when removing and adding DVR.
+
+
+
+Plex Media Server 1.19.1.2589 is now available in the Beta update channel
+-----------------------------------------
+NEW:
+	- (DVR) Added What’s On Now and What’s On Later hubs (#11135).
+	- (Sync) Support for syncing FLAC music without transcoding on iOS devices (requires Plex for iOS version 5.7 or greater) (#10933)
+	- (Ubuntu/Debian) IPA / LDAP environments now supported for User and Group names
+	- (Ubuntu/Debian) Improved detection when installing in a container environment (Docker, LXC, or other container methods)
+	- snap packages are now built for armv7hf (armhf) and aarch64 (arm64)
+	- (Library) Add a preference for smart shuffles.
+	- (Library) When deleting items, try to maintain playlists (e.g. in the case of album upgrades).
+	- (Library) When re-adding a show, compute more realistic date added based on play history.
+	- (Library) When upgrading an album, maintain the date added.
+FIXES:
+	- (Debian/Ubuntu) Close potential privilege escalation vulnerability for a local, non-root computer account during install/upgrade (#11222)
+	- (Debian/Ubuntu) Sysvinit service auto-restart during package upgrade could fail on older systems.
+	- (Library) Locked similar artists field would still get overwritten by refreshes.
+	- (Ubuntu/Debian) Avoid triggering udevadm bug when installing in a LXC
+	- (Ubuntu/Debian) Be tolerant of non-POSIX environments which allow spaces in User / Group names
+	- (Ubuntu/Debian) Do not falsely detect transcoding hardware during installation on systems which cannot support it
+	- (Ubuntu/Debian) Installing in an environment where an UNKNOWN user owns the Application Support directory would fail
+	- (Ubuntu/Debian) Multiple service override files no longer fail installation.
+	- (Ubuntu/Debian) Respect autostart after upgrade for all versions 1.18.5 and above
+	- Watch From Start option was sometimes not presented when attempting to watch a recording in progress. (#10482)
+	- (Connections) Clients repeatedly early-terminating poll requests could lead to resource exhaustion (#11183)
+	- (DVR) Removed outdated hub “Starting Soon”. (#11246)
+	- (Library) Don’t include search results on home screen for libraries which don’t have “include in dashboard” enabled.
+	- (Library) Don’t try to fetch lyrics for unmatched albums.
+	- (Library) Guard against invalid future times sent for playback.
+	- (Library) Guard against invalid future times sent for ratings.
+	- (Library) Prevent some cases in which duplicate plays could be recorded.
+	- (Metadata) Movie background art with words was being preferred incorrectly.
+	- (Network) X-Forwarded-For would not be respected when sending ipv6 IPs
+
+
+
 Plex Media Server 1.18.9.2578 is now available to everyone.
 -----------------------------------------
 FIXES:
