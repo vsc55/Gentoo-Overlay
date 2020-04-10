@@ -1,0 +1,1 @@
+SUBSYSTEM=="drm", GROUP="video", MODE="0660"

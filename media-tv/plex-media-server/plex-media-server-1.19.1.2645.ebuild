@@ -4,7 +4,7 @@
 
 EAPI="2"
 
-inherit eutils user systemd
+inherit eutils user systemd udev
 
 MAGIC1=${PV}
 MAGIC2="ccb6eb67e"
@@ -22,9 +22,13 @@ SRC_URI="
 SLOT="0"
 LICENSE="Plex"
 # IUSE="systemd"
+IUSE="udev"
 
 DEPEND=""
-RDEPEND="net-dns/avahi"
+RDEPEND="
+	net-dns/avahi
+	udev? ( >=virtual/udev-171 )
+"
 
 INIT_SCRIPT="${ROOT}/etc/init.d/plex-media-server"
 
@@ -74,6 +78,13 @@ src_install() {
 #	fi
 	newinitd ${FILESDIR}/pms_initd_2 plex-media-server
 	newconfd ${FILESDIR}/pms_conf_2 plex-media-server
+	
+	if use udev; then
+		local udevdir="$(get_udevdir)"
+		insinto ${udevdir}/rules.d
+		newins "${FILESDIR}/udev_60-tv-butler.rules" 60-tv-butler.rules
+		newins "${FILESDIR}/udev_60-plex-hw-transcoding.rules" 60-plex-hw-transcoding.rules
+	fi
 }
 
 pkg_prerm() {
