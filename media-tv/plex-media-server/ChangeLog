@@ -4,6 +4,20 @@ https://plex.tv/downloads/1/archive
 https://plex.tv/downloads/1/archive
 
 
+Plex Media Server 1.19.1.2645 is now available to everyone.
+-----------------------------------------
+FIXES:
+	- FreeBSD package re-added.
+
+
+
+Plex Media Server 1.19.1.2630 is now available in the Beta update channel
+-----------------------------------------
+FIXES:
+	- (Debian/Ubuntu) Sysvinit service would fail to start in some cases.
+
+
+
 Plex Media Server 1.19.1.2621 is now available in the Beta update channel
 -----------------------------------------
 What’s changed:
