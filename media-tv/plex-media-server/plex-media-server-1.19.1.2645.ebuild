@@ -95,6 +95,12 @@ pkg_prerm() {
 }
 
 pkg_postinst() {
+
+	if use udev ; then
+		udevadm control --reload-rules \
+			&& udevadm trigger --subsystem-match=usb
+	fi
+
 	einfo ""
 	elog "Plex Media Server is now fully installed. Please check the configuration file in /etc/plex if the defaults please your needs."
 	elog "To start please call '/etc/init.d/plex-media-server start'. You can manage your library afterwards by navigating to http://<ip>:32400/web/"
