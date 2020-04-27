@@ -4,6 +4,18 @@ https://plex.tv/downloads/1/archive
 https://plex.tv/downloads/1/archive
 
 
+Plex Media Server 1.19.2.2711 is now availe in the Beta update channel
+-----------------------------------------
+FIXES:
+	 - The legacy Samsung app failed to connect.
+
+
+
+Plex Media Server 1.19.2.2702 is now availe in the Beta update channel
+-----------------------------------------
+	 -(Updater) Hardening (security)
+
+
 
 Plex Media Server 1.19.2.2673 is now available to in the Beta update channel.
 -----------------------------------------
