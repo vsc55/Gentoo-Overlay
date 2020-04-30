@@ -3,6 +3,12 @@ http://www.videohelp.com/tools/Plex/version-history
 https://plex.tv/downloads/1/archive
 https://plex.tv/downloads/1/archive
 
+Plex Media Server 1.19.2.2737 is now available in the Beta update channel
+-----------------------------------------
+FIXES:
+	 - (Remote Access) Online status in the web client could erroneously show it as offline (#11449)
+
+
 
 Plex Media Server 1.19.2.2711 is now availe in the Beta update channel
 -----------------------------------------
