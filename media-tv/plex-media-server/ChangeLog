@@ -3,6 +3,20 @@ http://www.videohelp.com/tools/Plex/version-history
 https://plex.tv/downloads/1/archive
 https://plex.tv/downloads/1/archive
 
+
+
+Plex Media Server 1.19.3.2740 is now available in the Beta update channel
+-----------------------------------------
+NEW:
+	- (Web) Updated to 4.30.2
+FIXES:
+	- (DVR) Postprocessing scripts must now be located inside APPDATA/Scripts. Old scripts will continue to work
+	- (DVR) Server would sometimes fail to consume EPG data from certain XMLTV data files. (#11368)
+	- (First Run) Music libraries added during setup wizard could fail to be created (#11432)
+	- (Security) Remove the Windows AppData path preference from the web app (#11355)
+
+
+
 Plex Media Server 1.19.2.2737 is now available in the Beta update channel
 -----------------------------------------
 FIXES:
@@ -19,7 +33,7 @@ FIXES:
 
 Plex Media Server 1.19.2.2702 is now availe in the Beta update channel
 -----------------------------------------
-	 -(Updater) Hardening (security)
+	 - (Updater) Hardening (security)
 
 
 
@@ -27,7 +41,6 @@ Plex Media Server 1.19.2.2673 is now available to in the Beta update channel.
 -----------------------------------------
 NEW:
 	- (Library) New visibility preference to control library visibility in home screen hubs / search
-
 FIXES:
 	- (DVR) EPG data may not completely get refreshed if there is cached data from earlier recent refresh. (#11287)
 	- (DVR) Server would not load internet hosted XMLTV guide data that was over 16MB in size. (#11266)
