@@ -4,6 +4,12 @@ https://plex.tv/downloads/1/archive
 https://plex.tv/downloads/1/archive
 
 
+Plex Media Server 1.19.3.2764 is now available in the Beta update channel
+-----------------------------------------
+FIXES:
+	- (Playlists) Adding an item to a playlist from a remote server didn’t work (#11305)
+
+
 
 Plex Media Server 1.19.3.2740 is now available in the Beta update channel
 -----------------------------------------
