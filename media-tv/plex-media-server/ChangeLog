@@ -3,6 +3,23 @@ http://www.videohelp.com/tools/Plex/version-history
 https://plex.tv/downloads/1/archive
 https://plex.tv/downloads/1/archive
 
+
+Plex Media Server 1.19.3.2852 is now available to everyone
+-----------------------------------------
+NEW:
+	- Intro Detection
+	- (Web) Updated to 4.30.2
+FIXES:
+	- (DVR) Server would not invoke Plex Commercial Skipper under certain cases.
+	- (DVR) Server would sometimes fail to consume EPG data from certain XMLTV data files. (#11368)
+	- (First Run) Music libraries added during setup wizard could fail to be created (#11432)
+	- (IntroDetector) Crash on Windows when using older CPUs
+	- (Library) Video preview thumbnail generation could fail
+	- (Playlists) Adding an item to a playlist from a remote server didn’t work (#11305)
+	- (PostPlay) Post play could show the item that was just played (#11374)
+
+
+
 Plex Media Server 1.19.3.2843 is now available to everyone
 -----------------------------------------
 NEW:
