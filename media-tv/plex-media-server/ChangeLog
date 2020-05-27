@@ -4,6 +4,34 @@ https://plex.tv/downloads/1/archive
 https://plex.tv/downloads/1/archive
 
 
+Plex Media Server 1.19.4.2865 is now available in the Beta update channel
+-----------------------------------------
+FIXES:
+	- (DVR) Server could crash while updating its DVR lineup data.
+
+
+
+Plex Media Server 1.19.4.2854 is now available in the Beta update channel
+-----------------------------------------
+NEW:
+	- (DVR) XMLTV users can now specify categories for Kids content. (#11267)
+	- (DVR) XMLTV users can specify a custom guide refresh rate. (#10787)
+	- (Debian) Add host information to bottom of installer log for diagnosing problems.
+FIXES:
+	- (Butler) Periodic music refreshes didn’t refresh albums and tracks (#11475)
+	- (DVR) Episodes may end up with 1900-01-01 dates with certain XMLTV EPG files that provide date instead of original-air-date. (#10973)
+	- (DVR) Server would not invoke Plex Commercial Skipper under certain cases.
+	- (DVR) Unable to record a new release of a movie if an older release is in the library. (#11504)
+	- (Debian) SYSV override variables not being evaluated and used correctly during PMS startup.
+	- (Jobs) Generation of video preview thumbnails would continue even after disabling the global preference.
+	- (Music) Items added from TIDAL have duplicate source filters (#11439)
+	- (Redhat) PMS would not restart automatically after package upgrade.
+	- (Remote Access) Status may initially show as unavailable on server settings web page. (#5114)
+	- (Synology) Plex share permissions not correct after upgrading, re-installating, or attempting repair.
+	- (Transcoder) Very low-bitrate music transcodes could fail (#11481)
+
+
+
 Plex Media Server 1.19.3.2852 is now available to everyone
 -----------------------------------------
 NEW:
