@@ -4,6 +4,14 @@ https://plex.tv/downloads/1/archive
 https://plex.tv/downloads/1/archive
 
 
+Plex Media Server 1.19.4.2893 is now available in the Beta update channel
+-----------------------------------------
+FIXES:
+	- (DVR) XMLTV sometimes did not refresh
+	- (DVR) Commercial skip log file was sometimes improperly copied into user library directories
+
+
+
 Plex Media Server 1.19.4.2865 is now available in the Beta update channel
 -----------------------------------------
 FIXES:
