@@ -3,6 +3,31 @@ http://www.videohelp.com/tools/Plex/version-history
 https://plex.tv/downloads/1/archive
 https://plex.tv/downloads/1/archive
 
+Plex Media Server 1.19.4.2935 is now available to everyone
+-----------------------------------------
+NEW:
+	- (DVR) XMLTV users can now specify categories for Kids content. (#11267)
+	- (DVR) XMLTV users can specify a custom guide refresh rate. (#10787)
+	- (Debian) Add host information to bottom of installer log for diagnosing problems.
+FIXES:
+	- (Butler) Periodic music refreshes didn’t refresh albums and tracks (#11475)
+	- (DVR) Episodes may end up with 1900-01-01 dates with certain XMLTV EPG files that provide date instead of original-air-date. (#10973)
+	- (DVR) Server could crash while updating its DVR lineup data.
+	- (DVR) Server would not invoke “Plex Commercial Skipper” under certain circumstances.
+	- (DVR) Unable to record a new release of a movie if an older release is in the library. (#11504)
+	- (Debian) SYSV override variables not being evaluated and used correctly during PMS startup.
+	- (Background transcodes) Intro detection / Video preview generation / Optimizer tasks were excessively throttled when “Disable video stream transcoding” was selected
+	- (Intro Detection) Reduce size of temporaries
+	- (Intro Detection) Store temporary files in the transcode temp directory
+	- (Intro Detection) Clean up old files on SHIELD (and use cache storage by default)
+	- (Jobs) Generation of video preview thumbnails would continue even after disabling the global preference.
+	- (Music) Items added from TIDAL have duplicate source filters (#11439)
+	- (Redhat) PMS would not restart automatically after package upgrade.
+	- (Remote Access) Status may initially show as unavailable on server settings web page. (#5114)
+	- (Synology) Plex share permissions not correct after upgrading, re-installating, or attempting repair.
+	- (Transcoder) Very low-bitrate music transcodes could fail (#11481)
+
+
 
 Plex Media Server 1.19.4.2902 is now available in the Beta update channel
 -----------------------------------------
