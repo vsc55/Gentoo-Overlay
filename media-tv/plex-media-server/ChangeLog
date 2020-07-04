@@ -3,6 +3,14 @@ http://www.videohelp.com/tools/Plex/version-history
 https://plex.tv/downloads/1/archive
 https://plex.tv/downloads/1/archive
 
+Plex Media Server 1.19.5.3035 is now available in the beta update channel
+-----------------------------------------
+FIXES:
+
+	- (DVR) Server would fail to load program data for certain XMLTV guide sources.
+
+
+
 Plex Media Server 1.19.4.2935 is now available to everyone
 -----------------------------------------
 NEW:
