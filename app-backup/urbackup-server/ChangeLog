@@ -1,5 +1,23 @@
 https://www.urbackup.org/server_changelog.html
 
+2.4.13
+
+    Fix check if image backup is already queued when using image snapshot groups
+    Handle “all_nonusb” setting in image snapshot group
+    Work-around non-working SOCK_CLOEXEC (Linux)
+    Fix storing alert state when serialization has null bytes
+    Fix backup_dirs_optional display + saving
+    Substract sparse extents before checking if file fits on storage
+    Upgrade miniz
+    Upgrade to Visual Studio 2019
+    Upgrade cURL third-library on Windows
+    Fix raw image deletion if backup storage does not support snapshots
+    Handle new zfs command line version return
+    Use reflink if hard links aren’t available (fixes file backup issues with Windows ReFS)
+    Properly cleanup zstd pipes. Fixes memory/file descriptor leak with ZSTD clients
+    Skip interfaces where address is not set on Linux. Fixes segfault during startup
+
+
 2.4.12
 
     Delete backup script .hashes file in snapshot before backups (fixes issues with script backups in some cases)

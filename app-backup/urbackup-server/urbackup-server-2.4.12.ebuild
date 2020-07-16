@@ -29,10 +29,10 @@ DEPEND="${RDEPEND}"
 
 
 PATCHES=(
-	"${FILESDIR}/urbackup-server-${PV}-autoupdate-code.patch"
-	"${FILESDIR}/urbackup-server-${PV}-autoupdate-config.patch"
-	"${FILESDIR}/urbackup-server-${PV}-autoupdate-ui.patch"
-	"${FILESDIR}/urbackup-server-${PV}-autoupdate-datafiles-gcc-fortify.patch"
+	"${FILESDIR}/urbackup-server-2.4.1x-autoupdate-code.patch"
+	"${FILESDIR}/urbackup-server-2.4.1x-autoupdate-config.patch"
+	"${FILESDIR}/urbackup-server-2.4.1x-autoupdate-ui.patch"
+	"${FILESDIR}/urbackup-server-2.4.1x-autoupdate-datafiles-gcc-fortify.patch"
 )
 
 

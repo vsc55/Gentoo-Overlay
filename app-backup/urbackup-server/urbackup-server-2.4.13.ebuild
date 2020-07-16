@@ -116,6 +116,10 @@ pkg_postinst() {
 	elog "Start service:"
 	elog "# /etc/init.d/urbackupsrv start"
 	elog ""
+	elog "Firewall Ports:"
+	elog " - TCP > 55413-55415"
+	elog " - UDP > 35623"
+	elog ""
 	
 	if use systemd; then
 		elog "Setup auto start daemon:"
