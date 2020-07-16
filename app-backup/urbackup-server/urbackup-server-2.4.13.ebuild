@@ -19,7 +19,7 @@ IUSE="-systemd crypt hardened fuse mail zlib logrotate"
 RDEPEND="
 	dev-db/sqlite
 	>=sys-devel/gcc-4.1.1
-	>=sys-libs/glibc-2.17
+	>=sys-libs/glibc-2.28
 	crypt? ( dev-libs/crypto++ )
 	fuse? ( >=sys-fs/fuse-2.6 )
 	mail? ( >=net-misc/curl-7.23.1[ssl] )
