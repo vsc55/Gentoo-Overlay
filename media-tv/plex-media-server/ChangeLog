@@ -3,6 +3,15 @@ http://www.videohelp.com/tools/Plex/version-history
 https://plex.tv/downloads/1/archive
 https://plex.tv/downloads/1/archive
 
+
+
+Plex Media Server 1.19.5.3112 is now available in the beta update channel
+-----------------------------------------
+FIXES:
+	- (Stability) Rare crash when shared servers have custom connection URLs
+
+
+
 Plex Media Server 1.19.5.3035 is now available in the beta update channel
 -----------------------------------------
 FIXES:
