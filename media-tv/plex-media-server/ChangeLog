@@ -5,6 +5,37 @@ https://plex.tv/downloads/1/archive
 
 
 
+Plex Media Server 1.20.0.3133 is now available in the beta update channel
+-----------------------------------------
+FIXES:
+	- (Library) Certain TV libraries could incorrectly be upgraded to a new Plex Movie library. (#11774)
+
+
+
+Plex Media Server 1.20.0.3125 is now available in the beta update channel
+-----------------------------------------
+NEW:
+	- New improved movie agent. (More info here 40)
+	- (API) Add path parameter in scanning endpoint to allow partial scan via API.
+	- (Library) Add sort option for Audience Rating in movie libraries.
+	- (Library) Improve music searching by allowing artist in album searches, and artist and album in track searches.
+	- (Web) Updated to 4.34.4
+FIXES:
+	- (DVR) Manually added DVRs or those that do not respond to SSDP searches may disappear in Server DVR Settings. (#11650)
+	- (DVR) No content would be returned under ‘Live TV & DVR -> Browse’ when filtered by Episode -> Sport for XMLTV content (#11268).
+	- (DVR) Server would sometimes mark a DVR device as dead, even when it is available.
+	- (DVR) server would display incorrect times under “Limit Airing Times To” advance recording option. (#11362)
+	- (DVR) server would sometimes not seek to the desired playback position. (#11397)
+	- (Library) Don’t return track results with an artist search match.
+	- (Library) External music hubs could be slow to load.
+	- (Library) Refresh media analysis for music items.
+	- (Library) Shuffling some playlists could fail.
+	- (Library) Some smart playlists didn’t have composite image.
+	- (Library) The ‘Albu Artist’ letter jump list could jump to the wrong place (#11493)
+	- (Library) When adding new albums, the entire artist isn’t refreshed.
+
+
+
 Plex Media Server 1.19.5.3112 is now available in the beta update channel
 -----------------------------------------
 FIXES:
