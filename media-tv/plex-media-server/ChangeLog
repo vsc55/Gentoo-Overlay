@@ -4,6 +4,22 @@ https://plex.tv/downloads/1/archive
 https://plex.tv/downloads/1/archive
 
 
+Plex Media Server 1.20.0.3181 is now available in the beta update channel
+-----------------------------------------
+NEW:
+	- (Library) Add language override as advanced setting for new Plex Movie items (#11752)
+FIXES:
+	- (Collections) It was possible for collections to get into a state where you could no longer edit them.
+	- (DVR) Server would attempt to clean up files that were already removed (#11234).
+	- (DVR) Server would attempt to move recordings that were already moved (#11070).
+	- (Library) Certain rules in .plexignore files would not always work as expected (#11770)
+	- (Library) Having multiple movies and subtitles in the same folder would not work correctly with the Plex Movie agent (#11789)
+	- (Library) Summaries from existing collections could be removed during a movie library upgrade (#11770)
+	- (QNAP) Allow PlexData network share permissions to be edited in QTS.
+	- (QNAP) Improve PlexData network share creation when system has multiple volumes.
+	- (QNAP) Improve handling of GPU detection on various models.
+
+
 
 Plex Media Server 1.20.0.3133 is now available in the beta update channel
 -----------------------------------------
