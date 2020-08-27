@@ -4,6 +4,32 @@ https://plex.tv/downloads/1/archive
 https://plex.tv/downloads/1/archive
 
 
+Plex Media Server 1.20.1.3252 is now available in the beta update channel
+-----------------------------------------
+NEW:
+	- (Filters) Add ‘trash’ filter to ‘custom filters’ (#11103)
+	- (Library) Store external ids for items in new Plex Movie libraries.
+FIXES:
+	- (Analysis) Chapter and index thumbnails would not get re-generated after replacing a file with another with the same filename (#8922)
+	- (DVR) Corrected typo in Detect Commercials settings description (#11804).
+	- (DVR) Fixed an issue where Plex Commercial Skipper would unexpectedly exit with an error code (#11259) (#11151)
+	- (DVR) Would use excessive amount of memory when loading certain XMLTV guide files (#11501).
+	- (DVR) Server would display incorrect times under “Limit Airing Times To” advance recording option (#11362)
+	- (EPG) Channel list could fail to load on certain XMLTV guides.
+	- (Hubs) Some items could show in Continue Watching that fall outside the set window.
+	- (Intro Detection) Ensure temporary files are always deleted
+	- (Library) Albums/Artists would default to a reverse alphabetical sort (#11779)
+	- (Library) Enabling “Include adult content” option for new Plex Movie libraries could result in incorrect matches.
+	- (Library) Pick up changes to local sidecar subtitles when loading a new Plex Movie item.
+	- (Library) Renaming files in an upgraded Plex Movie library could result in the user defined poster getting changed.
+	- (Library) Some sidecar subtitles on new Plex Movie libraries would not get picked up.
+	- (Scanner) Show artist and show names in the activity monitor
+	- (Metadata) Local assets and metadata for Plex Movie items only read from one location when the item has more than one media version.
+	- (Scanner) Items unable to match in new Plex Movie libraries would not show the year if available (#11866)
+	- (Collections) Setting a collection title or summary to a blank value would make it inaccessible.
+
+
+
 Plex Media Server 1.20.1.3232 is now available in the beta update channel
 -----------------------------------------
 FIXES:
