@@ -9,6 +9,38 @@ Legend:
 
 
 
+Version 9.3 - Released: September 23, 2020
+-----------------------------------------
+New
+- TLS 1.3 Support for HTTPS connections (EWS / ActiveSync / Web)
+- TLS 1.3 Support for IMAPS connections
+- TLS 1.3 Support for SMTPS connections
+- TLS 1.3 Support for POP3 connections
+
+Fixes:
+- KoffRtfWrapper.exe process sometimes crashes
+- Update checker does not fallback to HTTP
+- User Office field is not synchronized from AD
+- CardDAV Sync not fully working with Shared Folders on Mac OSX
+- No desktop notification for INBOX subfolders
+- Webmail bug - Cannot open MS Teams link in webmail
+- AppleMail (EWS) crash when receiving an invite from Lotus Notes
+- Calendar event attachment field is always in English
+- Cannot change user public folder rights using a domain admin account
+- Error when editing multiple users at the same time
+- KOFF is unable to open resource as attached mailbox
+- Paperclip attachment icon disappears from outlook and webmail for emails with attachments
+- Attachment filter not blocking attachment
+- TLSv1.2 is not used for client connections by default
+- User in Outlook for Mac can create an all-day calendar event and it's synchronized with Webmail
+- Webmail - Send an email with an active long text footer
+- Webmail - Calendar attachments gets broken
+- Webmail - task due date changes when the page is reloaded
+- Webmail - Show more recipients in To: field does not work in the Czech language
+- Editing meetings in Outlook for Mac causes hyperlinks to double
+
+
+
 Version 9.2.12 - Released: March 11, 2020
 -----------------------------------------
 Fixes:
