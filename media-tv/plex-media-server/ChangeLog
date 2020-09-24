@@ -4,6 +4,33 @@ https://plex.tv/downloads/1/archive
 https://plex.tv/downloads/1/archive
 
 
+Plex Media Server 1.20.2.3343 is now available in the beta update channel.
+-----------------------------------------
+NEW:
+	- (DVR) Guide refresh checkbox moved to DVR settings dialog (#11660).
+	- (DVR) Guide refresh time exposed under DVR settings dialog, with XMLTV being able to set custom start time (#11660).
+	- (Loudness) Greatly improved the quality of soundprint data (#11500)
+FIXES:
+	- (Butler) Temporary cache files could sometimes not be removed (#11951)
+	- (DVR) Managed user was unable to cancel their own recordings from conflict modal (#11316)
+	- (DVR) Server would not display user selected commercial skip setting for scheduled recording (#11921).
+	- (DVR) UI for XMLTV guide refresh interval setting would display 4 hours, instead of the default of 24 hours (#11660)
+	- (Hubs) Reduce the time taken to load ‘home’
+	- (Hubs) The Rediscover hub for TV shows could take a long time to load.
+	- (Library) “Trashed” items could be removed if an analysis was run on them.
+	- (Library) Certain file paths could result in incorrect matches for items in new Plex Movies libraries (#11925)
+	- (Library) Items from related hubs on episode pre-plays could fail to play back
+	- (Library) Shuffling content could result in deterministic results
+	- (Loudness) Soundprint analysis could give incorrect results on files with very high sample rates (#11500)
+	- (Metadata) Some series with punctuation or special characters in their titles wouldn’t match against TheTVDB.
+	- (Music) If a request to match an album failed it would cause a crash (#11977)
+	- (QNAP) Only create PlexData symlink to AppData if user has created a ‘PlexData’ share.
+	- (Scanner) Local assets would not be available in Plex Movie libraries if the library was a UNC path (#11931)
+	- (Subtitles) Subtitle files with names containing a percent sign could be scanned in with invalid paths (#11386)
+	- (Transcoder) Hardware transcoding could have substantially reduced quality on Windows systems with Intel GPUs (#11036)
+
+
+
 Plex Media Server 1.20.1.3252 is now available in the beta update channel
 -----------------------------------------
 NEW:
