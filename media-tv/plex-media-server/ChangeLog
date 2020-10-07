@@ -4,6 +4,21 @@ https://plex.tv/downloads/1/archive
 https://plex.tv/downloads/1/archive
 
 
+Plex Media Server 1.20.3.3401 is now available in the beta update channel.
+-----------------------------------------
+NEW:
+	- (Collections) Show alternate poster and background options when editing collections created by the Plex Movie agent (#11968)
+	- (Subtitles) Plex Movie libraries now support an additional “sdh” or “cc” flag for SDH designation of sidecar subtitles (#11966)
+FIXES:
+	- (DVR) Allow recording when partials are disabled if airing started less than 30 seconds ago. (#11916)
+	- (DVR) Guide refresh would sometimes not initiate (#12004).
+	- (DVR) dvb-c Hauppauge soloHD/dualHD tuners fail to scan channels (#11826)
+	- (EPG) DST time change would cause high CPU usage. (#10770)
+	- (Library) Plexignore rules in the directory root would not respect wildcard folder paths (#11955)
+	- (Scanner) Chapter and preview thumbnail jobs for movies would run for all items instead of only new ones if that preference was enabled (#11982)
+	- (Subtitles) Sidecar subtitles using language codes with a region subtag would return the language as Unknown (#11956)
+
+
 
 Plex Media Server 1.20.2.3402 is now available in the beta update channel.
 -----------------------------------------
