@@ -4,6 +4,22 @@ https://plex.tv/downloads/1/archive
 https://plex.tv/downloads/1/archive
 
 
+
+Plex Media Server 1.20.3.3430 is now available in the beta update channel.
+-----------------------------------------
+FIXES:
+	- (HTTPS) Certain network errors or service outages could result in the server entering a broken state from which it would not automatically recover (#12037)
+	- (Library) Custom search parameters in Fix Match for Plex Movie and Music libraries were not being respected.
+
+
+
+Plex Media Server 1.20.3.3421 is now available in the beta update channel.
+-----------------------------------------
+FIXES:
+	- (Player) Remote control of another player did not work.
+
+
+
 Plex Media Server 1.20.3.3401 is now available in the beta update channel.
 -----------------------------------------
 NEW:
