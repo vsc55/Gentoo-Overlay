@@ -4,6 +4,42 @@ https://plex.tv/downloads/1/archive
 https://plex.tv/downloads/1/archive
 
 
+
+Plex Media Server 1.20.4.3508-6abbd541f is now available in the beta update channel
+-----------------------------------------
+NEW:
+	- (DVR) New Library option added to include all files during commercial detection (#12024).
+	- (Web) Updated to 4.43.4
+	- Update translations.
+FIXES:
+	- (Analysis) Media analysis wouldn’t trigger correctly in Plex Movie libraries when modifications were detected (#12041)
+	- (DVR) Server would sometimes crash when scheduling shows to record (#12062).
+	- (Dashboard) Metadata for Live TV sessions would not update when airing changed. (#11306)
+	- (HTTP) Fixed an issue where clients could fail to connect to a server for some time after TLS certificate renewal (#11848)
+	- (Library) Certain assets using UNC paths would not always work (#11931)
+	- (Library) Disabling automatic extras for Plex Movie libraries had no effect (#12033)
+	- (Library) Rating something 0 wasn’t distinguished from no rating.
+	- (Library) Some TV shows could fail to match or get metadata.
+	- (Library) Track and disk indexes could be incorrectly set for some multidisc albums (#11745)
+	- (Library) When sorting albums oldest first, only years were used, not full release dates.
+	- (Library) When tags only have release year, don’t use current m/d, use 1/1.
+	- (Live TV) Paused playback could not always be resumed reliably. (#11476)
+	- (QNAP) Remove unnecessary duplicate SSL port entry from config.
+	- (Transcoder) Freetype has been updated to 2.10.4, fixes CVE-2020-15999
+	- (Transcoder) Playback could fail on certain files with very large subtitle events
+	- (Windows Installer) Changed Plex Update Service start type to delayed start. (#11560)
+	- Similar artists limited to 10 in some places.
+
+
+
+Plex Media Server 1.20.3.3483 is now available to everyone
+-----------------------------------------
+FIXES:
+	- (Transcoder) Freetype has been updated to 2.10.4, fixes CVE-2020-15999
+	- (Transcoder) Playback could fail on certain files with very large subtitle events
+
+
+
 Plex Media Server 1.20.3.3437 is now available in the beta update channel.
 -----------------------------------------
 FIXES:
