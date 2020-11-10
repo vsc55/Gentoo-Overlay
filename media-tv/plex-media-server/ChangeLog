@@ -4,6 +4,12 @@ https://plex.tv/downloads/1/archive
 https://plex.tv/downloads/1/archive
 
 
+Plex Media Server 1.20.4.3517-ab5e1197c is now available in the beta update channel
+-----------------------------------------
+FIXES:
+	- (ImageTranscoder) Memory would leak when rescaling or cropping images (#10040)
+
+
 
 Plex Media Server 1.20.4.3508 is now available in the beta update channel
 -----------------------------------------
