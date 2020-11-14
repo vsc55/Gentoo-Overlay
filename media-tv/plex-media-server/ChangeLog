@@ -4,6 +4,14 @@ https://plex.tv/downloads/1/archive
 https://plex.tv/downloads/1/archive
 
 
+
+Plex Media Server 1.20.5.3583-309e93364 is now available in the beta update channel
+-----------------------------------------
+FIXES:
+	- (DVR) Require XMLTV guide for countries not supported by Gracenote.
+
+
+
 Plex Media Server 1.20.4.3517-ab5e1197c is now available in the beta update channel
 -----------------------------------------
 FIXES:
