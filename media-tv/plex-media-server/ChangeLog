@@ -4,6 +4,20 @@ https://plex.tv/downloads/1/archive
 https://plex.tv/downloads/1/archive
 
 
+Plex Media Server 1.20.5.3600-47c0d9038 is now available to everyone
+-----------------------------------------
+FIXES:
+	- (DVR) Require XMLTV guide for countries not supported by Gracenote.
+	- (DVR) The correct frequencies could not be scanned in Colombia, Panama, and Trinidad and Tobago.
+	- (Library) Movie files stored in the drive root on Windows could fail to match (#12107)
+	- (Library) Use a deterministic order when consuming local poster and art assets for Plex Movie libraries (#12070)
+	- (Metadata) Certain unsupported local assets could be used for Plex Movie item backgrounds (#12070)
+	- (Metadata) Embedded posters for movies would be used regardless if ‘Prefer local metadata’ preference was set or not (#12070)
+	- (Metadata) Loading movies from some clients wouldn’t reflect changes to local sidecar subtitles.
+	- (Transcoder) Older versions of Nvidia drivers (supporting API version 9.0 but not version 10.0) are now supported again (#12091)
+	- (Webhooks) Added librarySectionTitle to payload. (#11906)
+
+
 
 Plex Media Server 1.20.5.3583-309e93364 is now available in the beta update channel
 -----------------------------------------
