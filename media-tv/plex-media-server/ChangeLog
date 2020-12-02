@@ -3,6 +3,23 @@ http://www.videohelp.com/tools/Plex/version-history
 https://plex.tv/downloads/1/archive
 https://plex.tv/downloads/1/archive
 
+Plex Media Server 1.21.0.3711 is now available to everyone.
+-----------------------------------------
+FIXES:
+	- (EPG) Reintroduce support for the following countries once the Gracenote provider is enabled - Australia, Hungary, India, Netherlands, New Zealand, Poland, Russia, South Africa, Switzerland, Uruguay. (#12135)
+
+
+
+Plex Media Server 1.21.0.3616 is now available to everyone.
+-----------------------------------------
+NEW:
+	- (Transcoder) HDR to SDR tonemapping PP preview (see https://support.plex.tv/articles/hdr-to-sdr-tone-mapping 23 for more info)
+FIXES:
+	- (Filters) HDR filter could miss some items (#12060)
+	- (Library) Date-based shows weren’t getting metadata.
+	- (Transcoder) Older versions of Nvidia drivers (supporting API version 9.0 but not version 10.0) are now supported again (#12091)
+
+
 
 Plex Media Server 1.21.0.3608-f7262c352 is now available in the beta update channel.
 -----------------------------------------
