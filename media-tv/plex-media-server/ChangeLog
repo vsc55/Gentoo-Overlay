@@ -3,6 +3,36 @@ http://www.videohelp.com/tools/Plex/version-history
 https://plex.tv/downloads/1/archive
 https://plex.tv/downloads/1/archive
 
+
+
+Plex Media Server 1.21.1.3766 is now available to PlexPass users in the Beta update channel.
+-----------------------------------------
+NEW:
+	- (Hubs) Seasonal and Event based hubs (Generated locally. Can be toggled in Library settings)
+FIXES:
+	- (Hubs) Seasonal hubs could cause text overlap in Plex Web
+
+
+
+Plex Media Server 1.21.1.3759 is now available to PlexPass users in the Beta update channel.
+-----------------------------------------
+FIXES:
+	- (Scanner) Rare crashes when scanning in duplicates
+
+
+
+Plex Media Server 1.21.1.3753 is now available to PlexPass users in the Beta update channel.
+-----------------------------------------
+NEW:
+	- (Transcoder) Add support for the Intel Compute Runtime OpenCL driver versions 20.36 and later for newer integrated GPU models on Linux
+FIXES:
+	- (DVR) Plex Tuner Service would sometimes fail to start up on Windows, when machine was under load (#12035)
+	- (Library) Studio would be listed twice in custom filters (#12124)
+	- (Pivots) Only display playlist pivot if it is non-empty (#12097)
+	- (Scanner) New movies would have incomplete metadata if the scan was invoked from the command line (#12156)
+
+
+
 Plex Media Server 1.21.0.3711 is now available to everyone.
 -----------------------------------------
 FIXES:
