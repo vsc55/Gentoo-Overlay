@@ -4,6 +4,19 @@ https://plex.tv/downloads/1/archive
 https://plex.tv/downloads/1/archive
 
 
+Plex Media Server 1.21.1.3830-6c22540d5 is now available to everyone.
+-----------------------------------------
+FIXED:
+	- (DVR) Require postal code during setup for Poland, Russia, and Switzerland.
+
+
+
+Plex Media Server 1.21.1.3795-ee64ab56f is now available to everyone.
+-----------------------------------------
+NEW:
+	- (Web) Updated to 4.47.3
+
+
 
 Plex Media Server 1.21.1.3766 is now available to PlexPass users in the Beta update channel.
 -----------------------------------------
