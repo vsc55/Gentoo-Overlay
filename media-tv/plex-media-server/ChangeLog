@@ -4,6 +4,28 @@ https://plex.tv/downloads/1/archive
 https://plex.tv/downloads/1/archive
 
 
+Plex Media Server 1.21.2.3943 is now available to everyone.
+-----------------------------------------
+FIXES:
+	- (Agents) TheTVDB Agent matching could fail in some cases (#12295).
+	- (Scanner) Fixed regression causing excessive library scan times in previous release.
+
+
+
+Plex Media Server 1.21.2.3939 is now available to everyone.
+-----------------------------------------
+NEW:
+	- (Gaming) Retro Games with Plex Arcade sub (MacOS and Windows)
+	- (DVR) Server will scan a media item, or library contents, for commercials when “Analyze” is invoked (#12059)
+	- (Library) Enhance smart shuffle to do a better job of feeling random.
+	- (Web) Updated to 4.81.1
+FIXES:
+	- (DVR) server would sometimes re-record shows that already existed in library, but were slightly smaller due to custom postprocessing (#11689)
+	- (EPG) Some hubs were empty or missing items after transition to Gracenote. (#12229).
+	- (HTTP) The server could crash when setting up libraries during first run.
+	- (MUSIC) Changed played progress point for podcasts/long-form-audio to 99%, other audio content to 50% (12193)
+
+
 
 Plex Media Server 1.21.2.3918 is now available to PlexPass users in the Beta update channel.
 -----------------------------------------
