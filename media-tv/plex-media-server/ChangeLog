@@ -4,6 +4,17 @@ https://plex.tv/downloads/1/archive
 https://plex.tv/downloads/1/archive
 
 
+Plex Media Server 1.21.2.3997 is now available to Plex Pass users in the Beta update channel.
+-----------------------------------------
+FIXES:
+	- (TLS) Fixed an issue that could cause TLS certificates to be renewed prematurely
+
+
+Plex Media Server 1.21.2.3978 is now available to Plex Pass users in the Beta update channel.
+-----------------------------------------
+This update contains internal changes in support of upcoming server functionality improvements.
+
+
 Plex Media Server 1.21.2.3943 is now available to everyone.
 -----------------------------------------
 FIXES:
