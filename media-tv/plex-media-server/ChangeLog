@@ -4,6 +4,22 @@ https://plex.tv/downloads/1/archive
 https://plex.tv/downloads/1/archive
 
 
+Plex Media Server 1.21.3.4021 is now available to Plex Pass users in the Beta update channel.
+-----------------------------------------
+FIXES:
+	- (TLS) Custom certificates were not used in some cases where they should’ve been
+	- (TLS) Improved error handling and logging
+
+
+
+Plex Media Server 1.21.3.4015 is now available to Plex Pass users in the Beta update channel.
+Plex Media Server 1.21.3.4014 is now available to everyone.
+-----------------------------------------
+FIXES:
+	- (Security) Mitigate against potential DDoS amplification by only responding to UDP requests from LAN
+
+
+
 Plex Media Server 1.21.2.3997 is now available to Plex Pass users in the Beta update channel.
 -----------------------------------------
 FIXES:
