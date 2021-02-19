@@ -4,6 +4,26 @@ https://plex.tv/downloads/1/archive
 https://plex.tv/downloads/1/archive
 
 
+Plex Media Server 1.21.3.4046 is now available to Plex Pass users in the Beta update channel.
+-----------------------------------------
+FIXES:
+	- (Gaming) (Windows) Add firewall exception for game transcoder.
+	- (Gaming) (Windows) Fix games not being copied over to app support.
+	- (Gaming) (Windows) Fix hang stopping game.
+	- (Gaming) Correctly bind analog triggers.
+	- (Gaming) During library creation, kick off MAME core download.
+	- (Gaming) During library creation, move over new skeleton core mapping file.
+	- (Gaming) Exit if we fail to submit frames to Parsec.
+	- (Gaming) Fix for crash in a few cores (e.g. mesen).
+	- (Gaming) Fixed scaling with games which change resolution (e.g. Tekken 2).
+	- (Gaming) Pass back better errors when game transcoder exits at start.
+	- (Gaming) Redirect joypad to keyboard for MAME to fix e.g. Asteroids.
+	- (Gaming) Restore default joystick saturation for MAME.
+	- (Gaming) Return different errors codes when exiting so client has visibility.
+	- (Gaming) Wait longer for game transcoder to start.
+
+
+
 Plex Media Server 1.21.3.4021 is now available to Plex Pass users in the Beta update channel.
 -----------------------------------------
 FIXES:
