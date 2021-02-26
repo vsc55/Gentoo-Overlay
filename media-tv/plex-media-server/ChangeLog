@@ -4,6 +4,40 @@ https://plex.tv/downloads/1/archive
 https://plex.tv/downloads/1/archive
 
 
+Plex Media Server 1.21.4.4079 is now available to Plex Pass users in the Beta update channel.
+-----------------------------------------
+FIXES:
+	- (Butler) Scheduled tasks were not always running as expected.
+
+
+
+Plex Media Server 1.21.4.4054 is now available to Plex Pass users in the Beta update channel.
+-----------------------------------------
+NEW:
+	- (Web) Updated to 4.51.3
+FIXES:
+	- (DVR) Newly recorded show Advanced->Seasons setting would not match the Library’s Seasons setting ( plexinc/plex-issues#226 )
+	- (DVR) Plex Tuner Service would sometimes shut down while Plex Media Server was still running (#12223).
+	- (Gaming) Correctly bind analog triggers.
+	- (Gaming) During library creation, kick off MAME core download.
+	- (Gaming) During library creation, move over new skeleton core mapping file.
+	- (Gaming) Exit if we fail to submit frames to Parsec.
+	- (Gaming) Fix for crash in a few cores (e.g. mesen).
+	- (Gaming) Fixed scaling with games which change resolution (e.g. Tekken 2).
+	- (Gaming) Pass back better errors when game transcoder exits at start.
+	- (Gaming) Redirect joypad to keyboard for MAME to fix e.g. Asteroids.
+	- (Gaming) Restore default joystick saturation for MAME.
+	- (Gaming) Return different errors codes when exiting so client has visibility.
+	- (Gaming) Wait longer for game transcoder to start.
+	- (Gaming) [Windows] Add firewall exception for game transcoder.
+	- (Gaming) [Windows] Fix games not being copied over to app support.
+	- (Gaming) [Windows] Fix hang stopping game.
+	- (Library) Allow deletion of play history again.
+	- (Scanner) Respect ‘disc’ suffix for stacked media using the Plex Movie agent (#12315)
+	- The server could exit unexpectedly if media was deleted while clients made certain API calls (#12307)
+
+
+
 Plex Media Server 1.21.3.4046 is now available to Plex Pass users in the Beta update channel.
 -----------------------------------------
 FIXES:
