@@ -4,6 +4,22 @@ https://plex.tv/downloads/1/archive
 https://plex.tv/downloads/1/archive
 
 
+Plex Media Server 1.22.0.4136 is now available to Plex Pass users in the Beta update channel.
+-----------------------------------------
+NEW:
+	- New Beta Plex TV Series agent (see [BETA] New Plex TV Series Scanner 123)
+	- (Library) Allow TMDB id matching in Fix Match using 'tmdb-` prefix (#12389)
+FIXES:
+	- (Library) Manually unmatched items in Plex Movie libraries would get rematched when refreshing (#12281)
+	- (Library) Scanning in a TV folder containing optimized versions could match episodes to the wrong show (#12381)
+	- (Library) Shows and Artists wouldn’t show play history for their items if the agent had changed (#12354)
+	- (Metadata) Embedded studio tags were not being read correctly for Plex Movie items (#12242)
+	- (Playqueue) Newly created play queue would not place specials from TV Shows in the correct order (#11994)
+	- (Scanner) The Plex Movie scanner may not pick up extras and subtitles for media with unicode characters in the filename.
+	- (Transcoder) Sessions could become unresponsive after seek requests with certain timings, most commonly seen on Samsung devices (#11703)
+
+
+
 Plex Media Server 1.21.4.4079 is now available to Plex Pass users in the Beta update channel.
 -----------------------------------------
 FIXES:
