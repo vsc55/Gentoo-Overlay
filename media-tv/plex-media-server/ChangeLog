@@ -4,6 +4,23 @@ https://plex.tv/downloads/1/archive
 https://plex.tv/downloads/1/archive
 
 
+Plex Media Server 1.22.0.4157 is now available to Plex Pass users in the Beta update channel.
+-----------------------------------------
+NEW:
+	- (Library) Show unmatched filter for episodes.
+FIXES:
+	- (Library) Rematching would occur for all unmatched episode items after every scan on the Plex TV agent.
+
+
+
+Plex Media Server 1.22.0.4145 is now available to Plex Pass users in the Beta update channel.
+-----------------------------------------
+FIXES:
+	- (Network) Bandwidth controls would sometimes limit bandwidth too much (#12399)
+	- (TV) The beta TV agent could overwrite EPG metadata for a show.
+
+
+
 Plex Media Server 1.22.0.4136 is now available to Plex Pass users in the Beta update channel.
 -----------------------------------------
 NEW:
