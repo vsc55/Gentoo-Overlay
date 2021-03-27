@@ -5,6 +5,39 @@ https://plex.tv/downloads/1/archive
 
 
 
+Plex Media Server 1.22.1.4228 is now available to Plex Pass users in the Beta update channel.
+-----------------------------------------
+Please note that due to some particularly large database migrations, your first time starting up the server with this release may take an unusually long time, depending on library size, disk speed, and CPU performance. This is normal.
+
+NEW:
+	- (Library) Improved search handling of non-Latin scripts (#7896)
+	- (Library) Improved search handling of punctuation (#7833)
+	- (Web) Updated to 4.52.2
+	- (Web) Updated to 4.53.0
+	- Updated Translations.
+FIXES:
+	- (Butler) The scheduled job to refresh local metadata could use a lot or memory.
+	- (Gaming) Allow h/w encoding for parallel N64 core.
+	- (Gaming) Fix for games not saving state on Windows.
+	- (Gaming) Move to using nearest neighbor scaling for sharper rendering.
+	- (Gaming) OpenGL v2 and v3 rendering pipelines.
+	- (Gaming) Use passed in display dimensions to render at a higher resolution.
+	- (Library) Artist genres were not being set for FLAC files.
+	- (Library) Don’t expose genre radio if user has “none” selected for genre source.
+	- (Library) Ensure shuffle doesn’t bias towards single-track artists.
+	- (Library) Old lyrics weren’t being removed, which could result in errors displaying lyrics.
+	- (Library) TV intro detection would run unconditionally for users without a Plex Pass using the beta TV agent.
+	- (Metadata) On rare occasions, refreshing a movie item may remove reviews and extras (#12428)
+	- (Statistics) Don’t store duplicate records in the statistics tables
+	- (Transcoder) Short backwards seeks could fail in DASH transcodes under some circumstances (#11824)
+	- Added Slovak and Slovenian translations.
+	- Crash returning active playback sessions.
+	- Episodes with air date and no episode number could play out of order.
+	- The server could fail to start up on some ARM systems (#12513)
+	- Tightened cross-origin request security restrictions (#7712)
+
+
+
 Plex Media Server 1.22.1.4200 is now available to Plex Pass users in the Beta update channel.
 -----------------------------------------
 NEW:
