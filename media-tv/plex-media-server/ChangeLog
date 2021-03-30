@@ -3,6 +3,28 @@ http://www.videohelp.com/tools/Plex/version-history
 https://plex.tv/downloads/1/archive
 https://plex.tv/downloads/1/archive
 
+Plex Media Server 1.22.2.4262 is now available to Plex Pass users in the Beta update channel.
+-----------------------------------------
+FIXES:
+	- (Collections) Collection deletion would fail
+
+
+
+Plex Media Server 1.22.2.4256 is now available to Plex Pass users in the Beta update channel.
+-----------------------------------------
+NEW:
+	- (Library) Expose both Network and Studio filters for libraries using the Plex TV Series agent beta (#12517)
+	- Outbound HTTP connections can now use newer HTTP protocol versions
+FIXES:
+	- (Hubs) Crash when loading home
+	- (Library) Items could incorrectly appear in On Deck when changing agents or when rating an item (#12515)
+	- (Library) Locked title and year fields could get overwritten on unmatched items (#12484).
+	- (Library) Unmatched episodes in matched seasons wouldn’t respect local metadata preference in the beta TV agent.
+	- (Scanner) Certain episode filenames were not being scanned correctly using the Plex TV agent beta (#12478)
+	- (Scanner) Certain path names for TV Specials folders wouldn’t get read correctly using the Beta TV agent.
+	- (Search) EPG search requests would sometimes fail with 404. (#12333)
+	- Don’t notify user about new versions when automatic updates are enabled. (#12085)
+
 
 
 Plex Media Server 1.22.1.4228 is now available to Plex Pass users in the Beta update channel.
