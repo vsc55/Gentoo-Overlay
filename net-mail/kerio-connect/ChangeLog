@@ -8,6 +8,40 @@ Legend:
 ! Known issue / missing feature
 
 
+Version 9.3.1 patch 1 - Released: March 22, 2021
+-----------------------------------------
+Fixes:
+- When email drafts are saved within Outlook via accounts setup with KOFF, the sender is saved as "Unknown" instead of the creator of the draft.
+
+
+
+Version 9.3.1 - Released: January 19, 2021
+-----------------------------------------
+Fixes:
+- Unable to join MS teams meeting through Webmail Calendar
+
+
+
+Version 9.3.0 p2 - Released: November 30, 2020
+-----------------------------------------
+Fixes:
+- Event attachments in Russian filename looses filename after uploaded
+- Printing Attached Emails shows the Date of the Host Email Instead of the Attached Email
+- SSL Certificate becomes untrusted after upgrading to 9.3.0 (CentOS, RHEL)
+- AV Updates fail on CentOS, RHEL
+- Webmail Inbox Notifications for shared mailboxes where the user is not Owner.
+
+
+
+Version 9.3.0 p1 - Released: October 26, 2020
+-----------------------------------------
+Fixes:
+- All-day Calendar event displayed on the previous day in some timezones
+- mailserver process crashes due to DKIM CheckSignaure (libdkimpp/libcrypto-kt.1.1)
+- On iOS via ActiveSync error is returned ParseCalendarContent: Unknown method: 6
+- Webmail crash with NestingLevel error
+
+
 
 Version 9.3 - Released: September 23, 2020
 -----------------------------------------
