@@ -3,6 +3,12 @@ http://www.videohelp.com/tools/Plex/version-history
 https://plex.tv/downloads/1/archive
 https://plex.tv/downloads/1/archive
 
+Plex Media Server 1.22.3.4392 is now available to Plex Pass users in the Beta update channel.
+-----------------------------------------
+FIXES:
+	- (Library) Bring back ‘exclude from home’ library preference
+	- (Hubs) Respect the onDeck limit when generating the continue watching hub
+
 
 
 Plex Media Server 1.22.2.4282 is now available to Plex Pass users in the Beta update channel.
