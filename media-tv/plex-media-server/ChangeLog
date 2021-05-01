@@ -3,6 +3,34 @@ http://www.videohelp.com/tools/Plex/version-history
 https://plex.tv/downloads/1/archive
 https://plex.tv/downloads/1/archive
 
+
+
+Plex Media Server 1.23.0.4459 is now available to Plex Pass users in the Beta update channel.
+-----------------------------------------
+FIXES:
+	- (Server) Server could fail to launch on 32-bit linux platforms
+
+
+
+Plex Media Server 1.23.0.4438 is now available to Plex Pass users in the Beta update channel.
+-----------------------------------------
+NEW:
+	- (Web) Updated to 4.55.1
+	- Updated translations.
+FIXES:
+	- (DVR) Guide refresh would not always cancel immediately. (#11286)
+	- (Library) Embedded ‘album’ tag for movies was not correctly used for collection creation (#12536)
+	- (Library) Improve database handling when refreshing large amounts of metadata (#12590)
+	- (Library) Smart Shuffle wasn’t picking the most popular tracks on each album.
+	- (Library) Smart Shuffle would play some tracks more often than it should.
+	- (LibraryGarbageCollector) Fix keep policy to consider multiple media as one item (#11885)
+	- (Metadata) Extended music metadata and lyrics would be removed after a refresh (#12585)
+	- (Metadata) Locked fields being not being set when also setting artwork (#12383)
+	- (TLS) Newly-renewed certs were incompatible with certain legacy Sonos devices (#12531)
+	- (Transcoder) GPU HDR tone mapping could unexpectedly fail on some newer Intel processors (#12534)
+
+
+
 Plex Media Server 1.22.3.4392 is now available to Plex Pass users in the Beta update channel.
 -----------------------------------------
 FIXES:
