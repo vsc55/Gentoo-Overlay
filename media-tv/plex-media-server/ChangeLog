@@ -5,6 +5,27 @@ https://plex.tv/downloads/1/archive
 
 
 
+Plex Media Server 1.23.0.4497 is now available to Plex Pass users in the Beta update channel.
+-----------------------------------------
+FIXES:
+	- (Linux) Debian systems did not start after upgrade
+
+
+
+Plex Media Server 1.23.0.4482 is now available to Plex Pass users in the Beta update channel.
+-----------------------------------------
+FIXES:
+	- (Windows) Plex Media Fingerprinter failing to run (#12649)
+
+
+
+Plex Media Server 1.23.0.4480 is now available to Plex Pass users in the Beta update channel.
+-----------------------------------------
+FIXES:
+	- (Linux) HW transcoding could cause a crash on systems with Nvidia GPUs.
+
+
+
 Plex Media Server 1.23.0.4459 is now available to Plex Pass users in the Beta update channel.
 -----------------------------------------
 FIXES:
