@@ -4,6 +4,49 @@ https://plex.tv/downloads/1/archive
 https://plex.tv/downloads/1/archive
 
 
+Plex Media Server 1.23.2.4600 is now available to Plex Pass users in the Beta update channel.
+-----------------------------------------
+FIXES:
+	- An issue could occur on Windows systems when downgrading and re-upgrading
+	- Work around a bug in certain Eero routers that prevented PMS on Linux from connecting to Plex cloud services
+
+
+
+Plex Media Server 1.23.2.4584 is now available to Plex Pass users in the Beta update channel.
+-----------------------------------------
+FIXES:
+	- (PlayQueues) Playing a special could result in starting playback on wrong episode (#12505)
+
+
+
+Plex Media Server 1.23.1.4571 is now available to Plex Pass users in the Beta update channel.
+-----------------------------------------
+NEW:
+	- (Web) Updated to 4.57.4
+FIXES:
+	- (DVR) Device title not always correctly set during DVR setup. (#12703)
+	- (Library) Improve responsiveness when performing large scan/refresh operations on TV libraries (#12611)
+	- (Metadata) Don’t auto download season specific backgrounds in the Plex TV Series agent.
+
+
+
+Plex Media Server 1.23.1.4528 is now available to Plex Pass users in the Beta update channel.
+-----------------------------------------
+FIXES:
+	- (Library) Improve responsiveness when performing large scan/refresh operations on TV libraries (#12611)
+	- (Metadata) Don’t auto download season specific backgrounds in the Plex TV Series agent.
+
+
+
+Plex Media Server 1.23.0.4523 is now available to everyone.
+-----------------------------------------
+FIXES:
+	- (Collections) Playback of show collections could fail (#12326)
+	- (Library) Bring back ‘exclude from home’ library preference
+	- (TLS) Newly-issued certificates could fail to verify with certain highly-strict TLS clients (#12669)
+	- (TLS) The server could request replacement certificates excessively frequently (#12669)
+
+
 
 Plex Media Server 1.23.0.4497 is now available to Plex Pass users in the Beta update channel.
 -----------------------------------------
