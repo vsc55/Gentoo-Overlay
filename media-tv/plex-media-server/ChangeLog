@@ -4,6 +4,83 @@ https://plex.tv/downloads/1/archive
 https://plex.tv/downloads/1/archive
 
 
+Plex Media Server 1.23.4.4712 is now available to Plex Pass users in the Beta update channel.
+-----------------------------------------
+NEW:
+	- (Transcoder) Improved audio quality when encoding AAC (#12743)
+FIXES:
+	- (Debian) Nvidia hardware transcoding could fail on some system configurations
+	- (Network) DNS lookups could fail on some Linux systems that rely solely on systemd-resolved (#12791)
+	- (PlayQueue) Server would sometimes play the wrong episode when show contains specials with no air date (#12758)
+	- (Transcoder) Transcode sessions using NVDEC for video decode could use excessive amounts of GPU memory (#12765)
+	- (Utilities) The Plex SQLite utility failed to launch on FreeBSD systems (#12796)
+	- The server could become unresponsive after certain play queue operations (#12749)
+
+
+
+Plex Media Server 1.23.3.4707 is now available to Plex Pass users in the Beta update channel.
+-----------------------------------------
+FIXES:
+	- (Scanner) Certain music files could cause a crash during scanning.
+
+
+
+Plex Media Server 1.23.3.4706 is now available to Plex Pass users in the Beta update channel.
+-----------------------------------------
+FIXES:
+	- (DVR) Scheduling sports team subscription would cause server to crash. (#12768)
+
+
+
+Plex Media Server 1.23.3.4692 is now available to Plex Pass users in the Beta update channel.
+-----------------------------------------
+NEW:
+	- (Library) Add ability to sort things randomly.
+	- (Music) Add “artist last played” field.
+	- (Music) Add popularity as a new track sort field.
+	- (Music) Allow periodic music refresh to perform metadata upgrades.
+	- (Music) If a single directory appears to have multiple albums, match them all.
+	- (Music) Support for ‘releasetime’ tags in FLAC to give precise release dates.
+	- (Search) Ability to search for track artists.
+FIXES:
+	- (Jobs) The server could get into a state where it no longer processed media index files until the next restart (#12698)
+	- (Library) Changes to local metadata wouldn’t be detected automatically for movies and episodes using the Plex agents (#12700)
+	- (Music) Improvements to Smart Shuffle to improve diversity.
+	- (Music) Use style radios over genre unless the library has genres coming from tags.
+	- (Photos) Photos with geolocation metadata failed to load.
+	- (Preferences) Fix temporary preferences.xml files on Windows (#12718)
+	- (Preferences) Use international time format for hours of day preferences (#12664)
+	- (Radio) Play queues could end up repeating in some rare cases.
+	- (Search) Improve searching for exact matches.
+
+
+
+Plex Media Server 1.23.2.4656 is now available to everyone.
+-----------------------------------------
+	- This release addresses the issue in previous 1.23.2 builds that could cause loss of some preference data (including plex.tv sign-in and device identification) in certain cases on Windows. Users affected by this issue should see this post 36 for more details. We apologize for any inconvenience caused.
+
+
+
+Plex Media Server 1.23.2.4625 is now available to everyone.
+-----------------------------------------
+FIXES:
+	- (Music) Fix regression with Add to Library when adding artists and albums from TIDAL (#12741)
+	- (PlayQueues) Playing a special could result in starting playback on wrong episode (#12505)
+
+
+
+Plex Media Server 1.23.1.4602 is now available to everyone.
+-----------------------------------------
+NEW:
+	- (Web) Updated to 4.57.4
+FIXES:
+	- (DVR) Device title not always correctly set during DVR setup. (#12703)
+	- (Library) Improve responsiveness when performing large scan/refresh operations on TV libraries (#12611)
+	- (Metadata) Don’t auto download season specific backgrounds in the Plex TV Series agent.
+	- (Network) Certain environments could experience DNS lookup failures. (#12710)
+
+
+
 Plex Media Server 1.23.2.4600 is now available to Plex Pass users in the Beta update channel.
 -----------------------------------------
 FIXES:
