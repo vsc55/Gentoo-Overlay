@@ -2,12 +2,12 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI="7"
+EAPI=7
 
-inherit eutils user systemd
+inherit eutils user systemd udev unpacker
 
 MAGIC1=${PV}
-MAGIC2="8e2884e4b"
+MAGIC2="b7e0c30f2"
 
 URI="http://downloads.plex.tv/plex-media-server-new"
 
@@ -21,67 +21,31 @@ SRC_URI="
 "
 SLOT="0"
 LICENSE="Plex"
-IUSE="systemd"
+# IUSE="systemd"
+IUSE="udev"
 
 DEPEND=""
-RDEPEND="net-dns/avahi"
+RDEPEND="
+	acct-group/plex
+	acct-user/plex
+	net-dns/avahi
+	udev? ( >=virtual/udev-171 )
+"
 
 INIT_SCRIPT="${ROOT}/etc/init.d/plex-media-server"
 
-pkg_setup() {
-	enewgroup plex
-	enewuser plex -1 /bin/bash /var/lib/plexmediaserver "plex,video" --system
-}
+
+S="${WORKDIR}"
+
+_APPNAME="plexmediaserver"
+_USERNAME="plex"
+
+
+#src_unpack() {
+#	unpack_deb ${A}
+#}
 
 pkg_preinst() {
-	einfo "Unpacking DEB File"
-	cd "${WORKDIR}"
-	ar x "${DISTDIR}/${A}"
-	mkdir data
-	mkdir control
-	tar -Jxvf data.tar.xz -C data
-	tar -xzf control.tar.gz -C control
-
-	einfo "Preparing files for installation"
-	# delete systemd debian
-	rm -r data/lib/systemd
-	# delete initd debian
-	rm -r data/etc/init
-	# remove debian specific useless files
-	rm data/usr/share/doc/plexmediaserver/README.Debian
-	rm data/usr/share/doc/plexmediaserver/changelog.Debian.gz
-	# delete sourcer list to apt-get
-	rm -r data/etc/apt
-		
-	einfo "Preparing config files"
-	# move the config to the correct place
-	mkdir data/etc/plex
-	mv data/etc/default/plexmediaserver data/etc/plex/plexmediaserver.conf
-	rmdir data/etc/default
-	
-	einfo "Patching Startup"
-	# apply patch for start_pms to use the new config file
-	cd data/usr/sbin
-	epatch "${FILESDIR}"/start_pms_1.15.0.647.patch || die "patch startup failed"
-	cd ../../..
-	
-	# as the patch doesn't seem to correctly set the permissions on new files do this now
-	# now copy to image directory for actual installation
-	cp -R data/* "${D}"  || die "install cp failed"
-	
-	einfo "preparing logging targets"
-	# make sure the logging directory is created
-	mkdir "${D}"var
-	mkdir "${D}"var/log
-	mkdir "${D}"var/log/pms
-	chown plex:plex "${D}"var/log/pms
-
-	einfo "Prepare default library destination"
-	# also make sure the default library folder is pre created with correct permissions
-	mkdir "${D}"var/lib
-	mkdir "${D}"var/lib/plexmediaserver
-	chown plex:plex "${D}"var/lib/plexmediaserver
-	
 	einfo "Stopping running instances of Media Server"
 	if [ -e "${INIT_SCRIPT}" ]; then
 		${INIT_SCRIPT} stop
@@ -89,10 +53,47 @@ pkg_preinst() {
 }
 
 src_install() {
-	if use systemd; then
-		systemd_newunit "${FILESDIR}"/plex-media-server.service plex-media-server.service	
+
+	# remove useless files
+	rm -r "etc" || die
+	rm -r "usr/share" || die
+	
+	
+	# Copy main files over to image and preserve permissions so it is portable
+	cp -rp usr/ "${ED}"/ || die
+	
+
+	einfo "preparing logging targets"
+	# Make sure the logging directory is created
+	local logging_dir="/var/log/pms"
+	dodir "${logging_dir}"
+	fowners "${_USERNAME}":"${_USERNAME}" "${logging_dir}"
+	keepdir "${logging_dir}"
+
+
+	
+	einfo "Prepare default library destination"
+	# also make sure the default library folder is pre created with correct permissions
+	local default_library_dir="/var/lib/${_APPNAME}"
+	dodir "${default_library_dir}"
+	fowners "${_USERNAME}":"${_USERNAME}" "${default_library_dir}"
+	keepdir "${default_library_dir}"
+
+
+
+# TODO: No actualizado systemd
+#	if use systemd; then
+#		systemd_newunit "${FILESDIR}"/plex-media-server.service plex-media-server.service	
+#	fi
+	newinitd "${FILESDIR}"/pms_initd_2 plex-media-server
+	newconfd "${FILESDIR}"/pms_conf_2 plex-media-server
+	
+	if use udev; then
+		local udevdir="$(get_udevdir)"
+		insinto ${udevdir}/rules.d
+		newins "${FILESDIR}/udev_60-tv-butler.rules" 60-tv-butler.rules
+		newins "${FILESDIR}/udev_60-plex-hw-transcoding.rules" 60-plex-hw-transcoding.rules
 	fi
-	newinitd ${FILESDIR}/pms_initd_1 plex-media-server
 }
 
 pkg_prerm() {
@@ -103,6 +104,12 @@ pkg_prerm() {
 }
 
 pkg_postinst() {
+
+	if use udev ; then
+		udevadm control --reload-rules \
+			&& udevadm trigger --subsystem-match=usb
+	fi
+
 	einfo ""
 	elog "Plex Media Server is now fully installed. Please check the configuration file in /etc/plex if the defaults please your needs."
 	elog "To start please call '/etc/init.d/plex-media-server start'. You can manage your library afterwards by navigating to http://<ip>:32400/web/"

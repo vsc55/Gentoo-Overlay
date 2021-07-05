@@ -7,7 +7,7 @@ EAPI="7"
 inherit eutils user systemd
 
 MAGIC1=${PV}
-MAGIC2="8e2884e4b"
+MAGIC2="72c16a276"
 
 URI="http://downloads.plex.tv/plex-media-server-new"
 
@@ -21,7 +21,7 @@ SRC_URI="
 "
 SLOT="0"
 LICENSE="Plex"
-IUSE="systemd"
+# IUSE="systemd"
 
 DEPEND=""
 RDEPEND="net-dns/avahi"
@@ -38,32 +38,11 @@ pkg_preinst() {
 	cd "${WORKDIR}"
 	ar x "${DISTDIR}/${A}"
 	mkdir data
-	mkdir control
-	tar -Jxvf data.tar.xz -C data
-	tar -xzf control.tar.gz -C control
+	tar -Jxf data.tar.xz -C data
 
-	einfo "Preparing files for installation"
-	# delete systemd debian
-	rm -r data/lib/systemd
-	# delete initd debian
-	rm -r data/etc/init
-	# remove debian specific useless files
-	rm data/usr/share/doc/plexmediaserver/README.Debian
-	rm data/usr/share/doc/plexmediaserver/changelog.Debian.gz
-	# delete sourcer list to apt-get
+	# remove useless files
+	rm -fr data/usr/share
 	rm -r data/etc/apt
-		
-	einfo "Preparing config files"
-	# move the config to the correct place
-	mkdir data/etc/plex
-	mv data/etc/default/plexmediaserver data/etc/plex/plexmediaserver.conf
-	rmdir data/etc/default
-	
-	einfo "Patching Startup"
-	# apply patch for start_pms to use the new config file
-	cd data/usr/sbin
-	epatch "${FILESDIR}"/start_pms_1.15.0.647.patch || die "patch startup failed"
-	cd ../../..
 	
 	# as the patch doesn't seem to correctly set the permissions on new files do this now
 	# now copy to image directory for actual installation
@@ -89,10 +68,12 @@ pkg_preinst() {
 }
 
 src_install() {
-	if use systemd; then
-		systemd_newunit "${FILESDIR}"/plex-media-server.service plex-media-server.service	
-	fi
-	newinitd ${FILESDIR}/pms_initd_1 plex-media-server
+# TODO: No actualizado systemd
+#	if use systemd; then
+#		systemd_newunit "${FILESDIR}"/plex-media-server.service plex-media-server.service	
+#	fi
+	newinitd ${FILESDIR}/pms_initd_2 plex-media-server
+	newconfd ${FILESDIR}/pms_conf_2 plex-media-server
 }
 
 pkg_prerm() {
