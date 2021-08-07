@@ -4,6 +4,95 @@ https://plex.tv/downloads/1/archive
 https://plex.tv/downloads/1/archive
 
 
+
+Plex Media Server 1.24.0.4897 is now available to Plex Pass users in the Beta update channel.
+-----------------------------------------
+NOTE: After installing this version if you decide to downgrade to a release prior to 1.24.0 it will require a media analysis to be run on all existing video items. This will happen automatically but you may notice some additional load on the server during your scheduled tasks window. This is only applicable if you downgrade, just installing this version will not trigger this.
+
+NEW:
+	- (API) Language and country names are now returned in the client’s language (#12815)
+	- (Localization) Improved language code support for audio and subtitle streams (#12909)
+	- (Scanner) Support for TV season directory names that contain a season title after the number (#12834)
+FIXES:
+	- (Analysis) Bitrate analysis was sometimes incorrect when file contained image attachments (#12882)
+	- (Collections) Manually ordered collections would fail to play (#12879)
+	- (Collections) Missing hubs when an item is part of a manually ordered collection (#12862
+	- (Extras) An exception throw in refreshing extra lists could cause the server to exit (#12890)
+	- (HTTP) HTTP/2 requests could fail when passed malformed headers (#12876)
+	- (Library) Scanning photo libraries could result in Exception warning log spam on certain platforms (#12941)
+	- (Music) Aural fixations were broken for TIDAL subscribers w/o a full Plex Pass (#12812)
+	- (Music) If genre preference is “Plex Music” don’t read genre from tags (#12812)
+	- (Music) When manually analyzing albums, clear loudness analysis (#12808)
+	- (Playback) Pre-rolls wouldn’t play unless cinema trailers were enabled (#12819)
+	- (Transcode) Transcoding to AC3 could result in a lower bitrate than this codec needs to produce decent quality. (#9814)
+
+
+
+Plex Media Server 1.23.6.4881 is now available to Plex Pass users in the Beta update channel.
+-----------------------------------------
+NOTE: This release changes how DVR identifies channels internally. You should not notice a change after you upgrade to this release; however, if you then downgrade to an older version of PMS, you will need to refresh your EPG before tuning and recording work as expected.
+FIXES:
+	- Issues starting up (database locked)
+
+
+
+Plex Media Server 1.23.6.4810 is now available to Plex Pass users in the Beta update channel.
+-----------------------------------------
+NOTE: This release changes how DVR identifies channels internally. You should not notice a change after you upgrade to this release; however, if you then downgrade to an older version of PMS, you will need to refresh your EPG before tuning and recording work as expected.
+
+NEW:
+	- (Downloads) Download access now enforced on the server via shared user settings (#12859)
+FIXES:
+	- (Hubs) Stop showing opted out items in Merged Recently Added hubs (#12820)
+	- (Music) Discovery radio only loaded the first few tracks.
+	- (Scanner) Improved matching for TV episodes with names including both vertical and horizontal resolutions (#12830)
+	- (Scanner) Improved matching for TV episodes with version-number suffixes (#12830)
+	- (Scanner) Some episode files would get skipped if it was a low confidence match (#12861)
+
+
+
+Plex Media Server 1.23.5.4841 is now available to Plex Pass users in the Beta update channel.
+-----------------------------------------
+	- ????
+
+
+
+Plex Media Server 1.23.5.4801 is now available to Plex Pass users in the Beta update channel.
+-----------------------------------------
+NEW:
+	- (Web) Updated to 4.59.2
+FIXES:
+	- (Agent) The Plex movie agent was ignoring IMDb ids inside NFO files during matching.
+	- (Analysis) Music file bitrates contained bitrate for more than just the audio track (#10068)
+	- (Collections) Respect limit when creating collections from the advanced filters screens (#12622)
+	- (Collections) Shared smart tv collections could appear empty (#12642)
+	- (Extras) The TV show extras hub would disappear after playing one of the extras (#12799)
+	- (Hubs) Disabling the top pinned Recently Added hub would prevent the Merged Recently Added hub appearing (if preference was set) (#12625)
+	- (Hubs) Hubs relying on ratings would not work as expected when not using Rotten Tomato ratings (#12588)
+	- (Hubs) Merged Recently Added would not appear for both movies and home videos (if both were pinned, and the preference was set) (#12632)
+	- (Library) Searches including original titles weren’t working.
+	- (Metadata) Genres from embedded movie tags could contain unwanted whitespace.
+	- (Music) Aural fixations were broken for TIDAL subscribers w/o a full Plex Pass (#12812)
+	- (Music) If genre preference is “Plex Music” don’t read genre from tags (#12812)
+	- (Music) Scanning multi-disc albums could\xC2_result in split discs.
+	- (Network) DNS lookups could fail on some Linux systems that rely solely on systemd-resolved (#12791)
+	- (Statistics) Bandwidth usage by device could be logged under a global value instead of individually for each device (#12805)
+
+
+
+Plex Media Server 1.23.4.4805 is now available to Plex Pass users in the Beta update channel.
+-----------------------------------------
+NEW:
+	- (QNAP) Add preliminary support for QTS 5.0 Beta
+
+
+
+Plex Media Server 1.23.4.4755 is now available to Plex Pass users in the Beta update channel.
+-----------------------------------------
+	- ????
+
+
+
 Plex Media Server 1.23.4.4712 is now available to Plex Pass users in the Beta update channel.
 -----------------------------------------
 NEW:
