@@ -5,6 +5,21 @@ https://plex.tv/downloads/1/archive
 
 
 
+Plex Media Server 1.24.0.4930 is now available to Plex Pass users in the Beta update channel.
+-----------------------------------------
+NOTE : After installing this version if you decide to downgrade to a release prior to 1.24.0 it will require a media analysis to be run on all existing video items. This will happen automatically but you may notice some additional load on the server during your scheduled tasks window. This is only applicable if you downgrade, just installing this version will not trigger this.
+
+
+
+Plex Media Server 1.24.0.4916 is now available to Plex Pass users in the Beta update channel.
+-----------------------------------------
+NOTE : After installing this version if you decide to downgrade to a release prior to 1.24.0 it will require a media analysis to be run on all existing video items. This will happen automatically but you may notice some additional load on the server during your scheduled tasks window. This is only applicable if you downgrade, just installing this version will not trigger this.
+
+FIXES:
+	- (Playback) Roku devices were always getting forced to transcode when enabling subtitles.
+
+
+
 Plex Media Server 1.24.0.4897 is now available to Plex Pass users in the Beta update channel.
 -----------------------------------------
 NOTE: After installing this version if you decide to downgrade to a release prior to 1.24.0 it will require a media analysis to be run on all existing video items. This will happen automatically but you may notice some additional load on the server during your scheduled tasks window. This is only applicable if you downgrade, just installing this version will not trigger this.
