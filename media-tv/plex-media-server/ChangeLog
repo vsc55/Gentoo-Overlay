@@ -3,6 +3,12 @@ http://www.videohelp.com/tools/Plex/version-history
 https://plex.tv/downloads/1/archive
 https://plex.tv/downloads/1/archive
 
+Plex Media Server 1.24.1.4931 is now available to Plex Pass users in the Beta update channel.
+-----------------------------------------
+FIXES:
+	- (Analysis) Bitrate analysis was sometimes incorrect with certain audio tracks (#12955)
+	- (Metadata) Always use the first embedded image when preferring local metadata (#12946)
+
 
 
 Plex Media Server 1.24.0.4930 is now available to Plex Pass users in the Beta update channel.
