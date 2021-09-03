@@ -3,6 +3,22 @@ http://www.videohelp.com/tools/Plex/version-history
 https://plex.tv/downloads/1/archive
 https://plex.tv/downloads/1/archive
 
+
+
+Plex Media Server 1.24.2.4973 is now available to Plex Pass users in the Beta update channel.
+-----------------------------------------
+NEW:
+	- (Synology) Use new ‘PlexMediaServer’ share as metadata storage structure on DSM 7
+	- (TerraMaster) Update packaging to support manually installing on devices
+	- (Web) Updated to 4.62.1
+FIXES:
+	- (Debian) Improve Intel CPU model parsing during installation for hardware transcoding detection and user messaging
+	- (Hubs) Related hubs would only show 6 items if they had a custom order (#13001)
+	- (Library) The server could become unresponsive if certain HTTP requests were made simultaneously (#12844)
+	- (Network) The server could get stuck in a state where it thinks there is no internet connectivity (#12635)
+
+
+
 Plex Media Server 1.24.1.4931 is now available to Plex Pass users in the Beta update channel.
 -----------------------------------------
 FIXES:
