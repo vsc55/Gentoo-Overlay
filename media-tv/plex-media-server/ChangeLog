@@ -5,6 +5,42 @@ https://plex.tv/downloads/1/archive
 
 
 
+
+Plex Media Server 1.24.3.5033 is now available to Plex Pass users in the Beta update channel.
+-----------------------------------------
+NEW:
+	- (API) Added ‘includeGuids’ query param option (#12976)
+	- (Music) Allow setting threads used for Sonic analysis via hidden preference “LongRunningJobThreads” (#13030)
+	- (Web) Updated to 4.63.0
+	- Updated translations (#13006)
+FIXES:
+	- (Collection) Collection order changes to “Custom” after the order changed manually (#12826)
+	- (Collection) Hide collection order serttings for smart collections (#12822)
+	- (Collection) Removing hub templates for deleted promoted collections (#12645)
+	- (Collections) Merged Recently Added row disappeared when first pinned library excluded from homescreen (#12883)
+	- (EPG) Certain XMLTV guides would not show data. (#13044)
+	- (Library) De-dupe top viewed items by GUID, not ID (#13038)
+	- (Library) In some cases, view history could show less items than expected (#13038)
+	- (Library) Trying to upgrade the agent on libraries would fail if language was set to Norwegian (#13053)
+	- (Music) Avoid albums merging incorrectly in some cases when preferring tags (#13038)
+	- (Music) If Sonic analysis runs into an error, continue with the next album (#13030)
+	- (Music) In some cases, tracks from separate discs could get their ratings linked (#13038)
+	- (Music) Local album artwork could disappear or be incorrect in some cases (#13038)
+	- (Music) Random Album Radio wasn’t working on some platforms (#13041)
+	- (Music) When preferring genres from tags, still show style radios (#13041)
+	- (Scanner) Libraries with multiple locations could get rescanned even if files in the path had not changed (#13026)
+	- (Search) Improve search queries with “and” and “&” (#12910)
+	- (Synology) Ensure recently-deleted files don’t remain in the library (#13052)
+
+
+
+Plex Media Server 1.24.2.5000 is now available to Plex Pass users in the Beta update channel.
+-----------------------------------------
+FIXES:
+	- (EPG) Certain XMLTV guides would not show data. (#13044)
+
+
+
 Plex Media Server 1.24.2.4973 is now available to Plex Pass users in the Beta update channel.
 -----------------------------------------
 NEW:
