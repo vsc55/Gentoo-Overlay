@@ -1,8 +1,15 @@
-do sFuente:
+Fuente:
 http://www.videohelp.com/tools/Plex/version-history
 https://plex.tv/downloads/1/archive
 https://plex.tv/downloads/1/archive
 
+
+Plex Media Server 1.24.4.5081 is now available to Plex Pass users in the Beta update channel.
+-----------------------------------------
+FIXES:
+	- (EPG) DVR set up using XMLTV guide data could show overlapping airings in the grid.
+	- (Library) Some albums could fail to load their metadata properly (#13100)
+	- (Linux) Initial server setup and certain filesystem operations could fail on certain Linux systems (#13027)
 
 
 
