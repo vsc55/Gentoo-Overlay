@@ -4,6 +4,25 @@ https://plex.tv/downloads/1/archive
 https://plex.tv/downloads/1/archive
 
 
+
+Plex Media Server 1.24.5.5160 is now available to Plex Pass users in the Beta update channel.
+-----------------------------------------
+Database changes may cause longer than normal start-up times after initial installation of this update, especially on larger libraries. Please be patient and do not interrupt this process.
+NEW:
+	- (Synology) Improve install wizard messaging and ‘Plex’ share detection
+	- (Synology) Remove log file redirection option from installer
+FIXES:
+	- (Collections) Merged RA shows the relevant items after reordering pinned libraries (#12962)
+	- (Library) Sonic distances were incorrectly displayed in some cases.
+	- (Metadata) Episodes could lose locked thumbnails in certain circumstances (#13102)
+	- (Metadata) Episodes with embedded metadata for actors could remove actor thumbnails for the show (#13088)
+	- (Metadata) Episodes would retain the titleSort when getting unmatched (#13102)
+	- (Metadata) Items that have been split would only use local metadata from the first copy (#13097)
+	- (Metadata) Switching agents for TV libraries would result in locked season posters getting unset (#13102)
+	- (Search) Improved search results of compound words (#13028)
+
+
+
 Plex Media Server 1.24.4.5081 is now available to Plex Pass users in the Beta update channel.
 -----------------------------------------
 FIXES:
