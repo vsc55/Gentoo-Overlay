@@ -4,6 +4,13 @@ https://plex.tv/downloads/1/archive
 https://plex.tv/downloads/1/archive
 
 
+Plex Media Server 1.24.5.5173 is now available to Plex Pass users in the Beta update channel.
+-----------------------------------------
+Database changes may cause longer than normal start-up times after initial installation of this update, especially on larger libraries. Please be patient and do not interrupt this process.
+FIXES:
+	- (Playback) Some requests were failing causing Live TV streams on Android to get interrupted.
+
+
 
 Plex Media Server 1.24.5.5160 is now available to Plex Pass users in the Beta update channel.
 -----------------------------------------
