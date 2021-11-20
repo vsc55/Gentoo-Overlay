@@ -4,6 +4,38 @@ https://plex.tv/downloads/1/archive
 https://plex.tv/downloads/1/archive
 
 
+
+Plex Media Server 1.25.0.5246 is now available to Plex Pass users in the Beta update channel.
+-----------------------------------------
+FIXES:
+	- (Library) Refreshing metadata for items could result in duplicate tags for certain items (#13196)
+
+
+
+Plex Media Server 1.25.0.5220 is now available to Plex Pass users in the Beta update channel.
+-----------------------------------------
+NEW:
+	- (Metadata) Add Croatian as language option for modern Movie and TV agents (#13119)
+	- (Subtitles) New font package and default styles for server-side subtitle rendering
+	- (Transcoder) Architectural changes to provide future support for hardware transcoding on additional NAS devices
+	- (Transcoder) Architectural changes to provide improved support for remuxing some HDR formats
+	- (Transcoder) Support for hardware transcoding of H.264 Constrained Baseline media
+	- (Transcoder) Support for hardware transcoding on Intel Xe/Gen12 (TGL, RKL) GPUs
+	- (Transcoder) Update to newer upstream ffmpeg
+	- (Web) Updated to 4.66.1
+FIXES:
+	- (Library) Prevent certain extras getting scanned as additional media items when partial scanning is enabled (#13129)
+	- (Library) The music analysis task could linger in the dashboard.
+	- (Metadata) Prevent actors with the same names overwriting each others thumbnails (#13084)
+	- (Music) Avoid duplicate albums showing up in On This Day in Plexamp.
+	- (Music) Rebuilding sonic indexes could result in crashes.
+	- (Music) Scheduled tasks would attempt sonic analyis on TIDAL tracks in library.
+	- (Music) Server could crash after scanning music library.
+	- (Optimized Versions) Some analysis jobs wouldn’t trigger correctly on newly optimized versions (#13138)
+	- (Scanner) The TV scanner could crash if passed a specific path (#13118)
+
+
+
 Plex Media Server 1.24.5.5173 is now available to Plex Pass users in the Beta update channel.
 -----------------------------------------
 Database changes may cause longer than normal start-up times after initial installation of this update, especially on larger libraries. Please be patient and do not interrupt this process.
@@ -3593,7 +3625,7 @@ NEW:
 	- (Windows) Install Media Feature Packs during setup on Windows N and KN SKUs.
 	- (Linux) ARMv5, PowerPC, ROS4 and unRAID 32-bit NAS devices are no longer supported (see complete list at https://support.plex.tv/hc/en-us/articles/218212517)
 
-FIX:
+FIXES:
 	- (Sync) Reprocess items if necessary when original media is removed. (#3800)
 	- (Sync) Sync v1 items were including redundant subtitle streams. (#1704)
 	- (Sync) Show a clear error message when a user's sync item is no longer authorized. (#4453)
@@ -3674,7 +3706,7 @@ NEW:
 	- Various updates to Services and Media Flags.
 	- (Windows) Localized tray icon to German, Spanish, French, Japanese, and Chinese.
 
-FIX:
+FIXES:
 	- (Metadata) Improve TVDB matching of newly added shows.
 	- (Metadata) Prevent movie sort titles getting reverted to default values. (#3817)
 	- (Metadata) Detect forced flag in external idx/sub subtitles file name. (#4196)
@@ -3690,7 +3722,7 @@ FIX:
 NEW:
 	- Update Plex/Web to 2.6.0
 
-FIX:
+FIXES:
 	- (Media Optimizer) Episodes from shows whose titles have trailing periods might be repeatedly reprocessed (on Windows).
 	- (Media Optimizer) Transcoded special episodes weren't following the naming convention.
 	- (Media Optimizer) Optimized versions could be automatically deleted while being watched.
@@ -3714,7 +3746,7 @@ FIX:
 NEW:
 	- Update Plex/Web to 2.5.9
 
-FIX:
+FIXES:
 	- New installs weren't offering a simple way to sign into plex.tv.
 	- Transcoded music playback was failing on Playstation 3 and 4 apps.
 
@@ -3724,7 +3756,7 @@ FIX:
 NEW:
 	- (NAS) Support Synology DS414j, DS416j and DSM 6.0 Beta
 
-FIX:
+FIXES:
 	- (Windows) Occasional HTTP 500 errors when playing media.
 	- (NAS) Warn if the Synology DSM version is too old.
 	- (Transcoder) In rare cases, clients might see partial files when downloading segmented WebVTT subtitles.
@@ -3744,7 +3776,7 @@ NEW:
 	- (Prefs) Move advanced Update Channel pref to non-advanced section.
 	- Improved startup times on multi-core systems.
 
-FIX:
+FIXES:
 	- (Lyrics) Handle lyrics files with CR linebreaks.
 	- Media Optimizer) Improved default sorting of items for Media Optimizer, Playlists, and Sync.
 	- (Metadata) Show correct release date for MP3 music files.
@@ -3783,7 +3815,7 @@ FIX:
 
 0.9.15.6 - 23 de feb de 2016
 -----------------------------------------
-FIX:
+FIXES:
 	- Multiple subtitles in a single file could be lost after a metadata update.
 	- Auto-update could require a manual install in some cases.
 	- (Roku) Improve stability resuming video over HLS.
@@ -3799,7 +3831,7 @@ NEW:
 	- (UI) Easily secure insecure media servers on the local network.
 	- Update Plex/Web to 2.5.6
 
-FIX:
+FIXES:
 	- (Transcoder) Respect profile limitations around VBR audio.
 
 
@@ -3810,7 +3842,7 @@ NEW:
 	- Recognize JPEG 2000 files as photos.
 	- Recognize WebVTT files as external subtitles.
 
-FIX:
+FIXES:
 	- (PS3, PS4) Incorrect aspect ratios transcoding anamorphic video.
 	- (Chromecast) Remove 12Mbps video bitrate limit.
 	- Remove folder view from library sections when user has restrictions.
@@ -5278,13 +5310,13 @@ Plex Media Server 0.9.7.19.
 (You think we rest on Easter Sunday? Think again.)
 
 This release can be downloaded here.
-FIX: Explicitly close HTTP connections, fixes some issues with Android and PlexSync (e.g. Kindle Fire HD).
-FIX: Send back correct video size in HLS playlist, should fix (most) aspect ratio issues in Plex/Web.
-FIX: (Linux) Don't crash if PID file is corrupt.
-FIX: (Windows) Fix a possible issue running on older processors.
-FIX: (Transcoder) More resiliency to corrupt H.264 streams.
-FIX: (Transcoder) Fix some issues transcoding AVI files with H.264 video.
-FIX: (Synology) Fixed startup issue.
+FIXES: Explicitly close HTTP connections, fixes some issues with Android and PlexSync (e.g. Kindle Fire HD).
+FIXES: Send back correct video size in HLS playlist, should fix (most) aspect ratio issues in Plex/Web.
+FIXES: (Linux) Don't crash if PID file is corrupt.
+FIXES: (Windows) Fix a possible issue running on older processors.
+FIXES: (Transcoder) More resiliency to corrupt H.264 streams.
+FIXES: (Transcoder) Fix some issues transcoding AVI files with H.264 video.
+FIXES: (Synology) Fixed startup issue.
 
 Plex Media Server 0.9.7.18 (PlexPass only)
 
@@ -5336,50 +5368,50 @@ NEW: (API) export library section UUIDs for PlexSync.
 NEW: (Android) Add FLAC as a direct play profile (syncing at less than “highest” will convert to MP3).
 NEW: Added device notifications for sync (in progress, item complete). Mostly helps Kepler.
 NEW: (PlexSync) Support for syncing show banners.
-FIX: (New transcoder) Massive speedups for the new transcoder in many scenarios (sync, streaming, seeking). It should be 2x to 3x faster (around 2x faster than the old transcoder), and will resolve many issues of stuttering and buffering some have seen.
-FIX: A bug where timed library updates might only happen every other interval.
-FIX: A major regression with subtitles causing transcoder to exit on certain OS X systems.
-FIX: A case where we didn’t allow the host system to sleep.
-FIX: Improvements to audio stream picking heuristics.
-FIX: A hang when WebKit transcodes failed.
-FIX: Some EAC3 streams showed up as “EC-3&#8243;.
-FIX: Use media analysis duration instead of likely meaningless metadata duration when possible.
-FIX: Improved elastic thread pool behavior, less pressure on thread creation/destruction.
-FIX: Fixed an issue where background color wasn’t correct in the image transcoder (fixes section icons on Roku).
-FIX: (OS X) Fix auto-update library failing under certain conditions.
-FIX: (OS X) Show Plex/Web preferences by default, option-click shows old Cocoa prefs.
-FIX: Improve Kepler transcoder profile, add Plex/Web profile.
-FIX: (ReadyNAS) Update packaging, fix temp folder path.
-FIX: (Ubuntu) Upstart fix.
-FIX: (Fedora) Fixes in scripts.
-FIX: (Roku) Improve profile, disable anamorphic video.
-FIX: (Kepler) Limit AAC to two channel, so 5.1 gets mixed down when streaming on mobile devices.
-FIX: (Kepler) Fix for anamorphic video displaying incorrectly.
-FIX: (Windows) Don’t let PYTHONPATH interfere with our Python. Fixes some startup issues.
-FIX: (New transcoder) Upgrade to ffmpeg 1.1.2
-FIX: (New transcoder) Allow specifying max bitrate.
-FIX: (New transcoder) MPEG4 inside AVI files didn’t work.
-FIX: (New transcoder) Allow for faster seeking for clients that support it.
-FIX: (New transcoder) Don’t send back blank segments when transcoder dies.
-FIX: (New transcoder) Allow other users access to transcode session information.
-FIX: (New transcoder) Use higher bitrate when converting other codecs to AAC.
-FIX: (New transcoder) Improve quality when transcoding interlaced content.
-FIX: (New transcoder) Greatly improved AAC audio quality.
-FIX: (New transcoder) Remove MP3 from iOS HLS transcode target.
-FIX: (New transcoder) Improved support for remuxing with multichannel audio.
-FIX: (New transcoder) Support transcoding between multi-channel formats.
-FIX: (New transcoder) We failed with some content due to scaling bug (Vimeo, TED).
-FIX: (New transcoder) Send more logs up to the media server to help diagnosing issues.
-FIX: (New transcoder) Fix an issue when remuxed videos failed or acted weirdly.
-FIX: (New transcoder) Fix issue with last character being missing in SRT subs.
-FIX: (New transcoder) Fix SRT subs showing <font> tags.
-FIX: (New transcoder) Improve accuracy of bitrate in M3U8, helps Roku.
-FIX: (New transcoder) Improve bandwidth estimates for HLS.
-FIX: (New transcoder) Some indirect videos failed to play.
-FIX: (New transcoder) We were generating MPEGTS streams which occasionally made the Roku crash.
-FIX: (New transcoder) Improve reliability of new transcoder when resuming.
-FIX: (New transcoder) Some VOBSUB subtitles inside MKV files weren’t burned.
-FIX: (New transcoder) Some high bitrate stereo content failed to transcode.
+FIXES: (New transcoder) Massive speedups for the new transcoder in many scenarios (sync, streaming, seeking). It should be 2x to 3x faster (around 2x faster than the old transcoder), and will resolve many issues of stuttering and buffering some have seen.
+FIXES: A bug where timed library updates might only happen every other interval.
+FIXES: A major regression with subtitles causing transcoder to exit on certain OS X systems.
+FIXES: A case where we didn’t allow the host system to sleep.
+FIXES: Improvements to audio stream picking heuristics.
+FIXES: A hang when WebKit transcodes failed.
+FIXES: Some EAC3 streams showed up as “EC-3&#8243;.
+FIXES: Use media analysis duration instead of likely meaningless metadata duration when possible.
+FIXES: Improved elastic thread pool behavior, less pressure on thread creation/destruction.
+FIXES: Fixed an issue where background color wasn’t correct in the image transcoder (fixes section icons on Roku).
+FIXES: (OS X) Fix auto-update library failing under certain conditions.
+FIXES: (OS X) Show Plex/Web preferences by default, option-click shows old Cocoa prefs.
+FIXES: Improve Kepler transcoder profile, add Plex/Web profile.
+FIXES: (ReadyNAS) Update packaging, fix temp folder path.
+FIXES: (Ubuntu) Upstart fix.
+FIXES: (Fedora) Fixes in scripts.
+FIXES: (Roku) Improve profile, disable anamorphic video.
+FIXES: (Kepler) Limit AAC to two channel, so 5.1 gets mixed down when streaming on mobile devices.
+FIXES: (Kepler) Fix for anamorphic video displaying incorrectly.
+FIXES: (Windows) Don’t let PYTHONPATH interfere with our Python. Fixes some startup issues.
+FIXES: (New transcoder) Upgrade to ffmpeg 1.1.2
+FIXES: (New transcoder) Allow specifying max bitrate.
+FIXES: (New transcoder) MPEG4 inside AVI files didn’t work.
+FIXES: (New transcoder) Allow for faster seeking for clients that support it.
+FIXES: (New transcoder) Don’t send back blank segments when transcoder dies.
+FIXES: (New transcoder) Allow other users access to transcode session information.
+FIXES: (New transcoder) Use higher bitrate when converting other codecs to AAC.
+FIXES: (New transcoder) Improve quality when transcoding interlaced content.
+FIXES: (New transcoder) Greatly improved AAC audio quality.
+FIXES: (New transcoder) Remove MP3 from iOS HLS transcode target.
+FIXES: (New transcoder) Improved support for remuxing with multichannel audio.
+FIXES: (New transcoder) Support transcoding between multi-channel formats.
+FIXES: (New transcoder) We failed with some content due to scaling bug (Vimeo, TED).
+FIXES: (New transcoder) Send more logs up to the media server to help diagnosing issues.
+FIXES: (New transcoder) Fix an issue when remuxed videos failed or acted weirdly.
+FIXES: (New transcoder) Fix issue with last character being missing in SRT subs.
+FIXES: (New transcoder) Fix SRT subs showing <font> tags.
+FIXES: (New transcoder) Improve accuracy of bitrate in M3U8, helps Roku.
+FIXES: (New transcoder) Improve bandwidth estimates for HLS.
+FIXES: (New transcoder) Some indirect videos failed to play.
+FIXES: (New transcoder) We were generating MPEGTS streams which occasionally made the Roku crash.
+FIXES: (New transcoder) Improve reliability of new transcoder when resuming.
+FIXES: (New transcoder) Some VOBSUB subtitles inside MKV files weren’t burned.
+FIXES: (New transcoder) Some high bitrate stereo content failed to transcode.
 
 
 Plex Media Server v0.9.7.12
@@ -5393,22 +5425,22 @@ That’s not to say that these updates themselves aren’t exciting. We’ve been doin
 Here’s a full list of changes in the latest Plex Media Server, available from here:
 
 NEW: Greatly improved (Sync and Win8) transcoder subtitle burning: support SSA and SMI, fix crashes, fix subtitle sync when resuming video.
-FIX: Scanning TV shows near the root directory of a volume didn’t work reliably.
-FIX: Send Accept-Ranges: bytes HTTP header when answering requests for media. Fixes Win8 seeking in media.
-FIX: DTS audio inside MP4 container could be incorrectly identified as mp4a during media analysis.
-FIX: Transcoding certain media files could be pathologically slow. Thanks to Rodger for helping us diagnose the issue!
-FIX: Transcoding video audio from MP3 to AAC would fail in some rare cases.
-FIX: A/V sync issues transcoding Smooth Streaming to Windows 8 Store app.
-FIX: Actor thumbnails weren’t being offered correctly to sync clients.
-FIX: Removed unnecessary logging when running transcoder.
-FIX: Add more logging when Win8 app loopback exemption can’t be added.
-FIX: When a media asset is uploaded, it becomes the default.
-FIX: Sync item status could be prematurely reported as complete.
-FIX: Added iPad mini sync profile.
+FIXES: Scanning TV shows near the root directory of a volume didn’t work reliably.
+FIXES: Send Accept-Ranges: bytes HTTP header when answering requests for media. Fixes Win8 seeking in media.
+FIXES: DTS audio inside MP4 container could be incorrectly identified as mp4a during media analysis.
+FIXES: Transcoding certain media files could be pathologically slow. Thanks to Rodger for helping us diagnose the issue!
+FIXES: Transcoding video audio from MP3 to AAC would fail in some rare cases.
+FIXES: A/V sync issues transcoding Smooth Streaming to Windows 8 Store app.
+FIXES: Actor thumbnails weren’t being offered correctly to sync clients.
+FIXES: Removed unnecessary logging when running transcoder.
+FIXES: Add more logging when Win8 app loopback exemption can’t be added.
+FIXES: When a media asset is uploaded, it becomes the default.
+FIXES: Sync item status could be prematurely reported as complete.
+FIXES: Added iPad mini sync profile.
 NEW: (API) Allow converting SMI to SRT (format=srt).
-FIX: (Windows) Large log files when number of library paths exceeded 64.
-FIX: (Sync) A few issues with sync status not being reported correctly.
-FIX: (Transcoder) An A/V sync issue affecting Win8 app.
+FIXES: (Windows) Large log files when number of library paths exceeded 64.
+FIXES: (Sync) A few issues with sync status not being reported correctly.
+FIXES: (Transcoder) An A/V sync issue affecting Win8 app.
 Leveraging the new transcoder, and all these other fixes, is the latest update of Plex for Windows 8. It’s taken us a few releases, but at this point media playback support on the app is really super good, and it’s able to play lots of content with remuxing, which (given our support for throttling on the server side), means awesome quality video with minimal CPU usage. Lots of other new stuff, including more keyboard navigation and a cool media information popup, and many bug-fixes.
 
 Plex/Web also got a massive update. A giant, thundering, epic update, featuring a redesigned home screen, greatly simplified navigation, and lots of other goodies. Look at this beautiful new dashboard!
@@ -5440,12 +5472,12 @@ Switching topics, there’s also a brand new release of Plex for Windows 8 in the 
 
 Last, but not least, there’s a new Plex Media Server release, which addresses some issues, including a reboot problem with LG TVs. We’ve spoken with LG, and they say a firmware update is coming which will fix the bug, but we have a workaround for you in the meantime. You can download the new release in the usual place.
 
-FIX: Workaround for LG TVs rebooting.
-FIX: (Windows) Lots of CPU, giants logs in some cases.
-FIX: An issue scanning sections where the paths had trailing slashes (e.g. W:).
-FIX: MP4 files with DTS streams had them incorrectly identified as MP4a.
-FIX: (Sync) A few issues with sync status not being reported correctly.
-FIX: (Transcoder) An A/V sync issue affecting Windows 8 Plex app.
+FIXES: Workaround for LG TVs rebooting.
+FIXES: (Windows) Lots of CPU, giants logs in some cases.
+FIXES: An issue scanning sections where the paths had trailing slashes (e.g. W:).
+FIXES: MP4 files with DTS streams had them incorrectly identified as MP4a.
+FIXES: (Sync) A few issues with sync status not being reported correctly.
+FIXES: (Transcoder) An A/V sync issue affecting Windows 8 Plex app.
 
 
 Plex Media Server v0.9.7.9
@@ -5468,32 +5500,32 @@ NEW: Allow players to specify a protocol and respect their port.
 NEW: (API) Support for filtering movies by studio.
 NEW: (API) Support for sorting by last view date.
 NEW: (API) Added endpoints for uploading custom media assets (e.g. posters). Used by Plex/Web.
-FIX: Some cache control header updates.
-FIX: A few crashes.
-FIX: (Windows) Workaround for Win 8 security model preventing Plex for Windows 8 from connecting on same machine.
-FIX: (Windows) Crash on start.
-FIX: (Windows) 100% CPU when Plex for Windows 8 is running.
-FIX: (Transcoder) External SRT files with BOM marker weren’t getting rendered.
-FIX: (Transcoder) Faster startup.
-FIX: (PlexSync) Transcoder now handles anamorphic video properly.
-FIX: (PlexSync) Sometimes converted files could be bigger than source files.
-FIX: (PlexSync) Ratings directory was missing.
-FIX: (API) New /channels/arts endpoint which returns channel background art.
-FIX: (API) Resolutions filter can be itself filtered.
-FIX: (API) Don’t return empty studios.
-FIX: (API) Global on deck has mixed parents.
-FIX: (API) Make sure recently viewed channels have identifiers.
-FIX: (API) Fix incorrectly escaping JSON.
-FIX: (API) Fixes for media asset uploads, and select/lock upload.
-FIX: (API) Fix alphanumeric paging with non-alphanumeric characters.
-FIX: (DLNA) Hopeful fix for some heap corruption.
-FIX: Fixed a few (very) rare deadlocks.
-FIX: Fixed iTunes channel for iTunes 11.
-FIX: (Sync) iPad 4s weren’t using the right profile.
-FIX: (Transcoder) Faster starting for transcoded audio.
-FIX: (Transcoder) Fixes for RTMP with new transcoder.
-FIX: (Transcoder) Speed up WebKit transcoder starts.
-FIX: (Transcoder) Fix for some remuxing cases with Win8.
+FIXES: Some cache control header updates.
+FIXES: A few crashes.
+FIXES: (Windows) Workaround for Win 8 security model preventing Plex for Windows 8 from connecting on same machine.
+FIXES: (Windows) Crash on start.
+FIXES: (Windows) 100% CPU when Plex for Windows 8 is running.
+FIXES: (Transcoder) External SRT files with BOM marker weren’t getting rendered.
+FIXES: (Transcoder) Faster startup.
+FIXES: (PlexSync) Transcoder now handles anamorphic video properly.
+FIXES: (PlexSync) Sometimes converted files could be bigger than source files.
+FIXES: (PlexSync) Ratings directory was missing.
+FIXES: (API) New /channels/arts endpoint which returns channel background art.
+FIXES: (API) Resolutions filter can be itself filtered.
+FIXES: (API) Don’t return empty studios.
+FIXES: (API) Global on deck has mixed parents.
+FIXES: (API) Make sure recently viewed channels have identifiers.
+FIXES: (API) Fix incorrectly escaping JSON.
+FIXES: (API) Fixes for media asset uploads, and select/lock upload.
+FIXES: (API) Fix alphanumeric paging with non-alphanumeric characters.
+FIXES: (DLNA) Hopeful fix for some heap corruption.
+FIXES: Fixed a few (very) rare deadlocks.
+FIXES: Fixed iTunes channel for iTunes 11.
+FIXES: (Sync) iPad 4s weren’t using the right profile.
+FIXES: (Transcoder) Faster starting for transcoded audio.
+FIXES: (Transcoder) Fixes for RTMP with new transcoder.
+FIXES: (Transcoder) Speed up WebKit transcoder starts.
+FIXES: (Transcoder) Fix for some remuxing cases with Win8.
 We’re incredibly excited to be spending 2013 with you. Lots of really great stuff in the works!
 
 
@@ -5603,64 +5635,64 @@ NEW: (API) Added a new /library/onDeck global On Deck endpoint.
 NEW: (API) Added fledgling new endpoints /transcode/sessions (and corresponding DELETE /transcode/sessions/<key>).
 NEW: (API) Pass back default sort/direction in /sorts.
 NEW: (API) Added lots more details to WebSocket notifications.
-FIX: An issue which could result in On Deck items being ordered incorrectly or empty.
-FIX: Don’t pass back filenames for shared sections.
-FIX: An issue where season art for date-based shows wouldn’t get loaded the first scan.
-FIX: A few memory leaks and a socket leak.
-FIX: An issue which could lead to the media server becoming unresponsive and crashing with no network.
-FIX: Recently Viewed Show count bumped to 25.
-FIX: When signing out of myPlex, deregister server in cloud.
-FIX: Fix some photos not getting thumbnails.
-FIX: (Windows) Crash when enabling network logging.
-FIX: Crash analyzing some .TS files.
-FIX: Speed up photo scanning greatly.
-FIX: 1/16 of the time, we were incorrectly computing OpenSubtitles hashes. Existing ones are repaired.
-FIX: Attempt to work around newer LG TVs causing PMS to churn with big music sections.
-FIX: Date-based episodes could be inappropriately merged.
-FIX: Store format of sidecar subtitles.
-FIX: Rare issue where HTTP server could stop accepting new connections.
-FIX: Massive speedup when computing number of watched episodes for a show.
-FIX: Quitting PMS during startup could lead to a hang.
-FIX: Move the deletion preference into the library preferences group.
-FIX: Fix a crash in JSON serialization.
-FIX: Tweak to phrasing for episode sort list.
-FIX: Don’t refresh metadata when asked to re-analyze media.
-FIX: Fix an occasion hang where the media server would become unresponsive to requests.
-FIX: Watched/unwatched episode counts could get out of sync after a scan.
-FIX: Filter out non-ASCI characters from EXIF tags.
-FIX: Scanner crashes analyzing DNG files from Lightroom 4.1
-FIX: Occasional crash when scanner exits.
-FIX: Sort files before handing them to the scanners.
-FIX: Run photo and music analysis two at a time, which speeds things up even more.
-FIX: Reduction of memory and thread usage.
-FIX: (DLNA) Fixes for remote/shared server access.
-FIX: (DLNA) Fix when DlnaDeviceDiscoveryInterval was 0.
-FIX: (DLNA) Fix issue with XBox360 and MOV files with 64-bit offsets.
-FIX: (DLNA) OnBrowseMetadata returned wrong content, fixes XBMC playback.
-FIX: (DLNA) Profile for Panasonic Viera TVs.
-FIX: (API) Send back titles with library timeline notifications (for Plex/Web).
-FIX: (API) An issue where WebSocket got closed prematurely.
-FIX: (API) WebSocket handshake failed when URL has X-Plex-Token in it.
-FIX: (API) A few WebSockets crashes.
-FIX: (API) Ensure lastAccessedAt attribute always present for channel listing.
-FIX: (API) Ensure the endpoint which stops a scan doesn’t return until the scan actually stops.
-FIX: (API) Return library section XML when POSTing a new section.
-FIX: (API) Fix a case where library background art endpoint didn’t work.
-FIX: (API) Allow PUT /library/metadata/X to take multiple IDs.
-FIX: (API) myPlex signups work again.
-FIX: (API) Return errors from myPlex when signups don’t work.
-FIX: (API) When sorting by title, actually use the sort title.
-FIX: (API) Expose Flash/Silverlight installation state, start state via root XML.
+FIXES: An issue which could result in On Deck items being ordered incorrectly or empty.
+FIXES: Don’t pass back filenames for shared sections.
+FIXES: An issue where season art for date-based shows wouldn’t get loaded the first scan.
+FIXES: A few memory leaks and a socket leak.
+FIXES: An issue which could lead to the media server becoming unresponsive and crashing with no network.
+FIXES: Recently Viewed Show count bumped to 25.
+FIXES: When signing out of myPlex, deregister server in cloud.
+FIXES: Fix some photos not getting thumbnails.
+FIXES: (Windows) Crash when enabling network logging.
+FIXES: Crash analyzing some .TS files.
+FIXES: Speed up photo scanning greatly.
+FIXES: 1/16 of the time, we were incorrectly computing OpenSubtitles hashes. Existing ones are repaired.
+FIXES: Attempt to work around newer LG TVs causing PMS to churn with big music sections.
+FIXES: Date-based episodes could be inappropriately merged.
+FIXES: Store format of sidecar subtitles.
+FIXES: Rare issue where HTTP server could stop accepting new connections.
+FIXES: Massive speedup when computing number of watched episodes for a show.
+FIXES: Quitting PMS during startup could lead to a hang.
+FIXES: Move the deletion preference into the library preferences group.
+FIXES: Fix a crash in JSON serialization.
+FIXES: Tweak to phrasing for episode sort list.
+FIXES: Don’t refresh metadata when asked to re-analyze media.
+FIXES: Fix an occasion hang where the media server would become unresponsive to requests.
+FIXES: Watched/unwatched episode counts could get out of sync after a scan.
+FIXES: Filter out non-ASCI characters from EXIF tags.
+FIXES: Scanner crashes analyzing DNG files from Lightroom 4.1
+FIXES: Occasional crash when scanner exits.
+FIXES: Sort files before handing them to the scanners.
+FIXES: Run photo and music analysis two at a time, which speeds things up even more.
+FIXES: Reduction of memory and thread usage.
+FIXES: (DLNA) Fixes for remote/shared server access.
+FIXES: (DLNA) Fix when DlnaDeviceDiscoveryInterval was 0.
+FIXES: (DLNA) Fix issue with XBox360 and MOV files with 64-bit offsets.
+FIXES: (DLNA) OnBrowseMetadata returned wrong content, fixes XBMC playback.
+FIXES: (DLNA) Profile for Panasonic Viera TVs.
+FIXES: (API) Send back titles with library timeline notifications (for Plex/Web).
+FIXES: (API) An issue where WebSocket got closed prematurely.
+FIXES: (API) WebSocket handshake failed when URL has X-Plex-Token in it.
+FIXES: (API) A few WebSockets crashes.
+FIXES: (API) Ensure lastAccessedAt attribute always present for channel listing.
+FIXES: (API) Ensure the endpoint which stops a scan doesn’t return until the scan actually stops.
+FIXES: (API) Return library section XML when POSTing a new section.
+FIXES: (API) Fix a case where library background art endpoint didn’t work.
+FIXES: (API) Allow PUT /library/metadata/X to take multiple IDs.
+FIXES: (API) myPlex signups work again.
+FIXES: (API) Return errors from myPlex when signups don’t work.
+FIXES: (API) When sorting by title, actually use the sort title.
+FIXES: (API) Expose Flash/Silverlight installation state, start state via root XML.
 
 
 Plex Media Server v0.9.6.9
 September 10th, 2012 | Category: Release | Author: elan
 You hear that Mr. Anderson? That is the sound of inevitability. And, of course, the sound of another Plex Media Server release dropping! We’ve been incredibly busy after our announcement of PlexPass and the release of the new Plex Web Client (thanks so much for all your feedback and support!), but we wanted to get these fixes out to you as quickly as we could:
 
-FIX: [OS X] An annoying crash on start (massive thanks to MarcFBR for helping us track this down).
-FIX: [Win] RTMP channels weren’t working.
-FIX: A few minor token-related bugs.
-FIX: An issue with Internet Explorer and the new Web Client.
+FIXES: [OS X] An annoying crash on start (massive thanks to MarcFBR for helping us track this down).
+FIXES: [Win] RTMP channels weren’t working.
+FIXES: A few minor token-related bugs.
+FIXES: An issue with Internet Explorer and the new Web Client.
 
 
 Part 1: Plex Media Server v0.9.6.8
@@ -5674,21 +5706,21 @@ NEW: Mega-awesome [big surprise] (shown off in part 3).
 NEW: Added new (advanced) preferences for enabling/disabling Bonjour/GDM.
 NEW: (API) Support for JSON in non-channel endpoints.
 NEW: (API) WebSocket support for sending events to clients.
-FIX: Plex Media Scanner would occasionally crash on exit.
-FIX: Large reduction in memory/threads usage.
-FIX: Fix for missing posters when top agent failed.
-FIX: MP4 files with chapter tracks were analyzed as having subtitles.
-FIX: Some files (mostly WMV3) could fail to get framerate analyzed.
-FIX: Make sure photo agents get hit to refresh when scanning.
-FIX: Always send myPlex username when doing network logging.
-FIX: (Windows) Crash when analyzing some TS files.
-FIX: Be more lenient when parsing URIs which end in & or ?.
-FIX: (DLNA) Minor fix to Samsung profile.
-FIX: (Windows) Transcoder can handle RTMP now.
-FIX: (Linux) ReadyNAS ARM builds working again.
-FIX: (API) Fixes to preference serialization.
-FIX: (API) Fix for paging where some items were (partially) missing (and 10% speedup).
-FIX: (API) Signing into myPlex with ‘+’ signs in email/password was broken.
+FIXES: Plex Media Scanner would occasionally crash on exit.
+FIXES: Large reduction in memory/threads usage.
+FIXES: Fix for missing posters when top agent failed.
+FIXES: MP4 files with chapter tracks were analyzed as having subtitles.
+FIXES: Some files (mostly WMV3) could fail to get framerate analyzed.
+FIXES: Make sure photo agents get hit to refresh when scanning.
+FIXES: Always send myPlex username when doing network logging.
+FIXES: (Windows) Crash when analyzing some TS files.
+FIXES: Be more lenient when parsing URIs which end in & or ?.
+FIXES: (DLNA) Minor fix to Samsung profile.
+FIXES: (Windows) Transcoder can handle RTMP now.
+FIXES: (Linux) ReadyNAS ARM builds working again.
+FIXES: (API) Fixes to preference serialization.
+FIXES: (API) Fix for paging where some items were (partially) missing (and 10% speedup).
+FIXES: (API) Signing into myPlex with ‘+’ signs in email/password was broken.
 
 
 Plex Media Server v0.9.6.6 / Plex v0.9.5.4 / Plex for iOS v2.5
@@ -5703,47 +5735,47 @@ We’re in the process of pushing a new release of Plex for iOS today to Apple, sh
 NEW: Home screen sections can be re-ordered or hidden. Yay!
 NEW: Background art while browsing. Pretty!
 NEW: Easier to read list view when browsing by folder. Useful!
-FIX: High bitrate content will correctly transcode instead of attempting Direct Play (thanks, majortom!)
-FIX: Media deletion & progress reporting works when using myPlex without publishing servers.
-FIX: Network addresses are resolved earlier to make playing media on remote clients more reliable.
-FIX: Easier method for adding friends.
-FIX: Crash when attempting to set a user rating for an item with no community rating.
-FIX: Crash marking a show (un)watched.
-FIX: A few layout & graphical issues.
+FIXES: High bitrate content will correctly transcode instead of attempting Direct Play (thanks, majortom!)
+FIXES: Media deletion & progress reporting works when using myPlex without publishing servers.
+FIXES: Network addresses are resolved earlier to make playing media on remote clients more reliable.
+FIXES: Easier method for adding friends.
+FIXES: Crash when attempting to set a user rating for an item with no community rating.
+FIXES: Crash marking a show (un)watched.
+FIXES: A few layout & graphical issues.
 We also have a new Plex Media Server release for you, with a number of improvements, which can be downloaded from the usual place (and shortly from auto-update):
 
 NEW: Added (advanced) preference for specifying location of Aperture/iPhone XML paths. The preference is ApertureLibraryXmlPath for Aperture and iPhotoLibraryXmlPath for iPhoto. Yes, we’re going to have an easy way to get at these advanced preferences soon.
 NEW: (Linux) Allow syslog logging via environment variable PLEX_MEDIA_SERVER_USE_SYSLOG. This has been requested for ages.
 NEW: (API) Massive performance improvement for players that ask for paged data (e.g. for Roku). If you have large library sections, you’ll notice a big change; with 1000 items, the page requests are 6 times faster.
 NEW: (API) Added /library/sections/X/{sorts|filters} endpoints for advanced filtering.
-FIX: Sidecar (e.g. SRT) subtitle files work again. Sorry, that was a bad regression.
-FIX: (Windows) Upload speeds from the server were artificially slow in some cases. We’d gotten sporadic reports over the months that upload speeds seemed limited, and we finally managed to track down the issue. The upload speed will now max out your connection, and will take much less CPU as well.
-FIX: A crash when scanning for plug-ins when permissions are wrong.
-FIX: (Mac) Fix some Aperture photos not displaying properly.
-FIX: Library timeline could generate blank items occasionally.
-FIX: Web interface didn’t show added and deleted items properly when scanning.
-FIX: Don’t pass back bogus blank content ratings.
-FIX: (Linux) DLNA icon and server name were missing on some platforms.
-FIX: When overwriting plug-ins, files that don’t exist anymore are deleted.
-FIX: Handle 302 as well as 301 redirects in the image transcoder.
-FIX: When scanning files that had already been scanned, they didn’t end up with thumbnails.
-FIX: Certain image formats (TIFF, BMP, PCX) didn’t get thumb nailed.
-FIX: Fixed sleep prevention, OS X (and possibly Linux) should sleep now.
-FIX: (Windows) Fixed a crash on start.
-FIX: (Synology) DLNA to PS3 wasn’t working.
-FIX: (DLNA) Memory leak in DLNA server process.
-FIX: (DLNA) Fixed PS3 audio dropouts by transcoding to stereo for now in the profile.
-FIX: (DLNA) Fixed evaluation of limitations.
-FIX: (DLNA) Fixed AAC audio not playing to PS3.
-FIX: (DLNA) Build-in profile now supports Samsung SmartTVs (thanks, holzi!)
+FIXES: Sidecar (e.g. SRT) subtitle files work again. Sorry, that was a bad regression.
+FIXES: (Windows) Upload speeds from the server were artificially slow in some cases. We’d gotten sporadic reports over the months that upload speeds seemed limited, and we finally managed to track down the issue. The upload speed will now max out your connection, and will take much less CPU as well.
+FIXES: A crash when scanning for plug-ins when permissions are wrong.
+FIXES: (Mac) Fix some Aperture photos not displaying properly.
+FIXES: Library timeline could generate blank items occasionally.
+FIXES: Web interface didn’t show added and deleted items properly when scanning.
+FIXES: Don’t pass back bogus blank content ratings.
+FIXES: (Linux) DLNA icon and server name were missing on some platforms.
+FIXES: When overwriting plug-ins, files that don’t exist anymore are deleted.
+FIXES: Handle 302 as well as 301 redirects in the image transcoder.
+FIXES: When scanning files that had already been scanned, they didn’t end up with thumbnails.
+FIXES: Certain image formats (TIFF, BMP, PCX) didn’t get thumb nailed.
+FIXES: Fixed sleep prevention, OS X (and possibly Linux) should sleep now.
+FIXES: (Windows) Fixed a crash on start.
+FIXES: (Synology) DLNA to PS3 wasn’t working.
+FIXES: (DLNA) Memory leak in DLNA server process.
+FIXES: (DLNA) Fixed PS3 audio dropouts by transcoding to stereo for now in the profile.
+FIXES: (DLNA) Fixed evaluation of limitations.
+FIXES: (DLNA) Fixed AAC audio not playing to PS3.
+FIXES: (DLNA) Build-in profile now supports Samsung SmartTVs (thanks, holzi!)
 We also have some fixes in a new release of the Plex Laika desktop client:
-FIX: Update RTMP to 2.4
-FIX: Fix for connectivity issues when PMS isn’t running locally (thanks to elwertk).
-FIX: Playback of interlaced H.264 content (MBAFF) was broken (thanks to elwertk).
-FIX: Use the same user agent as earlier in Plex/Nine.
-FIX: Add the Plex language and version headers.
-FIX: When forced transcode was enabled, playback could fail for local files.
-FIX: Support for chained indirects in channels.
+FIXES: Update RTMP to 2.4
+FIXES: Fix for connectivity issues when PMS isn’t running locally (thanks to elwertk).
+FIXES: Playback of interlaced H.264 content (MBAFF) was broken (thanks to elwertk).
+FIXES: Use the same user agent as earlier in Plex/Nine.
+FIXES: Add the Plex language and version headers.
+FIXES: When forced transcode was enabled, playback could fail for local files.
+FIXES: Support for chained indirects in channels.
 
 
 Plex Media Server v0.9.6.5
@@ -5759,21 +5791,21 @@ NEW: Location header exposed to CORS requests.
 NEW: Added a new advanced preference (TranscoderDefaultDuration) for specifying default duration for Flash/Silverlight videos. Useful for videos that exceed two hours in duration.
 NEW: Added a new advanced preference (TranscoderTempDirectory) for specifying the temporary directory for the transcoder. Useful for all those with SSD drives.
 NEW: (DLNA) Add support for device matching on serial number and manufacturer fields. Really, guys, did you implement the spec in a slightly different way on purpose? Just to mess with us?
-FIX: Music scans refreshed artists/albums for no good reason, again and again. Think of it like a nervous golden retriever which kept poking the dead squirrel. Bad dog. Sit. Stayyyy.
-FIX: Minor fixes and memory leaks in the Quicksilver transcoder.
-FIX: Do scanning depth-first instead of breadth-first. Details matter.
-FIX: Make sure we return not-deleted media items before deleted media, fixes iOS playback failure in some rare cases.
-FIX: Pass back the correct deletedAt time in the metadata item.
-FIX: Be careful not to overwrite good GUIDs, could lead to episodes losing poster/status when replacing SD ones with HD, e.g.
-FIX: A case where certain audio files could fail to analyze, causing repetitive analysis during audio scans. Points for persistence!
-FIX: Fixed a deadlock when calling into the system bundle early in startup.
-FIX: Fixed a hang scanning DVR-MS content. We’ve been doing lots of work lately to get those files to scan in properly, we’ll be pushing new scanner/agents shortly! Thanks, Ian, you know who you are.
-FIX: Pass more hints along to agents, useful for WTV work.
-FIX: Browsing by rating wasn’t exactly right.
-FIX: Failure to log in certain cases on OS X.
-FIX: (DLNA) Getting metadata can result in empty parent ID.
-FIX: (DLNA) Lack of posters on PS3 (really fixed this time, so sorry).
-FIX: (DLNA) Tweak to album art for XBoxes. (XBoxen?)
+FIXES: Music scans refreshed artists/albums for no good reason, again and again. Think of it like a nervous golden retriever which kept poking the dead squirrel. Bad dog. Sit. Stayyyy.
+FIXES: Minor fixes and memory leaks in the Quicksilver transcoder.
+FIXES: Do scanning depth-first instead of breadth-first. Details matter.
+FIXES: Make sure we return not-deleted media items before deleted media, fixes iOS playback failure in some rare cases.
+FIXES: Pass back the correct deletedAt time in the metadata item.
+FIXES: Be careful not to overwrite good GUIDs, could lead to episodes losing poster/status when replacing SD ones with HD, e.g.
+FIXES: A case where certain audio files could fail to analyze, causing repetitive analysis during audio scans. Points for persistence!
+FIXES: Fixed a deadlock when calling into the system bundle early in startup.
+FIXES: Fixed a hang scanning DVR-MS content. We’ve been doing lots of work lately to get those files to scan in properly, we’ll be pushing new scanner/agents shortly! Thanks, Ian, you know who you are.
+FIXES: Pass more hints along to agents, useful for WTV work.
+FIXES: Browsing by rating wasn’t exactly right.
+FIXES: Failure to log in certain cases on OS X.
+FIXES: (DLNA) Getting metadata can result in empty parent ID.
+FIXES: (DLNA) Lack of posters on PS3 (really fixed this time, so sorry).
+FIXES: (DLNA) Tweak to album art for XBoxes. (XBoxen?)
 
 
 Plex Media Server v0.9.6.4
@@ -5789,29 +5821,29 @@ NEW: (DLNA) Support matching devices by other device properties than friendly na
 NEW: (DLNA) Ship DLNA profiles with PMS builds instead of Framework builds.
 NEW: (DLNA) Emit icons using alternative resolutions.
 And a bunch of most excellent fixes:
-FIX: Skip publishing IP addresses from virtual interfaces.
-FIX: Be faster about extracting thumbnails.
-FIX: Fix the scanner hanging with 100% CPU scanning some evil AVIs.
-FIX: (Win) Fix crash when playing some Flash/Silverlight video.
-FIX: Notify HTTP clients that we close the connection.
-FIX: Only write the amount requested with HTTP range requests.
-FIX: Calculate bitrate for videos in a more accurate fashion.
-FIX: Scanner is smarter about need to reanalyze media.
-FIX: A few small memory leaks fixed in scanner.
-FIX: Crashes scanning some IMG/ISO files.
-FIX: Overeager timeout when waiting for transcoded content.
-FIX: iTunes plug-in crashes with invalid input key.
-FIX: (Linux) Crash related to VMware network interfaces.
-FIX: (Linux) rsync fixes.
-FIX: (Linux) DLNA crashes on certain systems with ancient compilers.
-FIX: (DLNA) Non-local servers will display server name along with section titles.
-FIX: (DLNA) PNs not being set for audio, fixes playback on PS3.
-FIX: (DLNA) Folders now show up in the folders view.
-FIX: (DLNA) Posters weren’t showing up on PS3.
-FIX: (DLNA) DLNA server now cleans up correctly when shutting down.
-FIX: (DLNA) Xbox now supports transcoded jpeg as icons and thumbnails.
-FIX: (DLNA) Set seek flags for audio/video (regression).
-FIX: (DLNA) Metadata for iTunes content now set properly.
+FIXES: Skip publishing IP addresses from virtual interfaces.
+FIXES: Be faster about extracting thumbnails.
+FIXES: Fix the scanner hanging with 100% CPU scanning some evil AVIs.
+FIXES: (Win) Fix crash when playing some Flash/Silverlight video.
+FIXES: Notify HTTP clients that we close the connection.
+FIXES: Only write the amount requested with HTTP range requests.
+FIXES: Calculate bitrate for videos in a more accurate fashion.
+FIXES: Scanner is smarter about need to reanalyze media.
+FIXES: A few small memory leaks fixed in scanner.
+FIXES: Crashes scanning some IMG/ISO files.
+FIXES: Overeager timeout when waiting for transcoded content.
+FIXES: iTunes plug-in crashes with invalid input key.
+FIXES: (Linux) Crash related to VMware network interfaces.
+FIXES: (Linux) rsync fixes.
+FIXES: (Linux) DLNA crashes on certain systems with ancient compilers.
+FIXES: (DLNA) Non-local servers will display server name along with section titles.
+FIXES: (DLNA) PNs not being set for audio, fixes playback on PS3.
+FIXES: (DLNA) Folders now show up in the folders view.
+FIXES: (DLNA) Posters weren’t showing up on PS3.
+FIXES: (DLNA) DLNA server now cleans up correctly when shutting down.
+FIXES: (DLNA) Xbox now supports transcoded jpeg as icons and thumbnails.
+FIXES: (DLNA) Set seek flags for audio/video (regression).
+FIXES: (DLNA) Metadata for iTunes content now set properly.
 
 
 Plex Media Server v0.9.6.3
@@ -5833,28 +5865,28 @@ NEW: (DLNA) Enable PN overrides in profiles.
 NEW: (DLNA) Support for AudioContainers, similar to VideoContainers.
 NEW: (DLNA) Add profile option to remap blank object ID requests.
 And lots of things are fixed as well:
-FIX: Some playback and browse issues in the 0.9.6 series related to database slowness.
-FIX: Database performance should be much faster overall in this release. Like, much faster, retrieving all 800 or so movies from my local server takes about half the time it used to. Give it a few seconds on start to optimize your database.
-FIX: Some media wouldn’t get a thumbnail image, if it was on the dark side (like full of vampires or something).
-FIX: Fixed redirects in channels, which was breaking lots of channel playback.
-FIX: (OS X) Fixed a new issue where occasionally the posters wouldn’t display in the media manager on initial scan.
-FIX: (Linux) Don’t write settings file every hour if nothing has changed, should prevent disks from spinning up for no good reason. Some hard drive company bribed us to add that bug, but you know, we just don’t roll like that.
-FIX: (Linux) Use system bundled rsync if available, otherwise fallback on bundled version.
-FIX: Better handling of sleep prevention.
-FIX: Scanner log was filling up with ‘ignoring atom of size 0&#8242;.
-FIX: Scanner could get stuck using up 100% of CPU.
-FIX: WMV MediaInfo profile/level not always read correctly.
-FIX: (DLNA) Generic transcodes to mpeg/mpeg2video didn’t work.
-FIX: (DLNA) Transcoding multichannel content to MP3 didn’t work.
-FIX: (DLNA) Generic transcoder failed to encode mpeg4.
-FIX: (DLNA) Server gave access to shared sections, but not myPlex owned sections.
-FIX: (DLNA) Add friendlier error message when port 1900 is in use.
-FIX: (DLNA) Fix stack corruption with seasons > 100 episodes.
-FIX: (DLNA) Apply actual mime types from spec.
-FIX: (DLNA) Identification mechanisms is now case insensitive.
-FIX: (DLNA) Implement friendly name matching for devices without unique user-agent headers.
-FIX: (DLNA) Episodes was displaying out of order.
-FIX: (DLNA) Add profile option to override icon size.
+FIXES: Some playback and browse issues in the 0.9.6 series related to database slowness.
+FIXES: Database performance should be much faster overall in this release. Like, much faster, retrieving all 800 or so movies from my local server takes about half the time it used to. Give it a few seconds on start to optimize your database.
+FIXES: Some media wouldn’t get a thumbnail image, if it was on the dark side (like full of vampires or something).
+FIXES: Fixed redirects in channels, which was breaking lots of channel playback.
+FIXES: (OS X) Fixed a new issue where occasionally the posters wouldn’t display in the media manager on initial scan.
+FIXES: (Linux) Don’t write settings file every hour if nothing has changed, should prevent disks from spinning up for no good reason. Some hard drive company bribed us to add that bug, but you know, we just don’t roll like that.
+FIXES: (Linux) Use system bundled rsync if available, otherwise fallback on bundled version.
+FIXES: Better handling of sleep prevention.
+FIXES: Scanner log was filling up with ‘ignoring atom of size 0&#8242;.
+FIXES: Scanner could get stuck using up 100% of CPU.
+FIXES: WMV MediaInfo profile/level not always read correctly.
+FIXES: (DLNA) Generic transcodes to mpeg/mpeg2video didn’t work.
+FIXES: (DLNA) Transcoding multichannel content to MP3 didn’t work.
+FIXES: (DLNA) Generic transcoder failed to encode mpeg4.
+FIXES: (DLNA) Server gave access to shared sections, but not myPlex owned sections.
+FIXES: (DLNA) Add friendlier error message when port 1900 is in use.
+FIXES: (DLNA) Fix stack corruption with seasons > 100 episodes.
+FIXES: (DLNA) Apply actual mime types from spec.
+FIXES: (DLNA) Identification mechanisms is now case insensitive.
+FIXES: (DLNA) Implement friendly name matching for devices without unique user-agent headers.
+FIXES: (DLNA) Episodes was displaying out of order.
+FIXES: (DLNA) Add profile option to override icon size.
 
 
 Plex Media Server v0.9.6.2 / Plex v0.9.5.3
@@ -5870,43 +5902,43 @@ Let’s walk through the changes for the media server first:
 NEW: Greatly enhanced media analysis. When I asked Max how to describe the changes, he said “it’s awesome”. He’s a man of few words, but I’ll try to explain a bit more. The media server analyzes your media for a few reasons: In order to extract a thumbnail, and to glean details about the exact format and codecs in the file. The latter is critical in order for players to determine what files they can consume without transcoding, which can be Direct Streamed (remuxed), and which need to be transcoded. The world of media is incredibly complicated. A simple MP4 file be optimized for streaming, or not; it can have 64-bit chunk offsets, or not; the H.264 inside it can be a myriad of different profiles, levels and have different features enabled. We now capture all of that information, and it will have many uses, not least in making the DLNA server component truly world-class. One thing you’ll notice is that when you scan in this version, the scan will take a lot longer the first time on an existing section, because the scanner is upgrading the analysis for all your files. Be patient, kick back, open a beer, and let it do its job!
 NEW: The default on new installs is to empty trash automatically. This was confusing too many new users, and I think it was the wrong default, not to mention a confusing UX around learning how and why to empty the trash.
 NEW: Support for non-DRM iTunes videos and iTunes U.
-FIX: Improved segmented MPEGTS output (fixes Roku artifacts). And there was much rejoicing!!
-FIX: TV shows didn’t load metadata properly if the episode had a date but no index (e.g. personal media).
-FIX: Individual TV episodes can now have their content rating set by the agents.
-FIX: A few random crashes observed in the wild.
-FIX: (Linux) From scratch installs now work again (e.g. Synology).
-FIX: Crash when transcoding (e.g. to LG MediaLink).
-FIX: Status text while scanning didn’t show up in the OS X media manager.
-FIX: Transcoder recognizes some MPEG2 files correctly now.
-FIX: Return the HTTP body from plug-ins even when there’s a failure.
-FIX: Audio transcoder wasn’t working for remote clients.
-FIX: Regression in the transcoder leading to green/artifacts on iOS/ATV2.
-FIX: Many fixes for SRT “burning” during transcode, including subtitles not showing up at all or only partially.
-FIX: (Linux) Ensure we kill orphaned DLNA servers.
-FIX: (Linux) DLNA server occasionally wasn’t able to start, unable to obtain IP.
-FIX: Don’t identify MP4 chapter tracks as subtitles.
-FIX: Durations in MP3 files should be analyzed much more accurately.
+FIXES: Improved segmented MPEGTS output (fixes Roku artifacts). And there was much rejoicing!!
+FIXES: TV shows didn’t load metadata properly if the episode had a date but no index (e.g. personal media).
+FIXES: Individual TV episodes can now have their content rating set by the agents.
+FIXES: A few random crashes observed in the wild.
+FIXES: (Linux) From scratch installs now work again (e.g. Synology).
+FIXES: Crash when transcoding (e.g. to LG MediaLink).
+FIXES: Status text while scanning didn’t show up in the OS X media manager.
+FIXES: Transcoder recognizes some MPEG2 files correctly now.
+FIXES: Return the HTTP body from plug-ins even when there’s a failure.
+FIXES: Audio transcoder wasn’t working for remote clients.
+FIXES: Regression in the transcoder leading to green/artifacts on iOS/ATV2.
+FIXES: Many fixes for SRT “burning” during transcode, including subtitles not showing up at all or only partially.
+FIXES: (Linux) Ensure we kill orphaned DLNA servers.
+FIXES: (Linux) DLNA server occasionally wasn’t able to start, unable to obtain IP.
+FIXES: Don’t identify MP4 chapter tracks as subtitles.
+FIXES: Durations in MP3 files should be analyzed much more accurately.
 The Plex client has a number of fixes, and we’ll be paying it more attention in the coming months.
 
 NEW: Developer ID-signed for Mountain Lion.
 NEW: (OS X) Support for Crystal HD
 NEW: Allow forcing transcoding on local networks (good for older clients).
-FIX: Fix a crash when playing video over VNC.
-FIX: Apple remote keymap was incorrect in Now Playing window.
-FIX: (OS X) Many fixes for optical/HDMI audio output.
-FIX: (OS X) Transcoding 5.1 AAC and DTS to AC3 works now.
-FIX: When selecting multi-item videos, it always played the first item.
-FIX: Occasional flicker when starting videos.
-FIX: Respect the “noCache” attribute, fixes some channels not refreshing properly (e.g. Netflix).
-FIX: (OS X) RTMP wasn’t enabled properly.
-FIX: When playing some WebKit channels, it improperly transcoded, resulting in no audio.
-FIX: Saved cookies were making some channels fail to play (e.g. YouTube).
-FIX: Skinning issue that could make multiple thumbs appear for some content.
-FIX: Only show watched state (and context menu items) for library content.
-FIX: Changing display blanking settings required exiting and re-entering full screen to take effect.
-FIX: Plex.ToggleDisplayBlanking keymap function restored.
-FIX: Plex.RunScript and Plex.RunAppleScript work again (Mac OS only).
-FIX: (OS X) Plex.RunScript handles files with the .scpt extension as well as .applescript.
+FIXES: Fix a crash when playing video over VNC.
+FIXES: Apple remote keymap was incorrect in Now Playing window.
+FIXES: (OS X) Many fixes for optical/HDMI audio output.
+FIXES: (OS X) Transcoding 5.1 AAC and DTS to AC3 works now.
+FIXES: When selecting multi-item videos, it always played the first item.
+FIXES: Occasional flicker when starting videos.
+FIXES: Respect the “noCache” attribute, fixes some channels not refreshing properly (e.g. Netflix).
+FIXES: (OS X) RTMP wasn’t enabled properly.
+FIXES: When playing some WebKit channels, it improperly transcoded, resulting in no audio.
+FIXES: Saved cookies were making some channels fail to play (e.g. YouTube).
+FIXES: Skinning issue that could make multiple thumbs appear for some content.
+FIXES: Only show watched state (and context menu items) for library content.
+FIXES: Changing display blanking settings required exiting and re-entering full screen to take effect.
+FIXES: Plex.ToggleDisplayBlanking keymap function restored.
+FIXES: Plex.RunScript and Plex.RunAppleScript work again (Mac OS only).
+FIXES: (OS X) Plex.RunScript handles files with the .scpt extension as well as .applescript.
 
 
 Plex Media Center v9.5.2 ~ Smoked Wild Boar Edition
@@ -5922,31 +5954,31 @@ NEW: [Mac] Support for automatic refresh rate switching. And there was much rejo
 NEW: Add a way to specify a manual address for a media server, useful for working around network issues.
 NEW: When running without a server, search now returns cloud results.
 NEW: Add a global audio delay setting.
-FIX: CPU usage for software decoding greatly reduced for all codecs, fixing VC-1 “stutter” issue and playback on older machines.
-FIX: Allow selecting interface language in preferences.
-FIX: Enable down-mix volume boost preference.
-FIX: Enable speaker configuration preference.
-FIX: A hang in the home screen.
-FIX: Losing a server even though it was running on the same machine.
-FIX: Not enough buffering (and therefore playback issues) with remote transcoded media.
-FIX: Toggling full screen works on multi-display setups.
-FIX: Allow ESC to get out of a playlist.
-FIX: Add missing strings for shutdown timer.
-FIX: Change the audio settings dialog to show delay in milliseconds, it seemed more human-friendly.
-FIX: Crash clicking the “save as default” button in video settings.
-FIX: Make sure we stop remote transcodes when stopping playback.
-FIX: Update ffmpeg, fixes some artifacts with VC-1 and several other issues.
-FIX: Stop printing myPlex tokens to the logs.
-FIX: “Old-school” sources were disappearing after a restart.
-FIX: Posters/art weren’t changing when changed on the media server.
-FIX: Don’t play theme music if music is already playing or if video is playing in small window.
-FIX: Background music volume is always VERY LOUD (preference works now).
-FIX: [Mac] A crash when playing Flash/Silverlight videos followed by non-WebKit video.
-FIX: [Mac] Flash/Silverlight video occasionally displayed black & white garbage on the screen.
-FIX: Info button on iOS toggles OSD, and back button works as well.
-FIX: Multiple crashes when skipping around in videos.
-FIX: [Win] Crash on startup.
-FIX: [Win] A randomly occurring hang.
+FIXES: CPU usage for software decoding greatly reduced for all codecs, fixing VC-1 “stutter” issue and playback on older machines.
+FIXES: Allow selecting interface language in preferences.
+FIXES: Enable down-mix volume boost preference.
+FIXES: Enable speaker configuration preference.
+FIXES: A hang in the home screen.
+FIXES: Losing a server even though it was running on the same machine.
+FIXES: Not enough buffering (and therefore playback issues) with remote transcoded media.
+FIXES: Toggling full screen works on multi-display setups.
+FIXES: Allow ESC to get out of a playlist.
+FIXES: Add missing strings for shutdown timer.
+FIXES: Change the audio settings dialog to show delay in milliseconds, it seemed more human-friendly.
+FIXES: Crash clicking the “save as default” button in video settings.
+FIXES: Make sure we stop remote transcodes when stopping playback.
+FIXES: Update ffmpeg, fixes some artifacts with VC-1 and several other issues.
+FIXES: Stop printing myPlex tokens to the logs.
+FIXES: “Old-school” sources were disappearing after a restart.
+FIXES: Posters/art weren’t changing when changed on the media server.
+FIXES: Don’t play theme music if music is already playing or if video is playing in small window.
+FIXES: Background music volume is always VERY LOUD (preference works now).
+FIXES: [Mac] A crash when playing Flash/Silverlight videos followed by non-WebKit video.
+FIXES: [Mac] Flash/Silverlight video occasionally displayed black & white garbage on the screen.
+FIXES: Info button on iOS toggles OSD, and back button works as well.
+FIXES: Multiple crashes when skipping around in videos.
+FIXES: [Win] Crash on startup.
+FIXES: [Win] A randomly occurring hang.
 
 
 Plex v0.9.5 – Brave New World
@@ -5987,18 +6019,18 @@ NEW: There is a new API endpoint /library/optimize which, as you might expect, o
 
 And the fixes:
 
-FIX: When refreshing a library section because changes to folders were detected, we wait until the changes stop before kicking off the scan, so that we don’t scan partial/locked files.
-FIX: Custom artwork with spaces in path was not displaying properly.
-FIX: This is an amusing one because it’s been there for a long time and nobody noticed. When doing a new scan, every 16th movie wasn’t displayed in the media manager (it was scanned, it just didn’t show up until you switched sections). Thanks to louisd for noticing it!
-FIX: Our friend diamondsw helped us debug an issue where certain MKV files were failing to play on mobile devices.
-FIX: Boots has been reporting this one for a while, there was an occasional hang in the media manager when scrolling quickly.
-FIX: The was an issue scanning if your username had an apostrophe in it.
-FIX: A (rather rare) crash in refreshing/timed updates.
-FIX: [Windows] Sign all Python extensions. Apparently some of the AV products are coming up with some false positives on the media server, and the hope is that this might improve things.
-FIX: [Windows] When exiting, don’t hang waiting for system bundle.
-FIX: [Windows] When OpenSSL DLLs were installed into system, PMS system bundles wouldn’t start. This would cause the “no agents” issue.
-FIX: [Linux] You can now use the environment variable PLEX_MEDIA_SERVER_APPLICATION_SUPPORT_DIR to specify where all of the media server’s user files go (library, plug-ins, logs, etc.)
-FIX: [WIN32/Linux]: If multiple copies of a piece of media are found, load metadata for all copies.
+FIXES: When refreshing a library section because changes to folders were detected, we wait until the changes stop before kicking off the scan, so that we don’t scan partial/locked files.
+FIXES: Custom artwork with spaces in path was not displaying properly.
+FIXES: This is an amusing one because it’s been there for a long time and nobody noticed. When doing a new scan, every 16th movie wasn’t displayed in the media manager (it was scanned, it just didn’t show up until you switched sections). Thanks to louisd for noticing it!
+FIXES: Our friend diamondsw helped us debug an issue where certain MKV files were failing to play on mobile devices.
+FIXES: Boots has been reporting this one for a while, there was an occasional hang in the media manager when scrolling quickly.
+FIXES: The was an issue scanning if your username had an apostrophe in it.
+FIXES: A (rather rare) crash in refreshing/timed updates.
+FIXES: [Windows] Sign all Python extensions. Apparently some of the AV products are coming up with some false positives on the media server, and the hope is that this might improve things.
+FIXES: [Windows] When exiting, don’t hang waiting for system bundle.
+FIXES: [Windows] When OpenSSL DLLs were installed into system, PMS system bundles wouldn’t start. This would cause the “no agents” issue.
+FIXES: [Linux] You can now use the environment variable PLEX_MEDIA_SERVER_APPLICATION_SUPPORT_DIR to specify where all of the media server’s user files go (library, plug-ins, logs, etc.)
+FIXES: [WIN32/Linux]: If multiple copies of a piece of media are found, load metadata for all copies.
 
 
 Plex v0.9.3.3 – Halfway to the stars
@@ -6027,12 +6059,12 @@ NEW: If subtitle files are dropped in next to a piece of media, they will be pic
 NEW: Support for SUB/IDX subtitles in Plex for Mac. They’re chunky evil bitmaps, but we love them. Sort of.
 NEW: Support for DTS > AC3 transcoding in transcoder (useful for LG TV, ATV2 and others).
 
-FIX: Subtitle scaling is now uniform, no more giant subtitles. No, you don’t need a different prescription for your glasses.
-FIX: Anamorphic videos were not Direct Streamed.
-FIX: More videos in general Direct Stream (level, nitrate, segment size issues).
-FIX: Improved selection of subtitles with “shown with foreign audio” setting.
-FIX: The SD MKV A/V sync issue.
-FIX: A few bugs on Lion, Plex should now be Lion-ready (which answers this question)!
+FIXES: Subtitle scaling is now uniform, no more giant subtitles. No, you don’t need a different prescription for your glasses.
+FIXES: Anamorphic videos were not Direct Streamed.
+FIXES: More videos in general Direct Stream (level, nitrate, segment size issues).
+FIXES: Improved selection of subtitles with “shown with foreign audio” setting.
+FIXES: The SD MKV A/V sync issue.
+FIXES: A few bugs on Lion, Plex should now be Lion-ready (which answers this question)!
 
 Platform Parity:
 
@@ -6047,7 +6079,7 @@ We’re working hard to improve support for music inside Plex, and have made a num
 
 NEW: Support for “Various Artists” (compilations) in music sections.
 NEW: Initial support for multi-disc albums in music sections.
-FIX: Much improved matching, far fewer false matches.
+FIXES: Much improved matching, far fewer false matches.
 
 Other:
 
@@ -6059,33 +6091,33 @@ NEW: [Windows] Authenticode all binaries (hopefully preventing AV software from 
 NEW: [Windows] Configure firewall on install.
 NEW: Listen on new multicast group in GDM to avoid Windows 7 networking bug.
 
-FIX: Issue where Vorbis streams were not transcoded.
-FIX: Better logging for Python scanner errors while scanning.
-FIX: [OS X] Database migration progress dialog didn’t always work properly.
-FIX: Many fixes for GDM networking code.
-FIX: [Windows] Scans stopping without completing.
-FIX: [Windows] Server could become unresponsive.
-FIX: [Windows] Conflicts with user-installed Python.
-FIX: In certain cases, iOS app wasn’t showing channel images.
-FIX: Unmatched items could become rematched, and items matched to a different agent could go back to the default agent.
-FIX: [OS X] Cocoa media manager no longer jumps back to the grid when you are viewing details during a scan.
-FIX: Hang when remotely playing one file followed by the next on Plex for Mac.
-FIX: [OS X] Directory names are served up in precomposed UTF-8 on OS X (instead of decomposed).
-FIX: [Linux] Crashes reading certain JPEG files.
-FIX: [Linux] Image quality wasn’t as good for posters.
-FIX: [Linux] Advertise on the real IP, not localhost.
-FIX: [Linux] Playing files > 2GB failed.
-FIX: [Linux] Fanart was scaled too small.
-FIX: [Linux] If HOME was set to /, cache path wasn’t computed correctly.
-FIX: Disable IPv6 on Linux/Windows by default, seems to cause problems in some cases.
-FIX: Extreme memory usage or crashes analyzing ISO files.
-FIX: Some crashes on shutdown, and also sped it up.
-FIX: Don’t add the “All Episodes” directory if we don’t have any (e.g. in watched tree).
-FIX: When refreshing older media libraries, bring remote media (poster/art) references local.
-FIX: [OS X] Massive memory leak switching sections in the Cocoa media manager.
-FIX: Offer even higher bitrates over 3G.
-FIX: Issue with media streams in the database that could cause a transcode to fail on start.
-FIX: A handful of other small bugs and crashes.
+FIXES: Issue where Vorbis streams were not transcoded.
+FIXES: Better logging for Python scanner errors while scanning.
+FIXES: [OS X] Database migration progress dialog didn’t always work properly.
+FIXES: Many fixes for GDM networking code.
+FIXES: [Windows] Scans stopping without completing.
+FIXES: [Windows] Server could become unresponsive.
+FIXES: [Windows] Conflicts with user-installed Python.
+FIXES: In certain cases, iOS app wasn’t showing channel images.
+FIXES: Unmatched items could become rematched, and items matched to a different agent could go back to the default agent.
+FIXES: [OS X] Cocoa media manager no longer jumps back to the grid when you are viewing details during a scan.
+FIXES: Hang when remotely playing one file followed by the next on Plex for Mac.
+FIXES: [OS X] Directory names are served up in precomposed UTF-8 on OS X (instead of decomposed).
+FIXES: [Linux] Crashes reading certain JPEG files.
+FIXES: [Linux] Image quality wasn’t as good for posters.
+FIXES: [Linux] Advertise on the real IP, not localhost.
+FIXES: [Linux] Playing files > 2GB failed.
+FIXES: [Linux] Fanart was scaled too small.
+FIXES: [Linux] If HOME was set to /, cache path wasn’t computed correctly.
+FIXES: Disable IPv6 on Linux/Windows by default, seems to cause problems in some cases.
+FIXES: Extreme memory usage or crashes analyzing ISO files.
+FIXES: Some crashes on shutdown, and also sped it up.
+FIXES: Don’t add the “All Episodes” directory if we don’t have any (e.g. in watched tree).
+FIXES: When refreshing older media libraries, bring remote media (poster/art) references local.
+FIXES: [OS X] Massive memory leak switching sections in the Cocoa media manager.
+FIXES: Offer even higher bitrates over 3G.
+FIXES: Issue with media streams in the database that could cause a transcode to fail on start.
+FIXES: A handful of other small bugs and crashes.
 
 XML API:
 
@@ -6095,8 +6127,8 @@ NEW: Media XML contains width and height for video and photos.
 NEW: New endpoint GET /library/sections/X/allLeaves (returns all tracks, episodes, etc.)
 NEW: New endpoint DELETE /library/metadata/X
 NEW: Ability to search by filename.
-FIX: Clipping bug in the container paging API.
-FIX: Files with ‘%’ characters were not encoded correctly in XML.
+FIXES: Clipping bug in the container paging API.
+FIXES: Files with ‘%’ characters were not encoded correctly in XML.
 
 
 Plex v0.9.2.7 – Tweaks and fixes
@@ -6110,20 +6142,20 @@ Now that the latest iOS version has made it into the store (and thank you so muc
 
 NewImage
 
-* FIX: We’ve updated the transcoding engine to fix a number of issues, including 3G video playback being audio only (thanks, Chris!), improvements in threading (1080p content should work more smoothly), and according to one tester, DTS-MA now mixes down correctly. Thanks also to mitch969 and others on the forums for all their help testing!
-* FIX: A few fixes for for the web-based media manager, including a fix for changes to collections not saving, sections not disappearing from clients when deleted via the web manager, and fixes for the “Match using” and un-match functionality.
-* FIX: When an episode is renamed, make sure we reload metadata if the episode or season number changed.
-* FIX: If a slideshow screensaver is active, playing content via the iOS or Android remotes turns the screensaver off (thanks to Man for bring this to our attention).
-* FIX: A fix for Turbo Scanning where if you edited a library section (to add a new directory, or when moving media, for example), you would need to perform a deep scan to pick up the changes.
+* FIXES: We’ve updated the transcoding engine to fix a number of issues, including 3G video playback being audio only (thanks, Chris!), improvements in threading (1080p content should work more smoothly), and according to one tester, DTS-MA now mixes down correctly. Thanks also to mitch969 and others on the forums for all their help testing!
+* FIXES: A few fixes for for the web-based media manager, including a fix for changes to collections not saving, sections not disappearing from clients when deleted via the web manager, and fixes for the “Match using” and un-match functionality.
+* FIXES: When an episode is renamed, make sure we reload metadata if the episode or season number changed.
+* FIXES: If a slideshow screensaver is active, playing content via the iOS or Android remotes turns the screensaver off (thanks to Man for bring this to our attention).
+* FIXES: A fix for Turbo Scanning where if you edited a library section (to add a new directory, or when moving media, for example), you would need to perform a deep scan to pick up the changes.
 
 We’ve also been hard at work at improving the music functionality. Besides support for FLAC, we’ve also added and fixed lots of other things. The really nice part is that the changes were to the scanner and agents, which means that they could be pushed out automatically in micro-increments. I love the thought of our users waking up to new features and bug-fixes without the need to download a whole new version!
 
 * NEW: Support for scanning OGG.
 * NEW: Improved and enhanced poster gathering from tags in all supported file formats.
 * NEW: Music lacking tags is scanned in as “unknown” artist/album.
-* FIX: Tons of fixes and improvements around reading tags.
+* FIXES: Tons of fixes and improvements around reading tags.
 * NEW: Parse track numbers out of filename if they’re not in the tags.
-* FIX: Folders with more than 50 files are scanned.
+* FIXES: Folders with more than 50 files are scanned.
 
 
 Plex v0.9.2.6 – A little something for everyone
@@ -6134,17 +6166,17 @@ Share
 It’s rainy, and I have no beer. I have no beer because my car battery died, so I haven’t been able to go to the store to purchase more beer. As sure, my sadness will surely come through in these release notes. And there’s a Blues song in there somewhere.
 An important general fix:
 
-FIX: As issue when scanning a lot of new content (especially TV shows), where the Media Server could become unresponsive. We are now downloading media at the time of the scan (to make access faster in clients), and there was a bug that could cause an excessive amount of simultaneous downloads to, um, mess things up.
+FIXES: As issue when scanning a lot of new content (especially TV shows), where the Media Server could become unresponsive. We are now downloading media at the time of the scan (to make access faster in clients), and there was a bug that could cause an excessive amount of simultaneous downloads to, um, mess things up.
 
 Some fixes specifically for Windows users:
 
-FIX: [Win] The issue with season/episode posters not appearing has finally been fixed.
-FIX: [Win] An issue where Plex Media Server refused to start when the user directory had an apostrophe in it. Many thanks to mrrwbrown and nyez1 on the forums for helping us track it down, we really appreciate it!
+FIXES: [Win] The issue with season/episode posters not appearing has finally been fixed.
+FIXES: [Win] An issue where Plex Media Server refused to start when the user directory had an apostrophe in it. Many thanks to mrrwbrown and nyez1 on the forums for helping us track it down, we really appreciate it!
 
 And a few subtitle fixes:
 
-FIX: Subtitles weren’t being automatically enabled when there was just one embedded subtitle in a file and the preference was set to subtitles being “always enabled”.
-FIX: As if that wasn’t bad enough, if a subtitle wasn’t enabled automatically when a file was played on Plex for Mac, it was disabled rather forcefully, so that it wouldn’t (won’t) appear again even if your preferences changed.
+FIXES: Subtitles weren’t being automatically enabled when there was just one embedded subtitle in a file and the preference was set to subtitles being “always enabled”.
+FIXES: As if that wasn’t bad enough, if a subtitle wasn’t enabled automatically when a file was played on Plex for Mac, it was disabled rather forcefully, so that it wouldn’t (won’t) appear again even if your preferences changed.
 
 So to summarize, every video you played with the last version which did NOT choose to display subtitles automatically now has them disabled unless you manually enable them. This is likely not a big deal, because if you wanted them enabled you would have likely done so at the time! And the bug is now fixed.
 
@@ -6216,16 +6248,16 @@ Plex Media Manager 3
 
 Here is a full list of bugs this release fixes. The Mac downloads have been made live on the main page and via Sparkle, and the Windows builds will be made live tomorrow after we do some final testing. Thanks for your patience and for all your great feedback on the last release.
 
-* FIX: The Media Server would crash on start if you had certain plug-ins installed with bogus XML.
-* FIX: In certain cases, a scan would result in multiple movies showing the same name/poster.
-* FIX: A few fixes for soft deletion, including merged movies not showing the /! icon.
-* FIX: Changing the view type in Unwatched Shows would change the view type for episodes.
-* FIX: Possible fix for an OS X Lion crash (Plex is still unsupported on Lion).
-* FIX: Plex should now pick DTS/AC3 tracks over stereo when connected to a receiver.
-* FIX: When you play a video via iOS application, screen saver is turned off on Plex.
-* FIX: [Win] Issue with the transcoder, many videos wouldn’t play.
-* FIX: [Win] Posters for seasons/episodes not displaying.
-* FIX: [Win] Customization of application support directory wasn’t working.
+* FIXES: The Media Server would crash on start if you had certain plug-ins installed with bogus XML.
+* FIXES: In certain cases, a scan would result in multiple movies showing the same name/poster.
+* FIXES: A few fixes for soft deletion, including merged movies not showing the /! icon.
+* FIXES: Changing the view type in Unwatched Shows would change the view type for episodes.
+* FIXES: Possible fix for an OS X Lion crash (Plex is still unsupported on Lion).
+* FIXES: Plex should now pick DTS/AC3 tracks over stereo when connected to a receiver.
+* FIXES: When you play a video via iOS application, screen saver is turned off on Plex.
+* FIXES: [Win] Issue with the transcoder, many videos wouldn’t play.
+* FIXES: [Win] Posters for seasons/episodes not displaying.
+* FIXES: [Win] Customization of application support directory wasn’t working.
 
 
 Plex v0.9.2.3 – #velociraptorblood
@@ -6252,26 +6284,26 @@ Search
 * NEW: Added the By Folder second level menu.
 * NEW: Support for our Bonjour replacement, known as G’Day Mate (GDM). Easy discovery!
 * NEW: [Win] Support for storing application support files anywhere.
-* FIX: The “Add Application” button was broken.
-* FIX: Don’t refresh metadata every two weeks.
-* FIX: In rare cases a Python process would take 100% CPU.
-* FIX: “Unwatched” section second title was incorrect.
-* FIX: Browsing for subtitles on Plex for Mac client.
-* FIX: Flash 10.1/10.2 works now.
-* FIX: With newer Flash installed, PMS is not restarted after 5.1 audio (as Flash but was fixed).
-* FIX: Refresh works with local media agent even if media isn’t matched (for subs, posters).
-* FIX: [Win] Various crashes (shutdown, during scans)
-* FIX: [Win] Issue with dialogs popping up asking you to insert drive.
-* FIX: [Win] Updated to latest transcoder, fixing lots of issues.
-* FIX: [Win] Make sure we don’t conflict with installed Pythons.
-* FIX: [Win] Lack of season/episode posters.
-* FIX: Movies with ratings of 10 don’t show up under “5 stars”
-* FIX: Any “phantom” media in the database is whacked after a scan.
-* FIX: Don’t let the machine sleep while transcoding.
-* FIX: Empty machine name crash.
-* FIX: Support for audio playback from Android with security enabled.
-* FIX: Add countries and producers tags to metadata models.
-* FIX: Media is downloaded on metadata refresh, and always kept around.
+* FIXES: The “Add Application” button was broken.
+* FIXES: Don’t refresh metadata every two weeks.
+* FIXES: In rare cases a Python process would take 100% CPU.
+* FIXES: “Unwatched” section second title was incorrect.
+* FIXES: Browsing for subtitles on Plex for Mac client.
+* FIXES: Flash 10.1/10.2 works now.
+* FIXES: With newer Flash installed, PMS is not restarted after 5.1 audio (as Flash but was fixed).
+* FIXES: Refresh works with local media agent even if media isn’t matched (for subs, posters).
+* FIXES: [Win] Various crashes (shutdown, during scans)
+* FIXES: [Win] Issue with dialogs popping up asking you to insert drive.
+* FIXES: [Win] Updated to latest transcoder, fixing lots of issues.
+* FIXES: [Win] Make sure we don’t conflict with installed Pythons.
+* FIXES: [Win] Lack of season/episode posters.
+* FIXES: Movies with ratings of 10 don’t show up under “5 stars”
+* FIXES: Any “phantom” media in the database is whacked after a scan.
+* FIXES: Don’t let the machine sleep while transcoding.
+* FIXES: Empty machine name crash.
+* FIXES: Support for audio playback from Android with security enabled.
+* FIXES: Add countries and producers tags to metadata models.
+* FIXES: Media is downloaded on metadata refresh, and always kept around.
 
 And gobs of other fixes…
 
@@ -6284,12 +6316,12 @@ As you might have noticed, we finished up on a round of incremental releases and
 
 Without further ado, I’m happy to introduce you to a new incremental chock full of bug-fixes:
 
-* FIX: Media thumbnailing functionality was broken. Totally my fault, we’ve been making builds of Plex Media Server for other platforms (*hint hint wink wink*) and I accidentally left it disabled in the OS X build. Whoops.
-* FIX: Minor fixes for Plex ffmpeg (MPEG-TS memory leak, fix for Blu Ray subtitles).
-* FIX: There was an issue starting some MP4 streams in plug-ins (e.g. Earth Touch and MSNBC). Thanks to Sander for helping us diagnose the issue and test the fix!
-* FIX: Unmatching an item wasn’t resetting posters and other graphics correctly.
-* FIX: Second level movie sections weren’t showing custom backgrounds.
-* FIX: On occasion, secondary lists of sections would show up without a background (thanks, Scott!)
+* FIXES: Media thumbnailing functionality was broken. Totally my fault, we’ve been making builds of Plex Media Server for other platforms (*hint hint wink wink*) and I accidentally left it disabled in the OS X build. Whoops.
+* FIXES: Minor fixes for Plex ffmpeg (MPEG-TS memory leak, fix for Blu Ray subtitles).
+* FIXES: There was an issue starting some MP4 streams in plug-ins (e.g. Earth Touch and MSNBC). Thanks to Sander for helping us diagnose the issue and test the fix!
+* FIXES: Unmatching an item wasn’t resetting posters and other graphics correctly.
+* FIXES: Second level movie sections weren’t showing custom backgrounds.
+* FIXES: On occasion, secondary lists of sections would show up without a background (thanks, Scott!)
 
 
 Plex v0.9.1.7
@@ -6318,21 +6350,21 @@ Plex Media Manager-18.jpg
 
 We also fixed a large number of bugs:
 
-* FIX: Delete collection instead section when clicking the [-] button (sorry!)
-* FIX: Only allow dropping onto same-section collections.
-* FIX: The Fix Incorrect Match button wasn’t working in the details view.
-* FIX: We remember selection and scroll location when navigating back.
-* FIX: Broken forward navigation, forward swiping in browse view.
-* FIX: Missing last character in path bar in media manager.
-* FIX: Plex Media Server issue which could result in hang or missing sections/plug-ins.
-* FIX: Long beachball adding/removing sections.
-* FIX: Rescan whacks collections, they weren’t locked correctly if you created them by dragging and dropping or context menu.
-* FIX: Abort on start with Aperture XML file with weird permission/location.
-* FIX: Don’t perform Bonjour resolves during video playback, fixes an every-ten-minute or so stutter.
-* FIX: Rare crash in Plex when left idle.
-* FIX: Continue scanning if we run into permissions issues.
-* FIX: Dock icon weirdness when disabling and attempting an immediate restart.
-* FIX: We’ve reverted the transcoder to use the older quality settings, which will reduce CPU usage.
+* FIXES: Delete collection instead section when clicking the [-] button (sorry!)
+* FIXES: Only allow dropping onto same-section collections.
+* FIXES: The Fix Incorrect Match button wasn’t working in the details view.
+* FIXES: We remember selection and scroll location when navigating back.
+* FIXES: Broken forward navigation, forward swiping in browse view.
+* FIXES: Missing last character in path bar in media manager.
+* FIXES: Plex Media Server issue which could result in hang or missing sections/plug-ins.
+* FIXES: Long beachball adding/removing sections.
+* FIXES: Rescan whacks collections, they weren’t locked correctly if you created them by dragging and dropping or context menu.
+* FIXES: Abort on start with Aperture XML file with weird permission/location.
+* FIXES: Don’t perform Bonjour resolves during video playback, fixes an every-ten-minute or so stutter.
+* FIXES: Rare crash in Plex when left idle.
+* FIXES: Continue scanning if we run into permissions issues.
+* FIXES: Dock icon weirdness when disabling and attempting an immediate restart.
+* FIXES: We’ve reverted the transcoder to use the older quality settings, which will reduce CPU usage.
 
 
 Plex v0.9.1.2
@@ -6387,15 +6419,15 @@ So what else is new and fixed in this incremental? Quite a bit, but I need to go
 * NEW: Keyboard accelerators for clipboard operations.
 * NEW: Optional dock icon (set in Preferences).
 * NEW: Home movies section works much better: ratings/view status/resume is now remembered, and of course you can edit all the metadata.
-* FIX: Resume offset/view status now remembered for media even if it’s not matched.
-* FIX: Stuttering issue with VIDEO_TS media, previously released in hot-fix form.
-* FIX: Recently Viewed Shows wasn’t working.
-* FIX: Lower CPU usage when refreshing TV shows.
-* FIX: Seasons/episodes views weren’t getting graphics from the media server.
-* FIX: Cases where a scan failed and we deleted lots of media out of the library.
-* FIX: Crash in the scanner with a bogus AVI file.
-* FIX: Posters/art not appearing when searching for movies.
-* FIX: Tweaks in Plex to hopefully not “lose” sections and plug-ins (more fixes forthcoming).
+* FIXES: Resume offset/view status now remembered for media even if it’s not matched.
+* FIXES: Stuttering issue with VIDEO_TS media, previously released in hot-fix form.
+* FIXES: Recently Viewed Shows wasn’t working.
+* FIXES: Lower CPU usage when refreshing TV shows.
+* FIXES: Seasons/episodes views weren’t getting graphics from the media server.
+* FIXES: Cases where a scan failed and we deleted lots of media out of the library.
+* FIXES: Crash in the scanner with a bogus AVI file.
+* FIXES: Posters/art not appearing when searching for movies.
+* FIXES: Tweaks in Plex to hopefully not “lose” sections and plug-ins (more fixes forthcoming).
 
 
 Plex v0.9.1
@@ -6429,37 +6461,37 @@ Plex Media Manager-1.jpg
 
 By far we spent the most time fixing bugs. Hopefully this release will resolve most of the really pesky issues. We appreciate all the patience and kindness you’ve shown us with this first release. As we’ve mentioned, this was a ground-up rewrite of the entire library, so problems were definitely to be expected.
 
-* FIX: That dratted issue with posters and art continually re-downloading off the Internet. The Plex Media Server is now the single entity that downloads the graphics, and all the clients request from it. Expirations have been fixed, and other improvements around caching have been made. The bottom line is that, while not perfect, it should be much, much better. N.B. As part of this change, it’s of course going to have to download everything one last time in order to transition over to this new scheme.
-* FIX: Leopard crash on start (thanks, Ryan!). Also a crash on start when your computer didn’t have a name. And a few other crashes on start.
-* FIX: Stuttering playback (mostly with HD media). In some cases the cache size was being set incorrectly based on bad analysis, and this could lead to stutters during playback.
-* FIX: Anamorphic videos fix for iOS. Additionally, anamorphic MP4 files play correctly on Plex for Mac (thanks, Ryan!).
-* &#65279;FIX: High CPU usage during scan, which could cause stuttering during playback as well.
-* FIX: Plug-ins could go missing in Plex when starting at same time as PMS.
-* FIX: We now quit the Scanner if the Media Server quits.
-* FIX: When detecting a rename, we upload location the in the database, otherwise media gets whacked when removing old location.
-* FIX: When a duplicate episode was found, it lost the “addedAt” time (making it disappear from “recently added”).
-* FIX: Allow backspace to exit the weather section, preferences, and a few other places where you could get stuck with the iOS app.
-* FIX: The “-1&#8243; year issue in list view.
-* FIX: Better handling of locked database file.
-* &#65279;FIX: In certain cases, stacked movies were not played in the right order.
-* FIX: Sometimes partial fanart files were displayed, leading to corrupted images being displayed.
-* FIX: Better handling for audio/video distinguishing in iTunes for foreign languages.
-* FIX: Allow changing metadata agent settings when there are no sections.
-* FIX: Video podcasts passed back as Video elements instead of Track.
-* FIX: Hebrew subtitles were displaying punctuation incorrectly.
-* FIX: The word “dvdmedia” was displayed at the end of the movie title.
-* FIX: Occasionally startup issues could result in agents not showing up, improve the recovery from this.
-* FIX: Issue on startup, due to space in home folder.
-* FIX: Videos stopping randomly in the middle of play.
-* FIX: A few tweaks to the Media Server’s menu bar, to make canceling a library refresh possible, and to make it harder to accidentally start one.
-* FIX: iTunes/iLife plug-ins mysteriously disappearing.
-* FIX: Lots of crashes while scanning and analyzing media, including some MP3s.
-* FIX: The Media Server starts (and installs) on a machine without Internet.
-* FIX: We fixed a .BUP/.IFO ordering issue which could cause a crash when playing a VIDEO_TS movie. You’ll need to remove and add the section to fix the ordering (but you won’t lose view state/progress doing so).
-* FIX: A buffer overflow issue reported by d1dn0t, which also caused crashes when navigating into some plug-ins.
-* FIX: Adding library sections from the command line wasn’t working (thanks, Atrus!).
-* FIX: The library would occasionally refresh continually.
-* FIX: Crash of the iOS app near the end of a video.
+* FIXES: That dratted issue with posters and art continually re-downloading off the Internet. The Plex Media Server is now the single entity that downloads the graphics, and all the clients request from it. Expirations have been fixed, and other improvements around caching have been made. The bottom line is that, while not perfect, it should be much, much better. N.B. As part of this change, it’s of course going to have to download everything one last time in order to transition over to this new scheme.
+* FIXES: Leopard crash on start (thanks, Ryan!). Also a crash on start when your computer didn’t have a name. And a few other crashes on start.
+* FIXES: Stuttering playback (mostly with HD media). In some cases the cache size was being set incorrectly based on bad analysis, and this could lead to stutters during playback.
+* FIXES: Anamorphic videos fix for iOS. Additionally, anamorphic MP4 files play correctly on Plex for Mac (thanks, Ryan!).
+* &#65279;FIXES: High CPU usage during scan, which could cause stuttering during playback as well.
+* FIXES: Plug-ins could go missing in Plex when starting at same time as PMS.
+* FIXES: We now quit the Scanner if the Media Server quits.
+* FIXES: When detecting a rename, we upload location the in the database, otherwise media gets whacked when removing old location.
+* FIXES: When a duplicate episode was found, it lost the “addedAt” time (making it disappear from “recently added”).
+* FIXES: Allow backspace to exit the weather section, preferences, and a few other places where you could get stuck with the iOS app.
+* FIXES: The “-1&#8243; year issue in list view.
+* FIXES: Better handling of locked database file.
+* &#65279;FIXES: In certain cases, stacked movies were not played in the right order.
+* FIXES: Sometimes partial fanart files were displayed, leading to corrupted images being displayed.
+* FIXES: Better handling for audio/video distinguishing in iTunes for foreign languages.
+* FIXES: Allow changing metadata agent settings when there are no sections.
+* FIXES: Video podcasts passed back as Video elements instead of Track.
+* FIXES: Hebrew subtitles were displaying punctuation incorrectly.
+* FIXES: The word “dvdmedia” was displayed at the end of the movie title.
+* FIXES: Occasionally startup issues could result in agents not showing up, improve the recovery from this.
+* FIXES: Issue on startup, due to space in home folder.
+* FIXES: Videos stopping randomly in the middle of play.
+* FIXES: A few tweaks to the Media Server’s menu bar, to make canceling a library refresh possible, and to make it harder to accidentally start one.
+* FIXES: iTunes/iLife plug-ins mysteriously disappearing.
+* FIXES: Lots of crashes while scanning and analyzing media, including some MP3s.
+* FIXES: The Media Server starts (and installs) on a machine without Internet.
+* FIXES: We fixed a .BUP/.IFO ordering issue which could cause a crash when playing a VIDEO_TS movie. You’ll need to remove and add the section to fix the ordering (but you won’t lose view state/progress doing so).
+* FIXES: A buffer overflow issue reported by d1dn0t, which also caused crashes when navigating into some plug-ins.
+* FIXES: Adding library sections from the command line wasn’t working (thanks, Atrus!).
+* FIXES: The library would occasionally refresh continually.
+* FIXES: Crash of the iOS app near the end of a video.
 
 
 Plex Media Server ever-hotter-fix (2010-09-26)
@@ -6472,10 +6504,10 @@ So if you’re feeling brave, take them for a spin, and if you’re not, please wait
 
 But if you live on the edge, regularly swim with sharks, or fly to Pamplona for the running of the bulls, try the latest hotter-fix release here. It fixes the following issues:
 
-* FIX: Occasional crash on start.
-* FIX: Issue with TV/Movie search/updates hanging.
-* FIX: A rare issue where the server would get stuck exiting, and required a reboot (which seems like an OS X issue).
-* FIX: GUI weirdness using the new asynchronous “fix match” dialog.
+* FIXES: Occasional crash on start.
+* FIXES: Issue with TV/Movie search/updates hanging.
+* FIXES: A rare issue where the server would get stuck exiting, and required a reboot (which seems like an OS X issue).
+* FIXES: GUI weirdness using the new asynchronous “fix match” dialog.
 
 As with the last one, drop the new application into ~/Library/Application Support/Plex and replace the existing one. Look at the string after the version number to make sure you’re running the latest code, and let us know how it works for you! As long as this version doesn’t have any more regressions, we’ll roll it into an official release shortly.
 
@@ -6515,16 +6547,16 @@ Transcoding.jpg
 
 We’ve also fixed a number of bugs, including:
 
-* FIX: Crash on start when your computer didn’t have a name.
-* FIX: Videos stopping randomly in the middle of play (sorry!).
-* FIX: iTunes/iLife plug-ins mysteriously disappearing (should be fixed).
-* FIX: The scanner/media analysis had its ffmpeg updated to 0.6.x, and a few other related bugs have been fixed, which should fix lots of crashes while scanning.
-* FIX: We fixed a .BUP/.IFO ordering issue which could cause a crash when playing a VIDEO_TS movie. You’ll need to remove and add the section to fix the ordering (but you won’t lose view state/progress doing so).
-* FIX: A buffer overflow issue reported by d1dn0t, which also caused crashes when navigating into some plug-ins.
-* FIX: Adding library sections from the command line wasn’t working (thanks, Atrus!).
-* FIX: The library would occasionally refresh continually.
-* FIX: Crash of the iOS app near the end of a video (thanks to Mike P for the report and media sample, and to Frank for fixing).
-* FIX: Agents are now allowed to set a title in the update function for movies.
+* FIXES: Crash on start when your computer didn’t have a name.
+* FIXES: Videos stopping randomly in the middle of play (sorry!).
+* FIXES: iTunes/iLife plug-ins mysteriously disappearing (should be fixed).
+* FIXES: The scanner/media analysis had its ffmpeg updated to 0.6.x, and a few other related bugs have been fixed, which should fix lots of crashes while scanning.
+* FIXES: We fixed a .BUP/.IFO ordering issue which could cause a crash when playing a VIDEO_TS movie. You’ll need to remove and add the section to fix the ordering (but you won’t lose view state/progress doing so).
+* FIXES: A buffer overflow issue reported by d1dn0t, which also caused crashes when navigating into some plug-ins.
+* FIXES: Adding library sections from the command line wasn’t working (thanks, Atrus!).
+* FIXES: The library would occasionally refresh continually.
+* FIXES: Crash of the iOS app near the end of a video (thanks to Mike P for the report and media sample, and to Frank for fixing).
+* FIXES: Agents are now allowed to set a title in the update function for movies.
 
 
 Plex/Nine has been released!
@@ -6547,24 +6579,24 @@ The Plex/Eight series is supposed to be about stability, and with all the change
 
 Without further ado, the fixes:
 
-* FIX: A bug where Plex and the Plex Media Server could get out of sync and display the wrong contents for a directory.
-* FIX: An issue when stopping music playback, where the GUI “clicks” don’t restore and the playing track is still selected.
-* FIX: Photo thumbnails were broken for plug-ins (thanks to orr721 for the report!)
-* FIX: Hitting the menu button during a blank slideshow causes a crash. (thank to Majkel and other for the report!)
-* FIX: When a track fails to play, Plex jumps into (blank) Now Playing screen anyway.
-* FIX: Sometimes the photo screensaver started going “crazy fast”.
-* FIX: The new remote code logged too much.
-* FIX: The duration didn’t show up in plug-ins.
-* FIX: You weren’t returned to the main menu correctly from items added to your Favorites, or direct links to plug-ins in the Music section. Existing favorites will need to be removed and re-added. (James)
-* FIX: The iTunes plug-in now sorts artists by the “sort artist” field in iTunes. This one is for Scott!
-* FIX: Crashes with WebKit plug-ins that appear in the Music section.
-* FIX: PlexHelper occasionally stopped responding (or responded incorrectly) to button presses.
-* FIX: Sometimes Plex didn’t start after the first run. Believe it or not, this was an OS X bug, now worked around.
-* FIX: Plex hung when using the mouse wheel to scroll through text (thanks to hqrs for the report!)
-* FIX: Changed the servers in the TVDB scraper to use the load balanced ones. (many thanks to kruisje for the fix!)
-* FIX: Fixed a crash loading some RAW files.
-* FIX: DTS-to-AC3 was broken in the last release. Thanks to our audio doctor Ryan who fixed it and improved the AC3 trancoding in the process.
-* FIX: When you select “previous track” it now does the right thing with streamed content: moving to the start of the track or the previous track depending on how far along the track is (awesome, James!)
+* FIXES: A bug where Plex and the Plex Media Server could get out of sync and display the wrong contents for a directory.
+* FIXES: An issue when stopping music playback, where the GUI “clicks” don’t restore and the playing track is still selected.
+* FIXES: Photo thumbnails were broken for plug-ins (thanks to orr721 for the report!)
+* FIXES: Hitting the menu button during a blank slideshow causes a crash. (thank to Majkel and other for the report!)
+* FIXES: When a track fails to play, Plex jumps into (blank) Now Playing screen anyway.
+* FIXES: Sometimes the photo screensaver started going “crazy fast”.
+* FIXES: The new remote code logged too much.
+* FIXES: The duration didn’t show up in plug-ins.
+* FIXES: You weren’t returned to the main menu correctly from items added to your Favorites, or direct links to plug-ins in the Music section. Existing favorites will need to be removed and re-added. (James)
+* FIXES: The iTunes plug-in now sorts artists by the “sort artist” field in iTunes. This one is for Scott!
+* FIXES: Crashes with WebKit plug-ins that appear in the Music section.
+* FIXES: PlexHelper occasionally stopped responding (or responded incorrectly) to button presses.
+* FIXES: Sometimes Plex didn’t start after the first run. Believe it or not, this was an OS X bug, now worked around.
+* FIXES: Plex hung when using the mouse wheel to scroll through text (thanks to hqrs for the report!)
+* FIXES: Changed the servers in the TVDB scraper to use the load balanced ones. (many thanks to kruisje for the fix!)
+* FIXES: Fixed a crash loading some RAW files.
+* FIXES: DTS-to-AC3 was broken in the last release. Thanks to our audio doctor Ryan who fixed it and improved the AC3 trancoding in the process.
+* FIXES: When you select “previous track” it now does the right thing with streamed content: moving to the start of the track or the previous track depending on how far along the track is (awesome, James!)
 
 OK, so I said there were just fixes, right? I lied! James, as usual, pulled out a great new feature or two out of his hat, and we hope you enjoy them.
 
@@ -6579,20 +6611,20 @@ We realize it’s been a little while since the last release, but hopefully the wa
 
 [French users, be sure to read through oncleben31's blog post on the new scraper included in this release here.]
 
-* FIX: On Snow Leopard, 5.1 audio had issues. We’ve cleaned up the code, fixed the problems, and it now runs great on 10.6. Many thanks to Ryan for all his work on this one.
-* FIX: We fixed an issue with the new caching system that could cause some MKVs and other files to stutter when played over the network.
-* FIX: Video playlists work again.
-* FIX: Multi-part videos display thumbnails again.
-* FIX: Crash reading GPS EXIF data from photos.
-* FIX: Fix for crash when displaying subtitles (Thanks, Billy J!)
-* FIX: A few crashes in the Media Server (custom iTunes genre artwork, and playing Netflix movies).
-* FIX: First WebKit play on a fresh install didn’t work.
-* FIX: App Store would sometimes not show up on a fresh install.
-* FIX: GForce visualizer for iTunes causes Plex to crash.
-* FIX: TVDB image issue (thanks to Poldi!)
-* FIX: Posters issue in IMDB scraper (thanks, Jay!) and issue with cast lists (thanks to Todd G!)
-* FIX: DTS downmixing method reverted to use libdts. People who listen on headphone *may* be happier.
-* FIX: Make keyboard backlight feature optional (James). You can access this setting in the advanced Cocoa preferences area under the Videos tab.
+* FIXES: On Snow Leopard, 5.1 audio had issues. We’ve cleaned up the code, fixed the problems, and it now runs great on 10.6. Many thanks to Ryan for all his work on this one.
+* FIXES: We fixed an issue with the new caching system that could cause some MKVs and other files to stutter when played over the network.
+* FIXES: Video playlists work again.
+* FIXES: Multi-part videos display thumbnails again.
+* FIXES: Crash reading GPS EXIF data from photos.
+* FIXES: Fix for crash when displaying subtitles (Thanks, Billy J!)
+* FIXES: A few crashes in the Media Server (custom iTunes genre artwork, and playing Netflix movies).
+* FIXES: First WebKit play on a fresh install didn’t work.
+* FIXES: App Store would sometimes not show up on a fresh install.
+* FIXES: GForce visualizer for iTunes causes Plex to crash.
+* FIXES: TVDB image issue (thanks to Poldi!)
+* FIXES: Posters issue in IMDB scraper (thanks, Jay!) and issue with cast lists (thanks to Todd G!)
+* FIXES: DTS downmixing method reverted to use libdts. People who listen on headphone *may* be happier.
+* FIXES: Make keyboard backlight feature optional (James). You can access this setting in the advanced Cocoa preferences area under the Videos tab.
 
 To summarize, Plex should now work pretty well on Snow Leopard, and hopefully most of the annoyances and issues in the last release have been fixed. Moving right along, what other tasty nuggets await in this new release?
 
@@ -6640,25 +6672,25 @@ Plex-35.jpg 471×313 pixels.jpg
 # NEW: We display error messages when an item fails to play (as opposed to silently returning to the menu).
 
 Along with all these additions, we’ve fixed quite a few bugs:
-# FIX: Manually added PMS sources can be removed via context menu (James).
-# FIX: The default folder for the slide show was set to “F:/” (#303)
-# FIX: Fixed an issue when Auto-Subtitles are enabled, we weren’t allowing manual activation of other subtitles if they were automatically disabled.
-# FIX: Crash in the Media Server in iTunes plug-in.
-# FIX: James made some minor tweaks to menu/keyboard handling, so that the ‘Move focus to the menu bar’ command (mapped to ^F2) works, and also &#8984;W now closes the About window.
-# FIX: We now scrobble to Last.fm as “Plex”.
-# FIX: Thumbnails obtained from the Plex Media Server are all stored in their own directory, and given a limited time to live, so that you shouldn’t need to go manually whack icons or fanart any more. In addition, thumbnails created by the Plex Media Server with Quick Look are also only cached for a limited amount of time.
-# FIX: Removed the System Info window, which really wasn’t doing much good (thanks to James).
-# FIX: Disable cross-fading by default (also thanks to James).
-# FIX: Fixed an error in the keymap (thanks to Mickey for reporting, and James for fixing).
-# FIX: The Plex Media Server quit confirmation dialog didn’t always appear on top (James).
-# FIX: Improved A/V sync, those with senses tuned to this sort of stuff should find it better behaved.
-# FIX: iTunes visualizers didn’t show elapsed time (thanks to Daniel for reporting it).
-# FIX: Resume point for videos is now saved when quitting.
-# FIX: Years weren’t showing up in IMDB matches.
-# FIX: On updates or restarts, PlexHelper (and thus Apple Remote) could stop working.
-# FIX: If you had the Plex Media Server set to “Always running” it would not start on boot.
-# FIX: A crash starting a zoomed MKV (with software upscaling enabled).
-# FIX: A crash on startup with audio device changes.
+# FIXES: Manually added PMS sources can be removed via context menu (James).
+# FIXES: The default folder for the slide show was set to “F:/” (#303)
+# FIXES: Fixed an issue when Auto-Subtitles are enabled, we weren’t allowing manual activation of other subtitles if they were automatically disabled.
+# FIXES: Crash in the Media Server in iTunes plug-in.
+# FIXES: James made some minor tweaks to menu/keyboard handling, so that the ‘Move focus to the menu bar’ command (mapped to ^F2) works, and also &#8984;W now closes the About window.
+# FIXES: We now scrobble to Last.fm as “Plex”.
+# FIXES: Thumbnails obtained from the Plex Media Server are all stored in their own directory, and given a limited time to live, so that you shouldn’t need to go manually whack icons or fanart any more. In addition, thumbnails created by the Plex Media Server with Quick Look are also only cached for a limited amount of time.
+# FIXES: Removed the System Info window, which really wasn’t doing much good (thanks to James).
+# FIXES: Disable cross-fading by default (also thanks to James).
+# FIXES: Fixed an error in the keymap (thanks to Mickey for reporting, and James for fixing).
+# FIXES: The Plex Media Server quit confirmation dialog didn’t always appear on top (James).
+# FIXES: Improved A/V sync, those with senses tuned to this sort of stuff should find it better behaved.
+# FIXES: iTunes visualizers didn’t show elapsed time (thanks to Daniel for reporting it).
+# FIXES: Resume point for videos is now saved when quitting.
+# FIXES: Years weren’t showing up in IMDB matches.
+# FIXES: On updates or restarts, PlexHelper (and thus Apple Remote) could stop working.
+# FIXES: If you had the Plex Media Server set to “Always running” it would not start on boot.
+# FIXES: A crash starting a zoomed MKV (with software upscaling enabled).
+# FIXES: A crash on startup with audio device changes.
 
 Also, we’ve worked on the interaction between Plex and the Media Server, as well as the Python Framework. James just pushed the official v1.0 to the store, and he’ll be blogging about all the great changes in the final release. Note that all plug-in caches and data will be reset because of changes to the encoding, which means that you will need to re-enter login data into some plug-ins (we apologize for this).
 # NEW: We now support redirection from HTTP to RTMP, MMS, and WebKit streams.
@@ -6667,12 +6699,12 @@ Also, we’ve worked on the interaction between Plex and the Media Server, as well
 # NEW: Seek bars are allowed to specify small/large percentages to jump.
 # NEW: Video items can specify bandwidth if they wish to override the automatically computed bandwidth (also useful for some FLV files where it’s not possible to extract it).
 # NEW: You can pass back cookies from the Media Server to Plex, which is useful for accessing authenticated content.
-# FIX: The Preferences item refreshes parent, useful for displaying/hiding sub-menus based on logged in status (James)
-# FIX: Javascript seek bars didn’t reset properly.
-# FIX: String keys are now allowed for album media items.
-# FIX: The Plex Media Server would crash if a site configuration moved to an unknown state.
-# FIX: Showing a message dialog at the top level of a plug-in didn’t work right.
-# FIX: The Media Server didn’t forward requests to the right plug-in when they shared a common prefix (James)
+# FIXES: The Preferences item refreshes parent, useful for displaying/hiding sub-menus based on logged in status (James)
+# FIXES: Javascript seek bars didn’t reset properly.
+# FIXES: String keys are now allowed for album media items.
+# FIXES: The Plex Media Server would crash if a site configuration moved to an unknown state.
+# FIXES: Showing a message dialog at the top level of a plug-in didn’t work right.
+# FIXES: The Media Server didn’t forward requests to the right plug-in when they shared a common prefix (James)
 
 
 Release 0.8.1: Crazy Delicious
@@ -6680,25 +6712,25 @@ May 22nd, 2009 | Category: Release | Author: elan
 
 Remember how when Windows 3.0 came out, it really sucked, and it wasn’t until 3.1 that Microsoft got things right? Well, I’d like to think of this release (download here) as being the “Windows 3.1&#8243; release of Plex. We’ve fixed a lot of issues, and this version should be much more stable than the previous one. Additionally, the people who were staying with v0.7.13 because of issues with BluRay rips in subsequent versions can now download this version without fear.
 
-* FIX: Idle CPU reduced greatly. On an iMac we went from 24% to around 9.8%. On a 1.83GHz Mini we went from 38% to 16%. Al Gore is happy.
-* FIX: Hang when playing WebKit content after 5.1 content.
-* FIX: A few issues causing App Store/plug-ins to disappear.
-* FIX: Hang on exit (when Media Server Scrobbler was enabled).
-* FIX: Cannot play/browse AC/DC (and other artists with funky names) from the iTunes library. Heavy metal fans rejoice!
-* FIX: Scrobbling plays of AAC files to the Plex Media Server wasn’t working.
-* FIX: Crash on start when Plex Media Server was run on a computer without Plex.
-* FIX: Intermittant lack of audio when starting 5.1 videos when background music/themes was enabled. (We also disabling the fading, which was not helping.)
-* FIX: VC-1 apparent regression in ffmpeg 0.5 which caused much higher CPU usage and related problems. Ryan and I resolved it by reverting to an earlier version of the codec. Thanks to Peter for bringing the issue to our attention, and to Aaron for help in tracking it down.
-* FIX: View Slideshow context menu items weren’t enabled for top-level photo plug-ins.
-* FIX: Jay and Isaac tweaked the default settings for IMDB to make sure the best quality posters are returned.
-* FIX: James made some tweak to Now Playing. The flip time is now configurable in the Advanced Settings Cocoa UI (Make it flip every 5 seconds! Make your child and/or pets motion sick!) Additionally, the background is more in line with look of MediaStream.
-* FIX: We’ve defaulted the automatic audio stream selection to false, as we think that default makes more sense (Thanks, Isaac! You can turn it off manually yourself in the video player preferences.) We also fixed an issue with the auto-selection of subtitles if the auto-selection of audio streams was disabled.
-* FIX: We pulled the latest libdcr code which decodes RAW images (it fixes some pink-hue issues with newer cameras).
-* FIX: As forum user “someone” reported, the German strings were botched in the previous version.
-* FIX: Sébastien Vaast kindly send us updates to the French translation.
-* FIX: We fixed a possible crash with Javascript seek bars in site profiles.
-* FIX: Relative coordinates on “thumb” seek-bars were broken, many thanks to Robert Nio for reporting the issue and testing the fix.
-* FIX: We pulled the latest XBMC UPnP code, in hopes this would help with some problems reported on the forums. We also pulled a fix related to the sendkey HTTP-API command, and a few other fixes.
+* FIXES: Idle CPU reduced greatly. On an iMac we went from 24% to around 9.8%. On a 1.83GHz Mini we went from 38% to 16%. Al Gore is happy.
+* FIXES: Hang when playing WebKit content after 5.1 content.
+* FIXES: A few issues causing App Store/plug-ins to disappear.
+* FIXES: Hang on exit (when Media Server Scrobbler was enabled).
+* FIXES: Cannot play/browse AC/DC (and other artists with funky names) from the iTunes library. Heavy metal fans rejoice!
+* FIXES: Scrobbling plays of AAC files to the Plex Media Server wasn’t working.
+* FIXES: Crash on start when Plex Media Server was run on a computer without Plex.
+* FIXES: Intermittant lack of audio when starting 5.1 videos when background music/themes was enabled. (We also disabling the fading, which was not helping.)
+* FIXES: VC-1 apparent regression in ffmpeg 0.5 which caused much higher CPU usage and related problems. Ryan and I resolved it by reverting to an earlier version of the codec. Thanks to Peter for bringing the issue to our attention, and to Aaron for help in tracking it down.
+* FIXES: View Slideshow context menu items weren’t enabled for top-level photo plug-ins.
+* FIXES: Jay and Isaac tweaked the default settings for IMDB to make sure the best quality posters are returned.
+* FIXES: James made some tweak to Now Playing. The flip time is now configurable in the Advanced Settings Cocoa UI (Make it flip every 5 seconds! Make your child and/or pets motion sick!) Additionally, the background is more in line with look of MediaStream.
+* FIXES: We’ve defaulted the automatic audio stream selection to false, as we think that default makes more sense (Thanks, Isaac! You can turn it off manually yourself in the video player preferences.) We also fixed an issue with the auto-selection of subtitles if the auto-selection of audio streams was disabled.
+* FIXES: We pulled the latest libdcr code which decodes RAW images (it fixes some pink-hue issues with newer cameras).
+* FIXES: As forum user “someone” reported, the German strings were botched in the previous version.
+* FIXES: Sébastien Vaast kindly send us updates to the French translation.
+* FIXES: We fixed a possible crash with Javascript seek bars in site profiles.
+* FIXES: Relative coordinates on “thumb” seek-bars were broken, many thanks to Robert Nio for reporting the issue and testing the fix.
+* FIXES: We pulled the latest XBMC UPnP code, in hopes this would help with some problems reported on the forums. We also pulled a fix related to the sendkey HTTP-API command, and a few other fixes.
 
 
 Plex/Eight Released
@@ -6725,23 +6757,23 @@ These options are both on by default, and they will not override per-video setti
 
 And the fixes:
 
-* FIX: Sometimes album art didn’t show up in the Now Playing window.
-* FIX: Remote fanart (e.g. iTunes) wasn’t showing up.
-* FIX: Very slow start/skipping tracks for music. We made some improvements to the Media Server, and the ever-skilled jmarshall committed a nice related fix which we pulled. You won’t believe how much faster it is.
-* FIX: Speaking of performance, a big shout out to Jens Kleemann, who has been working for a while on analyzing and improving the performance of Plex. A few weeks ago, he told me that one of the main sources of the idle CPU usage was in some code that was locking and unlocking a mutex. He even sent over a patch that did less locking, and Plex took less CPU with the fix. Now this didn’t seem right to me, as a thread that is blocked on a mutex doesn’t consume any CPU. One night I looked over the mutex code, and I noticed a line of debug code that got the thread’s Mach port. I’d put this line in when I was trying to track down a threading issue *ages* ago, and it wasn’t used anymore. Except, as it turns out, it was responsible for consuming about a quarter of Plex’s CPU usage when idle. So a big thank you to Jens, and a big apology from me. Just think how many trillion of instructions your computers have executed for no good reason because of me. I might actually be responsible for global warming.
-* FIX: We’ve changed the thumbnailing code for photos to use a single thumb instead of four, by popular request.
-* FIX: Nikolas Stephan kindly submitted a patch so that Last.fm scrobbling works with tracks played from the Plex Media Server.
-* FIX: Nikolas Stephan also submitted a patch which allows selecting folders for the photo screensaver, apparently something which used to work.
-* FIX: We restart the Plex Media Server when we quit after 5.1 play (or upon restart after a crash). This is needed to work around a CoreAudio/WebKit issue, and you would have seen this issue as WebKit videos playing back without audio.
-* FIX: We automatically remove empty iLife sources, so if you don’t have Aperture, it won’t show up, for example.
-* FIX: GlimmerBlocker no longer prevents WebKit plug-ins from working.
-* FIX: The new wider list view works with the “hide thumbs” option.
-* FIX: Some SSA subtitles (e.g. Chinese) didn’t render correctly.
-* FIX: James made some fixes to background music; the volume level of the background music shouldn’t be quieter than regular music, and fixed a couple of problems with it not restarting properly. Also, it’ll fade out when starting a video.
-* FIX: The fonts have been fixed in the Now Playing window for the Original font set.
-* FIX: A possible crash in the Plex Media Server.
-* FIX: Better keyboard mappings for the Now Playing window and Mira (thanks to marklight!)
-* FIX: We pulled the latest IMDB scraper from XBMC (thanks to aaron and jayman for testing it out!) and this should fix it bringing down incorrect posters when the IMPA awards option is on.
+* FIXES: Sometimes album art didn’t show up in the Now Playing window.
+* FIXES: Remote fanart (e.g. iTunes) wasn’t showing up.
+* FIXES: Very slow start/skipping tracks for music. We made some improvements to the Media Server, and the ever-skilled jmarshall committed a nice related fix which we pulled. You won’t believe how much faster it is.
+* FIXES: Speaking of performance, a big shout out to Jens Kleemann, who has been working for a while on analyzing and improving the performance of Plex. A few weeks ago, he told me that one of the main sources of the idle CPU usage was in some code that was locking and unlocking a mutex. He even sent over a patch that did less locking, and Plex took less CPU with the fix. Now this didn’t seem right to me, as a thread that is blocked on a mutex doesn’t consume any CPU. One night I looked over the mutex code, and I noticed a line of debug code that got the thread’s Mach port. I’d put this line in when I was trying to track down a threading issue *ages* ago, and it wasn’t used anymore. Except, as it turns out, it was responsible for consuming about a quarter of Plex’s CPU usage when idle. So a big thank you to Jens, and a big apology from me. Just think how many trillion of instructions your computers have executed for no good reason because of me. I might actually be responsible for global warming.
+* FIXES: We’ve changed the thumbnailing code for photos to use a single thumb instead of four, by popular request.
+* FIXES: Nikolas Stephan kindly submitted a patch so that Last.fm scrobbling works with tracks played from the Plex Media Server.
+* FIXES: Nikolas Stephan also submitted a patch which allows selecting folders for the photo screensaver, apparently something which used to work.
+* FIXES: We restart the Plex Media Server when we quit after 5.1 play (or upon restart after a crash). This is needed to work around a CoreAudio/WebKit issue, and you would have seen this issue as WebKit videos playing back without audio.
+* FIXES: We automatically remove empty iLife sources, so if you don’t have Aperture, it won’t show up, for example.
+* FIXES: GlimmerBlocker no longer prevents WebKit plug-ins from working.
+* FIXES: The new wider list view works with the “hide thumbs” option.
+* FIXES: Some SSA subtitles (e.g. Chinese) didn’t render correctly.
+* FIXES: James made some fixes to background music; the volume level of the background music shouldn’t be quieter than regular music, and fixed a couple of problems with it not restarting properly. Also, it’ll fade out when starting a video.
+* FIXES: The fonts have been fixed in the Now Playing window for the Original font set.
+* FIXES: A possible crash in the Plex Media Server.
+* FIXES: Better keyboard mappings for the Now Playing window and Mira (thanks to marklight!)
+* FIXES: We pulled the latest IMDB scraper from XBMC (thanks to aaron and jayman for testing it out!) and this should fix it bringing down incorrect posters when the IMPA awards option is on.
 * We also pulled a good bunch of code fixes from XBMC. (No Aeon fixes, sorry.)
 
 Next up will be a big release of new and enhanced plug-ins, and then back to work on Plex/Nine.
@@ -6769,36 +6801,36 @@ untitled.png
 
 We’ve also fixed a number of bugs in this release:
 
-* FIX: The context menu was broken for the Favorites section.
-* FIX: We weren’t saving the ’show extensions’ setting correctly in advanced settings.
-* FIX: James fixed a long-standing (since Plex/Five) scraper hang with tvshow.nfo.
-* FIX: We got a patch from rgrove (thanks!) that ensures that LAN cache settings are used for SMB shares.
-* FIX: Caching was disabled, which caused no end of trouble playing back Internet content.
-* FIX: We added Lanczos back to the OSD upscaling menu.
-* FIX: We increased the size of the default fonts. I have to personally apologize for that, apparently I ate too many carrots as a baby.
-* FIX: Crash/hang when exiting after playing a video.
-* FIX: Also a longstanding bug, the occasional lack of GUI sounds after playing videos (thanks to Kent for helping me track this down).
-* FIX: The Plex Media Server is a Universal Binary again.
-* FIX: Ryan helped me fix a DTS->AC3 transcoding channel mapping bug.
-* FIX: A Plex Media Server crash (when stopping a WebKit video shortly after starting) was fixed.
-* FIX: We’ve made the list view give more room to text. After all, scrolling text is hard to read.
+* FIXES: The context menu was broken for the Favorites section.
+* FIXES: We weren’t saving the ’show extensions’ setting correctly in advanced settings.
+* FIXES: James fixed a long-standing (since Plex/Five) scraper hang with tvshow.nfo.
+* FIXES: We got a patch from rgrove (thanks!) that ensures that LAN cache settings are used for SMB shares.
+* FIXES: Caching was disabled, which caused no end of trouble playing back Internet content.
+* FIXES: We added Lanczos back to the OSD upscaling menu.
+* FIXES: We increased the size of the default fonts. I have to personally apologize for that, apparently I ate too many carrots as a baby.
+* FIXES: Crash/hang when exiting after playing a video.
+* FIXES: Also a longstanding bug, the occasional lack of GUI sounds after playing videos (thanks to Kent for helping me track this down).
+* FIXES: The Plex Media Server is a Universal Binary again.
+* FIXES: Ryan helped me fix a DTS->AC3 transcoding channel mapping bug.
+* FIXES: A Plex Media Server crash (when stopping a WebKit video shortly after starting) was fixed.
+* FIXES: We’ve made the list view give more room to text. After all, scrolling text is hard to read.
 
 untitled.png
 
-* FIX: Stopping a video with 5.1 audio could be a bit slow.
-* FIX: The clock could display letters (e.g. “kk:49&#8243;). Thanks to Daniel for helping me track this one down.
-* FIX: James made the thumbnail searching code respect the dvdthumbs advanced setting (so you can add support for Front Row style preview.jpg files).
-* FIX: Double speed playback of 22KHz audio in videos (e.g. some FLV video).
-* FIX: Enhanced the caching of directories to work well with the Plex Media Server (much quicker backing up to parent directories).
-* FIX: Isaac fixed a few confusing strings.
-* FIX: Improved Russian strings (thanks to friendly).
-* FIX: Blurry fanart. Thanks to tassitassi for bringing it to my attention and to jmarshall for the fix).
+* FIXES: Stopping a video with 5.1 audio could be a bit slow.
+* FIXES: The clock could display letters (e.g. “kk:49&#8243;). Thanks to Daniel for helping me track this one down.
+* FIXES: James made the thumbnail searching code respect the dvdthumbs advanced setting (so you can add support for Front Row style preview.jpg files).
+* FIXES: Double speed playback of 22KHz audio in videos (e.g. some FLV video).
+* FIXES: Enhanced the caching of directories to work well with the Plex Media Server (much quicker backing up to parent directories).
+* FIXES: Isaac fixed a few confusing strings.
+* FIXES: Improved Russian strings (thanks to friendly).
+* FIXES: Blurry fanart. Thanks to tassitassi for bringing it to my attention and to jmarshall for the fix).
 
 We also added a few new Media Server plug-in features and fixed some bugs:
 
 * NEW: Support for typing a string in the site config (requested by Rick, useful for authenticating into Flash sites).
 * NEW: We allow specifying a dead zone in the seek bar site config, which can help make a tooltip disappear after a seek.
-* FIX: Preferences weren’t being correctly escaped, which could lead to problems logging into Netflix, for example.
+* FIXES: Preferences weren’t being correctly escaped, which could lead to problems logging into Netflix, for example.
 
 
 Release 0.7.14: An-nyoung!
@@ -6833,23 +6865,23 @@ fonts.png
 
 Lots of good fixes in this release as well.
 
-* FIX: Allow specifying “always on” vs. “on for SD content” for software upscaling (we’ve also allowed you to select the algorithm used in the advanced settings dialog).
-* FIX: If you have audio linking to system output, it restores the original setting when exiting.
-* FIX: Improved support for SMI subtitles (pulled from XBMC).
-* FIX: Backing up from App Store or Help brings you back to main menu.
-* FIX: When upgrading, helper and Media Server sometimes didn’t get restarted. This one was driving me crazy.
-* FIX: Apple Remote could drop key-presses when system was loaded (many thanks to Evan Schoenberg for the fix, this has been annoying many for quite some time).
-* FIX: When using an HTTP proxy (like Glimmer Blocker), the Media Server wouldn’t play Flash content.
-* FIX: Huge speed increase starting plug-ins in the Media Server on startup.
-* FIX: Signature on Media Server should always be correct now, eliminating firewall warnings.
-* FIX: iPhoto album ordering now exactly matches iPhoto.
-* FIX: Many things restored to Mediastream which were taken out in the last version (allow hiding Movies, TV Shows, and the Quit items, back back background image folder settings, restored “hide thumbs in list view”, and put back the library button in music files).
-* FIX: Sometime when displaying a slide show, moving to the next image would simply exit out of the slideshow (nice find, James!)
-* FIX: HD Homerun should work now.
-* FIX: Stillness sent an encoding patch and scraper updates for KinoPoisk.ru (thank you!)
-* FIX: Seasons and episodes views will now display correctly for first-time users, thanks to Isaac.
-* FIX: We were missing a key mapping for deleting individual video bookmarks.
-* FIX: Ryan, our resident audio wizard, fixed an issue with static noise when skipping forward in an AAC 5.1 file.
+* FIXES: Allow specifying “always on” vs. “on for SD content” for software upscaling (we’ve also allowed you to select the algorithm used in the advanced settings dialog).
+* FIXES: If you have audio linking to system output, it restores the original setting when exiting.
+* FIXES: Improved support for SMI subtitles (pulled from XBMC).
+* FIXES: Backing up from App Store or Help brings you back to main menu.
+* FIXES: When upgrading, helper and Media Server sometimes didn’t get restarted. This one was driving me crazy.
+* FIXES: Apple Remote could drop key-presses when system was loaded (many thanks to Evan Schoenberg for the fix, this has been annoying many for quite some time).
+* FIXES: When using an HTTP proxy (like Glimmer Blocker), the Media Server wouldn’t play Flash content.
+* FIXES: Huge speed increase starting plug-ins in the Media Server on startup.
+* FIXES: Signature on Media Server should always be correct now, eliminating firewall warnings.
+* FIXES: iPhoto album ordering now exactly matches iPhoto.
+* FIXES: Many things restored to Mediastream which were taken out in the last version (allow hiding Movies, TV Shows, and the Quit items, back back background image folder settings, restored “hide thumbs in list view”, and put back the library button in music files).
+* FIXES: Sometime when displaying a slide show, moving to the next image would simply exit out of the slideshow (nice find, James!)
+* FIXES: HD Homerun should work now.
+* FIXES: Stillness sent an encoding patch and scraper updates for KinoPoisk.ru (thank you!)
+* FIXES: Seasons and episodes views will now display correctly for first-time users, thanks to Isaac.
+* FIXES: We were missing a key mapping for deleting individual video bookmarks.
+* FIXES: Ryan, our resident audio wizard, fixed an issue with static noise when skipping forward in an AAC 5.1 file.
 
 And lots of changes in Plex Media Server land:
 
@@ -6870,7 +6902,7 @@ March 10th, 2009 | Category: Release | Author: elan
 
 We’ve got lots of things “cooking” but we wanted to make a quick release (download here) to fix Hulu as well as provide some important enhancements to the media server.
 
-* FIX: Hulu playback was broken when the site exploited a bug in our code, which has now been fixed.
+* FIXES: Hulu playback was broken when the site exploited a bug in our code, which has now been fixed.
 * NEW: Support for variably-sized Flash/Silverlight content (and also for sizes changing on the fly). You can now specify negative values in the site configuration for cropping, mouse operations, and in seekbars. A negative X or width value indicates the number of pixels from the right, and a negative Y or height value specifies negative pixels from the bottom. (Specifying 0 for width/height means “the entire width/height”, this should help for sites such as Vimeo.)
 * NEW: We’ve moved the Plex Python plug-in framework into a plug-in named Framework.bundle (great idea, James!). Among other things, this fixes the issue with the code signature breaking on the Plex Media Server and the Leopard firewall getting upset about it. This also allows us to have multiple concurrent versions of the framework for backwards compatibility. We take this sort of thing very seriously, as we want you to be able to write plug-ins without fear of them breaking with API changes.
 
@@ -6880,8 +6912,8 @@ March 03rd, 2009 | Category: Release | Author: elan
 
 A couple of fixes in this one, which you can download here.
 
-* FIX: Silly regression which resulted in you being left in an empty directory after installing from the app store (and a few other cases).
-* FIX: Improved compatibility with certain Flash sites.
+* FIXES: Silly regression which resulted in you being left in an empty directory after installing from the app store (and a few other cases).
+* FIXES: Improved compatibility with certain Flash sites.
 
 
 Release 0.7.11: Fixes and Improved User Experience
@@ -6889,13 +6921,13 @@ March 01st, 2009 | Category: Release | Author: elan
 
 Lots of good stuff fixed in this release, and we’re happy to bring it to you. You can download this release here.
 
-* FIX: Crashes in Plex Media Server with Safari Adblocker and other similar plug-ins.
-* FIX: Pulled a fix from XBMC for variable framerate FLV files (important for a new plug-in).
-* FIX: Crashes in Apple Movie Trailers with 5.1 audio (integrated Ryan’s excellent audio fixes).
-* FIX: Some of the menu shortcuts were broken (thanks to migueld for pointing this out).
-* FIX: Some other crashes in Plex Media Server with badly behaved or misconfigured sites.
-* FIX: Much improved Swedish translation, with many thanks to atrus.
-* FIX: Updated to the latest Amazon scrapers (thanks to John Lockwood).
+* FIXES: Crashes in Plex Media Server with Safari Adblocker and other similar plug-ins.
+* FIXES: Pulled a fix from XBMC for variable framerate FLV files (important for a new plug-in).
+* FIXES: Crashes in Apple Movie Trailers with 5.1 audio (integrated Ryan’s excellent audio fixes).
+* FIXES: Some of the menu shortcuts were broken (thanks to migueld for pointing this out).
+* FIXES: Some other crashes in Plex Media Server with badly behaved or misconfigured sites.
+* FIXES: Much improved Swedish translation, with many thanks to atrus.
+* FIXES: Updated to the latest Amazon scrapers (thanks to John Lockwood).
 * NEW: Support for executing Javascript inside plug-in site configurations (as an action).
 
 
@@ -6916,12 +6948,12 @@ February 24th, 2009 | Category: Release | Author: elan
 
 We’re really happy to see that people seem to be enjoying the store. We’ve had tens of thousands of plug-ins downloaded already, and we have a bunch of new ones in the works! In the meantime, we’ve cooked up another quick release to try to fix the most egregious issues with the last one.
 
-* FIX: Fixed permissions on the Plex binary to allow non-administrative users to run.
-* FIX: Tweaks to the skin for upcoming Plug-ins.
-* FIX: Some crashes and leaks in the Media Server.
-* FIX: Fixed the scrapers/NFO issue, this time for real (many thanks to Isaac for all the hard work on this one!). We also include the TMDB scraper again.
-* FIX: A regression where only the first iPhoto album showed up.
-* FIX: Improved compatibility with Flash sites for the Media Server.
+* FIXES: Fixed permissions on the Plex binary to allow non-administrative users to run.
+* FIXES: Tweaks to the skin for upcoming Plug-ins.
+* FIXES: Some crashes and leaks in the Media Server.
+* FIXES: Fixed the scrapers/NFO issue, this time for real (many thanks to Isaac for all the hard work on this one!). We also include the TMDB scraper again.
+* FIXES: A regression where only the first iPhoto album showed up.
+* FIXES: Improved compatibility with Flash sites for the Media Server.
 
 The release can be downloaded here or via Sparkle as usual.
 
@@ -6961,11 +6993,11 @@ Luckily, we have a few scripts written, and there are really only a few simple s
 
 Here are the changes in this new release, which can be downloaded here (source here):
 
-* FIX: iPhoto events sort by date, not by name.
-* FIX: Slow access to media, marking unwatched/watched, etc.
-* FIX: The HTTP receive timeout was increased to 15 seconds, to hopefully allow TVDB time to respond. Thanks to Todd L on the forums for suggesting this fix.
-* FIX: IFO files weren’t showing up in DVD video directories.
-* FIX: The MediaStream “Info List” view mode was tweaked to make the list the same size and positioning vertically as the regular list view.
+* FIXES: iPhoto events sort by date, not by name.
+* FIXES: Slow access to media, marking unwatched/watched, etc.
+* FIXES: The HTTP receive timeout was increased to 15 seconds, to hopefully allow TVDB time to respond. Thanks to Todd L on the forums for suggesting this fix.
+* FIXES: IFO files weren’t showing up in DVD video directories.
+* FIXES: The MediaStream “Info List” view mode was tweaked to make the list the same size and positioning vertically as the regular list view.
 
 
 Release: Plex/Seven 0.7.6 - Month of fixes
@@ -6979,21 +7011,21 @@ The release can be downloaded from here, and the source is available here.
 
 Without further ado, here are the changes for this release:
 
-* FIX: Ryan coaxed DTSWAV files into playing. It turns out to be impossible to play 44.1KHz DTS files on OS X, as it assumes encoded audio is 48KHz. For now, we’re mixing down the files, and shortly we’ll move to transcoding them to 48KHz AC3 files. Not optimal, but better than nothing given the limitations of the platform. (I’m looking forward to this personally, because I want to have the first 1080p Wizard of Oz + 5.1 Dark Side of the Moon party.)
-* FIX: The highly annoying bug which caused TV shows to lose audio randomly with TV theme music enabled.
-* FIX: Certain dialogs in the update code didn’t support UTF8 strings (James).
-* FIX: There is now an option you can disable to prevent Plex linking the system audio output device with the device selected in Plex (System > Audio > Link System Output).
-* FIX: The audio device settings didn’t appear to be remembered in the settings (they actually were saved, just not displayed correctly).
-* FIX: We’ve disallowed deleting files from inside Plex by default. Much safer! This is a change to the settings, so you’d need to delete your guisettings.xml file to get the new value.
-* FIX: We fixed a bug that prevented actions from being sent to Plex via event clients (used by Remote buddy).
-* FIX: Ryan fixed a crash when attempting to transcode a corrupt DTS stream into AC3.
-* FIX: Background music tracks are now played completely randomly.
-* FIX: Isaac fixed some issues in the harmony and keyboard maps, and also added Hold Up/Hold Down to control volume in Full Screen Video and Visusalization for Mira users (and likely Sofa Control users as well). He also went through and “humanized” some of the error messages that Plex spits out to be more intelligible.
-* FIX: Tweaked permissions on a MediaStream file.
-* FIX: Mikey gave us some fixes to French strings (thanks!)
-* FIX: Stillness sent some fixes for the KinoPoisk scraper (thanks!)
-* FIX: A crash in Weather for some regions.
-* FIX: Maddox suggested some excellent changes in the scraper defaults which result in better movie covers by default.
+* FIXES: Ryan coaxed DTSWAV files into playing. It turns out to be impossible to play 44.1KHz DTS files on OS X, as it assumes encoded audio is 48KHz. For now, we’re mixing down the files, and shortly we’ll move to transcoding them to 48KHz AC3 files. Not optimal, but better than nothing given the limitations of the platform. (I’m looking forward to this personally, because I want to have the first 1080p Wizard of Oz + 5.1 Dark Side of the Moon party.)
+* FIXES: The highly annoying bug which caused TV shows to lose audio randomly with TV theme music enabled.
+* FIXES: Certain dialogs in the update code didn’t support UTF8 strings (James).
+* FIXES: There is now an option you can disable to prevent Plex linking the system audio output device with the device selected in Plex (System > Audio > Link System Output).
+* FIXES: The audio device settings didn’t appear to be remembered in the settings (they actually were saved, just not displayed correctly).
+* FIXES: We’ve disallowed deleting files from inside Plex by default. Much safer! This is a change to the settings, so you’d need to delete your guisettings.xml file to get the new value.
+* FIXES: We fixed a bug that prevented actions from being sent to Plex via event clients (used by Remote buddy).
+* FIXES: Ryan fixed a crash when attempting to transcode a corrupt DTS stream into AC3.
+* FIXES: Background music tracks are now played completely randomly.
+* FIXES: Isaac fixed some issues in the harmony and keyboard maps, and also added Hold Up/Hold Down to control volume in Full Screen Video and Visusalization for Mira users (and likely Sofa Control users as well). He also went through and “humanized” some of the error messages that Plex spits out to be more intelligible.
+* FIXES: Tweaked permissions on a MediaStream file.
+* FIXES: Mikey gave us some fixes to French strings (thanks!)
+* FIXES: Stillness sent some fixes for the KinoPoisk scraper (thanks!)
+* FIXES: A crash in Weather for some regions.
+* FIXES: Maddox suggested some excellent changes in the scraper defaults which result in better movie covers by default.
 
 We have also updated the Plex Media Server (included with Plex) with the following changes:
 
@@ -7002,8 +7034,8 @@ We have also updated the Plex Media Server (included with Plex) with the followi
 
 untitled.png
 
-* FIX: More tweaks for “album artist” tag.
-* FIX: iPhoto sorting of events and albums was broken.
+* FIXES: More tweaks for “album artist” tag.
+* FIXES: iPhoto sorting of events and albums was broken.
 
 We’ve also pulled the usual bunch of fixes from XBMC, including updated scrapers, updated UPnP code, and some fixes.
 
@@ -7015,11 +7047,11 @@ December 26th, 2008 | Category: Release | Author: elan
 
 Hope you’ve all been having fun holiday celebrations! I’ve been drinking heavily and obsessively fixing bugs in Plex, and finding that the two activities mix well.
 
-* FIX: The audio dropout issue which was introduced in 0.7.2 should now be fixed.
-* FIX: The corrupted German MediaStream strings.
-* FIX: File size reporting bug in HTTP API has really been fixed this time.
-* FIX: Some tweaks to “album artist” tags in Plex Media Server iTunes module. Thanks to zanex for helping explain what was wrong.
-* FIX: Certain videos (FLV, YouTube, 22KHz MP3 tracks) played back at double-speed. Thanks to Ryan for explaining how to fix this one.
+* FIXES: The audio dropout issue which was introduced in 0.7.2 should now be fixed.
+* FIXES: The corrupted German MediaStream strings.
+* FIXES: File size reporting bug in HTTP API has really been fixed this time.
+* FIXES: Some tweaks to “album artist” tags in Plex Media Server iTunes module. Thanks to zanex for helping explain what was wrong.
+* FIXES: Certain videos (FLV, YouTube, 22KHz MP3 tracks) played back at double-speed. Thanks to Ryan for explaining how to fix this one.
 
 
 Plex v0.5.22: Last in the series
@@ -7046,10 +7078,10 @@ untitled.jpg
 
 * NEW: Support for the Home and End keys in lists. Also support for using the A/Z keys to skip to the next/previous letter in lists. Jonathan Marshall added support for this last one a while ago, cool dude that he is, so we added a mapping. Also, Isaac added a new mapping for people using Snatch on their iPhone. You’ll have to whack your Keymap.xml file in ~/Application Support/Plex/userdata to get these features.
 * NEW: We have included the latest MediaStream skin (no doubt out of date by tomorrow), along with the associated code fixes so that you don’t have to hit escape 23 times to return to the main menu from the Movie/TV sections. You can see some documentation for the new settings in this version of the skin here (many thanks to Jayman978!)
-* FIX: We dimmed the wrong screen when you were running with a multi-screen setup and Plex was on the second screen.
-* FIX: Some MP3 tags caused a hang. This includes the “Burial” album, so bretonh will be pleased.
-* FIX: Refreshing movie info from NFO in VIDEO_TS folders caused a crash.
-* FIX: Storing a TV show in multiple places (e.g. some seasons in one place, some seasons in another), whether by multi-path sources or different sources led to duplicates.
+* FIXES: We dimmed the wrong screen when you were running with a multi-screen setup and Plex was on the second screen.
+* FIXES: Some MP3 tags caused a hang. This includes the “Burial” album, so bretonh will be pleased.
+* FIXES: Refreshing movie info from NFO in VIDEO_TS folders caused a crash.
+* FIXES: Storing a TV show in multiple places (e.g. some seasons in one place, some seasons in another), whether by multi-path sources or different sources led to duplicates.
 
 We’ve of course included all the latest XBMC fixes as well, including the latest UPnP and MythTV code.
 
@@ -7068,11 +7100,11 @@ We’ve been busy working on some awesome new features for the upcoming 0.7 develo
 * NEW: We now turn off the backlight on displays that are blanked, many thanks to James. I hear the sound of happy Mac users rejoicing.
 * NEW: The menu button brings up shutdown menu instead of just exiting, as requested, holding play zooms into photos, and holding menu returns to normal zoom. Also, the escape key has been made to act just like the menu button on the remote. Thanks to Isaac for these improvements!
 * NEW: Added the ability to cycle through the available displays. This works in windowed or full-screen modes, and you can use the new &#8984;-Shift-&#8594; and &#8984;-Shift-&#8592; keyboard accelerators to do it. Fun! Plus, ever time I connect things in XCode’s Interface Builder, I get little shivers of pleasure.
-* FIX: Weather conditions are correctly localized (thanks, Enrique!)
-* FIX: James fixed a small bug with the display brightness setting.
-* FIX: The audio device is now saved and restored correctly in all cases. Seriously.
-* FIX: The problem affecting video with some LOL releases (and others) has been fixed (thanks to elupus for the fix to ffmpeg).
-* FIX: A rare bug causing a crash when blanking displays (thanks, Enrique!)
+* FIXES: Weather conditions are correctly localized (thanks, Enrique!)
+* FIXES: James fixed a small bug with the display brightness setting.
+* FIXES: The audio device is now saved and restored correctly in all cases. Seriously.
+* FIXES: The problem affecting video with some LOL releases (and others) has been fixed (thanks to elupus for the fix to ffmpeg).
+* FIXES: A rare bug causing a crash when blanking displays (thanks, Enrique!)
 
 Since Isaac has made tweaks to the keymap and advanced settings, unless you’re an expert user who has made your own edits, you’ll want to delete advancedsettings.xml and Keymap.xml from ~/Library/Application Support/Plex/userdata/ so that the new defaults can be installed.
 
