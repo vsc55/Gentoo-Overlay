@@ -4,6 +4,54 @@ https://plex.tv/downloads/1/archive
 https://plex.tv/downloads/1/archive
 
 
+Plex Media Server 1.25.3.5409 is now available to Plex Pass users in the Beta update channel.
+-----------------------------------------
+FIXES:
+	- (Scanner) Movie items with mis-matched agents could re-match unnecessarily during scanning (#13292)
+
+
+
+Plex Media Server 1.25.3.5385 is now available to Plex Pass users in the Beta update channel.
+-----------------------------------------
+FIXES:
+	- (Hubs) Fix potential serialization issue of CW hubs (#13237)
+	- (Metadata) Some episodes could fail to get metadata when using the legacy TVDB agent
+	- (Scanner) Hidden files inside media paths could cause unexpected issues with certain local assets (#13240)
+	- (Scanner) Improve detection of filename changes which should result in rematching items (#13220)
+	- (Scanner) Some file paths could prevent movies from scanning in correctly (#12980)
+	- (Series Scanner) Improved matching of season directory names including codec or resolution details (#13235)
+
+
+
+Plex Media Server 1.25.2.5319 is now available to Plex Pass users in the Beta update channel.
+-----------------------------------------
+FIXES:
+	- (Library) Server could exit if trying to delete non-existent items (#13190)
+	- (Metadata) Embedded metadata would be ignored on video files with non-lowercase extensions (#13195)
+	- (Optimized Versions) Conversions would fail on Windows if the item title contained trailing spaces (#13128)
+	- (PlayQueue) Playing DVR library item could result in playback of wrong item. (#12932)
+	- (QNAP) Ignore ‘@Recently-Snapshot’ folders during scanning (#13162)
+	- (Scanner) Improved distinction between episode numbers and numbers within a series title (#13210)
+	- (Scanner) Improved distinction between series titles and auxiliary metadata in file and directory names (#13210)
+
+
+
+Plex Media Server 1.25.1.5286 is now available to Plex Pass users in the Beta update channel.
+-----------------------------------------
+FIXES:
+	- (HTTP) The server could quit unexpectedly when certain types of requests were canceled prematurely (#13135)
+	- (Library) Refreshing metadata for an unmatched show wouldn’t perform a match (#12945)
+	- (NAS) ASUSTOR firmware version could be reported incorrectly on ADM 4.0 devices
+	- (NAS) Ensure Library and TMP directories exists on QNAP devices when starting PMS
+	- (Scanner) In rare instances some episode files could be ignored by the scanner (#13150)
+
+
+
+Plex Media Server 1.25.0.5282 is now available to Plex Pass users in the Beta update channel.
+-----------------------------------------
+????
+
+
 
 Plex Media Server 1.25.0.5246 is now available to Plex Pass users in the Beta update channel.
 -----------------------------------------
