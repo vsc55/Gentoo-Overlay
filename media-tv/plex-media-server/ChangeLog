@@ -3,6 +3,237 @@ http://www.videohelp.com/tools/Plex/version-history
 https://plex.tv/downloads/1/archive
 https://plex.tv/downloads/1/archive
 
+Plex Media Server 1.27.1.5891 is now available to Plex Pass users in the Beta update channel.
+-----------------------------------------
+FIXES:
+	- (Library) When media was deleted it could leave behind its sidecar files (#13479)
+	- (Music) Album year and date fields could differ when preferring local metadata (#13591)
+	- (Transcoder) Audio could drop out partway through playback when remuxing videos with very long keyframe intervals to DASH (#13411)
+
+
+
+Plex Media Server 1.27.0.5897 is now available to Plex Pass users in the Beta update channel.
+-----------------------------------------
+FIXES:
+	- (LibraryGarbageCollector) Watched content scheduled for deletion could be removed prematurely (#13617)
+	- (Metadata) Don’t pull in ratings from legacy TVDB agent (these no longer exist)
+
+
+
+Plex Media Server 1.27.0.5889 is now available to Plex Pass users in the Beta update channel.
+-----------------------------------------
+FIXES:
+	- (Library) The server could crash while searching for lyrics during metadata updates (#13622)
+	- (macOS) Auto-update could fail to update to 1.27.0.5873
+
+
+
+Plex Media Server 1.27.0.5878 is now available to Plex Pass users in the Beta update channel.
+-----------------------------------------
+FIXES:
+	- (macOS) Auto-update could fail to update to 1.27.0.5873
+
+
+
+Plex Media Server 1.27.0.5873 is now available to Plex Pass users in the Beta update channel.
+-----------------------------------------
+FIXES:
+	- (Metadata) Don’t pull in ratings from legacy TVDB agent (these no longer exist)
+	- (Music) Artists would not save sort title from embedded tags (#13604)
+	- HW Transcoding failing on NVidia Shield (Android 11) #13192
+
+
+
+Plex Media Server 1.27.0.5849 is now available to Plex Pass users in the Beta update channel.
+-----------------------------------------
+NEW:
+	- (Database) Improved startup performance by up to 70% when several migrations are run in sequence (#13541)
+	- (Music) Modernized the metadata matching and refresh logic (#13539)
+FIXES:
+	- (Bandwidth) In some cases downloads didn’t respect bandwidth limits (#13545)
+	- (Butler) Artists would get refreshed too frequently during the scheduled task window (#13575)
+	- (DVR) Fix stream DVR/Live TV to Chromecast (#13205)
+	- (EPG) Original air dates could be imported with incorrect time zone offsets for shows (#13533)
+	- (Library) Setting items’ originally-available dates to certain values in the distant past could fail (#13544)
+	- (Metadata) Don’t pull in ratings from legacy TVDB agent (these no longer exist)
+	- (Metadata) Episodes could get incorrect dates set on them with “Prefer local metadata” enabled (#13580)
+
+
+
+Plex Media Server 1.26.2.5797 is now available to Plex Pass users in the Beta update channel.
+-----------------------------------------
+NEW:
+	- (Database) Improve access performance substantially. Migrations are now over 35% faster in some cases. (#13505)
+FIXES:
+	- (DVR) Prevent losing extra data if media moved/renamed within the library (#13483)
+	- (EPG) Original air dates could be imported with incorrect time zone offsets (#13533)
+
+
+
+Plex Media Server 1.26.1.5798 is now available to Plex Pass users in the Beta update channel.
+-----------------------------------------
+FIXES:
+	- (DVR) Episodes scheduled for deletion could be removed prematurely (#13506)
+	- (DVR) “automatically delete after 30 days” is deleting all new episodes (#13506)
+	- (DVR): correct date in EPG guide for date based episodes (#13533)
+	- (Metadata) Editing the Originally Available date on an item could result in an incorrect year being stored (#13517)
+
+
+
+Plex Media Server 1.26.1.5772 is now available to Plex Pass users in the Beta update channel.
+-----------------------------------------
+FIXES:
+	- ?????
+
+
+
+Plex Media Server 1.26.1.5762 is now available to Plex Pass users in the Beta update channel.
+-----------------------------------------
+FIXES:
+	- (DVR) Plex Tuner Service does not return non-unicode encoded channels (#13374)
+	- (DVR) Plex Tuner Service only returns a small number of channels (#13261)
+	- (HttpClient) Plex Media Server could exit unexpectedly after HTTP requests completed with certain timing conditions (#13489)
+	- (Metadata) Manually setting the Originally Available date on an item would result in an incorrect value being stored (#13508)
+	- (Subtitles) Automatic character set conversion could fail with certain language codes (#13492)
+	- (TLS) Plex Media Server could exit unexpectedly when loading an incomplete user-provided certificate (#13484)
+	- (Transcoder) QSV tone-mapping could fail on Linux distributions using newer versions of libstdc++ (#13453)
+
+
+
+Plex Media Server 1.26.0.5715 is now available to Plex Pass users in the Beta update channel.
+-----------------------------------------
+NEW:
+	- (Metadata) Pull down country info for TV shows during metadata refreshes (#13463)
+FIXES:
+	- (Music) Improve artist searches when the search term is an alias (#13441)
+	- (Transcoder) Hardware transcoding could fail on Nvidia SHIELD TV systems (#13452)
+
+
+
+Plex Media Server 1.25.9.5721 is now available to Plex Pass users in the Beta update channel.
+-----------------------------------------
+NEW:
+	- (Series Scanner) Allow the server owner to create “.plexmatch” files providing hints for more accurate matching of nonstandard file naming schemes (#13211) see details at Match Hinting for TV Series | Plex Support 8
+FIXES:
+	- (PubSub) A pubsub server with sub-optimal latency could be selected (#13480)
+
+
+
+Plex Media Server 1.25.9.5673 is now available to Plex Pass users in the Beta update channel.
+-----------------------------------------
+NEW:
+	- (Series Scanner) Allow the server owner to create “.plexmatch” files providing hints for more accurate matching of nonstandard file naming schemes (#13211)
+	- (Web) Updated to 4.76.1
+FIXES:
+	- (AdDetector) Fix potential crash (#13421)
+	- (Scanner) Improved parsing of certain episode filename formats (#13419)
+	- (TV) Remove the deprecated TVDB ratings source option (#13426)
+
+
+
+Plex Media Server 1.25.8.5663 is now available to Plex Pass users in the Beta update channel.
+-----------------------------------------
+FIXES:
+	- (Windows) Sonic Analysis would fail.
+
+
+
+Plex Media Server 1.25.8.5621 is now available to Plex Pass users in the Beta update channel.
+-----------------------------------------
+NEW:
+	- (DVR) Add Transponders list for dvb-c NetColgone German Cable provider (#12012)
+FIXES:
+	- (DVR) Fix port rebind issue on PTS restart (#12988)
+	- (Metadata) Editing director, writer or producer fields could result in duplicated entries (#13384)
+
+
+
+Plex Media Server 1.25.7.5604 is now available to Plex Pass users in the Beta update channel.
+-----------------------------------------
+NEW:
+	- (Security) Certain critical server-management requests are now logged regardless of the configured log level (#13394)
+	- (Security) Downgrading the server’s log level now requires a PMS restart (#13393)
+	- (Security) Preroll video files now must have a recognized video file extension (#13397)
+	- (Security) When possible, request logs now include the name of the device associated with the auth token (#13392)
+FIXES:
+	- (Collections) Manually ordered items in collections would not always retain their set position (#13350)
+	- (EPG) Fix parsing XMLTV time including milliseconds (#13353)
+	- (Linux) The server could exit unexpectedly when processing dates in the distant past with certain time zone configurations (#13371)
+	- (Music) Improve matching accuracy of multi-disc albums (#13358)
+	- (Network) The server could react excessively to minor internal network configuration changes, such as those produced by starting and stopping containers (#13351)
+
+
+
+Plex Media Server 1.25.6.5577 is now available to Plex Pass users in the Beta update channel.
+-----------------------------------------
+¿?
+
+
+Plex Media Server 1.25.6.5545 is now available to Plex Pass users in the Beta update channel.
+-----------------------------------------
+NEW:
+	- (Collections) Promoted smart collection filtering based on selected user (#12605)
+	- (QNAP) Allow PMS to automatically accommodate configuration changes (QTS & QuTS)
+	- (QNAP) Improved Start/Stop control in App Center.
+	- (Stream Metadata) Provide additional detail in display titles for HDR streams (#12492)
+FIXES:
+	- (Hubs) Custom hubs are not deduplicated anymore (#13338)
+	- (Hubs) Fix collection hub visibility reset on preference change (#13337)
+	- (Music) Embedded Musicbrainz Release ids were not always picked up (#13357)
+	- (QNAP) PMS could not be restarted after unexpected failure in certain cases without restarting NAS.
+	- (Scanner) Adding another version of a movie in the same path could cause one to unmatch (#13373)
+	- (Scanner) In some scenarios movies could lose play history when replacing the media (#13373)
+	- (Synology) PMS could not be restarted after unexpected failure in certain cases without restarting NAS.
+	- (Synology) Plex Claim Token method would not actually claim under certain new installation conditions.
+	- (Transcode) Improve output quality in files with highly-variable bitrate (#2729)
+
+
+
+Plex Media Server 1.25.5.5492 is now available to Plex Pass users in the Beta update channel.
+-----------------------------------------
+FIXES:
+	- (Auto Update) Old update files were not cleaned up after a manual update. (#12693)
+	- (Collections) Items added from TIDAL could not be added to collections (#13289)
+	- (EPG) Guide could show wrong VCN if lineup has duplicate channel ids. (#13207)
+	- (EPG) Lineup channels returned during DVR setup were not sorted. (#13188)
+	- (Media Decision) The server could attempt to transcode files that use unsupported nonstandard colorspaces, even when other supported versions are available (#13183)
+	- (Metadata) In rare instances some tv seasons could match to the incorrect episode ordering (#13312)
+	- (Metadata) Local metadata for episode release dates would not get set correctly (#13189)
+	- (Metadata) The SDH flag for subtitles would be ignored for TV episodes (#13307)
+	- (Metadata) The embedded titleSort tag would be ignored when preferring local metadata for video files (#13266)
+	- (Scanner) Files with certain name formatting could be matched with incorrect episode numbers (#13280)
+	- (Scanner) Pick up 4 digit episode numbers when no season number exists (#13212)
+	- (Scanner) Try to use a year hint from a movie filename if the parent path doesn’t contain one (#13310)
+	- (Search) Music collections were not being returned in search results (#13000)
+
+
+
+Plex Media Server 1.25.4.5468 is now available to Plex Pass users in the Beta update channel.
+-----------------------------------------
+NEW:
+	(NOTE) Database changes may cause longer than normal start-up times after initial installation of this update, especially on larger libraries. Please be patient and do not interrupt this process.
+
+FIXES:
+	(Scanner) Some file paths were causing errors when scanning movie libraries (#13323)
+
+
+
+Plex Media Server 1.25.4.5426 is now available to Plex Pass users in the Beta update channel.
+-----------------------------------------
+NEW:
+	- (NOTE) Database changes may cause longer than normal start-up times after initial installation of this update, especially on larger libraries. Please be patient and do not interrupt this process.
+	- (Library) Refresh movie metadata periodically during scheduled tasks (#13250)
+	- (Metadata) Add Bulgarian language option for modern movie and TV agents (#13263)
+	- (TLS) Server-side HTTPS connection support is now always enabled for signed-in users; plaintext connections will continue to be supported as well by default (#13257)
+FIXES:
+	- (HttpClient) The server may quit unexpectedly if internal HTTP requests are made with certain timings (#13231)
+	- (Library) Requesting the list of items starting with special characters could give unexpected results (#13251)
+	- (Metadata) Some users could end up with massive amounts of duplicate extras (#13241)
+	- (Optimized Versions) New versions shouldn’t be encoded from existing optimized versions (#13254)
+	- (Subtitles) On-demand subtitles would not work on optimized versions (#13218)
+	- (Transcode) The transcoder process could fail to complete when encoding E-AC-3
+
+
 
 Plex Media Server 1.25.3.5409 is now available to Plex Pass users in the Beta update channel.
 -----------------------------------------
